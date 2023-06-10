@@ -13,6 +13,7 @@ using Memory;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System.Text.RegularExpressions;
+using static System.Windows.Forms.DataFormats;
 
 /* ERROR CODES
  * ERROR01: You didn't select a skill in your Arsenal.
@@ -695,6 +696,14 @@ namespace PD_Helper
         private void label12_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void OpenLabButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var labForm = new LabForm();
+            labForm.Closed += (s, args) => this.Show();
+            labForm.Show();
         }
     }
 }
