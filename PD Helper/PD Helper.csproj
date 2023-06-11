@@ -76,9 +76,6 @@
     <None Update="Assets\aura_26.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Assets\bg-lines.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="Assets\bug.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
