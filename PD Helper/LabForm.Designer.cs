@@ -29,9 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LabForm));
-            this.panel1 = new System.Windows.Forms.Panel();
             this.MainContainer = new System.Windows.Forms.SplitContainer();
-            this.ArsenalListPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.ArsenalListLayout = new System.Windows.Forms.TableLayoutPanel();
+            this.ArsenalListTitle = new System.Windows.Forms.Label();
+            this.ArsenalFilterTextBox = new System.Windows.Forms.TextBox();
+            this.ArsenalListScroller = new System.Windows.Forms.Panel();
+            this.ArsenalList = new System.Windows.Forms.TableLayoutPanel();
             this.ArsenalPanel = new System.Windows.Forms.Panel();
             this.CardTable = new System.Windows.Forms.TableLayoutPanel();
             this.CardTitlePanel = new System.Windows.Forms.Panel();
@@ -83,11 +86,12 @@
             this.ArsenalSkill28 = new System.Windows.Forms.Button();
             this.ArsenalSkill29 = new System.Windows.Forms.Button();
             this.ArsenalSkill30 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainContainer)).BeginInit();
             this.MainContainer.Panel1.SuspendLayout();
             this.MainContainer.Panel2.SuspendLayout();
             this.MainContainer.SuspendLayout();
+            this.ArsenalListLayout.SuspendLayout();
+            this.ArsenalListScroller.SuspendLayout();
             this.ArsenalPanel.SuspendLayout();
             this.CardTable.SuspendLayout();
             this.CardTitlePanel.SuspendLayout();
@@ -106,16 +110,6 @@
             this.ArsenalTable.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
-            // 
-            this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.MainContainer);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1176, 593);
-            this.panel1.TabIndex = 0;
-            // 
             // MainContainer
             // 
             this.MainContainer.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -124,7 +118,7 @@
             // 
             // MainContainer.Panel1
             // 
-            this.MainContainer.Panel1.Controls.Add(this.ArsenalListPanel);
+            this.MainContainer.Panel1.Controls.Add(this.ArsenalListLayout);
             // 
             // MainContainer.Panel2
             // 
@@ -133,15 +127,66 @@
             this.MainContainer.SplitterDistance = 555;
             this.MainContainer.TabIndex = 0;
             // 
-            // ArsenalListPanel
+            // ArsenalListLayout
             // 
-            this.ArsenalListPanel.AutoScroll = true;
-            this.ArsenalListPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ArsenalListPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.ArsenalListPanel.Location = new System.Drawing.Point(0, 0);
-            this.ArsenalListPanel.Name = "ArsenalListPanel";
-            this.ArsenalListPanel.Size = new System.Drawing.Size(555, 593);
-            this.ArsenalListPanel.TabIndex = 0;
+            this.ArsenalListLayout.ColumnCount = 1;
+            this.ArsenalListLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.ArsenalListLayout.Controls.Add(this.ArsenalListTitle, 0, 0);
+            this.ArsenalListLayout.Controls.Add(this.ArsenalFilterTextBox, 0, 1);
+            this.ArsenalListLayout.Controls.Add(this.ArsenalListScroller, 0, 2);
+            this.ArsenalListLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ArsenalListLayout.Location = new System.Drawing.Point(0, 0);
+            this.ArsenalListLayout.Name = "ArsenalListLayout";
+            this.ArsenalListLayout.RowCount = 3;
+            this.ArsenalListLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.ArsenalListLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.ArsenalListLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.ArsenalListLayout.Size = new System.Drawing.Size(555, 593);
+            this.ArsenalListLayout.TabIndex = 0;
+            // 
+            // ArsenalListTitle
+            // 
+            this.ArsenalListTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ArsenalListTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ArsenalListTitle.Location = new System.Drawing.Point(3, 0);
+            this.ArsenalListTitle.Name = "ArsenalListTitle";
+            this.ArsenalListTitle.Size = new System.Drawing.Size(549, 40);
+            this.ArsenalListTitle.TabIndex = 0;
+            this.ArsenalListTitle.Text = "Arsenal List";
+            this.ArsenalListTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ArsenalFilterTextBox
+            // 
+            this.ArsenalFilterTextBox.Location = new System.Drawing.Point(3, 43);
+            this.ArsenalFilterTextBox.Name = "ArsenalFilterTextBox";
+            this.ArsenalFilterTextBox.Size = new System.Drawing.Size(100, 23);
+            this.ArsenalFilterTextBox.TabIndex = 1;
+            // 
+            // ArsenalListScroller
+            // 
+            this.ArsenalListScroller.AutoScroll = true;
+            this.ArsenalListScroller.Controls.Add(this.ArsenalList);
+            this.ArsenalListScroller.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ArsenalListScroller.Location = new System.Drawing.Point(3, 83);
+            this.ArsenalListScroller.Name = "ArsenalListScroller";
+            this.ArsenalListScroller.Size = new System.Drawing.Size(549, 507);
+            this.ArsenalListScroller.TabIndex = 2;
+            // 
+            // ArsenalList
+            // 
+            this.ArsenalList.AutoSize = true;
+            this.ArsenalList.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ArsenalList.ColumnCount = 1;
+            this.ArsenalList.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.ArsenalList.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ArsenalList.Location = new System.Drawing.Point(0, 0);
+            this.ArsenalList.Name = "ArsenalList";
+            this.ArsenalList.RowCount = 1;
+            this.ArsenalList.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.ArsenalList.Size = new System.Drawing.Size(549, 0);
+            this.ArsenalList.TabIndex = 0;
             // 
             // ArsenalPanel
             // 
@@ -873,14 +918,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1176, 593);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.MainContainer);
             this.Name = "LabForm";
             this.Text = "LabForm";
-            this.panel1.ResumeLayout(false);
             this.MainContainer.Panel1.ResumeLayout(false);
             this.MainContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.MainContainer)).EndInit();
             this.MainContainer.ResumeLayout(false);
+            this.ArsenalListLayout.ResumeLayout(false);
+            this.ArsenalListLayout.PerformLayout();
+            this.ArsenalListScroller.ResumeLayout(false);
+            this.ArsenalListScroller.PerformLayout();
             this.ArsenalPanel.ResumeLayout(false);
             this.CardTable.ResumeLayout(false);
             this.CardTitlePanel.ResumeLayout(false);
@@ -905,11 +953,8 @@
         }
 
         #endregion
-
-        private Panel panel1;
         private SplitContainer MainContainer;
         private Panel ArsenalPanel;
-        private FlowLayoutPanel ArsenalListPanel;
         private TableLayoutPanel ArsenalTable;
         private Button ArsenalSkill1;
         private Button ArsenalSkill8;
@@ -960,5 +1005,10 @@
         private Panel CardSubtitlePanel;
         private Panel CardDescriptionPanel;
         private PictureBox CardSchoolPicture;
+        private TableLayoutPanel ArsenalListLayout;
+        private Label ArsenalListTitle;
+        private TextBox ArsenalFilterTextBox;
+        private Panel ArsenalListScroller;
+        private TableLayoutPanel ArsenalList;
     }
 }

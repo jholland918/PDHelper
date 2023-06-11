@@ -78,12 +78,6 @@ namespace PD_Helper
                     });
                 }
 
-                //var button = new Button
-                //{
-                //    Name = arsenalName,
-                //    Text = arsenalName,
-                //};
-
                 var arsenalListItem = new ArsenalListItem(arsenalName);
 
                 var schools = cards.Select(c => c.SCHOOL).Distinct();
@@ -101,14 +95,27 @@ namespace PD_Helper
                         arsenalListItem.SetActiveColors();
                     }
 
-                    //RenderArsenal(arsenalName, cards, schools, schoolCount, skillsOverAura); 
+                    RenderArsenal(arsenalName, cards, schools, schoolCount, skillsOverAura); 
                 };
 
-                ArsenalListPanel.Controls.Add(arsenalListItem);
+                AddItem(ArsenalList, arsenalListItem);
             }
         }
 
-        
+        private void AddItem(TableLayoutPanel panel, ArsenalListItem arsenalListItem)
+        {
+            // Get a reference to the previous existent 
+            RowStyle temp = panel.RowStyles[panel.RowCount - 1];
+
+            // Increase panel rows count by one
+            panel.RowCount++;
+
+            // Add a new RowStyle as a copy of the previous one
+            panel.RowStyles.Add(new RowStyle(temp.SizeType, temp.Height));
+
+            // Add your control
+            panel.Controls.Add(arsenalListItem, 0, panel.RowCount - 1);
+        }
 
         private void RenderArsenal(string arsenalName, List<PDCard> cards, IEnumerable<string> schools, int schoolCount, string skillsOverAura)
         {
