@@ -33,21 +33,25 @@
             this.MainContainer = new System.Windows.Forms.SplitContainer();
             this.ArsenalListPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.ArsenalPanel = new System.Windows.Forms.Panel();
+            this.CardTable = new System.Windows.Forms.TableLayoutPanel();
+            this.CardTitlePanel = new System.Windows.Forms.Panel();
+            this.CardSchoolPicture = new System.Windows.Forms.PictureBox();
+            this.CardTitleLabel = new System.Windows.Forms.Label();
+            this.CardSubtitlePanel = new System.Windows.Forms.Panel();
+            this.CardSubtitleLabel = new System.Windows.Forms.Label();
+            this.CardDescriptionPanel = new System.Windows.Forms.Panel();
+            this.CardDescriptionLabel = new System.Windows.Forms.Label();
             this.HeaderTableLayout = new System.Windows.Forms.TableLayoutPanel();
             this.SkillsOverAuraLabel = new System.Windows.Forms.Label();
             this.ArsenalCasePicture = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.SchoolPicture1 = new System.Windows.Forms.PictureBox();
-            this.SchoolPicture2 = new System.Windows.Forms.PictureBox();
-            this.SchoolPicture3 = new System.Windows.Forms.PictureBox();
-            this.SchoolPicture4 = new System.Windows.Forms.PictureBox();
-            this.SchoolPicture5 = new System.Windows.Forms.PictureBox();
+            this.ArsenalSchoolsTable = new System.Windows.Forms.TableLayoutPanel();
+            this.SchoolPicturePsycho = new System.Windows.Forms.PictureBox();
+            this.SchoolPictureOptical = new System.Windows.Forms.PictureBox();
+            this.SchoolPictureNature = new System.Windows.Forms.PictureBox();
+            this.SchoolPictureKi = new System.Windows.Forms.PictureBox();
+            this.SchoolPictureFaith = new System.Windows.Forms.PictureBox();
             this.ArsenalNameLabel = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.CardTitleLabel = new System.Windows.Forms.Label();
-            this.CardSubtitleLabel = new System.Windows.Forms.Label();
-            this.CardDescriptionLabel = new System.Windows.Forms.Label();
             this.ArsenalTable = new System.Windows.Forms.TableLayoutPanel();
             this.ArsenalSkill1 = new System.Windows.Forms.Button();
             this.ArsenalSkill8 = new System.Windows.Forms.Button();
@@ -85,16 +89,20 @@
             this.MainContainer.Panel2.SuspendLayout();
             this.MainContainer.SuspendLayout();
             this.ArsenalPanel.SuspendLayout();
+            this.CardTable.SuspendLayout();
+            this.CardTitlePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CardSchoolPicture)).BeginInit();
+            this.CardSubtitlePanel.SuspendLayout();
+            this.CardDescriptionPanel.SuspendLayout();
             this.HeaderTableLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ArsenalCasePicture)).BeginInit();
             this.panel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SchoolPicture1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SchoolPicture2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SchoolPicture3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SchoolPicture4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SchoolPicture5)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.ArsenalSchoolsTable.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SchoolPicturePsycho)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureOptical)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureNature)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureKi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureFaith)).BeginInit();
             this.ArsenalTable.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -138,14 +146,111 @@
             // ArsenalPanel
             // 
             this.ArsenalPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(49)))));
+            this.ArsenalPanel.Controls.Add(this.CardTable);
             this.ArsenalPanel.Controls.Add(this.HeaderTableLayout);
-            this.ArsenalPanel.Controls.Add(this.tableLayoutPanel1);
             this.ArsenalPanel.Controls.Add(this.ArsenalTable);
             this.ArsenalPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ArsenalPanel.Location = new System.Drawing.Point(0, 0);
             this.ArsenalPanel.Name = "ArsenalPanel";
             this.ArsenalPanel.Size = new System.Drawing.Size(617, 593);
             this.ArsenalPanel.TabIndex = 0;
+            // 
+            // CardTable
+            // 
+            this.CardTable.ColumnCount = 1;
+            this.CardTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.CardTable.Controls.Add(this.CardTitlePanel, 0, 0);
+            this.CardTable.Controls.Add(this.CardSubtitlePanel, 0, 1);
+            this.CardTable.Controls.Add(this.CardDescriptionPanel, 0, 2);
+            this.CardTable.Location = new System.Drawing.Point(6, 396);
+            this.CardTable.Name = "CardTable";
+            this.CardTable.RowCount = 3;
+            this.CardTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.CardTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.CardTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.CardTable.Size = new System.Drawing.Size(596, 185);
+            this.CardTable.TabIndex = 3;
+            // 
+            // CardTitlePanel
+            // 
+            this.CardTitlePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(177)))), ((int)(((byte)(150)))));
+            this.CardTitlePanel.Controls.Add(this.CardSchoolPicture);
+            this.CardTitlePanel.Controls.Add(this.CardTitleLabel);
+            this.CardTitlePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CardTitlePanel.Location = new System.Drawing.Point(0, 0);
+            this.CardTitlePanel.Margin = new System.Windows.Forms.Padding(0);
+            this.CardTitlePanel.Name = "CardTitlePanel";
+            this.CardTitlePanel.Size = new System.Drawing.Size(596, 37);
+            this.CardTitlePanel.TabIndex = 0;
+            // 
+            // CardSchoolPicture
+            // 
+            this.CardSchoolPicture.Dock = System.Windows.Forms.DockStyle.Right;
+            this.CardSchoolPicture.Location = new System.Drawing.Point(496, 0);
+            this.CardSchoolPicture.Margin = new System.Windows.Forms.Padding(0);
+            this.CardSchoolPicture.Name = "CardSchoolPicture";
+            this.CardSchoolPicture.Size = new System.Drawing.Size(100, 37);
+            this.CardSchoolPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.CardSchoolPicture.TabIndex = 1;
+            this.CardSchoolPicture.TabStop = false;
+            // 
+            // CardTitleLabel
+            // 
+            this.CardTitleLabel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.CardTitleLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CardTitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
+            this.CardTitleLabel.Location = new System.Drawing.Point(0, 0);
+            this.CardTitleLabel.Name = "CardTitleLabel";
+            this.CardTitleLabel.Size = new System.Drawing.Size(484, 37);
+            this.CardTitleLabel.TabIndex = 0;
+            this.CardTitleLabel.Text = "CardTitleLabel";
+            this.CardTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // CardSubtitlePanel
+            // 
+            this.CardSubtitlePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
+            this.CardSubtitlePanel.Controls.Add(this.CardSubtitleLabel);
+            this.CardSubtitlePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CardSubtitlePanel.Location = new System.Drawing.Point(0, 37);
+            this.CardSubtitlePanel.Margin = new System.Windows.Forms.Padding(0);
+            this.CardSubtitlePanel.Name = "CardSubtitlePanel";
+            this.CardSubtitlePanel.Size = new System.Drawing.Size(596, 37);
+            this.CardSubtitlePanel.TabIndex = 1;
+            // 
+            // CardSubtitleLabel
+            // 
+            this.CardSubtitleLabel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.CardSubtitleLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CardSubtitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(162)))), ((int)(((byte)(165)))));
+            this.CardSubtitleLabel.Location = new System.Drawing.Point(0, 0);
+            this.CardSubtitleLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.CardSubtitleLabel.Name = "CardSubtitleLabel";
+            this.CardSubtitleLabel.Size = new System.Drawing.Size(587, 37);
+            this.CardSubtitleLabel.TabIndex = 1;
+            this.CardSubtitleLabel.Text = "CardSubtitleLabel";
+            this.CardSubtitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // CardDescriptionPanel
+            // 
+            this.CardDescriptionPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(168)))), ((int)(((byte)(158)))));
+            this.CardDescriptionPanel.Controls.Add(this.CardDescriptionLabel);
+            this.CardDescriptionPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CardDescriptionPanel.Location = new System.Drawing.Point(0, 74);
+            this.CardDescriptionPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.CardDescriptionPanel.Name = "CardDescriptionPanel";
+            this.CardDescriptionPanel.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
+            this.CardDescriptionPanel.Size = new System.Drawing.Size(596, 111);
+            this.CardDescriptionPanel.TabIndex = 2;
+            // 
+            // CardDescriptionLabel
+            // 
+            this.CardDescriptionLabel.AutoSize = true;
+            this.CardDescriptionLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CardDescriptionLabel.Location = new System.Drawing.Point(3, 4);
+            this.CardDescriptionLabel.Name = "CardDescriptionLabel";
+            this.CardDescriptionLabel.Size = new System.Drawing.Size(159, 21);
+            this.CardDescriptionLabel.TabIndex = 2;
+            this.CardDescriptionLabel.Text = "CardDescriptionLabel";
             // 
             // HeaderTableLayout
             // 
@@ -190,7 +295,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.tableLayoutPanel3);
+            this.panel2.Controls.Add(this.ArsenalSchoolsTable);
             this.panel2.Controls.Add(this.ArsenalNameLabel);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(63, 3);
@@ -198,82 +303,87 @@
             this.panel2.Size = new System.Drawing.Size(355, 61);
             this.panel2.TabIndex = 1;
             // 
-            // tableLayoutPanel3
+            // ArsenalSchoolsTable
             // 
-            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.tableLayoutPanel3.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel3.ColumnCount = 5;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.Controls.Add(this.SchoolPicture1, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.SchoolPicture2, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.SchoolPicture3, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.SchoolPicture4, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.SchoolPicture5, 4, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 32);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(200, 29);
-            this.tableLayoutPanel3.TabIndex = 2;
+            this.ArsenalSchoolsTable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ArsenalSchoolsTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.ArsenalSchoolsTable.ColumnCount = 5;
+            this.ArsenalSchoolsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.ArsenalSchoolsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.ArsenalSchoolsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.ArsenalSchoolsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.ArsenalSchoolsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.ArsenalSchoolsTable.Controls.Add(this.SchoolPicturePsycho, 0, 0);
+            this.ArsenalSchoolsTable.Controls.Add(this.SchoolPictureOptical, 1, 0);
+            this.ArsenalSchoolsTable.Controls.Add(this.SchoolPictureNature, 2, 0);
+            this.ArsenalSchoolsTable.Controls.Add(this.SchoolPictureKi, 3, 0);
+            this.ArsenalSchoolsTable.Controls.Add(this.SchoolPictureFaith, 4, 0);
+            this.ArsenalSchoolsTable.Location = new System.Drawing.Point(3, 32);
+            this.ArsenalSchoolsTable.Name = "ArsenalSchoolsTable";
+            this.ArsenalSchoolsTable.RowCount = 1;
+            this.ArsenalSchoolsTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.ArsenalSchoolsTable.Size = new System.Drawing.Size(200, 29);
+            this.ArsenalSchoolsTable.TabIndex = 2;
             // 
-            // SchoolPicture1
+            // SchoolPicturePsycho
             // 
-            this.SchoolPicture1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SchoolPicture1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SchoolPicture1.Location = new System.Drawing.Point(4, 4);
-            this.SchoolPicture1.Name = "SchoolPicture1";
-            this.SchoolPicture1.Size = new System.Drawing.Size(32, 21);
-            this.SchoolPicture1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.SchoolPicture1.TabIndex = 0;
-            this.SchoolPicture1.TabStop = false;
+            this.SchoolPicturePsycho.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.SchoolPicturePsycho.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SchoolPicturePsycho.Location = new System.Drawing.Point(1, 1);
+            this.SchoolPicturePsycho.Margin = new System.Windows.Forms.Padding(0);
+            this.SchoolPicturePsycho.Name = "SchoolPicturePsycho";
+            this.SchoolPicturePsycho.Size = new System.Drawing.Size(38, 27);
+            this.SchoolPicturePsycho.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.SchoolPicturePsycho.TabIndex = 0;
+            this.SchoolPicturePsycho.TabStop = false;
             // 
-            // SchoolPicture2
+            // SchoolPictureOptical
             // 
-            this.SchoolPicture2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SchoolPicture2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SchoolPicture2.Location = new System.Drawing.Point(43, 4);
-            this.SchoolPicture2.Name = "SchoolPicture2";
-            this.SchoolPicture2.Size = new System.Drawing.Size(32, 21);
-            this.SchoolPicture2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.SchoolPicture2.TabIndex = 1;
-            this.SchoolPicture2.TabStop = false;
+            this.SchoolPictureOptical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.SchoolPictureOptical.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SchoolPictureOptical.Location = new System.Drawing.Point(40, 1);
+            this.SchoolPictureOptical.Margin = new System.Windows.Forms.Padding(0);
+            this.SchoolPictureOptical.Name = "SchoolPictureOptical";
+            this.SchoolPictureOptical.Size = new System.Drawing.Size(38, 27);
+            this.SchoolPictureOptical.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.SchoolPictureOptical.TabIndex = 1;
+            this.SchoolPictureOptical.TabStop = false;
             // 
-            // SchoolPicture3
+            // SchoolPictureNature
             // 
-            this.SchoolPicture3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SchoolPicture3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SchoolPicture3.Location = new System.Drawing.Point(82, 4);
-            this.SchoolPicture3.Name = "SchoolPicture3";
-            this.SchoolPicture3.Size = new System.Drawing.Size(32, 21);
-            this.SchoolPicture3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.SchoolPicture3.TabIndex = 2;
-            this.SchoolPicture3.TabStop = false;
+            this.SchoolPictureNature.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.SchoolPictureNature.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SchoolPictureNature.Location = new System.Drawing.Point(79, 1);
+            this.SchoolPictureNature.Margin = new System.Windows.Forms.Padding(0);
+            this.SchoolPictureNature.Name = "SchoolPictureNature";
+            this.SchoolPictureNature.Size = new System.Drawing.Size(38, 27);
+            this.SchoolPictureNature.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.SchoolPictureNature.TabIndex = 2;
+            this.SchoolPictureNature.TabStop = false;
             // 
-            // SchoolPicture4
+            // SchoolPictureKi
             // 
-            this.SchoolPicture4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SchoolPicture4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SchoolPicture4.Location = new System.Drawing.Point(121, 4);
-            this.SchoolPicture4.Name = "SchoolPicture4";
-            this.SchoolPicture4.Size = new System.Drawing.Size(32, 21);
-            this.SchoolPicture4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.SchoolPicture4.TabIndex = 3;
-            this.SchoolPicture4.TabStop = false;
+            this.SchoolPictureKi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.SchoolPictureKi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SchoolPictureKi.Location = new System.Drawing.Point(118, 1);
+            this.SchoolPictureKi.Margin = new System.Windows.Forms.Padding(0);
+            this.SchoolPictureKi.Name = "SchoolPictureKi";
+            this.SchoolPictureKi.Size = new System.Drawing.Size(38, 27);
+            this.SchoolPictureKi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.SchoolPictureKi.TabIndex = 3;
+            this.SchoolPictureKi.TabStop = false;
             // 
-            // SchoolPicture5
+            // SchoolPictureFaith
             // 
-            this.SchoolPicture5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SchoolPicture5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SchoolPicture5.Location = new System.Drawing.Point(160, 4);
-            this.SchoolPicture5.Name = "SchoolPicture5";
-            this.SchoolPicture5.Size = new System.Drawing.Size(36, 21);
-            this.SchoolPicture5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.SchoolPicture5.TabIndex = 4;
-            this.SchoolPicture5.TabStop = false;
+            this.SchoolPictureFaith.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.SchoolPictureFaith.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SchoolPictureFaith.Location = new System.Drawing.Point(157, 1);
+            this.SchoolPictureFaith.Margin = new System.Windows.Forms.Padding(0);
+            this.SchoolPictureFaith.Name = "SchoolPictureFaith";
+            this.SchoolPictureFaith.Size = new System.Drawing.Size(42, 27);
+            this.SchoolPictureFaith.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.SchoolPictureFaith.TabIndex = 4;
+            this.SchoolPictureFaith.TabStop = false;
             // 
             // ArsenalNameLabel
             // 
@@ -285,49 +395,6 @@
             this.ArsenalNameLabel.Size = new System.Drawing.Size(117, 21);
             this.ArsenalNameLabel.TabIndex = 1;
             this.ArsenalNameLabel.Text = "Arsenal Name";
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.CardTitleLabel, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.CardSubtitleLabel, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.CardDescriptionLabel, 0, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 411);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(602, 170);
-            this.tableLayoutPanel1.TabIndex = 1;
-            // 
-            // CardTitleLabel
-            // 
-            this.CardTitleLabel.AutoSize = true;
-            this.CardTitleLabel.Location = new System.Drawing.Point(3, 0);
-            this.CardTitleLabel.Name = "CardTitleLabel";
-            this.CardTitleLabel.Size = new System.Drawing.Size(82, 15);
-            this.CardTitleLabel.TabIndex = 0;
-            this.CardTitleLabel.Text = "CardTitleLabel";
-            // 
-            // CardSubtitleLabel
-            // 
-            this.CardSubtitleLabel.AutoSize = true;
-            this.CardSubtitleLabel.Location = new System.Drawing.Point(3, 34);
-            this.CardSubtitleLabel.Name = "CardSubtitleLabel";
-            this.CardSubtitleLabel.Size = new System.Drawing.Size(100, 15);
-            this.CardSubtitleLabel.TabIndex = 1;
-            this.CardSubtitleLabel.Text = "CardSubtitleLabel";
-            // 
-            // CardDescriptionLabel
-            // 
-            this.CardDescriptionLabel.AutoSize = true;
-            this.CardDescriptionLabel.Location = new System.Drawing.Point(3, 68);
-            this.CardDescriptionLabel.Name = "CardDescriptionLabel";
-            this.CardDescriptionLabel.Size = new System.Drawing.Size(120, 15);
-            this.CardDescriptionLabel.TabIndex = 2;
-            this.CardDescriptionLabel.Text = "CardDescriptionLabel";
             // 
             // ArsenalTable
             // 
@@ -815,19 +882,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.MainContainer)).EndInit();
             this.MainContainer.ResumeLayout(false);
             this.ArsenalPanel.ResumeLayout(false);
+            this.CardTable.ResumeLayout(false);
+            this.CardTitlePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.CardSchoolPicture)).EndInit();
+            this.CardSubtitlePanel.ResumeLayout(false);
+            this.CardDescriptionPanel.ResumeLayout(false);
+            this.CardDescriptionPanel.PerformLayout();
             this.HeaderTableLayout.ResumeLayout(false);
             this.HeaderTableLayout.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ArsenalCasePicture)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.SchoolPicture1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SchoolPicture2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SchoolPicture3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SchoolPicture4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SchoolPicture5)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.ArsenalSchoolsTable.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SchoolPicturePsycho)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureOptical)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureNature)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureKi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureFaith)).EndInit();
             this.ArsenalTable.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -870,20 +941,24 @@
         private Button ArsenalSkill28;
         private Button ArsenalSkill29;
         private Button ArsenalSkill30;
-        private TableLayoutPanel tableLayoutPanel1;
         private Label CardTitleLabel;
         private Label CardSubtitleLabel;
         private Label CardDescriptionLabel;
         private TableLayoutPanel HeaderTableLayout;
         private PictureBox ArsenalCasePicture;
         private Label ArsenalNameLabel;
-        private TableLayoutPanel tableLayoutPanel3;
+        private TableLayoutPanel ArsenalSchoolsTable;
         private Panel panel2;
-        private PictureBox SchoolPicture1;
-        private PictureBox SchoolPicture2;
-        private PictureBox SchoolPicture3;
-        private PictureBox SchoolPicture4;
-        private PictureBox SchoolPicture5;
+        private PictureBox SchoolPicturePsycho;
+        private PictureBox SchoolPictureOptical;
+        private PictureBox SchoolPictureNature;
+        private PictureBox SchoolPictureKi;
+        private PictureBox SchoolPictureFaith;
         private Label SkillsOverAuraLabel;
+        private TableLayoutPanel CardTable;
+        private Panel CardTitlePanel;
+        private Panel CardSubtitlePanel;
+        private Panel CardDescriptionPanel;
+        private PictureBox CardSchoolPicture;
     }
 }

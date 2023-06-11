@@ -1,4 +1,6 @@
-﻿namespace PD_Helper.Library
+﻿using System.Diagnostics;
+
+namespace PD_Helper.Library
 {
     internal class AppColors
     {
@@ -9,5 +11,29 @@
         public static readonly Color Status = Color.FromArgb(114, 220, 81);
         public static readonly Color Erase = Color.FromArgb(170, 75, 220);
         public static readonly Color Aura = Color.FromArgb(127, 177, 150);
+
+        private static readonly Dictionary<string, Color> SkillTypes = new Dictionary<string, Color>
+        {
+            ["Attack"] = Attack,
+            ["Defense"] = Defense,
+            ["Environment"] = Environment,
+            ["Special"] = Special,
+            ["Status"] = Status,
+            ["Erase"] = Erase,
+            ["Aura"] = Aura,
+        };
+
+        public static Color GetSkillColor(string skillType)
+        {
+            try
+            {
+                return SkillTypes[skillType];
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return Color.Orange; // These skills aren't orange so this should stand out :)
+            }
+        }
     }
 }
