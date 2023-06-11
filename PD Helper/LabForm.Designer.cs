@@ -44,7 +44,7 @@
             this.HeaderTableLayout = new System.Windows.Forms.TableLayoutPanel();
             this.SkillsOverAuraLabel = new System.Windows.Forms.Label();
             this.ArsenalCasePicture = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.ArsenalMetadataPanel = new System.Windows.Forms.Panel();
             this.ArsenalSchoolsTable = new System.Windows.Forms.TableLayoutPanel();
             this.SchoolPicturePsycho = new System.Windows.Forms.PictureBox();
             this.SchoolPictureOptical = new System.Windows.Forms.PictureBox();
@@ -96,7 +96,7 @@
             this.CardDescriptionPanel.SuspendLayout();
             this.HeaderTableLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ArsenalCasePicture)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.ArsenalMetadataPanel.SuspendLayout();
             this.ArsenalSchoolsTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SchoolPicturePsycho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureOptical)).BeginInit();
@@ -261,7 +261,7 @@
             this.HeaderTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.HeaderTableLayout.Controls.Add(this.SkillsOverAuraLabel, 2, 0);
             this.HeaderTableLayout.Controls.Add(this.ArsenalCasePicture, 0, 0);
-            this.HeaderTableLayout.Controls.Add(this.panel2, 1, 0);
+            this.HeaderTableLayout.Controls.Add(this.ArsenalMetadataPanel, 1, 0);
             this.HeaderTableLayout.Location = new System.Drawing.Point(3, 3);
             this.HeaderTableLayout.Name = "HeaderTableLayout";
             this.HeaderTableLayout.RowCount = 1;
@@ -293,15 +293,15 @@
             this.ArsenalCasePicture.TabIndex = 0;
             this.ArsenalCasePicture.TabStop = false;
             // 
-            // panel2
+            // ArsenalMetadataPanel
             // 
-            this.panel2.Controls.Add(this.ArsenalSchoolsTable);
-            this.panel2.Controls.Add(this.ArsenalNameLabel);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(63, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(355, 61);
-            this.panel2.TabIndex = 1;
+            this.ArsenalMetadataPanel.Controls.Add(this.ArsenalSchoolsTable);
+            this.ArsenalMetadataPanel.Controls.Add(this.ArsenalNameLabel);
+            this.ArsenalMetadataPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ArsenalMetadataPanel.Location = new System.Drawing.Point(63, 3);
+            this.ArsenalMetadataPanel.Name = "ArsenalMetadataPanel";
+            this.ArsenalMetadataPanel.Size = new System.Drawing.Size(355, 61);
+            this.ArsenalMetadataPanel.TabIndex = 1;
             // 
             // ArsenalSchoolsTable
             // 
@@ -891,8 +891,8 @@
             this.HeaderTableLayout.ResumeLayout(false);
             this.HeaderTableLayout.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ArsenalCasePicture)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.ArsenalMetadataPanel.ResumeLayout(false);
+            this.ArsenalMetadataPanel.PerformLayout();
             this.ArsenalSchoolsTable.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SchoolPicturePsycho)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureOptical)).EndInit();
@@ -948,7 +948,7 @@
         private PictureBox ArsenalCasePicture;
         private Label ArsenalNameLabel;
         private TableLayoutPanel ArsenalSchoolsTable;
-        private Panel panel2;
+        private Panel ArsenalMetadataPanel;
         private PictureBox SchoolPicturePsycho;
         private PictureBox SchoolPictureOptical;
         private PictureBox SchoolPictureNature;

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,7 @@ namespace PD_Helper
         private readonly ArsenalService _arsenalService = new ArsenalService();
         private readonly List<Button> _arsenalSkills = new List<Button>();
         private Dictionary<string, PictureBox> SchoolPictures;
+        private ArsenalListItem _currentArsenalListItem = null;
 
         public LabForm()
         {
@@ -76,11 +78,13 @@ namespace PD_Helper
                     });
                 }
 
-                var button = new Button
-                {
-                    Name = arsenalName,
-                    Text = arsenalName,
-                };
+                //var button = new Button
+                //{
+                //    Name = arsenalName,
+                //    Text = arsenalName,
+                //};
+
+                var arsenalListItem = new ArsenalListItem(arsenalName);
 
                 var schools = cards.Select(c => c.SCHOOL).Distinct();
 
@@ -88,11 +92,23 @@ namespace PD_Helper
 
                 string skillsOverAura = $"{cards.Where(c => c.TYPE != "Aura").Count()}/30";
 
-                button.MouseEnter += (object? sender, EventArgs e) => RenderArsenal(arsenalName, cards, schools, schoolCount, skillsOverAura);
+                arsenalListItem.MouseEnter += (object? sender, EventArgs e) => 
+                {
+                    if (_currentArsenalListItem != arsenalListItem)
+                    {
+                        _currentArsenalListItem?.SetInactiveColors();
+                        _currentArsenalListItem = arsenalListItem;
+                        arsenalListItem.SetActiveColors();
+                    }
 
-                ArsenalListPanel.Controls.Add(button);
+                    //RenderArsenal(arsenalName, cards, schools, schoolCount, skillsOverAura); 
+                };
+
+                ArsenalListPanel.Controls.Add(arsenalListItem);
             }
         }
+
+        
 
         private void RenderArsenal(string arsenalName, List<PDCard> cards, IEnumerable<string> schools, int schoolCount, string skillsOverAura)
         {
