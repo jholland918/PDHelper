@@ -1,11 +1,13 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static PD_Helper.Form1;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PD_Helper.Library
 {
@@ -52,6 +54,24 @@ namespace PD_Helper.Library
             }
 
             return arsenal;
+        }
+
+        private static readonly Dictionary<string, int> _typeSort = new Dictionary<string, int>
+        {
+            ["Attack"] = 1,
+            ["Defense"] = 2,
+            ["Erase"] = 3,
+            ["Status"] = 4,
+            ["Special"] = 5,
+            ["Environment"] = 6,
+            ["Aura"] = 7,
+        };
+
+        public List<PDCard> SortCards(List<PDCard> cards)
+        {
+            // Phantom Dust's sorting seems pretty arbitrary except for sorting by skill type,
+            // so until I can figure it out I'm just going to sort by name after type.
+            return cards.OrderBy(c => _typeSort[c.TYPE]).ThenBy(c => c.NAME).ToList();
         }
     }
 }

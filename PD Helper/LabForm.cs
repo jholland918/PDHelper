@@ -108,6 +108,8 @@ namespace PD_Helper
 
                 var arsenalListItem = new ArsenalListItem(arsenalName);
 
+                cards = _arsenalService.SortCards(cards);
+
                 var schools = cards.Select(c => c.SCHOOL).Distinct();
 
                 int schoolCount = schools.Count();
