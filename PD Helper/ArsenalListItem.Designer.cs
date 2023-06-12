@@ -39,6 +39,9 @@
             this.SchoolPictureKi = new System.Windows.Forms.PictureBox();
             this.SchoolPictureFaith = new System.Windows.Forms.PictureBox();
             this.ArsenalNameLabel = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.SaveButton = new System.Windows.Forms.Button();
+            this.ArsenalSlotCombo = new System.Windows.Forms.ComboBox();
             this.ContainerTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ArsenalCasePicture)).BeginInit();
             this.ArsenalMetadataPanel.SuspendLayout();
@@ -48,6 +51,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureNature)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureKi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureFaith)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ContainerTable
@@ -55,16 +59,17 @@
             this.ContainerTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(53)))), ((int)(((byte)(47)))));
             this.ContainerTable.ColumnCount = 3;
             this.ContainerTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.ContainerTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.67F));
-            this.ContainerTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
+            this.ContainerTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 280F));
+            this.ContainerTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.ContainerTable.Controls.Add(this.ArsenalCasePicture, 0, 0);
             this.ContainerTable.Controls.Add(this.ArsenalMetadataPanel, 1, 0);
+            this.ContainerTable.Controls.Add(this.panel1, 2, 0);
             this.ContainerTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ContainerTable.Location = new System.Drawing.Point(0, 0);
             this.ContainerTable.Name = "ContainerTable";
             this.ContainerTable.RowCount = 1;
             this.ContainerTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.ContainerTable.Size = new System.Drawing.Size(600, 67);
+            this.ContainerTable.Size = new System.Drawing.Size(491, 67);
             this.ContainerTable.TabIndex = 0;
             // 
             // ArsenalCasePicture
@@ -86,7 +91,7 @@
             this.ArsenalMetadataPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ArsenalMetadataPanel.Location = new System.Drawing.Point(63, 3);
             this.ArsenalMetadataPanel.Name = "ArsenalMetadataPanel";
-            this.ArsenalMetadataPanel.Size = new System.Drawing.Size(354, 61);
+            this.ArsenalMetadataPanel.Size = new System.Drawing.Size(274, 61);
             this.ArsenalMetadataPanel.TabIndex = 1;
             // 
             // SkillsOverAuraLabel
@@ -95,7 +100,7 @@
             this.SkillsOverAuraLabel.AutoSize = true;
             this.SkillsOverAuraLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.SkillsOverAuraLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SkillsOverAuraLabel.Location = new System.Drawing.Point(307, 3);
+            this.SkillsOverAuraLabel.Location = new System.Drawing.Point(227, 3);
             this.SkillsOverAuraLabel.Name = "SkillsOverAuraLabel";
             this.SkillsOverAuraLabel.Size = new System.Drawing.Size(44, 21);
             this.SkillsOverAuraLabel.TabIndex = 2;
@@ -190,13 +195,69 @@
             this.ArsenalNameLabel.TabIndex = 0;
             this.ArsenalNameLabel.Text = "Arsenal Name";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.SaveButton);
+            this.panel1.Controls.Add(this.ArsenalSlotCombo);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(343, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(145, 61);
+            this.panel1.TabIndex = 2;
+            // 
+            // SaveButton
+            // 
+            this.SaveButton.BackColor = System.Drawing.Color.Transparent;
+            this.SaveButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.SaveButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(185)))), ((int)(((byte)(24)))));
+            this.SaveButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.SaveButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.SaveButton.Location = new System.Drawing.Point(0, 29);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(145, 32);
+            this.SaveButton.TabIndex = 1;
+            this.SaveButton.Text = "Save To Game";
+            this.SaveButton.UseVisualStyleBackColor = false;
+            // 
+            // ArsenalSlotCombo
+            // 
+            this.ArsenalSlotCombo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(53)))), ((int)(((byte)(47)))));
+            this.ArsenalSlotCombo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ArsenalSlotCombo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ArsenalSlotCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ArsenalSlotCombo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ArsenalSlotCombo.FormattingEnabled = true;
+            this.ArsenalSlotCombo.Items.AddRange(new object[] {
+            "ARSENAL01",
+            "ARSENAL02",
+            "ARSENAL03",
+            "ARSENAL04",
+            "ARSENAL05",
+            "ARSENAL06",
+            "ARSENAL07",
+            "ARSENAL08",
+            "ARSENAL09",
+            "ARSENAL10",
+            "ARSENAL11",
+            "ARSENAL12",
+            "ARSENAL13",
+            "ARSENAL14",
+            "ARSENAL15",
+            "ARSENAL16"});
+            this.ArsenalSlotCombo.Location = new System.Drawing.Point(0, 0);
+            this.ArsenalSlotCombo.Name = "ArsenalSlotCombo";
+            this.ArsenalSlotCombo.Size = new System.Drawing.Size(145, 28);
+            this.ArsenalSlotCombo.TabIndex = 0;
+            // 
             // ArsenalListItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.ContainerTable);
             this.Name = "ArsenalListItem";
-            this.Size = new System.Drawing.Size(600, 67);
+            this.Size = new System.Drawing.Size(491, 67);
             this.ContainerTable.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ArsenalCasePicture)).EndInit();
             this.ArsenalMetadataPanel.ResumeLayout(false);
@@ -207,6 +268,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureNature)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureKi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureFaith)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -224,5 +286,8 @@
         private PictureBox SchoolPictureKi;
         private PictureBox SchoolPictureFaith;
         private Label SkillsOverAuraLabel;
+        private Panel panel1;
+        private ComboBox ArsenalSlotCombo;
+        private Button SaveButton;
     }
 }

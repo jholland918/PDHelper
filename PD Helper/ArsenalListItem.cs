@@ -8,13 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace PD_Helper
 {
     public partial class ArsenalListItem : UserControl
     {
-        private readonly ArsenalService _arsenalService = new ArsenalService();
+        private readonly ArsenalService _arsenalService = new();
+        private readonly GameProfileService _gameProfileService = new();
         private static Dictionary<string, PictureBox> SchoolPictures = new Dictionary<string, PictureBox>();
 
         private readonly Color BackgroundColor = Color.FromArgb(33, 53, 47);
@@ -24,7 +26,7 @@ namespace PD_Helper
 
         private bool IsActive = false;
 
-        public ArsenalListItem(string arsenalName) 
+        public ArsenalListItem(string arsenalName)
             : this()
         {
             Initialize(arsenalName);
@@ -46,6 +48,7 @@ namespace PD_Helper
 
             ArsenalNameLabel.ForeColor = ForegroundColorHover;
             SkillsOverAuraLabel.ForeColor = ForegroundColorHover;
+            SaveButton.ForeColor = ForegroundColorHover;
 
             ContainerTable.BackColor = BackgroundColorHover;
             ArsenalCasePicture.BackColor = ForegroundColorHover;
@@ -68,6 +71,7 @@ namespace PD_Helper
 
             ArsenalNameLabel.ForeColor = ForegroundColor;
             SkillsOverAuraLabel.ForeColor = ForegroundColor;
+            SaveButton.ForeColor = ForegroundColor;
 
             ContainerTable.BackColor = BackgroundColor;
             ArsenalCasePicture.BackColor = ForegroundColor;
@@ -85,6 +89,10 @@ namespace PD_Helper
 
         private void Initialize(string arsenalName)
         {
+            InitArsenalSlotCombo();
+
+            SaveButton.Click += SaveButton_Click;
+
             foreach (Control control in Controls)
             {
                 control.MouseEnter += RedirectMouseEnter;
@@ -110,6 +118,29 @@ namespace PD_Helper
             }
 
             SkillsOverAuraLabel.Text = skillsOverAura;
+        }
+
+        private void InitArsenalSlotCombo()
+        {
+            ArsenalSlotCombo.SelectedItem = "ARSENAL01";
+            ArsenalSlotCombo.SelectedText = "ARSENAL01";
+            ArsenalSlotCombo.DrawItem += (object? sender, DrawItemEventArgs e) =>
+            {
+                int index = e.Index >= 0 ? e.Index : 0;
+                var brush = new SolidBrush(Color.FromArgb(92, 172, 149));
+                e.DrawBackground();
+                e.Graphics.DrawString(ArsenalSlotCombo.Items[index].ToString(), e.Font, brush, e.Bounds, StringFormat.GenericDefault);
+                e.DrawFocusRectangle();
+            };
+        }
+
+        private void SaveButton_Click(object? sender, EventArgs e)
+        {
+            int selectedIndex = ArsenalSlotCombo.SelectedIndex;
+
+            // Read test
+            //var profile = _gameProfileService.LoadGameProfile();
+            //var arsenal = _gameProfileService.ReadArsenal(profile, selectedIndex);
         }
 
         private void InitializeSchoolPictures()

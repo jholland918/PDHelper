@@ -82,6 +82,12 @@
     <None Update="Assets\faith_26.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Assets\gamepad-100.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\gamepad-50.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Assets\ki_26.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
