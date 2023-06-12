@@ -20,6 +20,7 @@ namespace PD_Helper
         private readonly List<Button> _arsenalSkills = new List<Button>();
         private Dictionary<string, PictureBox> SchoolPictures;
         private ArsenalListItem _currentArsenalListItem = null;
+        private Dictionary<int, string> arsenalRows = new Dictionary<int, string>();
 
         public LabForm()
         {
@@ -34,6 +35,33 @@ namespace PD_Helper
             _arsenalSkills.AddRange(new[] { ArsenalSkill1, ArsenalSkill2, ArsenalSkill3, ArsenalSkill4, ArsenalSkill5, ArsenalSkill6, ArsenalSkill7, ArsenalSkill8, ArsenalSkill9, ArsenalSkill10, ArsenalSkill11, ArsenalSkill12, ArsenalSkill13, ArsenalSkill14, ArsenalSkill15, ArsenalSkill16, ArsenalSkill17, ArsenalSkill18, ArsenalSkill19, ArsenalSkill20, ArsenalSkill21, ArsenalSkill22, ArsenalSkill23, ArsenalSkill24, ArsenalSkill25, ArsenalSkill26, ArsenalSkill27, ArsenalSkill28, ArsenalSkill29, ArsenalSkill30 });
 
             InitializeArsenalList();
+
+            ArsenalFilterTextBox.TextChanged += ArsenalFilterTextBox_TextChanged;
+        }
+
+        private void ArsenalFilterTextBox_TextChanged(object? sender, EventArgs e)
+        {
+            var searchTerm = ArsenalFilterTextBox.Text;
+            if (searchTerm.Length == 0)
+            {
+                foreach (var row in arsenalRows)
+                {
+                    ArsenalList.RowStyles[row.Key].SizeType = SizeType.AutoSize;
+                }
+                return;
+            }
+
+            foreach(var row in arsenalRows)
+            {
+                if (row.Value.Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
+                {
+                    ArsenalList.RowStyles[row.Key].SizeType = SizeType.AutoSize;
+                }
+                else
+                {
+                    ArsenalList.RowStyles[row.Key].SizeType = SizeType.Absolute; // Since height is zero, this hides the row
+                }
+            }
         }
 
         private void InitializeSchoolPictures()
@@ -86,7 +114,7 @@ namespace PD_Helper
 
                 string skillsOverAura = $"{cards.Where(c => c.TYPE != "Aura").Count()}/30";
 
-                arsenalListItem.MouseEnter += (object? sender, EventArgs e) => 
+                arsenalListItem.MouseEnter += (object? sender, EventArgs e) =>
                 {
                     if (_currentArsenalListItem != arsenalListItem)
                     {
@@ -95,14 +123,14 @@ namespace PD_Helper
                         arsenalListItem.SetActiveColors();
                     }
 
-                    RenderArsenal(arsenalName, cards, schools, schoolCount, skillsOverAura); 
+                    RenderArsenal(arsenalName, cards, schools, schoolCount, skillsOverAura);
                 };
 
-                AddItem(ArsenalList, arsenalListItem);
+                AddItem(ArsenalList, arsenalListItem, arsenalName);
             }
         }
 
-        private void AddItem(TableLayoutPanel panel, ArsenalListItem arsenalListItem)
+        private void AddItem(TableLayoutPanel panel, ArsenalListItem arsenalListItem, string arsenalName)
         {
             // Get a reference to the previous existent 
             RowStyle temp = panel.RowStyles[panel.RowCount - 1];
@@ -115,6 +143,9 @@ namespace PD_Helper
 
             // Add your control
             panel.Controls.Add(arsenalListItem, 0, panel.RowCount - 1);
+
+            // Add the arsenal name with it's row index so we can use it for filtering.
+            arsenalRows.Add(panel.RowCount - 1, arsenalName);
         }
 
         private void RenderArsenal(string arsenalName, List<PDCard> cards, IEnumerable<string> schools, int schoolCount, string skillsOverAura)
@@ -122,14 +153,14 @@ namespace PD_Helper
             ArsenalCasePicture.Image = AppImages.GetArsenalCase(schoolCount);
             ArsenalNameLabel.Text = arsenalName;
 
-            foreach(KeyValuePair<string, PictureBox> schoolPicture in SchoolPictures)
+            foreach (KeyValuePair<string, PictureBox> schoolPicture in SchoolPictures)
             {
-                if (schools.Contains(schoolPicture.Key)) 
+                if (schools.Contains(schoolPicture.Key))
                 {
-                    schoolPicture.Value.Show(); 
-                } 
+                    schoolPicture.Value.Show();
+                }
                 else
-                { 
+                {
                     schoolPicture.Value.Hide();
                 }
             }
@@ -166,11 +197,6 @@ namespace PD_Helper
             FileInfo[] Files = directory.GetFiles("*.arsenal"); //Getting Text files
 
             return Files.Select(f => Path.GetFileNameWithoutExtension(f.Name));
-        }
-
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
