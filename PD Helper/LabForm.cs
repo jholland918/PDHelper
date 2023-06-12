@@ -16,11 +16,12 @@ namespace PD_Helper
 {
     public partial class LabForm : Form
     {
-        private readonly ArsenalService _arsenalService = new ArsenalService();
-        private readonly List<Button> _arsenalSkills = new List<Button>();
-        private Dictionary<string, PictureBox> SchoolPictures;
+        private readonly GameProfileService _gameProfileService = new();
+        private readonly ArsenalService _arsenalService = new();
+        private readonly List<Button> _arsenalSkills = new();
+        private Dictionary<string, PictureBox> _schoolPictures;
         private ArsenalListItem _currentArsenalListItem = null;
-        private Dictionary<int, string> arsenalRows = new Dictionary<int, string>();
+        private Dictionary<int, string> _arsenalRows = new();
 
         public LabForm()
         {
@@ -44,14 +45,14 @@ namespace PD_Helper
             var searchTerm = ArsenalFilterTextBox.Text;
             if (searchTerm.Length == 0)
             {
-                foreach (var row in arsenalRows)
+                foreach (var row in _arsenalRows)
                 {
                     ArsenalList.RowStyles[row.Key].SizeType = SizeType.AutoSize;
                 }
                 return;
             }
 
-            foreach(var row in arsenalRows)
+            foreach(var row in _arsenalRows)
             {
                 if (row.Value.Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
                 {
@@ -72,7 +73,7 @@ namespace PD_Helper
             SchoolPictureKi.Image = AppImages.Ki;
             SchoolPictureFaith.Image = AppImages.Faith;
 
-            SchoolPictures = new Dictionary<string, PictureBox>
+            _schoolPictures = new Dictionary<string, PictureBox>
             {
                 ["Faith"] = SchoolPictureFaith,
                 ["Ki"] = SchoolPictureKi,
@@ -147,7 +148,7 @@ namespace PD_Helper
             panel.Controls.Add(arsenalListItem, 0, panel.RowCount - 1);
 
             // Add the arsenal name with it's row index so we can use it for filtering.
-            arsenalRows.Add(panel.RowCount - 1, arsenalName);
+            _arsenalRows.Add(panel.RowCount - 1, arsenalName);
         }
 
         private void RenderArsenal(string arsenalName, List<PDCard> cards, IEnumerable<string> schools, int schoolCount, string skillsOverAura)
@@ -155,7 +156,7 @@ namespace PD_Helper
             ArsenalCasePicture.Image = AppImages.GetArsenalCase(schoolCount);
             ArsenalNameLabel.Text = arsenalName;
 
-            foreach (KeyValuePair<string, PictureBox> schoolPicture in SchoolPictures)
+            foreach (KeyValuePair<string, PictureBox> schoolPicture in _schoolPictures)
             {
                 if (schools.Contains(schoolPicture.Key))
                 {
