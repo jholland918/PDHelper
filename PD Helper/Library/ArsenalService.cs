@@ -33,7 +33,7 @@ namespace PD_Helper.Library
                 string loadSchoolAmount = deckStrings[30].Remove(deckStrings[30].Length - 3);
                 if (loadSchoolAmount == "01" || loadSchoolAmount == "02" || loadSchoolAmount == "03")
                 {
-                    var schoolNumericValue = Int32.Parse(loadSchoolAmount);
+                    arsenal.SchoolAmount = Int32.Parse(loadSchoolAmount);
                     for (int i = 0; i < 30; i++)
                     {
                         if (!cardDef.ContainsKey(deckStrings[i]))

@@ -7,13 +7,18 @@ namespace PD_Helper.Library
 {
     internal class GameProfileService
     {
-        
+        private static GameProfile _gameProfile = null; // TODO: Probably don't use a static variable for this.
         private readonly string[] arsenalNameOffsets = { "8", "6C", "D0", "134", "198", "1FC", "260", "2C4", "328", "38C", "3F0", "454", "4B8", "51C", "580", "5E4" };
         private readonly string[] arsenalSkillOffsets = { "18", "7C", "E0", "144", "1A8", "20C", "270", "2D4", "338", "39C", "400", "464", "4C8", "52C", "590", "5F4" };
         private readonly Dictionary<string, PDCard> cardDef = JsonConvert.DeserializeObject<Dictionary<string, PDCard>>(File.ReadAllText("SkillDB.json"));
 
         public GameProfile LoadGameProfile()
         {
+            if (_gameProfile != null)
+            {
+                return _gameProfile;
+            }
+
             var process = Process.GetProcesses().FirstOrDefault(p => p.ProcessName == "PDUWP");
             if (process == null)
             {
@@ -39,7 +44,9 @@ namespace PD_Helper.Library
                 }
             }
 
-            return profile;
+            _gameProfile = profile;
+
+            return _gameProfile;
         }
 
         public GameArsenal ReadArsenal(GameProfile profile, int arsenalIndex)
@@ -70,6 +77,29 @@ namespace PD_Helper.Library
             arsenal.LoadSchoolAmount = currentHexStringFix.Remove(currentHexStringFix.Length - 3);
 
             return arsenal;
+        }
+
+        public void WritePdhArsenalToGameArsenal(GameProfile profile, Arsenal pdhArsenal, int gameArsenalIndex)
+        {
+            // Write arsenal name
+            byte[] deckNameToWrite = Encoding.ASCII.GetBytes(pdhArsenal.Name);
+            Array.Resize(ref deckNameToWrite, 15);
+            profile.Mem.WriteBytes("base+003ED6B8," + arsenalNameOffsets[gameArsenalIndex], deckNameToWrite);
+
+            var hexDeck = pdhArsenal.ToHexDeck();
+
+            // Write arsenal skills
+            byte[] dataToWrite = { };
+            Array.Resize(ref dataToWrite, 62);
+            int o = 0;
+            for (int i = 0; i < hexDeck.Length; i++)
+            {
+                dataToWrite[o] = Convert.ToByte(hexDeck[i].Remove(2), 16);
+                dataToWrite[o + 1] = Convert.ToByte(hexDeck[i].Remove(0, 3), 16);
+                o += 2;
+            }
+
+            profile.Mem.WriteBytes("base+003ED6B8," + arsenalSkillOffsets[gameArsenalIndex], dataToWrite);
         }
 
         public void WriteArsenal(GameArsenal arsenal)

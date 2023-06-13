@@ -17,6 +17,7 @@ namespace PD_Helper
 {
     public partial class ArsenalListItem : UserControl
     {
+        private Arsenal _arsenal;
         private readonly ArsenalService _arsenalService = new();
         private readonly GameProfileService _gameProfileService = new();
         private static Dictionary<string, PictureBox> SchoolPictures = new Dictionary<string, PictureBox>();
@@ -67,10 +68,10 @@ namespace PD_Helper
             }
 
             InitializeSchoolPictures();
-            var arsenal = _arsenalService.LoadArsenal(arsenalName);
-            var schools = arsenal.Cards.Select(c => c.SCHOOL).Distinct();
+            _arsenal = _arsenalService.LoadArsenal(arsenalName);
+            var schools = _arsenal.Cards.Select(c => c.SCHOOL).Distinct();
             int schoolCount = schools.Count();
-            string skillsOverAura = $"{arsenal.Cards.Where(c => c.TYPE != "Aura").Count()}/30";
+            string skillsOverAura = $"{_arsenal.Cards.Where(c => c.TYPE != "Aura").Count()}/30";
             ArsenalCasePicture.Image = AppImages.GetArsenalCase(schoolCount);
             ArsenalNameLabel.Text = arsenalName;
             foreach (KeyValuePair<string, PictureBox> schoolPicture in SchoolPictures)
@@ -104,10 +105,9 @@ namespace PD_Helper
                 SaveButton.Text = $"ARSENAL {_saveArsenalIndex.ToString().PadLeft(2, '0')}";
             }
 
-            Debug.WriteLine($"Saving to index [{_saveArsenalIndex})");
-            // Read test
-            //var profile = _gameProfileService.LoadGameProfile();
-            //var arsenal = _gameProfileService.ReadArsenal(profile, selectedIndex);
+            Debug.WriteLine($"Saving [{_arsenal.Name}] to index [{_saveArsenalIndex})");
+            var profile = _gameProfileService.LoadGameProfile();
+            _gameProfileService.WritePdhArsenalToGameArsenal(profile, _arsenal, _saveArsenalIndex - 1);
         }
 
         private void InitializeSchoolPictures()
