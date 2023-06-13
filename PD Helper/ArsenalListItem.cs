@@ -22,7 +22,11 @@ namespace PD_Helper
         private static Dictionary<string, PictureBox> SchoolPictures = new Dictionary<string, PictureBox>();
 
         // https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitem?view=windowsdesktop-7.0#remarks
-        private readonly ContextMenuStrip _saveDropdownStrip = new ContextMenuStrip();
+        private readonly ContextMenuStrip _saveDropdownStrip = new ContextMenuStrip
+        {
+            ShowCheckMargin = false,
+            ShowImageMargin = false,
+        };
 
         private readonly Color BackgroundColor = Color.FromArgb(33, 53, 47);
         private readonly Color BackgroundColorHover = Color.FromArgb(67, 11, 15);
@@ -44,13 +48,13 @@ namespace PD_Helper
 
         private void Initialize(string arsenalName)
         {
-            for(int i = 1; i<= 16; i++)
+            for (int i = 1; i<= 16; i++)
             {
-                var button3 = new ToolStripButton($"ARSENAL {i.ToString().PadLeft(2, '0')}");
+                var button = new ToolStripButton($"ARSENAL {i.ToString().PadLeft(2, '0')}");
                 // Due to scoping behavior, we must copy the i value to a locally scoped variable (indexCopy) to retain the current value passed to the click handler.
-                int indexCopy = i; 
-                button3.Click += (s, e) => SaveArsenalToGame(indexCopy);
-                _saveDropdownStrip.Items.Add(button3);
+                int indexCopy = i;
+                button.Click += (s, e) => SaveArsenalToGame(indexCopy);
+                _saveDropdownStrip.Items.Add(button);
             }
 
             SaveDropdownMenu.Click += SaveDropdownMenu_Click;
