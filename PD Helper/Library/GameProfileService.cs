@@ -86,9 +86,8 @@ namespace PD_Helper.Library
             Array.Resize(ref deckNameToWrite, 15);
             profile.Mem.WriteBytes("base+003ED6B8," + arsenalNameOffsets[gameArsenalIndex], deckNameToWrite);
 
-            var hexDeck = pdhArsenal.ToHexDeck();
-
             // Write arsenal skills
+            var hexDeck = pdhArsenal.ToHexDeck();
             byte[] dataToWrite = { };
             Array.Resize(ref dataToWrite, 62);
             int o = 0;
