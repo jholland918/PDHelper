@@ -18,7 +18,7 @@ namespace PD_Helper.Library
         public Arsenal LoadArsenal(string arsenalName)
         {
             var arsenal = new Arsenal();
-            arsenal.Name = arsenalName;
+            arsenal.ArsenalName = arsenalName;
             string path = @"Arsenals\" + arsenalName + ".arsenal";
             string file = File.ReadAllText(path);
             string[] deckStrings = file.Split(',');
@@ -43,7 +43,7 @@ namespace PD_Helper.Library
                         }
                         else
                         {
-                            arsenal.Cards.Add(cardDef[deckStrings[i]]);
+                            arsenal.Cards[i] = cardDef[deckStrings[i]];
                         }
                     }
                 }

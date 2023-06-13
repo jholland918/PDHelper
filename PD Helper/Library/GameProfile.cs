@@ -7,8 +7,16 @@ using System.Threading.Tasks;
 
 namespace PD_Helper.Library
 {
-    internal class GameProfile
+    internal sealed class GameProfile
     {
+        private static readonly Lazy<GameProfile> lazy = new Lazy<GameProfile>(() => new GameProfile());
+
+        public static GameProfile Instance { get { return lazy.Value; } }
+
+        private GameProfile()
+        {
+        }
+
         public Mem Mem { get; } = new Mem();
 
         public string ProcessId { get; set; }

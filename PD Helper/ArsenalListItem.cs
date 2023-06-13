@@ -105,9 +105,9 @@ namespace PD_Helper
                 SaveButton.Text = $"ARSENAL {_saveArsenalIndex.ToString().PadLeft(2, '0')}";
             }
 
-            Debug.WriteLine($"Saving [{_arsenal.Name}] to index [{_saveArsenalIndex})");
+            Debug.WriteLine($"Saving [{_arsenal.ArsenalName}] to index [{_saveArsenalIndex})");
             var profile = _gameProfileService.LoadGameProfile();
-            _gameProfileService.WritePdhArsenalToGameArsenal(profile, _arsenal, _saveArsenalIndex - 1);
+            _gameProfileService.WritePdhArsenalToGameArsenal(_arsenal, _saveArsenalIndex - 1);
         }
 
         private void InitializeSchoolPictures()

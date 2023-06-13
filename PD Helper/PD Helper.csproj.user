@@ -19,5 +19,8 @@
     <Compile Update="list.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="SkillSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
