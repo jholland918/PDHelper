@@ -153,6 +153,11 @@ namespace PD_Helper
 
         private void RenderArsenal(string arsenalName, List<PDCard> cards, IEnumerable<string> schools, int schoolCount, string skillsOverAura)
         {
+            if (!ArsenalPanel.Visible)
+            {
+                ArsenalPanel.Visible = true;
+            }
+            
             ArsenalCasePicture.Image = AppImages.GetArsenalCase(schoolCount);
             ArsenalNameLabel.Text = arsenalName;
 

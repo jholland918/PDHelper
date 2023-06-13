@@ -31,12 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LabForm));
             this.MainContainer = new System.Windows.Forms.SplitContainer();
             this.ArsenalListLayout = new System.Windows.Forms.TableLayoutPanel();
-            this.ArsenalFilterTextBox = new PD_Helper.CueTextBox();
             this.ArsenalListScroller = new System.Windows.Forms.Panel();
             this.ArsenalList = new System.Windows.Forms.TableLayoutPanel();
             this.ArsenalListHeader = new System.Windows.Forms.Panel();
             this.SaveToGameLabel = new System.Windows.Forms.Label();
             this.ArsenalListTitle = new System.Windows.Forms.Label();
+            this.SearchPanel = new System.Windows.Forms.Panel();
+            this.ArsenalFilterTextBox = new PD_Helper.CueTextBox();
+            this.SearchLabel = new System.Windows.Forms.Label();
             this.ArsenalPanel = new System.Windows.Forms.Panel();
             this.CardTable = new System.Windows.Forms.TableLayoutPanel();
             this.CardTitlePanel = new System.Windows.Forms.Panel();
@@ -88,8 +90,6 @@
             this.ArsenalSkill28 = new System.Windows.Forms.Button();
             this.ArsenalSkill29 = new System.Windows.Forms.Button();
             this.ArsenalSkill30 = new System.Windows.Forms.Button();
-            this.SearchLabel = new System.Windows.Forms.Label();
-            this.SearchPanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.MainContainer)).BeginInit();
             this.MainContainer.Panel1.SuspendLayout();
             this.MainContainer.Panel2.SuspendLayout();
@@ -97,6 +97,7 @@
             this.ArsenalListLayout.SuspendLayout();
             this.ArsenalListScroller.SuspendLayout();
             this.ArsenalListHeader.SuspendLayout();
+            this.SearchPanel.SuspendLayout();
             this.ArsenalPanel.SuspendLayout();
             this.CardTable.SuspendLayout();
             this.CardTitlePanel.SuspendLayout();
@@ -113,7 +114,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureKi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureFaith)).BeginInit();
             this.ArsenalTable.SuspendLayout();
-            this.SearchPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainContainer
@@ -130,6 +130,8 @@
             // 
             // MainContainer.Panel2
             // 
+            this.MainContainer.Panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MainContainer.Panel2.BackgroundImage")));
+            this.MainContainer.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.MainContainer.Panel2.Controls.Add(this.ArsenalPanel);
             this.MainContainer.Size = new System.Drawing.Size(1176, 593);
             this.MainContainer.SplitterDistance = 555;
@@ -151,18 +153,6 @@
             this.ArsenalListLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.ArsenalListLayout.Size = new System.Drawing.Size(555, 593);
             this.ArsenalListLayout.TabIndex = 0;
-            // 
-            // ArsenalFilterTextBox
-            // 
-            this.ArsenalFilterTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ArsenalFilterTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(168)))), ((int)(((byte)(158)))));
-            this.ArsenalFilterTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ArsenalFilterTextBox.Cue = "Search Arsenals...";
-            this.ArsenalFilterTextBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ArsenalFilterTextBox.Location = new System.Drawing.Point(35, -1);
-            this.ArsenalFilterTextBox.Name = "ArsenalFilterTextBox";
-            this.ArsenalFilterTextBox.Size = new System.Drawing.Size(496, 25);
-            this.ArsenalFilterTextBox.TabIndex = 3;
             // 
             // ArsenalListScroller
             // 
@@ -230,6 +220,40 @@
             this.ArsenalListTitle.Text = "Arsenal List";
             this.ArsenalListTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // SearchPanel
+            // 
+            this.SearchPanel.Controls.Add(this.ArsenalFilterTextBox);
+            this.SearchPanel.Controls.Add(this.SearchLabel);
+            this.SearchPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SearchPanel.Location = new System.Drawing.Point(3, 3);
+            this.SearchPanel.Name = "SearchPanel";
+            this.SearchPanel.Size = new System.Drawing.Size(549, 24);
+            this.SearchPanel.TabIndex = 4;
+            // 
+            // ArsenalFilterTextBox
+            // 
+            this.ArsenalFilterTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ArsenalFilterTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(168)))), ((int)(((byte)(158)))));
+            this.ArsenalFilterTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ArsenalFilterTextBox.Cue = "Search Arsenals...";
+            this.ArsenalFilterTextBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ArsenalFilterTextBox.Location = new System.Drawing.Point(35, -1);
+            this.ArsenalFilterTextBox.Name = "ArsenalFilterTextBox";
+            this.ArsenalFilterTextBox.Size = new System.Drawing.Size(496, 25);
+            this.ArsenalFilterTextBox.TabIndex = 3;
+            // 
+            // SearchLabel
+            // 
+            this.SearchLabel.AutoSize = true;
+            this.SearchLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.SearchLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.SearchLabel.Location = new System.Drawing.Point(3, 0);
+            this.SearchLabel.Name = "SearchLabel";
+            this.SearchLabel.Size = new System.Drawing.Size(32, 21);
+            this.SearchLabel.TabIndex = 2;
+            this.SearchLabel.Text = ">>";
+            this.SearchLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // ArsenalPanel
             // 
             this.ArsenalPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(49)))));
@@ -241,6 +265,7 @@
             this.ArsenalPanel.Name = "ArsenalPanel";
             this.ArsenalPanel.Size = new System.Drawing.Size(617, 593);
             this.ArsenalPanel.TabIndex = 0;
+            this.ArsenalPanel.Visible = false;
             // 
             // CardTable
             // 
@@ -955,28 +980,6 @@
             this.ArsenalSkill30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill30.UseVisualStyleBackColor = true;
             // 
-            // SearchLabel
-            // 
-            this.SearchLabel.AutoSize = true;
-            this.SearchLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SearchLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SearchLabel.Location = new System.Drawing.Point(3, 0);
-            this.SearchLabel.Name = "SearchLabel";
-            this.SearchLabel.Size = new System.Drawing.Size(32, 21);
-            this.SearchLabel.TabIndex = 2;
-            this.SearchLabel.Text = ">>";
-            this.SearchLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // SearchPanel
-            // 
-            this.SearchPanel.Controls.Add(this.ArsenalFilterTextBox);
-            this.SearchPanel.Controls.Add(this.SearchLabel);
-            this.SearchPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SearchPanel.Location = new System.Drawing.Point(3, 3);
-            this.SearchPanel.Name = "SearchPanel";
-            this.SearchPanel.Size = new System.Drawing.Size(549, 24);
-            this.SearchPanel.TabIndex = 4;
-            // 
             // LabForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -994,6 +997,8 @@
             this.ArsenalListScroller.PerformLayout();
             this.ArsenalListHeader.ResumeLayout(false);
             this.ArsenalListHeader.PerformLayout();
+            this.SearchPanel.ResumeLayout(false);
+            this.SearchPanel.PerformLayout();
             this.ArsenalPanel.ResumeLayout(false);
             this.CardTable.ResumeLayout(false);
             this.CardTitlePanel.ResumeLayout(false);
@@ -1013,8 +1018,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureKi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureFaith)).EndInit();
             this.ArsenalTable.ResumeLayout(false);
-            this.SearchPanel.ResumeLayout(false);
-            this.SearchPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
