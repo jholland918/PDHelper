@@ -39,9 +39,10 @@
             this.SchoolPictureKi = new System.Windows.Forms.PictureBox();
             this.SchoolPictureFaith = new System.Windows.Forms.PictureBox();
             this.ArsenalNameLabel = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.ButtonPanel = new System.Windows.Forms.Panel();
+            this.SaveToGameLabel = new System.Windows.Forms.Label();
+            this.SaveDropdownMenu = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
-            this.ArsenalSlotCombo = new System.Windows.Forms.ComboBox();
             this.ContainerTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ArsenalCasePicture)).BeginInit();
             this.ArsenalMetadataPanel.SuspendLayout();
@@ -51,7 +52,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureNature)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureKi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureFaith)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.ButtonPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // ContainerTable
@@ -63,7 +64,7 @@
             this.ContainerTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.ContainerTable.Controls.Add(this.ArsenalCasePicture, 0, 0);
             this.ContainerTable.Controls.Add(this.ArsenalMetadataPanel, 1, 0);
-            this.ContainerTable.Controls.Add(this.panel1, 2, 0);
+            this.ContainerTable.Controls.Add(this.ButtonPanel, 2, 0);
             this.ContainerTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ContainerTable.Location = new System.Drawing.Point(0, 0);
             this.ContainerTable.Name = "ContainerTable";
@@ -195,61 +196,62 @@
             this.ArsenalNameLabel.TabIndex = 0;
             this.ArsenalNameLabel.Text = "Arsenal Name";
             // 
-            // panel1
+            // ButtonPanel
             // 
-            this.panel1.Controls.Add(this.SaveButton);
-            this.panel1.Controls.Add(this.ArsenalSlotCombo);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(343, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(145, 61);
-            this.panel1.TabIndex = 2;
+            this.ButtonPanel.Controls.Add(this.SaveToGameLabel);
+            this.ButtonPanel.Controls.Add(this.SaveDropdownMenu);
+            this.ButtonPanel.Controls.Add(this.SaveButton);
+            this.ButtonPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonPanel.Location = new System.Drawing.Point(343, 3);
+            this.ButtonPanel.Name = "ButtonPanel";
+            this.ButtonPanel.Size = new System.Drawing.Size(145, 61);
+            this.ButtonPanel.TabIndex = 2;
+            // 
+            // SaveToGameLabel
+            // 
+            this.SaveToGameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SaveToGameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.SaveToGameLabel.Location = new System.Drawing.Point(3, 3);
+            this.SaveToGameLabel.Name = "SaveToGameLabel";
+            this.SaveToGameLabel.Size = new System.Drawing.Size(139, 21);
+            this.SaveToGameLabel.TabIndex = 3;
+            this.SaveToGameLabel.Text = "Save To Game";
+            this.SaveToGameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // SaveDropdownMenu
+            // 
+            this.SaveDropdownMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.SaveDropdownMenu.AutoSize = true;
+            this.SaveDropdownMenu.BackColor = System.Drawing.Color.Transparent;
+            this.SaveDropdownMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(185)))), ((int)(((byte)(24)))));
+            this.SaveDropdownMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.SaveDropdownMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveDropdownMenu.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SaveDropdownMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.SaveDropdownMenu.Location = new System.Drawing.Point(112, 27);
+            this.SaveDropdownMenu.Name = "SaveDropdownMenu";
+            this.SaveDropdownMenu.Size = new System.Drawing.Size(33, 34);
+            this.SaveDropdownMenu.TabIndex = 2;
+            this.SaveDropdownMenu.Text = "⯆";
+            this.SaveDropdownMenu.UseVisualStyleBackColor = false;
             // 
             // SaveButton
             // 
+            this.SaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.SaveButton.AutoSize = true;
             this.SaveButton.BackColor = System.Drawing.Color.Transparent;
-            this.SaveButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.SaveButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(185)))), ((int)(((byte)(24)))));
             this.SaveButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SaveButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.SaveButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SaveButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SaveButton.Location = new System.Drawing.Point(0, 29);
+            this.SaveButton.Location = new System.Drawing.Point(0, 27);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(145, 32);
+            this.SaveButton.Size = new System.Drawing.Size(116, 34);
             this.SaveButton.TabIndex = 1;
-            this.SaveButton.Text = "Save To Game";
+            this.SaveButton.Text = "ARSENAL01";
             this.SaveButton.UseVisualStyleBackColor = false;
-            // 
-            // ArsenalSlotCombo
-            // 
-            this.ArsenalSlotCombo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(53)))), ((int)(((byte)(47)))));
-            this.ArsenalSlotCombo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ArsenalSlotCombo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.ArsenalSlotCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ArsenalSlotCombo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ArsenalSlotCombo.FormattingEnabled = true;
-            this.ArsenalSlotCombo.Items.AddRange(new object[] {
-            "ARSENAL01",
-            "ARSENAL02",
-            "ARSENAL03",
-            "ARSENAL04",
-            "ARSENAL05",
-            "ARSENAL06",
-            "ARSENAL07",
-            "ARSENAL08",
-            "ARSENAL09",
-            "ARSENAL10",
-            "ARSENAL11",
-            "ARSENAL12",
-            "ARSENAL13",
-            "ARSENAL14",
-            "ARSENAL15",
-            "ARSENAL16"});
-            this.ArsenalSlotCombo.Location = new System.Drawing.Point(0, 0);
-            this.ArsenalSlotCombo.Name = "ArsenalSlotCombo";
-            this.ArsenalSlotCombo.Size = new System.Drawing.Size(145, 28);
-            this.ArsenalSlotCombo.TabIndex = 0;
             // 
             // ArsenalListItem
             // 
@@ -268,7 +270,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureNature)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureKi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureFaith)).EndInit();
-            this.panel1.ResumeLayout(false);
+            this.ButtonPanel.ResumeLayout(false);
+            this.ButtonPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -286,8 +289,10 @@
         private PictureBox SchoolPictureKi;
         private PictureBox SchoolPictureFaith;
         private Label SkillsOverAuraLabel;
-        private Panel panel1;
+        private Panel ButtonPanel;
         private ComboBox ArsenalSlotCombo;
         private Button SaveButton;
+        private Button SaveDropdownMenu;
+        private Label SaveToGameLabel;
     }
 }

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 
 namespace PD_Helper
 {
@@ -18,6 +20,9 @@ namespace PD_Helper
         private readonly ArsenalService _arsenalService = new();
         private readonly GameProfileService _gameProfileService = new();
         private static Dictionary<string, PictureBox> SchoolPictures = new Dictionary<string, PictureBox>();
+
+        // https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitem?view=windowsdesktop-7.0#remarks
+        private readonly ContextMenuStrip _saveDropdownStrip = new ContextMenuStrip();
 
         private readonly Color BackgroundColor = Color.FromArgb(33, 53, 47);
         private readonly Color BackgroundColorHover = Color.FromArgb(67, 11, 15);
@@ -37,61 +42,20 @@ namespace PD_Helper
             InitializeComponent();
         }
 
-        public void SetActiveColors()
-        {
-            if (IsActive)
-            {
-                return;
-            }
-
-            IsActive = true;
-
-            ArsenalNameLabel.ForeColor = ForegroundColorHover;
-            SkillsOverAuraLabel.ForeColor = ForegroundColorHover;
-            SaveButton.ForeColor = ForegroundColorHover;
-
-            ContainerTable.BackColor = BackgroundColorHover;
-            ArsenalCasePicture.BackColor = ForegroundColorHover;
-            SchoolPicturePsycho.BackColor = ForegroundColorHover;
-            SchoolPictureOptical.BackColor = ForegroundColorHover;
-            SchoolPictureNature.BackColor = ForegroundColorHover;
-            SchoolPictureKi.BackColor = ForegroundColorHover;
-            SchoolPictureFaith.BackColor = ForegroundColorHover;
-
-        }
-
-        public void SetInactiveColors()
-        {
-            if (!IsActive)
-            {
-                return;
-            }
-
-            IsActive = false;
-
-            ArsenalNameLabel.ForeColor = ForegroundColor;
-            SkillsOverAuraLabel.ForeColor = ForegroundColor;
-            SaveButton.ForeColor = ForegroundColor;
-
-            ContainerTable.BackColor = BackgroundColor;
-            ArsenalCasePicture.BackColor = ForegroundColor;
-            SchoolPicturePsycho.BackColor = ForegroundColor;
-            SchoolPictureOptical.BackColor = ForegroundColor;
-            SchoolPictureNature.BackColor = ForegroundColor;
-            SchoolPictureKi.BackColor = ForegroundColor;
-            SchoolPictureFaith.BackColor = ForegroundColor;
-        }
-
-        private void RedirectMouseEnter(object sender, EventArgs e)
-        {
-            OnMouseEnter(e);
-        }
-
         private void Initialize(string arsenalName)
         {
-            InitArsenalSlotCombo();
+            for(int i = 1; i<= 16; i++)
+            {
+                var button3 = new ToolStripButton($"ARSENAL {i.ToString().PadLeft(2, '0')}");
+                // Due to scoping behavior, we must copy the i value to a locally scoped variable (indexCopy) to retain the current value passed to the click handler.
+                int indexCopy = i; 
+                button3.Click += (s, e) => SaveArsenalToGame(indexCopy);
+                _saveDropdownStrip.Items.Add(button3);
+            }
 
-            SaveButton.Click += SaveButton_Click;
+            SaveDropdownMenu.Click += SaveDropdownMenu_Click;
+            SaveButton.Text = $"ARSENAL {_saveArsenalIndex.ToString().PadLeft(2, '0')}";
+            SaveButton.Click += (s, e) => SaveArsenalToGame();
 
             foreach (Control control in Controls)
             {
@@ -120,24 +84,23 @@ namespace PD_Helper
             SkillsOverAuraLabel.Text = skillsOverAura;
         }
 
-        private void InitArsenalSlotCombo()
+
+        private int _saveArsenalIndex = 1;
+
+        private void SaveDropdownMenu_Click(object? sender, EventArgs e)
         {
-            ArsenalSlotCombo.SelectedItem = "ARSENAL01";
-            ArsenalSlotCombo.SelectedText = "ARSENAL01";
-            ArsenalSlotCombo.DrawItem += (object? sender, DrawItemEventArgs e) =>
-            {
-                int index = e.Index >= 0 ? e.Index : 0;
-                var brush = new SolidBrush(Color.FromArgb(92, 172, 149));
-                e.DrawBackground();
-                e.Graphics.DrawString(ArsenalSlotCombo.Items[index].ToString(), e.Font, brush, e.Bounds, StringFormat.GenericDefault);
-                e.DrawFocusRectangle();
-            };
+            _saveDropdownStrip.Show(SaveDropdownMenu, new Point(0, SaveDropdownMenu.Height));
         }
 
-        private void SaveButton_Click(object? sender, EventArgs e)
+        private void SaveArsenalToGame(int? arsenalIndex = null)
         {
-            int selectedIndex = ArsenalSlotCombo.SelectedIndex;
+            if (arsenalIndex != null)
+            {
+                _saveArsenalIndex = arsenalIndex.Value;
+                SaveButton.Text = $"ARSENAL {_saveArsenalIndex.ToString().PadLeft(2, '0')}";
+            }
 
+            Debug.WriteLine($"Saving to index [{_saveArsenalIndex})");
             // Read test
             //var profile = _gameProfileService.LoadGameProfile();
             //var arsenal = _gameProfileService.ReadArsenal(profile, selectedIndex);
@@ -159,6 +122,60 @@ namespace PD_Helper
                 ["Optical"] = SchoolPictureOptical,
                 ["Psycho"] = SchoolPicturePsycho,
             };
+        }
+
+        public void SetActiveColors()
+        {
+            if (IsActive)
+            {
+                return;
+            }
+
+            IsActive = true;
+
+            ArsenalNameLabel.ForeColor = ForegroundColorHover;
+            SkillsOverAuraLabel.ForeColor = ForegroundColorHover;
+            SaveButton.ForeColor = ForegroundColorHover;
+            SaveDropdownMenu.ForeColor = ForegroundColorHover;
+            SaveToGameLabel.ForeColor = ForegroundColorHover;
+
+            ContainerTable.BackColor = BackgroundColorHover;
+            ArsenalCasePicture.BackColor = ForegroundColorHover;
+            SchoolPicturePsycho.BackColor = ForegroundColorHover;
+            SchoolPictureOptical.BackColor = ForegroundColorHover;
+            SchoolPictureNature.BackColor = ForegroundColorHover;
+            SchoolPictureKi.BackColor = ForegroundColorHover;
+            SchoolPictureFaith.BackColor = ForegroundColorHover;
+
+        }
+
+        public void SetInactiveColors()
+        {
+            if (!IsActive)
+            {
+                return;
+            }
+
+            IsActive = false;
+
+            ArsenalNameLabel.ForeColor = ForegroundColor;
+            SkillsOverAuraLabel.ForeColor = ForegroundColor;
+            SaveButton.ForeColor = ForegroundColor;
+            SaveDropdownMenu.ForeColor = ForegroundColor;
+            SaveToGameLabel.ForeColor = ForegroundColor;
+
+            ContainerTable.BackColor = BackgroundColor;
+            ArsenalCasePicture.BackColor = ForegroundColor;
+            SchoolPicturePsycho.BackColor = ForegroundColor;
+            SchoolPictureOptical.BackColor = ForegroundColor;
+            SchoolPictureNature.BackColor = ForegroundColor;
+            SchoolPictureKi.BackColor = ForegroundColor;
+            SchoolPictureFaith.BackColor = ForegroundColor;
+        }
+
+        private void RedirectMouseEnter(object sender, EventArgs e)
+        {
+            OnMouseEnter(e);
         }
     }
 }
