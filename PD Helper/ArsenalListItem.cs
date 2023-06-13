@@ -137,7 +137,6 @@ namespace PD_Helper
             SkillsOverAuraLabel.ForeColor = ForegroundColorHover;
             SaveButton.ForeColor = ForegroundColorHover;
             SaveDropdownMenu.ForeColor = ForegroundColorHover;
-            SaveToGameLabel.ForeColor = ForegroundColorHover;
 
             ContainerTable.BackColor = BackgroundColorHover;
             ArsenalCasePicture.BackColor = ForegroundColorHover;
@@ -162,7 +161,6 @@ namespace PD_Helper
             SkillsOverAuraLabel.ForeColor = ForegroundColor;
             SaveButton.ForeColor = ForegroundColor;
             SaveDropdownMenu.ForeColor = ForegroundColor;
-            SaveToGameLabel.ForeColor = ForegroundColor;
 
             ContainerTable.BackColor = BackgroundColor;
             ArsenalCasePicture.BackColor = ForegroundColor;

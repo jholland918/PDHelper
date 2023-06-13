@@ -40,7 +40,6 @@
             this.SchoolPictureFaith = new System.Windows.Forms.PictureBox();
             this.ArsenalNameLabel = new System.Windows.Forms.Label();
             this.ButtonPanel = new System.Windows.Forms.Panel();
-            this.SaveToGameLabel = new System.Windows.Forms.Label();
             this.SaveDropdownMenu = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
             this.ContainerTable.SuspendLayout();
@@ -60,7 +59,7 @@
             this.ContainerTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(53)))), ((int)(((byte)(47)))));
             this.ContainerTable.ColumnCount = 3;
             this.ContainerTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.ContainerTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 280F));
+            this.ContainerTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 320F));
             this.ContainerTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.ContainerTable.Controls.Add(this.ArsenalCasePicture, 0, 0);
             this.ContainerTable.Controls.Add(this.ArsenalMetadataPanel, 1, 0);
@@ -70,7 +69,7 @@
             this.ContainerTable.Name = "ContainerTable";
             this.ContainerTable.RowCount = 1;
             this.ContainerTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.ContainerTable.Size = new System.Drawing.Size(491, 67);
+            this.ContainerTable.Size = new System.Drawing.Size(535, 67);
             this.ContainerTable.TabIndex = 0;
             // 
             // ArsenalCasePicture
@@ -92,7 +91,7 @@
             this.ArsenalMetadataPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ArsenalMetadataPanel.Location = new System.Drawing.Point(63, 3);
             this.ArsenalMetadataPanel.Name = "ArsenalMetadataPanel";
-            this.ArsenalMetadataPanel.Size = new System.Drawing.Size(274, 61);
+            this.ArsenalMetadataPanel.Size = new System.Drawing.Size(314, 61);
             this.ArsenalMetadataPanel.TabIndex = 1;
             // 
             // SkillsOverAuraLabel
@@ -101,7 +100,7 @@
             this.SkillsOverAuraLabel.AutoSize = true;
             this.SkillsOverAuraLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.SkillsOverAuraLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SkillsOverAuraLabel.Location = new System.Drawing.Point(227, 3);
+            this.SkillsOverAuraLabel.Location = new System.Drawing.Point(267, 3);
             this.SkillsOverAuraLabel.Name = "SkillsOverAuraLabel";
             this.SkillsOverAuraLabel.Size = new System.Drawing.Size(44, 21);
             this.SkillsOverAuraLabel.TabIndex = 2;
@@ -198,26 +197,13 @@
             // 
             // ButtonPanel
             // 
-            this.ButtonPanel.Controls.Add(this.SaveToGameLabel);
             this.ButtonPanel.Controls.Add(this.SaveDropdownMenu);
             this.ButtonPanel.Controls.Add(this.SaveButton);
             this.ButtonPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ButtonPanel.Location = new System.Drawing.Point(343, 3);
+            this.ButtonPanel.Location = new System.Drawing.Point(383, 3);
             this.ButtonPanel.Name = "ButtonPanel";
-            this.ButtonPanel.Size = new System.Drawing.Size(145, 61);
+            this.ButtonPanel.Size = new System.Drawing.Size(149, 61);
             this.ButtonPanel.TabIndex = 2;
-            // 
-            // SaveToGameLabel
-            // 
-            this.SaveToGameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.SaveToGameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SaveToGameLabel.Location = new System.Drawing.Point(3, 3);
-            this.SaveToGameLabel.Name = "SaveToGameLabel";
-            this.SaveToGameLabel.Size = new System.Drawing.Size(139, 21);
-            this.SaveToGameLabel.TabIndex = 3;
-            this.SaveToGameLabel.Text = "Save To Game";
-            this.SaveToGameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SaveDropdownMenu
             // 
@@ -229,7 +215,7 @@
             this.SaveDropdownMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveDropdownMenu.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SaveDropdownMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SaveDropdownMenu.Location = new System.Drawing.Point(112, 27);
+            this.SaveDropdownMenu.Location = new System.Drawing.Point(116, 27);
             this.SaveDropdownMenu.Name = "SaveDropdownMenu";
             this.SaveDropdownMenu.Size = new System.Drawing.Size(33, 34);
             this.SaveDropdownMenu.TabIndex = 2;
@@ -259,7 +245,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.ContainerTable);
             this.Name = "ArsenalListItem";
-            this.Size = new System.Drawing.Size(491, 67);
+            this.Size = new System.Drawing.Size(535, 67);
             this.ContainerTable.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ArsenalCasePicture)).EndInit();
             this.ArsenalMetadataPanel.ResumeLayout(false);
@@ -293,6 +279,5 @@
         private ComboBox ArsenalSlotCombo;
         private Button SaveButton;
         private Button SaveDropdownMenu;
-        private Label SaveToGameLabel;
     }
 }

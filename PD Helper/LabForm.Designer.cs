@@ -31,11 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LabForm));
             this.MainContainer = new System.Windows.Forms.SplitContainer();
             this.ArsenalListLayout = new System.Windows.Forms.TableLayoutPanel();
-            this.ArsenalListTitle = new System.Windows.Forms.Label();
+            this.ArsenalFilterTextBox = new PD_Helper.CueTextBox();
             this.ArsenalListScroller = new System.Windows.Forms.Panel();
             this.ArsenalList = new System.Windows.Forms.TableLayoutPanel();
             this.SearchPanel = new System.Windows.Forms.Panel();
-            this.ArsenalFilterTextBox = new PD_Helper.CueTextBox();
+            this.SaveToGameLabel = new System.Windows.Forms.Label();
+            this.ArsenalListTitle = new System.Windows.Forms.Label();
             this.ArsenalPanel = new System.Windows.Forms.Panel();
             this.CardTable = new System.Windows.Forms.TableLayoutPanel();
             this.CardTitlePanel = new System.Windows.Forms.Panel();
@@ -135,42 +136,40 @@
             // 
             this.ArsenalListLayout.ColumnCount = 1;
             this.ArsenalListLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.ArsenalListLayout.Controls.Add(this.ArsenalListTitle, 0, 0);
+            this.ArsenalListLayout.Controls.Add(this.ArsenalFilterTextBox, 0, 0);
             this.ArsenalListLayout.Controls.Add(this.ArsenalListScroller, 0, 2);
             this.ArsenalListLayout.Controls.Add(this.SearchPanel, 0, 1);
             this.ArsenalListLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ArsenalListLayout.Location = new System.Drawing.Point(0, 0);
             this.ArsenalListLayout.Name = "ArsenalListLayout";
             this.ArsenalListLayout.RowCount = 3;
-            this.ArsenalListLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.ArsenalListLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.ArsenalListLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.ArsenalListLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.ArsenalListLayout.Size = new System.Drawing.Size(555, 593);
             this.ArsenalListLayout.TabIndex = 0;
             // 
-            // ArsenalListTitle
+            // ArsenalFilterTextBox
             // 
-            this.ArsenalListTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ArsenalListTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ArsenalListTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.ArsenalListTitle.Location = new System.Drawing.Point(3, 0);
-            this.ArsenalListTitle.Name = "ArsenalListTitle";
-            this.ArsenalListTitle.Size = new System.Drawing.Size(549, 40);
-            this.ArsenalListTitle.TabIndex = 0;
-            this.ArsenalListTitle.Text = "Arsenal List";
-            this.ArsenalListTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ArsenalFilterTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(168)))), ((int)(((byte)(158)))));
+            this.ArsenalFilterTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ArsenalFilterTextBox.Cue = "Search Arsenals...";
+            this.ArsenalFilterTextBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ArsenalFilterTextBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ArsenalFilterTextBox.Location = new System.Drawing.Point(3, 3);
+            this.ArsenalFilterTextBox.Name = "ArsenalFilterTextBox";
+            this.ArsenalFilterTextBox.Size = new System.Drawing.Size(535, 25);
+            this.ArsenalFilterTextBox.TabIndex = 3;
             // 
             // ArsenalListScroller
             // 
             this.ArsenalListScroller.AutoScroll = true;
             this.ArsenalListScroller.Controls.Add(this.ArsenalList);
             this.ArsenalListScroller.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ArsenalListScroller.Location = new System.Drawing.Point(0, 74);
+            this.ArsenalListScroller.Location = new System.Drawing.Point(0, 64);
             this.ArsenalListScroller.Margin = new System.Windows.Forms.Padding(0);
             this.ArsenalListScroller.Name = "ArsenalListScroller";
-            this.ArsenalListScroller.Size = new System.Drawing.Size(555, 519);
+            this.ArsenalListScroller.Size = new System.Drawing.Size(555, 529);
             this.ArsenalListScroller.TabIndex = 2;
             // 
             // ArsenalList
@@ -190,24 +189,43 @@
             // SearchPanel
             // 
             this.SearchPanel.BackColor = System.Drawing.Color.Transparent;
-            this.SearchPanel.Controls.Add(this.ArsenalFilterTextBox);
+            this.SearchPanel.Controls.Add(this.SaveToGameLabel);
+            this.SearchPanel.Controls.Add(this.ArsenalListTitle);
             this.SearchPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SearchPanel.Location = new System.Drawing.Point(3, 43);
+            this.SearchPanel.Location = new System.Drawing.Point(3, 33);
             this.SearchPanel.Name = "SearchPanel";
             this.SearchPanel.Size = new System.Drawing.Size(549, 28);
             this.SearchPanel.TabIndex = 3;
             // 
-            // ArsenalFilterTextBox
+            // SaveToGameLabel
             // 
-            this.ArsenalFilterTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(168)))), ((int)(((byte)(158)))));
-            this.ArsenalFilterTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ArsenalFilterTextBox.Cue = "Search Arsenals...";
-            this.ArsenalFilterTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ArsenalFilterTextBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ArsenalFilterTextBox.Location = new System.Drawing.Point(0, 0);
-            this.ArsenalFilterTextBox.Name = "ArsenalFilterTextBox";
-            this.ArsenalFilterTextBox.Size = new System.Drawing.Size(549, 25);
-            this.ArsenalFilterTextBox.TabIndex = 3;
+            this.SaveToGameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SaveToGameLabel.AutoSize = true;
+            this.SaveToGameLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.SaveToGameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.SaveToGameLabel.Location = new System.Drawing.Point(415, 3);
+            this.SaveToGameLabel.Name = "SaveToGameLabel";
+            this.SaveToGameLabel.Size = new System.Drawing.Size(116, 21);
+            this.SaveToGameLabel.TabIndex = 1;
+            this.SaveToGameLabel.Text = "Save To Game";
+            this.SaveToGameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ArsenalListTitle
+            // 
+            this.ArsenalListTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ArsenalListTitle.AutoSize = true;
+            this.ArsenalListTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ArsenalListTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.ArsenalListTitle.Location = new System.Drawing.Point(3, 3);
+            this.ArsenalListTitle.Name = "ArsenalListTitle";
+            this.ArsenalListTitle.Size = new System.Drawing.Size(97, 21);
+            this.ArsenalListTitle.TabIndex = 0;
+            this.ArsenalListTitle.Text = "Arsenal List";
+            this.ArsenalListTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ArsenalPanel
             // 
@@ -947,6 +965,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.MainContainer)).EndInit();
             this.MainContainer.ResumeLayout(false);
             this.ArsenalListLayout.ResumeLayout(false);
+            this.ArsenalListLayout.PerformLayout();
             this.ArsenalListScroller.ResumeLayout(false);
             this.ArsenalListScroller.PerformLayout();
             this.SearchPanel.ResumeLayout(false);
@@ -1033,5 +1052,6 @@
         private TableLayoutPanel ArsenalList;
         private CueTextBox ArsenalFilterTextBox;
         private Panel SearchPanel;
+        private Label SaveToGameLabel;
     }
 }
