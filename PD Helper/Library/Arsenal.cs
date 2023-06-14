@@ -39,6 +39,14 @@ namespace PD_Helper.Library
         /// </remarks>
         public int SchoolAmount { get; set; }
 
+        public string[] Schools 
+        {
+            get
+            {
+                return Cards.Select(c => c.SCHOOL).Distinct().Where(s => s != "Aura").ToArray();
+            }
+        }
+
         public PDCard[] Cards { get; } = new PDCard[30];
 
         /// <summary>

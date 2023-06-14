@@ -69,7 +69,7 @@ namespace PD_Helper
 
             InitializeSchoolPictures();
             _arsenal = _arsenalService.LoadArsenal(arsenalName);
-            var schools = _arsenal.Cards.Select(c => c.SCHOOL).Distinct();
+            var schools = _arsenal.Schools;
             int schoolCount = schools.Count();
             string skillsOverAura = $"{_arsenal.Cards.Where(c => c.TYPE != "Aura").Count()}/30";
             ArsenalCasePicture.Image = AppImages.GetArsenalCase(schoolCount);

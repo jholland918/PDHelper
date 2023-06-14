@@ -52,7 +52,7 @@ namespace PD_Helper
                 return;
             }
 
-            foreach(var row in _arsenalRows)
+            foreach (var row in _arsenalRows)
             {
                 if (row.Value.Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
                 {
@@ -90,28 +90,12 @@ namespace PD_Helper
             foreach (var arsenalName in arsenalNames)
             {
                 var arsenal = _arsenalService.LoadArsenal(arsenalName);
-                var cards = new List<PDCard>();
-
-                // Fill with arsenal cards
-                foreach (var card in arsenal.Cards)
-                {
-                    cards.Add(card);
-                }
-
-                // Fill out the rest of the arsenal with Aura...
-                for (int i = cards.Count; i < 30; i++)
-                {
-                    cards.Add(new PDCard
-                    {
-                        NAME = "Aura"
-                    });
-                }
 
                 var arsenalListItem = new ArsenalListItem(arsenalName);
 
-                cards = _arsenalService.SortCards(cards);
+                var cards = _arsenalService.SortCards(arsenal.Cards.ToList());
 
-                var schools = cards.Select(c => c.SCHOOL).Distinct();
+                var schools = arsenal.Schools;
 
                 int schoolCount = schools.Count();
 
@@ -157,7 +141,7 @@ namespace PD_Helper
             {
                 ArsenalPanel.Visible = true;
             }
-            
+
             ArsenalCasePicture.Image = AppImages.GetArsenalCase(schoolCount);
             ArsenalNameLabel.Text = arsenalName;
 

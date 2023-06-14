@@ -123,6 +123,19 @@ namespace PD_Helper.Library
         /// </summary>
         private void ValidateArsenal(Arsenal arsenal)
         {
+            foreach (var card in arsenal.Cards)
+            {
+                if (!SkillDB.SkillMap.ContainsKey(card.HEX))
+                {
+                    throw new AppException($"Arsenal card invalid, key [{card.HEX}] is invalid.");
+                }
+
+                if (card.SCHOOL != SkillDB.SkillMap[card.HEX])
+                {
+                    throw new AppException($"Arsenal card invalid, school is invalid for key [{card.HEX}]. Expected [{SkillDB.SkillMap[card.HEX]}] but found [{card.SCHOOL}]");
+                }
+            }
+
             if (arsenal.ArsenalIndex == null || arsenal.ArsenalIndex < 0 || arsenal.ArsenalIndex > 15)
             {
                 throw new AppException($"Invalid arsenal index [{arsenal.ArsenalIndex}]");
