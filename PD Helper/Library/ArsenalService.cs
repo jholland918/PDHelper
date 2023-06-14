@@ -16,8 +16,6 @@ namespace PD_Helper.Library
     /// </summary>
     internal class ArsenalService
     {
-        Dictionary<string, PDCard> cardDef = JsonConvert.DeserializeObject<Dictionary<string, PDCard>>(File.ReadAllText("SkillDB.json"));
-
         public Arsenal LoadArsenal(string arsenalName)
         {
             var arsenal = new Arsenal();
@@ -39,14 +37,14 @@ namespace PD_Helper.Library
                     arsenal.SchoolAmount = int.Parse(loadSchoolAmount);
                     for (int i = 0; i < 30; i++)
                     {
-                        if (!cardDef.ContainsKey(deckStrings[i]))
+                        if (!SkillDB.Skills.ContainsKey(deckStrings[i]))
                         {
                             MessageBox.Show("ERROR09: A Skill from your loaded arsenal does not exist in the game and could not be loaded. The arsenal has been tampered with or was corrupted. Please try loading another arsenal.");
                             break;
                         }
                         else
                         {
-                            arsenal.Cards[i] = cardDef[deckStrings[i]];
+                            arsenal.Cards[i] = SkillDB.Skills[deckStrings[i]];
                         }
                     }
                 }

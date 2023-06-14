@@ -12,7 +12,6 @@ namespace PD_Helper.Library
     {
         private readonly string[] arsenalNameOffsets = { "8", "6C", "D0", "134", "198", "1FC", "260", "2C4", "328", "38C", "3F0", "454", "4B8", "51C", "580", "5E4" };
         private readonly string[] arsenalSkillOffsets = { "18", "7C", "E0", "144", "1A8", "20C", "270", "2D4", "338", "39C", "400", "464", "4C8", "52C", "590", "5F4" };
-        private readonly Dictionary<string, PDCard> cardDef = JsonConvert.DeserializeObject<Dictionary<string, PDCard>>(File.ReadAllText("SkillDB.json"));
 
         /// <summary>
         /// Initializes the the <see cref="GameProfile"/> Instance.
@@ -76,7 +75,7 @@ namespace PD_Helper.Library
                 if (i < 30)
                 {
                     // The cards are the first thirty hex values.
-                    arsenal.Cards[i] = cardDef[currentHexString];
+                    arsenal.Cards[i] = SkillDB.Skills[currentHexString];
                 }
                 else
                 {
