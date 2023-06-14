@@ -2,6 +2,9 @@
 
 namespace PD_Helper.Library
 {
+    /// <summary>
+    /// Contains some common images for the application.
+    /// </summary>
     internal static class AppImages
     {
         public static readonly Image Bug = Image.FromFile(@"Assets\bug.png");

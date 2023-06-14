@@ -7,6 +7,12 @@ using static PD_Helper.Form1;
 
 namespace PD_Helper.Library
 {
+    /// <summary>
+    /// Represents a player's arsenal.
+    /// </summary>
+    /// <remarks>
+    /// This could be an arsenal that has been loaded from the Phantom Dust game, the filesystem, or created from scratch within PD Helper.
+    /// </remarks>
     internal class Arsenal
     {
         /// <summary>
@@ -56,24 +62,6 @@ namespace PD_Helper.Library
         public void SetSchoolAmount(string schoolAmountHex)
         {
             SchoolAmount = int.Parse(schoolAmountHex.Remove(schoolAmountHex.Length - 3));
-        }
-
-        public string[] ToHexDeck()
-        {
-            if (Cards.Length != 30)
-            {
-                throw new AppException($"Invalid card count [{Cards.Length}], cannot convert to valid Hex Deck.");
-            }
-
-            if (SchoolAmount < 1 || SchoolAmount > 3)
-            {
-                throw new AppException($"Invalid school count [{SchoolAmount}], cannot convert to valid Hex Deck.");
-            }
-
-            var output = Cards.Select(c => c.HEX).ToList();
-            output.Add($"0{SchoolAmount} 00");
-
-            return output.ToArray();
         }
     }
 }

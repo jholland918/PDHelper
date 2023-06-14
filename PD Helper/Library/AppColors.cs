@@ -2,6 +2,9 @@
 
 namespace PD_Helper.Library
 {
+    /// <summary>
+    /// Contains some common colors for the application.
+    /// </summary>
     internal class AppColors
     {
         public static readonly Color Attack = Color.FromArgb(220, 107, 69);

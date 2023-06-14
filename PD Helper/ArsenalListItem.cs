@@ -19,7 +19,7 @@ namespace PD_Helper
     {
         private Arsenal _arsenal;
         private readonly ArsenalService _arsenalService = new();
-        private readonly GameProfileService _gameProfileService = new();
+        private readonly GameService _gameService = new();
         private static Dictionary<string, PictureBox> SchoolPictures = new Dictionary<string, PictureBox>();
 
         // https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.toolstripitem?view=windowsdesktop-7.0#remarks
@@ -106,8 +106,9 @@ namespace PD_Helper
             }
 
             Debug.WriteLine($"Saving [{_arsenal.ArsenalName}] to index [{_saveArsenalIndex})");
-            var profile = _gameProfileService.LoadGameProfile();
-            _gameProfileService.WritePdhArsenalToGameArsenal(_arsenal, _saveArsenalIndex - 1);
+            
+            _arsenal.ArsenalIndex = _saveArsenalIndex - 1;
+            _gameService.WriteArsenal(_arsenal);
         }
 
         private void InitializeSchoolPictures()

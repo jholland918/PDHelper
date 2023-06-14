@@ -1,7 +1,7 @@
 ﻿namespace PD_Helper.Library
 {
     /// <summary>
-    /// Custom application exception used to throw exceptions meant to be displayed to the user
+    /// Custom application exception used to throw exceptions meant to be displayed to the user.
     /// </summary>
     internal class AppException : Exception
     {

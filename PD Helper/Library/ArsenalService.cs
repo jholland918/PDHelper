@@ -11,6 +11,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PD_Helper.Library
 {
+    /// <summary>
+    /// Various methods to operate on an <see cref="Arsenal"/>
+    /// </summary>
     internal class ArsenalService
     {
         Dictionary<string, PDCard> cardDef = JsonConvert.DeserializeObject<Dictionary<string, PDCard>>(File.ReadAllText("SkillDB.json"));
@@ -33,7 +36,7 @@ namespace PD_Helper.Library
                 string loadSchoolAmount = deckStrings[30].Remove(deckStrings[30].Length - 3);
                 if (loadSchoolAmount == "01" || loadSchoolAmount == "02" || loadSchoolAmount == "03")
                 {
-                    arsenal.SchoolAmount = Int32.Parse(loadSchoolAmount);
+                    arsenal.SchoolAmount = int.Parse(loadSchoolAmount);
                     for (int i = 0; i < 30; i++)
                     {
                         if (!cardDef.ContainsKey(deckStrings[i]))

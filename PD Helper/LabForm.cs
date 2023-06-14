@@ -16,7 +16,7 @@ namespace PD_Helper
 {
     public partial class LabForm : Form
     {
-        private readonly GameProfileService _gameProfileService = new();
+        private readonly GameService _gameService = new();
         private readonly ArsenalService _arsenalService = new();
         private readonly List<Button> _arsenalSkills = new();
         private Dictionary<string, PictureBox> _schoolPictures;
