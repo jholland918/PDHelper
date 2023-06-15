@@ -207,5 +207,20 @@ namespace PD_Helper
             ArsenalNameLabel.Text = newName;
             _arsenalListItems.Where(i => i.ArsenalName == oldName).First().ArsenalName = newName;
         }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            string arsenalName = ArsenalNameLabel.Text;
+            if (!ConfirmForm.Show($"Delete arsenal \"{arsenalName}\"?"))
+            {
+                return;
+            }
+            
+            _arsenalService.Delete(arsenalName);
+
+            ArsenalList.Controls.Clear();
+            _arsenalListItems.Clear();
+            InitializeArsenalList();
+        }
     }
 }

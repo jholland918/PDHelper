@@ -27,6 +27,19 @@ namespace PD_Helper.Library
             }
         }
 
+        public void Delete(string arsenalName)
+        {
+            DirectoryInfo directory = new DirectoryInfo(@"Arsenals\");
+
+            var file = Path.Combine(directory.FullName, $"{arsenalName}.arsenal");
+            if (!File.Exists(file))
+            {
+                throw new AppException($"File not found! [{file}]");
+            }
+
+            File.Delete(file);
+        }
+
         public void Rename(string oldName, string newName)
         {
             CheckArsenalName(newName);

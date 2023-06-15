@@ -9,7 +9,7 @@
 
         public static string Show(string promptText, string inputValue = null)
         {
-            PromptForm form = new PromptForm()
+            var form = new PromptForm()
             {
                 FormBorderStyle = FormBorderStyle.FixedDialog,
                 StartPosition = FormStartPosition.CenterScreen

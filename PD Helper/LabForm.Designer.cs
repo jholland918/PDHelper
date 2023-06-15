@@ -40,6 +40,14 @@
             this.ArsenalFilterTextBox = new PD_Helper.CueTextBox();
             this.SearchLabel = new System.Windows.Forms.Label();
             this.ArsenalPanel = new System.Windows.Forms.Panel();
+            this.DeleteButton = new System.Windows.Forms.Button();
+            this.NewButton = new System.Windows.Forms.Button();
+            this.ExportButton = new System.Windows.Forms.Button();
+            this.ImportButton = new System.Windows.Forms.Button();
+            this.RenameButton = new System.Windows.Forms.Button();
+            this.SortButton = new System.Windows.Forms.Button();
+            this.CancelChangesButton = new System.Windows.Forms.Button();
+            this.SaveChangesButton = new System.Windows.Forms.Button();
             this.CardTable = new System.Windows.Forms.TableLayoutPanel();
             this.CardTitlePanel = new System.Windows.Forms.Panel();
             this.CardSchoolPicture = new System.Windows.Forms.PictureBox();
@@ -90,14 +98,6 @@
             this.ArsenalSkill28 = new System.Windows.Forms.Button();
             this.ArsenalSkill29 = new System.Windows.Forms.Button();
             this.ArsenalSkill30 = new System.Windows.Forms.Button();
-            this.SaveChangesButton = new System.Windows.Forms.Button();
-            this.CancelChangesButton = new System.Windows.Forms.Button();
-            this.RenameButton = new System.Windows.Forms.Button();
-            this.SortButton = new System.Windows.Forms.Button();
-            this.ExportButton = new System.Windows.Forms.Button();
-            this.ImportButton = new System.Windows.Forms.Button();
-            this.DeleteButton = new System.Windows.Forms.Button();
-            this.NewButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.MainContainer)).BeginInit();
             this.MainContainer.Panel1.SuspendLayout();
             this.MainContainer.Panel2.SuspendLayout();
@@ -282,6 +282,80 @@
             this.ArsenalPanel.Size = new System.Drawing.Size(617, 593);
             this.ArsenalPanel.TabIndex = 0;
             this.ArsenalPanel.Visible = false;
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Location = new System.Drawing.Point(104, 483);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(94, 23);
+            this.DeleteButton.TabIndex = 11;
+            this.DeleteButton.Text = "Delete";
+            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            // 
+            // NewButton
+            // 
+            this.NewButton.Location = new System.Drawing.Point(6, 483);
+            this.NewButton.Name = "NewButton";
+            this.NewButton.Size = new System.Drawing.Size(94, 23);
+            this.NewButton.TabIndex = 10;
+            this.NewButton.Text = "New";
+            this.NewButton.UseVisualStyleBackColor = true;
+            // 
+            // ExportButton
+            // 
+            this.ExportButton.Location = new System.Drawing.Point(104, 454);
+            this.ExportButton.Name = "ExportButton";
+            this.ExportButton.Size = new System.Drawing.Size(94, 23);
+            this.ExportButton.TabIndex = 9;
+            this.ExportButton.Text = "Export";
+            this.ExportButton.UseVisualStyleBackColor = true;
+            // 
+            // ImportButton
+            // 
+            this.ImportButton.Location = new System.Drawing.Point(6, 454);
+            this.ImportButton.Name = "ImportButton";
+            this.ImportButton.Size = new System.Drawing.Size(94, 23);
+            this.ImportButton.TabIndex = 8;
+            this.ImportButton.Text = "Import";
+            this.ImportButton.UseVisualStyleBackColor = true;
+            // 
+            // RenameButton
+            // 
+            this.RenameButton.Location = new System.Drawing.Point(104, 425);
+            this.RenameButton.Name = "RenameButton";
+            this.RenameButton.Size = new System.Drawing.Size(94, 23);
+            this.RenameButton.TabIndex = 7;
+            this.RenameButton.Text = "Rename";
+            this.RenameButton.UseVisualStyleBackColor = true;
+            this.RenameButton.Click += new System.EventHandler(this.RenameButton_Click);
+            // 
+            // SortButton
+            // 
+            this.SortButton.Location = new System.Drawing.Point(6, 425);
+            this.SortButton.Name = "SortButton";
+            this.SortButton.Size = new System.Drawing.Size(94, 23);
+            this.SortButton.TabIndex = 6;
+            this.SortButton.Text = "Sort";
+            this.SortButton.UseVisualStyleBackColor = true;
+            // 
+            // CancelChangesButton
+            // 
+            this.CancelChangesButton.Location = new System.Drawing.Point(104, 396);
+            this.CancelChangesButton.Name = "CancelChangesButton";
+            this.CancelChangesButton.Size = new System.Drawing.Size(94, 23);
+            this.CancelChangesButton.TabIndex = 5;
+            this.CancelChangesButton.Text = "Cancel";
+            this.CancelChangesButton.UseVisualStyleBackColor = true;
+            // 
+            // SaveChangesButton
+            // 
+            this.SaveChangesButton.Location = new System.Drawing.Point(6, 396);
+            this.SaveChangesButton.Name = "SaveChangesButton";
+            this.SaveChangesButton.Size = new System.Drawing.Size(94, 23);
+            this.SaveChangesButton.TabIndex = 4;
+            this.SaveChangesButton.Text = "Save";
+            this.SaveChangesButton.UseVisualStyleBackColor = true;
             // 
             // CardTable
             // 
@@ -995,79 +1069,6 @@
             this.ArsenalSkill30.Text = "button30";
             this.ArsenalSkill30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill30.UseVisualStyleBackColor = true;
-            // 
-            // SaveChangesButton
-            // 
-            this.SaveChangesButton.Location = new System.Drawing.Point(6, 396);
-            this.SaveChangesButton.Name = "SaveChangesButton";
-            this.SaveChangesButton.Size = new System.Drawing.Size(94, 23);
-            this.SaveChangesButton.TabIndex = 4;
-            this.SaveChangesButton.Text = "Save";
-            this.SaveChangesButton.UseVisualStyleBackColor = true;
-            // 
-            // CancelChangesButton
-            // 
-            this.CancelChangesButton.Location = new System.Drawing.Point(104, 396);
-            this.CancelChangesButton.Name = "CancelChangesButton";
-            this.CancelChangesButton.Size = new System.Drawing.Size(94, 23);
-            this.CancelChangesButton.TabIndex = 5;
-            this.CancelChangesButton.Text = "Cancel";
-            this.CancelChangesButton.UseVisualStyleBackColor = true;
-            // 
-            // RenameButton
-            // 
-            this.RenameButton.Location = new System.Drawing.Point(104, 425);
-            this.RenameButton.Name = "RenameButton";
-            this.RenameButton.Size = new System.Drawing.Size(94, 23);
-            this.RenameButton.TabIndex = 7;
-            this.RenameButton.Text = "Rename";
-            this.RenameButton.UseVisualStyleBackColor = true;
-            this.RenameButton.Click += new System.EventHandler(this.RenameButton_Click);
-            // 
-            // SortButton
-            // 
-            this.SortButton.Location = new System.Drawing.Point(6, 425);
-            this.SortButton.Name = "SortButton";
-            this.SortButton.Size = new System.Drawing.Size(94, 23);
-            this.SortButton.TabIndex = 6;
-            this.SortButton.Text = "Sort";
-            this.SortButton.UseVisualStyleBackColor = true;
-            // 
-            // ExportButton
-            // 
-            this.ExportButton.Location = new System.Drawing.Point(104, 454);
-            this.ExportButton.Name = "ExportButton";
-            this.ExportButton.Size = new System.Drawing.Size(94, 23);
-            this.ExportButton.TabIndex = 9;
-            this.ExportButton.Text = "Export";
-            this.ExportButton.UseVisualStyleBackColor = true;
-            // 
-            // ImportButton
-            // 
-            this.ImportButton.Location = new System.Drawing.Point(6, 454);
-            this.ImportButton.Name = "ImportButton";
-            this.ImportButton.Size = new System.Drawing.Size(94, 23);
-            this.ImportButton.TabIndex = 8;
-            this.ImportButton.Text = "Import";
-            this.ImportButton.UseVisualStyleBackColor = true;
-            // 
-            // DeleteButton
-            // 
-            this.DeleteButton.Location = new System.Drawing.Point(104, 483);
-            this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(94, 23);
-            this.DeleteButton.TabIndex = 11;
-            this.DeleteButton.Text = "Delete";
-            this.DeleteButton.UseVisualStyleBackColor = true;
-            // 
-            // NewButton
-            // 
-            this.NewButton.Location = new System.Drawing.Point(6, 483);
-            this.NewButton.Name = "NewButton";
-            this.NewButton.Size = new System.Drawing.Size(94, 23);
-            this.NewButton.TabIndex = 10;
-            this.NewButton.Text = "New";
-            this.NewButton.UseVisualStyleBackColor = true;
             // 
             // LabForm
             // 
