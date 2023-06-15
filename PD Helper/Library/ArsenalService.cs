@@ -1,4 +1,5 @@
-﻿using static PD_Helper.Form1;
+﻿using System.Text.RegularExpressions;
+using static PD_Helper.Form1;
 
 namespace PD_Helper.Library
 {
@@ -7,6 +8,45 @@ namespace PD_Helper.Library
     /// </summary>
     internal class ArsenalService
     {
+        public void CheckArsenalName(string name)
+        {
+            if (name == null || name.Length == 0)
+            {
+                throw new AppException("Invalid arsenal name, must not be null or empty");
+            }
+
+            if (name.Length > 15)
+            {
+                throw new AppException($"Invalid arsenal name, exceeds 15 character maximum. [{name}]");
+            }
+
+            Regex r = new Regex("^[a-zA-Z0-9]*$");
+            if (!r.IsMatch(name.Replace(" ", "")))
+            {
+                throw new AppException($"Invalid arsenal name, only characters 0-9, a-z, A-Z, and spaces are allowed. [{name}]");
+            }
+        }
+
+        public void Rename(string oldName, string newName)
+        {
+            CheckArsenalName(newName);
+            DirectoryInfo directory = new DirectoryInfo(@"Arsenals\");
+
+            var oldFile = Path.Combine(directory.FullName, $"{oldName}.arsenal");
+            if (!File.Exists(oldFile))
+            {
+                throw new AppException($"File not found! [{oldFile}]");
+            }
+
+            var newFile = Path.Combine(directory.FullName, $"{newName}.arsenal");
+            if (File.Exists(newFile))
+            {
+                throw new AppException($"File already exists with that name! [{oldFile}]");
+            }
+
+            File.Move(oldFile, newFile);
+        }
+
         public Arsenal LoadArsenal(string arsenalName)
         {
             var arsenal = new Arsenal();

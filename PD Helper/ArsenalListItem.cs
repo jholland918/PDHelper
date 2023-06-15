@@ -33,8 +33,21 @@ namespace PD_Helper
         private readonly Color BackgroundColorHover = Color.FromArgb(67, 11, 15);
         private readonly Color ForegroundColor = Color.FromArgb(92, 172, 149);
         private readonly Color ForegroundColorHover = Color.FromArgb(216, 185, 24);
-
         private bool IsActive = false;
+
+        public string ArsenalName
+        {
+            get
+            {
+                return _arsenal.ArsenalName;
+            }
+
+            set
+            {
+                _arsenal.ArsenalName = value;
+                ArsenalNameLabel.Text = value;
+            }
+        }
 
         public ArsenalListItem(string arsenalName)
             : this()

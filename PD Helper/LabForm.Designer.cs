@@ -90,6 +90,14 @@
             this.ArsenalSkill28 = new System.Windows.Forms.Button();
             this.ArsenalSkill29 = new System.Windows.Forms.Button();
             this.ArsenalSkill30 = new System.Windows.Forms.Button();
+            this.SaveChangesButton = new System.Windows.Forms.Button();
+            this.CancelChangesButton = new System.Windows.Forms.Button();
+            this.RenameButton = new System.Windows.Forms.Button();
+            this.SortButton = new System.Windows.Forms.Button();
+            this.ExportButton = new System.Windows.Forms.Button();
+            this.ImportButton = new System.Windows.Forms.Button();
+            this.DeleteButton = new System.Windows.Forms.Button();
+            this.NewButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.MainContainer)).BeginInit();
             this.MainContainer.Panel1.SuspendLayout();
             this.MainContainer.Panel2.SuspendLayout();
@@ -257,6 +265,14 @@
             // ArsenalPanel
             // 
             this.ArsenalPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(49)))));
+            this.ArsenalPanel.Controls.Add(this.DeleteButton);
+            this.ArsenalPanel.Controls.Add(this.NewButton);
+            this.ArsenalPanel.Controls.Add(this.ExportButton);
+            this.ArsenalPanel.Controls.Add(this.ImportButton);
+            this.ArsenalPanel.Controls.Add(this.RenameButton);
+            this.ArsenalPanel.Controls.Add(this.SortButton);
+            this.ArsenalPanel.Controls.Add(this.CancelChangesButton);
+            this.ArsenalPanel.Controls.Add(this.SaveChangesButton);
             this.ArsenalPanel.Controls.Add(this.CardTable);
             this.ArsenalPanel.Controls.Add(this.HeaderTableLayout);
             this.ArsenalPanel.Controls.Add(this.ArsenalTable);
@@ -274,13 +290,13 @@
             this.CardTable.Controls.Add(this.CardTitlePanel, 0, 0);
             this.CardTable.Controls.Add(this.CardSubtitlePanel, 0, 1);
             this.CardTable.Controls.Add(this.CardDescriptionPanel, 0, 2);
-            this.CardTable.Location = new System.Drawing.Point(6, 396);
+            this.CardTable.Location = new System.Drawing.Point(204, 396);
             this.CardTable.Name = "CardTable";
             this.CardTable.RowCount = 3;
             this.CardTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.CardTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.CardTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.CardTable.Size = new System.Drawing.Size(596, 185);
+            this.CardTable.Size = new System.Drawing.Size(398, 185);
             this.CardTable.TabIndex = 3;
             // 
             // CardTitlePanel
@@ -292,13 +308,13 @@
             this.CardTitlePanel.Location = new System.Drawing.Point(0, 0);
             this.CardTitlePanel.Margin = new System.Windows.Forms.Padding(0);
             this.CardTitlePanel.Name = "CardTitlePanel";
-            this.CardTitlePanel.Size = new System.Drawing.Size(596, 37);
+            this.CardTitlePanel.Size = new System.Drawing.Size(398, 37);
             this.CardTitlePanel.TabIndex = 0;
             // 
             // CardSchoolPicture
             // 
             this.CardSchoolPicture.Dock = System.Windows.Forms.DockStyle.Right;
-            this.CardSchoolPicture.Location = new System.Drawing.Point(496, 0);
+            this.CardSchoolPicture.Location = new System.Drawing.Point(298, 0);
             this.CardSchoolPicture.Margin = new System.Windows.Forms.Padding(0);
             this.CardSchoolPicture.Name = "CardSchoolPicture";
             this.CardSchoolPicture.Size = new System.Drawing.Size(100, 37);
@@ -326,7 +342,7 @@
             this.CardSubtitlePanel.Location = new System.Drawing.Point(0, 37);
             this.CardSubtitlePanel.Margin = new System.Windows.Forms.Padding(0);
             this.CardSubtitlePanel.Name = "CardSubtitlePanel";
-            this.CardSubtitlePanel.Size = new System.Drawing.Size(596, 37);
+            this.CardSubtitlePanel.Size = new System.Drawing.Size(398, 37);
             this.CardSubtitlePanel.TabIndex = 1;
             // 
             // CardSubtitleLabel
@@ -351,7 +367,7 @@
             this.CardDescriptionPanel.Margin = new System.Windows.Forms.Padding(0);
             this.CardDescriptionPanel.Name = "CardDescriptionPanel";
             this.CardDescriptionPanel.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-            this.CardDescriptionPanel.Size = new System.Drawing.Size(596, 111);
+            this.CardDescriptionPanel.Size = new System.Drawing.Size(398, 111);
             this.CardDescriptionPanel.TabIndex = 2;
             // 
             // CardDescriptionLabel
@@ -980,6 +996,79 @@
             this.ArsenalSkill30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill30.UseVisualStyleBackColor = true;
             // 
+            // SaveChangesButton
+            // 
+            this.SaveChangesButton.Location = new System.Drawing.Point(6, 396);
+            this.SaveChangesButton.Name = "SaveChangesButton";
+            this.SaveChangesButton.Size = new System.Drawing.Size(94, 23);
+            this.SaveChangesButton.TabIndex = 4;
+            this.SaveChangesButton.Text = "Save";
+            this.SaveChangesButton.UseVisualStyleBackColor = true;
+            // 
+            // CancelChangesButton
+            // 
+            this.CancelChangesButton.Location = new System.Drawing.Point(104, 396);
+            this.CancelChangesButton.Name = "CancelChangesButton";
+            this.CancelChangesButton.Size = new System.Drawing.Size(94, 23);
+            this.CancelChangesButton.TabIndex = 5;
+            this.CancelChangesButton.Text = "Cancel";
+            this.CancelChangesButton.UseVisualStyleBackColor = true;
+            // 
+            // RenameButton
+            // 
+            this.RenameButton.Location = new System.Drawing.Point(104, 425);
+            this.RenameButton.Name = "RenameButton";
+            this.RenameButton.Size = new System.Drawing.Size(94, 23);
+            this.RenameButton.TabIndex = 7;
+            this.RenameButton.Text = "Rename";
+            this.RenameButton.UseVisualStyleBackColor = true;
+            this.RenameButton.Click += new System.EventHandler(this.RenameButton_Click);
+            // 
+            // SortButton
+            // 
+            this.SortButton.Location = new System.Drawing.Point(6, 425);
+            this.SortButton.Name = "SortButton";
+            this.SortButton.Size = new System.Drawing.Size(94, 23);
+            this.SortButton.TabIndex = 6;
+            this.SortButton.Text = "Sort";
+            this.SortButton.UseVisualStyleBackColor = true;
+            // 
+            // ExportButton
+            // 
+            this.ExportButton.Location = new System.Drawing.Point(104, 454);
+            this.ExportButton.Name = "ExportButton";
+            this.ExportButton.Size = new System.Drawing.Size(94, 23);
+            this.ExportButton.TabIndex = 9;
+            this.ExportButton.Text = "Export";
+            this.ExportButton.UseVisualStyleBackColor = true;
+            // 
+            // ImportButton
+            // 
+            this.ImportButton.Location = new System.Drawing.Point(6, 454);
+            this.ImportButton.Name = "ImportButton";
+            this.ImportButton.Size = new System.Drawing.Size(94, 23);
+            this.ImportButton.TabIndex = 8;
+            this.ImportButton.Text = "Import";
+            this.ImportButton.UseVisualStyleBackColor = true;
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Location = new System.Drawing.Point(104, 483);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(94, 23);
+            this.DeleteButton.TabIndex = 11;
+            this.DeleteButton.Text = "Delete";
+            this.DeleteButton.UseVisualStyleBackColor = true;
+            // 
+            // NewButton
+            // 
+            this.NewButton.Location = new System.Drawing.Point(6, 483);
+            this.NewButton.Name = "NewButton";
+            this.NewButton.Size = new System.Drawing.Size(94, 23);
+            this.NewButton.TabIndex = 10;
+            this.NewButton.Text = "New";
+            this.NewButton.UseVisualStyleBackColor = true;
+            // 
             // LabForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1084,5 +1173,13 @@
         private Label SaveToGameLabel;
         private Label SearchLabel;
         private Panel SearchPanel;
+        private Button DeleteButton;
+        private Button NewButton;
+        private Button ExportButton;
+        private Button ImportButton;
+        private Button RenameButton;
+        private Button SortButton;
+        private Button CancelChangesButton;
+        private Button SaveChangesButton;
     }
 }

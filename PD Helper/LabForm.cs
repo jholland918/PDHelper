@@ -83,6 +83,8 @@ namespace PD_Helper
             };
         }
 
+        private List<ArsenalListItem> _arsenalListItems = new List<ArsenalListItem>();
+
         private void InitializeArsenalList()
         {
             var arsenalNames = GetPdHelperArsenals();
@@ -92,6 +94,7 @@ namespace PD_Helper
                 var arsenal = _arsenalService.LoadArsenal(arsenalName);
 
                 var arsenalListItem = new ArsenalListItem(arsenalName);
+                _arsenalListItems.Add(arsenalListItem);
 
                 var cards = _arsenalService.SortCards(arsenal.Cards.ToList());
 
@@ -110,7 +113,7 @@ namespace PD_Helper
                         arsenalListItem.SetActiveColors();
                     }
 
-                    RenderArsenal(arsenalName, cards, schools, schoolCount, skillsOverAura);
+                    RenderArsenal(arsenalListItem.ArsenalName, cards, schools, schoolCount, skillsOverAura);
                 };
 
                 AddItem(ArsenalList, arsenalListItem, arsenalName);
@@ -189,6 +192,20 @@ namespace PD_Helper
             FileInfo[] Files = directory.GetFiles("*.arsenal"); //Getting Text files
 
             return Files.Select(f => Path.GetFileNameWithoutExtension(f.Name));
+        }
+
+        private void RenameButton_Click(object sender, EventArgs e)
+        {
+            string newName = PromptForm.Show("Enter new arsenal name", ArsenalNameLabel.Text).Trim();
+            if (newName.Length == 0)
+            {
+                return;
+            }
+
+            string oldName = ArsenalNameLabel.Text;
+            _arsenalService.Rename(oldName, newName);
+            ArsenalNameLabel.Text = newName;
+            _arsenalListItems.Where(i => i.ArsenalName == oldName).First().ArsenalName = newName;
         }
     }
 }
