@@ -1,7 +1,5 @@
-﻿using Newtonsoft.Json;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Text;
-using static PD_Helper.Form1;
 
 namespace PD_Helper.Library
 {

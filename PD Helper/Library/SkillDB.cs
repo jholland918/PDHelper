@@ -25,7 +25,7 @@ namespace PD_Helper.Library
 
         #region Skill Map
         /// <summary>
-        /// Authoritative skill to school mapping for validation use.
+        /// Authoritative skill-to-school mapping for validation use.
         /// </summary>
         public static readonly Dictionary<string, string> SkillMap = new Dictionary<string, string>
         {
