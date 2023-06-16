@@ -157,11 +157,13 @@ namespace PD_Helper
             {
                 if (schools.Contains(schoolPicture.Key))
                 {
-                    schoolPicture.Value.Show();
+                    schoolPicture.Value.Image = AppImages.GetSchool(schoolPicture.Key);
+                    schoolPicture.Value.BackColor = Color.FromArgb(92, 172, 149);
                 }
                 else
                 {
-                    schoolPicture.Value.Hide();
+                    schoolPicture.Value.Image = null;
+                    schoolPicture.Value.BackColor = Color.Transparent;
                 }
             }
 
