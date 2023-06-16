@@ -62,7 +62,7 @@ namespace PD_Helper
 
         private void Initialize(string arsenalName)
         {
-            for (int i = 1; i<= 16; i++)
+            for (int i = 1; i <= 16; i++)
             {
                 var button = new ToolStripButton($"ARSENAL {i.ToString().PadLeft(2, '0')}");
                 // Due to scoping behavior, we must copy the i value to a locally scoped variable (indexCopy) to retain the current value passed to the click handler.
@@ -95,11 +95,13 @@ namespace PD_Helper
             {
                 if (schools.Contains(schoolPicture.Key))
                 {
-                    schoolPicture.Value.Show();
+                    schoolPicture.Value.Image = AppImages.GetSchool(schoolPicture.Key);
+                    schoolPicture.Value.BackColor = Color.FromArgb(92, 172, 149);
                 }
                 else
                 {
-                    schoolPicture.Value.Hide();
+                    schoolPicture.Value.Image = null;
+                    schoolPicture.Value.BackColor = Color.Transparent;
                 }
             }
 
@@ -123,7 +125,7 @@ namespace PD_Helper
             }
 
             Debug.WriteLine($"Saving [{_arsenal.ArsenalName}] to index [{_saveArsenalIndex})");
-            
+
             _arsenal.ArsenalIndex = _saveArsenalIndex - 1;
             _gameService.WriteArsenal(_arsenal);
         }
@@ -159,14 +161,14 @@ namespace PD_Helper
             SkillsOverAuraLabel.ForeColor = ForegroundColorHover;
             SaveButton.ForeColor = ForegroundColorHover;
             SaveDropdownMenu.ForeColor = ForegroundColorHover;
-
-            ContainerTable.BackColor = BackgroundColorHover;
+            MainContainer.BackColor = BackgroundColorHover;
             ArsenalCasePicture.BackColor = ForegroundColorHover;
-            SchoolPicturePsycho.BackColor = ForegroundColorHover;
-            SchoolPictureOptical.BackColor = ForegroundColorHover;
-            SchoolPictureNature.BackColor = ForegroundColorHover;
-            SchoolPictureKi.BackColor = ForegroundColorHover;
-            SchoolPictureFaith.BackColor = ForegroundColorHover;
+
+            SchoolPicturePsycho.BackColor = SchoolPicturePsycho.Image == null ? Color.Transparent : ForegroundColorHover;
+            SchoolPictureOptical.BackColor = SchoolPictureOptical.Image == null ? Color.Transparent : ForegroundColorHover;
+            SchoolPictureNature.BackColor = SchoolPictureNature.Image == null ? Color.Transparent : ForegroundColorHover;
+            SchoolPictureKi.BackColor = SchoolPictureKi.Image == null ? Color.Transparent : ForegroundColorHover;
+            SchoolPictureFaith.BackColor = SchoolPictureFaith.Image == null ? Color.Transparent : ForegroundColorHover;
 
         }
 
@@ -183,14 +185,14 @@ namespace PD_Helper
             SkillsOverAuraLabel.ForeColor = ForegroundColor;
             SaveButton.ForeColor = ForegroundColor;
             SaveDropdownMenu.ForeColor = ForegroundColor;
-
-            ContainerTable.BackColor = BackgroundColor;
+            MainContainer.BackColor = BackgroundColor;
             ArsenalCasePicture.BackColor = ForegroundColor;
-            SchoolPicturePsycho.BackColor = ForegroundColor;
-            SchoolPictureOptical.BackColor = ForegroundColor;
-            SchoolPictureNature.BackColor = ForegroundColor;
-            SchoolPictureKi.BackColor = ForegroundColor;
-            SchoolPictureFaith.BackColor = ForegroundColor;
+
+            SchoolPicturePsycho.BackColor = SchoolPicturePsycho.Image == null ? Color.Transparent : ForegroundColor;
+            SchoolPictureOptical.BackColor = SchoolPictureOptical.Image == null ? Color.Transparent : ForegroundColor;
+            SchoolPictureNature.BackColor = SchoolPictureNature.Image == null ? Color.Transparent : ForegroundColor;
+            SchoolPictureKi.BackColor = SchoolPictureKi.Image == null ? Color.Transparent : ForegroundColor;
+            SchoolPictureFaith.BackColor = SchoolPictureFaith.Image == null ? Color.Transparent : ForegroundColor;
         }
 
         private void RedirectMouseEnter(object sender, EventArgs e)
