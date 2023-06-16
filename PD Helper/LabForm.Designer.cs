@@ -40,7 +40,7 @@
             this.ArsenalFilterTextBox = new PD_Helper.CueTextBox();
             this.SearchLabel = new System.Windows.Forms.Label();
             this.ArsenalPanel = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.ArsenalHeaderPanel = new System.Windows.Forms.Panel();
             this.SchoolPicturePsycho = new System.Windows.Forms.PictureBox();
             this.SkillsOverAuraLabel = new System.Windows.Forms.Label();
             this.SchoolPictureOptical = new System.Windows.Forms.PictureBox();
@@ -103,7 +103,7 @@
             this.ArsenalListHeader.SuspendLayout();
             this.SearchPanel.SuspendLayout();
             this.ArsenalPanel.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.ArsenalHeaderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SchoolPicturePsycho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureOptical)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ArsenalCasePicture)).BeginInit();
@@ -259,7 +259,7 @@
             // ArsenalPanel
             // 
             this.ArsenalPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(49)))));
-            this.ArsenalPanel.Controls.Add(this.panel1);
+            this.ArsenalPanel.Controls.Add(this.ArsenalHeaderPanel);
             this.ArsenalPanel.Controls.Add(this.DeleteButton);
             this.ArsenalPanel.Controls.Add(this.NewButton);
             this.ArsenalPanel.Controls.Add(this.RenameButton);
@@ -275,20 +275,20 @@
             this.ArsenalPanel.TabIndex = 0;
             this.ArsenalPanel.Visible = false;
             // 
-            // panel1
+            // ArsenalHeaderPanel
             // 
-            this.panel1.Controls.Add(this.ArsenalCasePicture);
-            this.panel1.Controls.Add(this.ArsenalNameLabel);
-            this.panel1.Controls.Add(this.SkillsOverAuraLabel);
-            this.panel1.Controls.Add(this.SchoolPicturePsycho);
-            this.panel1.Controls.Add(this.SchoolPictureOptical);
-            this.panel1.Controls.Add(this.SchoolPictureNature);
-            this.panel1.Controls.Add(this.SchoolPictureKi);
-            this.panel1.Controls.Add(this.SchoolPictureFaith);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(603, 67);
-            this.panel1.TabIndex = 12;
+            this.ArsenalHeaderPanel.Controls.Add(this.ArsenalCasePicture);
+            this.ArsenalHeaderPanel.Controls.Add(this.ArsenalNameLabel);
+            this.ArsenalHeaderPanel.Controls.Add(this.SkillsOverAuraLabel);
+            this.ArsenalHeaderPanel.Controls.Add(this.SchoolPicturePsycho);
+            this.ArsenalHeaderPanel.Controls.Add(this.SchoolPictureOptical);
+            this.ArsenalHeaderPanel.Controls.Add(this.SchoolPictureNature);
+            this.ArsenalHeaderPanel.Controls.Add(this.SchoolPictureKi);
+            this.ArsenalHeaderPanel.Controls.Add(this.SchoolPictureFaith);
+            this.ArsenalHeaderPanel.Location = new System.Drawing.Point(3, 3);
+            this.ArsenalHeaderPanel.Name = "ArsenalHeaderPanel";
+            this.ArsenalHeaderPanel.Size = new System.Drawing.Size(603, 67);
+            this.ArsenalHeaderPanel.TabIndex = 12;
             // 
             // SchoolPicturePsycho
             // 
@@ -1030,8 +1030,8 @@
             this.SearchPanel.ResumeLayout(false);
             this.SearchPanel.PerformLayout();
             this.ArsenalPanel.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.ArsenalHeaderPanel.ResumeLayout(false);
+            this.ArsenalHeaderPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SchoolPicturePsycho)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureOptical)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ArsenalCasePicture)).EndInit();
@@ -1114,6 +1114,6 @@
         private Button SortButton;
         private Button CancelChangesButton;
         private Button SaveChangesButton;
-        private Panel panel1;
+        private Panel ArsenalHeaderPanel;
     }
 }
