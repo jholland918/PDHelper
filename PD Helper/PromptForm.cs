@@ -15,7 +15,7 @@
                 StartPosition = FormStartPosition.CenterScreen
             };
 
-            if (inputValue != null || inputValue.Length > 0 )
+            if (inputValue != null && inputValue.Length > 0 )
             {
                 form.InputTextBox.Text = inputValue;
             }

@@ -84,6 +84,10 @@ namespace PD_Helper
             _arsenal = _arsenalService.LoadArsenal(arsenalName);
             var schools = _arsenal.Schools;
             int schoolCount = schools.Count();
+            if (schoolCount == 0)
+            {
+                schoolCount = 1; // Sometimes arsenals are all Aura, so set the school count to 1 minimum.
+            }
             string skillsOverAura = $"{_arsenal.Cards.Where(c => c.TYPE != "Aura").Count()}/30";
             ArsenalCasePicture.Image = AppImages.GetArsenalCase(schoolCount);
             ArsenalNameLabel.Text = arsenalName;

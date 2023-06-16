@@ -145,6 +145,11 @@ namespace PD_Helper
                 ArsenalPanel.Visible = true;
             }
 
+            if (schoolCount == 0)
+            {
+                schoolCount = 1; // Sometimes arsenals are all Aura, so set the school count to 1 minimum.
+            }
+
             ArsenalCasePicture.Image = AppImages.GetArsenalCase(schoolCount);
             ArsenalNameLabel.Text = arsenalName;
 
@@ -221,6 +226,44 @@ namespace PD_Helper
             ArsenalList.Controls.Clear();
             _arsenalListItems.Clear();
             InitializeArsenalList();
+        }
+
+        private void NewButton_Click(object sender, EventArgs e)
+        {
+            string arsenalName = PromptForm.Show("Enter new arsenal name").Trim();
+            if (arsenalName.Length == 0)
+            {
+                return;
+            }
+
+            _arsenalService.Create(arsenalName);
+
+            var arsenal = _arsenalService.LoadArsenal(arsenalName);
+
+            var arsenalListItem = new ArsenalListItem(arsenalName);
+            _arsenalListItems.Add(arsenalListItem);
+
+            var cards = _arsenalService.SortCards(arsenal.Cards.ToList());
+
+            var schools = arsenal.Schools;
+
+            int schoolCount = schools.Count();
+
+            string skillsOverAura = $"{cards.Where(c => c.TYPE != "Aura").Count()}/30";
+
+            arsenalListItem.MouseEnter += (object? sender, EventArgs e) =>
+            {
+                if (_currentArsenalListItem != arsenalListItem)
+                {
+                    _currentArsenalListItem?.SetInactiveColors();
+                    _currentArsenalListItem = arsenalListItem;
+                    arsenalListItem.SetActiveColors();
+                }
+
+                RenderArsenal(arsenalListItem.ArsenalName, cards, schools, schoolCount, skillsOverAura);
+            };
+
+            AddItem(ArsenalList, arsenalListItem, arsenalName);
         }
     }
 }

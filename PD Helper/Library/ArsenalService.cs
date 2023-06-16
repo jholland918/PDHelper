@@ -40,6 +40,21 @@ namespace PD_Helper.Library
             File.Delete(file);
         }
 
+        public void Create(string arsenalName)
+        {
+            CheckArsenalName(arsenalName);
+            DirectoryInfo directory = new DirectoryInfo(@"Arsenals\");
+
+            var file = Path.Combine(directory.FullName, $"{arsenalName}.arsenal");
+            if (File.Exists(file))
+            {
+                throw new AppException($"File already exists! [{file}]");
+            }
+
+            var blankArsenal = "FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,01 00,\r\n";
+            File.WriteAllText(file, blankArsenal);
+        }
+
         public void Rename(string oldName, string newName)
         {
             CheckArsenalName(newName);

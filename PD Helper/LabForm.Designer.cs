@@ -42,8 +42,6 @@
             this.ArsenalPanel = new System.Windows.Forms.Panel();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.NewButton = new System.Windows.Forms.Button();
-            this.ExportButton = new System.Windows.Forms.Button();
-            this.ImportButton = new System.Windows.Forms.Button();
             this.RenameButton = new System.Windows.Forms.Button();
             this.SortButton = new System.Windows.Forms.Button();
             this.CancelChangesButton = new System.Windows.Forms.Button();
@@ -267,8 +265,6 @@
             this.ArsenalPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(49)))));
             this.ArsenalPanel.Controls.Add(this.DeleteButton);
             this.ArsenalPanel.Controls.Add(this.NewButton);
-            this.ArsenalPanel.Controls.Add(this.ExportButton);
-            this.ArsenalPanel.Controls.Add(this.ImportButton);
             this.ArsenalPanel.Controls.Add(this.RenameButton);
             this.ArsenalPanel.Controls.Add(this.SortButton);
             this.ArsenalPanel.Controls.Add(this.CancelChangesButton);
@@ -285,7 +281,7 @@
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(104, 483);
+            this.DeleteButton.Location = new System.Drawing.Point(104, 454);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(94, 23);
             this.DeleteButton.TabIndex = 11;
@@ -295,30 +291,13 @@
             // 
             // NewButton
             // 
-            this.NewButton.Location = new System.Drawing.Point(6, 483);
+            this.NewButton.Location = new System.Drawing.Point(6, 454);
             this.NewButton.Name = "NewButton";
             this.NewButton.Size = new System.Drawing.Size(94, 23);
             this.NewButton.TabIndex = 10;
             this.NewButton.Text = "New";
             this.NewButton.UseVisualStyleBackColor = true;
-            // 
-            // ExportButton
-            // 
-            this.ExportButton.Location = new System.Drawing.Point(104, 454);
-            this.ExportButton.Name = "ExportButton";
-            this.ExportButton.Size = new System.Drawing.Size(94, 23);
-            this.ExportButton.TabIndex = 9;
-            this.ExportButton.Text = "Export";
-            this.ExportButton.UseVisualStyleBackColor = true;
-            // 
-            // ImportButton
-            // 
-            this.ImportButton.Location = new System.Drawing.Point(6, 454);
-            this.ImportButton.Name = "ImportButton";
-            this.ImportButton.Size = new System.Drawing.Size(94, 23);
-            this.ImportButton.TabIndex = 8;
-            this.ImportButton.Text = "Import";
-            this.ImportButton.UseVisualStyleBackColor = true;
+            this.NewButton.Click += new System.EventHandler(this.NewButton_Click);
             // 
             // RenameButton
             // 
@@ -1176,8 +1155,6 @@
         private Panel SearchPanel;
         private Button DeleteButton;
         private Button NewButton;
-        private Button ExportButton;
-        private Button ImportButton;
         private Button RenameButton;
         private Button SortButton;
         private Button CancelChangesButton;
