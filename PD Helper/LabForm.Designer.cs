@@ -29,16 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LabForm));
-            this.MainContainer = new System.Windows.Forms.SplitContainer();
             this.ArsenalListLayout = new System.Windows.Forms.TableLayoutPanel();
-            this.ArsenalListScroller = new System.Windows.Forms.Panel();
-            this.ArsenalList = new System.Windows.Forms.TableLayoutPanel();
             this.ArsenalListHeader = new System.Windows.Forms.Panel();
-            this.SaveToGameLabel = new System.Windows.Forms.Label();
-            this.ArsenalListTitle = new System.Windows.Forms.Label();
-            this.SearchPanel = new System.Windows.Forms.Panel();
             this.ArsenalFilterTextBox = new PD_Helper.CueTextBox();
+            this.SaveToGameLabel = new System.Windows.Forms.Label();
             this.SearchLabel = new System.Windows.Forms.Label();
+            this.ArsenalListTitle = new System.Windows.Forms.Label();
+            this.NewButton = new System.Windows.Forms.Button();
+            this.ArsenalListBody = new System.Windows.Forms.FlowLayoutPanel();
             this.ArsenalPanel = new System.Windows.Forms.Panel();
             this.ArsenalHeaderPanel = new System.Windows.Forms.Panel();
             this.ArsenalCasePicture = new System.Windows.Forms.PictureBox();
@@ -85,7 +83,6 @@
             this.CancelChangesButton = new System.Windows.Forms.Button();
             this.SortButton = new System.Windows.Forms.Button();
             this.RenameButton = new System.Windows.Forms.Button();
-            this.NewButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.CardPanel = new System.Windows.Forms.Panel();
             this.CardTitlePanel = new System.Windows.Forms.Panel();
@@ -95,14 +92,9 @@
             this.CardSubtitleLabel = new System.Windows.Forms.Label();
             this.CardDescriptionPanel = new System.Windows.Forms.Panel();
             this.CardDescriptionLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.MainContainer)).BeginInit();
-            this.MainContainer.Panel1.SuspendLayout();
-            this.MainContainer.Panel2.SuspendLayout();
-            this.MainContainer.SuspendLayout();
+            this.MainLayout = new System.Windows.Forms.TableLayoutPanel();
             this.ArsenalListLayout.SuspendLayout();
-            this.ArsenalListScroller.SuspendLayout();
             this.ArsenalListHeader.SuspendLayout();
-            this.SearchPanel.SuspendLayout();
             this.ArsenalPanel.SuspendLayout();
             this.ArsenalHeaderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ArsenalCasePicture)).BeginInit();
@@ -118,81 +110,51 @@
             ((System.ComponentModel.ISupportInitialize)(this.CardSchoolPicture)).BeginInit();
             this.CardSubtitlePanel.SuspendLayout();
             this.CardDescriptionPanel.SuspendLayout();
+            this.MainLayout.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // MainContainer
-            // 
-            this.MainContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(30)))), ((int)(((byte)(26)))));
-            this.MainContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainContainer.Location = new System.Drawing.Point(0, 0);
-            this.MainContainer.Name = "MainContainer";
-            // 
-            // MainContainer.Panel1
-            // 
-            this.MainContainer.Panel1.BackColor = System.Drawing.Color.Transparent;
-            this.MainContainer.Panel1.Controls.Add(this.ArsenalListLayout);
-            // 
-            // MainContainer.Panel2
-            // 
-            this.MainContainer.Panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MainContainer.Panel2.BackgroundImage")));
-            this.MainContainer.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.MainContainer.Panel2.Controls.Add(this.ArsenalPanel);
-            this.MainContainer.Size = new System.Drawing.Size(1165, 593);
-            this.MainContainer.SplitterDistance = 549;
-            this.MainContainer.TabIndex = 0;
             // 
             // ArsenalListLayout
             // 
+            this.ArsenalListLayout.AutoSize = true;
             this.ArsenalListLayout.ColumnCount = 1;
             this.ArsenalListLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.ArsenalListLayout.Controls.Add(this.ArsenalListScroller, 0, 2);
-            this.ArsenalListLayout.Controls.Add(this.ArsenalListHeader, 0, 1);
-            this.ArsenalListLayout.Controls.Add(this.SearchPanel, 0, 0);
+            this.ArsenalListLayout.Controls.Add(this.ArsenalListHeader, 0, 0);
+            this.ArsenalListLayout.Controls.Add(this.ArsenalListBody, 0, 2);
             this.ArsenalListLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ArsenalListLayout.Location = new System.Drawing.Point(0, 0);
+            this.ArsenalListLayout.Location = new System.Drawing.Point(3, 3);
             this.ArsenalListLayout.Name = "ArsenalListLayout";
             this.ArsenalListLayout.RowCount = 3;
-            this.ArsenalListLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.ArsenalListLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.ArsenalListLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
             this.ArsenalListLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.ArsenalListLayout.Size = new System.Drawing.Size(549, 593);
+            this.ArsenalListLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.ArsenalListLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.ArsenalListLayout.Size = new System.Drawing.Size(594, 593);
             this.ArsenalListLayout.TabIndex = 0;
-            // 
-            // ArsenalListScroller
-            // 
-            this.ArsenalListScroller.AutoScroll = true;
-            this.ArsenalListScroller.Controls.Add(this.ArsenalList);
-            this.ArsenalListScroller.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ArsenalListScroller.Location = new System.Drawing.Point(0, 64);
-            this.ArsenalListScroller.Margin = new System.Windows.Forms.Padding(0);
-            this.ArsenalListScroller.Name = "ArsenalListScroller";
-            this.ArsenalListScroller.Size = new System.Drawing.Size(1236, 529);
-            this.ArsenalListScroller.TabIndex = 2;
-            // 
-            // ArsenalList
-            // 
-            this.ArsenalList.AutoSize = true;
-            this.ArsenalList.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ArsenalList.ColumnCount = 1;
-            this.ArsenalList.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.ArsenalList.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ArsenalList.Location = new System.Drawing.Point(0, 0);
-            this.ArsenalList.Name = "ArsenalList";
-            this.ArsenalList.RowCount = 1;
-            this.ArsenalList.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.ArsenalList.Size = new System.Drawing.Size(1236, 0);
-            this.ArsenalList.TabIndex = 0;
             // 
             // ArsenalListHeader
             // 
             this.ArsenalListHeader.BackColor = System.Drawing.Color.Transparent;
+            this.ArsenalListHeader.Controls.Add(this.ArsenalFilterTextBox);
             this.ArsenalListHeader.Controls.Add(this.SaveToGameLabel);
+            this.ArsenalListHeader.Controls.Add(this.SearchLabel);
             this.ArsenalListHeader.Controls.Add(this.ArsenalListTitle);
+            this.ArsenalListHeader.Controls.Add(this.NewButton);
             this.ArsenalListHeader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ArsenalListHeader.Location = new System.Drawing.Point(3, 33);
+            this.ArsenalListHeader.Location = new System.Drawing.Point(3, 3);
             this.ArsenalListHeader.Name = "ArsenalListHeader";
-            this.ArsenalListHeader.Size = new System.Drawing.Size(1230, 28);
+            this.ArsenalListHeader.Size = new System.Drawing.Size(608, 59);
             this.ArsenalListHeader.TabIndex = 3;
+            // 
+            // ArsenalFilterTextBox
+            // 
+            this.ArsenalFilterTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(168)))), ((int)(((byte)(158)))));
+            this.ArsenalFilterTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ArsenalFilterTextBox.Cue = "Search Arsenals...";
+            this.ArsenalFilterTextBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ArsenalFilterTextBox.Location = new System.Drawing.Point(30, 5);
+            this.ArsenalFilterTextBox.Name = "ArsenalFilterTextBox";
+            this.ArsenalFilterTextBox.Size = new System.Drawing.Size(496, 25);
+            this.ArsenalFilterTextBox.TabIndex = 3;
             // 
             // SaveToGameLabel
             // 
@@ -202,12 +164,24 @@
             this.SaveToGameLabel.AutoSize = true;
             this.SaveToGameLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.SaveToGameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SaveToGameLabel.Location = new System.Drawing.Point(415, 3);
+            this.SaveToGameLabel.Location = new System.Drawing.Point(410, 37);
             this.SaveToGameLabel.Name = "SaveToGameLabel";
             this.SaveToGameLabel.Size = new System.Drawing.Size(116, 21);
             this.SaveToGameLabel.TabIndex = 1;
             this.SaveToGameLabel.Text = "Save To Game";
             this.SaveToGameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // SearchLabel
+            // 
+            this.SearchLabel.AutoSize = true;
+            this.SearchLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.SearchLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.SearchLabel.Location = new System.Drawing.Point(3, 3);
+            this.SearchLabel.Name = "SearchLabel";
+            this.SearchLabel.Size = new System.Drawing.Size(32, 21);
+            this.SearchLabel.TabIndex = 2;
+            this.SearchLabel.Text = ">>";
+            this.SearchLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ArsenalListTitle
             // 
@@ -217,57 +191,46 @@
             this.ArsenalListTitle.AutoSize = true;
             this.ArsenalListTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ArsenalListTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.ArsenalListTitle.Location = new System.Drawing.Point(3, 3);
+            this.ArsenalListTitle.Location = new System.Drawing.Point(3, 37);
             this.ArsenalListTitle.Name = "ArsenalListTitle";
             this.ArsenalListTitle.Size = new System.Drawing.Size(97, 21);
             this.ArsenalListTitle.TabIndex = 0;
             this.ArsenalListTitle.Text = "Arsenal List";
             this.ArsenalListTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // SearchPanel
+            // NewButton
             // 
-            this.SearchPanel.Controls.Add(this.ArsenalFilterTextBox);
-            this.SearchPanel.Controls.Add(this.SearchLabel);
-            this.SearchPanel.Location = new System.Drawing.Point(3, 3);
-            this.SearchPanel.Name = "SearchPanel";
-            this.SearchPanel.Size = new System.Drawing.Size(543, 24);
-            this.SearchPanel.TabIndex = 4;
+            this.NewButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(49)))));
+            this.NewButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.NewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NewButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.NewButton.Location = new System.Drawing.Point(106, 35);
+            this.NewButton.Name = "NewButton";
+            this.NewButton.Size = new System.Drawing.Size(62, 23);
+            this.NewButton.TabIndex = 10;
+            this.NewButton.Text = "New";
+            this.NewButton.UseVisualStyleBackColor = false;
+            this.NewButton.Click += new System.EventHandler(this.NewButton_Click);
             // 
-            // ArsenalFilterTextBox
+            // ArsenalListBody
             // 
-            this.ArsenalFilterTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ArsenalFilterTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(168)))), ((int)(((byte)(158)))));
-            this.ArsenalFilterTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ArsenalFilterTextBox.Cue = "Search Arsenals...";
-            this.ArsenalFilterTextBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ArsenalFilterTextBox.Location = new System.Drawing.Point(29, -1);
-            this.ArsenalFilterTextBox.Name = "ArsenalFilterTextBox";
-            this.ArsenalFilterTextBox.Size = new System.Drawing.Size(496, 25);
-            this.ArsenalFilterTextBox.TabIndex = 3;
-            // 
-            // SearchLabel
-            // 
-            this.SearchLabel.AutoSize = true;
-            this.SearchLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SearchLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SearchLabel.Location = new System.Drawing.Point(3, 0);
-            this.SearchLabel.Name = "SearchLabel";
-            this.SearchLabel.Size = new System.Drawing.Size(32, 21);
-            this.SearchLabel.TabIndex = 2;
-            this.SearchLabel.Text = ">>";
-            this.SearchLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ArsenalListBody.AutoScroll = true;
+            this.ArsenalListBody.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ArsenalListBody.Location = new System.Drawing.Point(3, 68);
+            this.ArsenalListBody.Name = "ArsenalListBody";
+            this.ArsenalListBody.Size = new System.Drawing.Size(580, 522);
+            this.ArsenalListBody.TabIndex = 4;
             // 
             // ArsenalPanel
             // 
-            this.ArsenalPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(49)))));
             this.ArsenalPanel.Controls.Add(this.ArsenalHeaderPanel);
             this.ArsenalPanel.Controls.Add(this.ArsenalDeckPanel);
             this.ArsenalPanel.Controls.Add(this.ArsenalControlPanel);
             this.ArsenalPanel.Controls.Add(this.CardPanel);
             this.ArsenalPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ArsenalPanel.Location = new System.Drawing.Point(0, 0);
+            this.ArsenalPanel.Location = new System.Drawing.Point(603, 3);
             this.ArsenalPanel.Name = "ArsenalPanel";
-            this.ArsenalPanel.Size = new System.Drawing.Size(612, 593);
+            this.ArsenalPanel.Size = new System.Drawing.Size(694, 593);
             this.ArsenalPanel.TabIndex = 0;
             this.ArsenalPanel.Visible = false;
             // 
@@ -813,7 +776,6 @@
             this.ArsenalControlPanel.Controls.Add(this.CancelChangesButton);
             this.ArsenalControlPanel.Controls.Add(this.SortButton);
             this.ArsenalControlPanel.Controls.Add(this.RenameButton);
-            this.ArsenalControlPanel.Controls.Add(this.NewButton);
             this.ArsenalControlPanel.Controls.Add(this.DeleteButton);
             this.ArsenalControlPanel.Location = new System.Drawing.Point(0, 396);
             this.ArsenalControlPanel.Name = "ArsenalControlPanel";
@@ -822,6 +784,9 @@
             // 
             // SaveChangesButton
             // 
+            this.SaveChangesButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.SaveChangesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveChangesButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
             this.SaveChangesButton.Location = new System.Drawing.Point(5, 3);
             this.SaveChangesButton.Name = "SaveChangesButton";
             this.SaveChangesButton.Size = new System.Drawing.Size(94, 23);
@@ -831,6 +796,9 @@
             // 
             // CancelChangesButton
             // 
+            this.CancelChangesButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.CancelChangesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CancelChangesButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
             this.CancelChangesButton.Location = new System.Drawing.Point(103, 3);
             this.CancelChangesButton.Name = "CancelChangesButton";
             this.CancelChangesButton.Size = new System.Drawing.Size(94, 23);
@@ -840,6 +808,9 @@
             // 
             // SortButton
             // 
+            this.SortButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.SortButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SortButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
             this.SortButton.Location = new System.Drawing.Point(5, 32);
             this.SortButton.Name = "SortButton";
             this.SortButton.Size = new System.Drawing.Size(94, 23);
@@ -849,6 +820,9 @@
             // 
             // RenameButton
             // 
+            this.RenameButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.RenameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RenameButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
             this.RenameButton.Location = new System.Drawing.Point(103, 32);
             this.RenameButton.Name = "RenameButton";
             this.RenameButton.Size = new System.Drawing.Size(94, 23);
@@ -857,18 +831,11 @@
             this.RenameButton.UseVisualStyleBackColor = true;
             this.RenameButton.Click += new System.EventHandler(this.RenameButton_Click);
             // 
-            // NewButton
-            // 
-            this.NewButton.Location = new System.Drawing.Point(5, 61);
-            this.NewButton.Name = "NewButton";
-            this.NewButton.Size = new System.Drawing.Size(94, 23);
-            this.NewButton.TabIndex = 10;
-            this.NewButton.Text = "New";
-            this.NewButton.UseVisualStyleBackColor = true;
-            this.NewButton.Click += new System.EventHandler(this.NewButton_Click);
-            // 
             // DeleteButton
             // 
+            this.DeleteButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
             this.DeleteButton.Location = new System.Drawing.Point(103, 61);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(94, 23);
@@ -966,25 +933,33 @@
             this.CardDescriptionLabel.TabIndex = 2;
             this.CardDescriptionLabel.Text = "CardDescriptionLabel";
             // 
+            // MainLayout
+            // 
+            this.MainLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(49)))));
+            this.MainLayout.ColumnCount = 2;
+            this.MainLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 600F));
+            this.MainLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.MainLayout.Controls.Add(this.ArsenalListLayout, 0, 0);
+            this.MainLayout.Controls.Add(this.ArsenalPanel, 1, 0);
+            this.MainLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainLayout.Location = new System.Drawing.Point(0, 0);
+            this.MainLayout.Name = "MainLayout";
+            this.MainLayout.RowCount = 1;
+            this.MainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.MainLayout.Size = new System.Drawing.Size(1240, 590);
+            this.MainLayout.TabIndex = 33;
+            // 
             // LabForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1165, 593);
-            this.Controls.Add(this.MainContainer);
+            this.ClientSize = new System.Drawing.Size(1240, 590);
+            this.Controls.Add(this.MainLayout);
             this.Name = "LabForm";
             this.Text = "LabForm";
-            this.MainContainer.Panel1.ResumeLayout(false);
-            this.MainContainer.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.MainContainer)).EndInit();
-            this.MainContainer.ResumeLayout(false);
             this.ArsenalListLayout.ResumeLayout(false);
-            this.ArsenalListScroller.ResumeLayout(false);
-            this.ArsenalListScroller.PerformLayout();
             this.ArsenalListHeader.ResumeLayout(false);
             this.ArsenalListHeader.PerformLayout();
-            this.SearchPanel.ResumeLayout(false);
-            this.SearchPanel.PerformLayout();
             this.ArsenalPanel.ResumeLayout(false);
             this.ArsenalHeaderPanel.ResumeLayout(false);
             this.ArsenalHeaderPanel.PerformLayout();
@@ -1002,12 +977,13 @@
             this.CardSubtitlePanel.ResumeLayout(false);
             this.CardDescriptionPanel.ResumeLayout(false);
             this.CardDescriptionPanel.PerformLayout();
+            this.MainLayout.ResumeLayout(false);
+            this.MainLayout.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private SplitContainer MainContainer;
         private Panel ArsenalPanel;
         private Button ArsenalSkill1;
         private Button ArsenalSkill8;
@@ -1054,15 +1030,11 @@
         private Panel CardSubtitlePanel;
         private Panel CardDescriptionPanel;
         private PictureBox CardSchoolPicture;
-        private TableLayoutPanel ArsenalListLayout;
         private Label ArsenalListTitle;
-        private Panel ArsenalListScroller;
-        private TableLayoutPanel ArsenalList;
         private CueTextBox ArsenalFilterTextBox;
         private Panel ArsenalListHeader;
         private Label SaveToGameLabel;
         private Label SearchLabel;
-        private Panel SearchPanel;
         private Button DeleteButton;
         private Button NewButton;
         private Button RenameButton;
@@ -1073,5 +1045,8 @@
         private Panel ArsenalDeckPanel;
         private Panel CardPanel;
         private Panel ArsenalControlPanel;
+        private TableLayoutPanel ArsenalListLayout;
+        private FlowLayoutPanel ArsenalListBody;
+        private TableLayoutPanel MainLayout;
     }
 }

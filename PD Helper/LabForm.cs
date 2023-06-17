@@ -42,27 +42,28 @@ namespace PD_Helper
 
         private void ArsenalFilterTextBox_TextChanged(object? sender, EventArgs e)
         {
-            var searchTerm = ArsenalFilterTextBox.Text;
-            if (searchTerm.Length == 0)
-            {
-                foreach (var row in _arsenalRows)
-                {
-                    ArsenalList.RowStyles[row.Key].SizeType = SizeType.AutoSize;
-                }
-                return;
-            }
+            //jmh
+            //var searchTerm = ArsenalFilterTextBox.Text;
+            //if (searchTerm.Length == 0)
+            //{
+            //    foreach (var row in _arsenalRows)
+            //    {
+            //        ArsenalList.RowStyles[row.Key].SizeType = SizeType.AutoSize;
+            //    }
+            //    return;
+            //}
 
-            foreach (var row in _arsenalRows)
-            {
-                if (row.Value.Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
-                {
-                    ArsenalList.RowStyles[row.Key].SizeType = SizeType.AutoSize;
-                }
-                else
-                {
-                    ArsenalList.RowStyles[row.Key].SizeType = SizeType.Absolute; // Since height is zero, this hides the row
-                }
-            }
+            //foreach (var row in _arsenalRows)
+            //{
+            //    if (row.Value.Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
+            //    {
+            //        ArsenalList.RowStyles[row.Key].SizeType = SizeType.AutoSize;
+            //    }
+            //    else
+            //    {
+            //        ArsenalList.RowStyles[row.Key].SizeType = SizeType.Absolute; // Since height is zero, this hides the row
+            //    }
+            //}
         }
 
         private void InitializeSchoolPictures()
@@ -116,26 +117,10 @@ namespace PD_Helper
                     RenderArsenal(arsenalListItem.ArsenalName, cards, schools, schoolCount, skillsOverAura);
                 };
 
-                AddItem(ArsenalList, arsenalListItem, arsenalName);
+                //jmh
+                //AddItem(ArsenalList, arsenalListItem, arsenalName);
+                ArsenalListBody.Controls.Add(arsenalListItem);
             }
-        }
-
-        private void AddItem(TableLayoutPanel panel, ArsenalListItem arsenalListItem, string arsenalName)
-        {
-            // Get a reference to the previous existent 
-            RowStyle temp = panel.RowStyles[panel.RowCount - 1];
-
-            // Increase panel rows count by one
-            panel.RowCount++;
-
-            // Add a new RowStyle as a copy of the previous one
-            panel.RowStyles.Add(new RowStyle(temp.SizeType, temp.Height));
-
-            // Add your control
-            panel.Controls.Add(arsenalListItem, 0, panel.RowCount - 1);
-
-            // Add the arsenal name with it's row index so we can use it for filtering.
-            _arsenalRows.Add(panel.RowCount - 1, arsenalName);
         }
 
         private void RenderArsenal(string arsenalName, List<PDCard> cards, IEnumerable<string> schools, int schoolCount, string skillsOverAura)
@@ -225,7 +210,8 @@ namespace PD_Helper
             
             _arsenalService.Delete(arsenalName);
 
-            ArsenalList.Controls.Clear();
+            //jmh
+            //ArsenalList.Controls.Clear();
             _arsenalListItems.Clear();
             InitializeArsenalList();
         }
@@ -265,7 +251,8 @@ namespace PD_Helper
                 RenderArsenal(arsenalListItem.ArsenalName, cards, schools, schoolCount, skillsOverAura);
             };
 
-            AddItem(ArsenalList, arsenalListItem, arsenalName);
+            //jmh
+            //AddItem(ArsenalList, arsenalListItem, arsenalName);
         }
     }
 }
