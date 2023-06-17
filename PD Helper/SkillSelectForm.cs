@@ -22,5 +22,95 @@ namespace PD_Helper
             this.card = card;
             InitializeComponent();
         }
+
+        private void PsychoButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OpticalButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NatureButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void KiButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FaithButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AuraButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AttackButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DefenseButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EraseButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StatusButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SpecialButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EnvironmentalButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ConfirmButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ConfirmDropdown_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SortComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SortComboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SortComboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

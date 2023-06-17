@@ -17,7 +17,8 @@ namespace PD_Helper
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             //Application.Run(new Form1());
-            Application.Run(new LabForm());
+            //Application.Run(new LabForm());
+            Application.Run(new SkillSelectForm(null, null));
         }
 
         static void AppExceptionHandler(object sender, UnhandledExceptionEventArgs args)
