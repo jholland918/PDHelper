@@ -936,6 +936,8 @@
             // MainLayout
             // 
             this.MainLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(49)))));
+            this.MainLayout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MainLayout.BackgroundImage")));
+            this.MainLayout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.MainLayout.ColumnCount = 2;
             this.MainLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 600F));
             this.MainLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
