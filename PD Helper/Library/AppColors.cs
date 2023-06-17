@@ -15,6 +15,11 @@ namespace PD_Helper.Library
         public static readonly Color Erase = Color.FromArgb(170, 75, 220);
         public static readonly Color Aura = Color.FromArgb(127, 177, 150);
 
+        public static readonly Color BackgroundColor = Color.FromArgb(33, 53, 47);
+        public static readonly Color BackgroundColorHover = Color.FromArgb(67, 11, 15);
+        public static readonly Color ForegroundColor = Color.FromArgb(92, 172, 149);
+        public static readonly Color ForegroundColorHover = Color.FromArgb(216, 185, 24);
+
         private static readonly Dictionary<string, Color> SkillTypes = new Dictionary<string, Color>
         {
             ["Attack"] = Attack,

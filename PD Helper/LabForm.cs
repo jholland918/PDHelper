@@ -130,7 +130,7 @@ namespace PD_Helper
                 if (arsenalListItem.Arsenal.Schools.Contains(schoolPicture.Key))
                 {
                     schoolPicture.Value.Image = AppImages.GetSchool(schoolPicture.Key);
-                    schoolPicture.Value.BackColor = Color.FromArgb(92, 172, 149);
+                    schoolPicture.Value.BackColor = AppColors.ForegroundColor;
                 }
                 else
                 {
@@ -148,7 +148,6 @@ namespace PD_Helper
                 skill.Text = card.NAME;
                 skill.BackColor = AppColors.GetSkillColor(card.TYPE);
                 skill.Image = AppImages.GetSchool(card.SCHOOL);
-                //skill.MouseEnter += (object? sender, EventArgs e) => RenderCard(card);
                 skill.AccessibleName = i.ToString(); // I should probably put this index on a subclass of Button instead of this hacky thing... :)
             }
         }

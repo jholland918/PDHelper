@@ -29,10 +29,6 @@ namespace PD_Helper
             ShowImageMargin = false,
         };
 
-        private readonly Color BackgroundColor = Color.FromArgb(33, 53, 47);
-        private readonly Color BackgroundColorHover = Color.FromArgb(67, 11, 15);
-        private readonly Color ForegroundColor = Color.FromArgb(92, 172, 149);
-        private readonly Color ForegroundColorHover = Color.FromArgb(216, 185, 24);
         private bool IsActive = false;
 
         public Arsenal Arsenal { get { return _arsenal; } }
@@ -160,18 +156,18 @@ namespace PD_Helper
 
             IsActive = true;
 
-            ArsenalNameLabel.ForeColor = ForegroundColorHover;
-            SkillsOverAuraLabel.ForeColor = ForegroundColorHover;
-            SaveButton.ForeColor = ForegroundColorHover;
-            SaveDropdownMenu.ForeColor = ForegroundColorHover;
-            MainContainer.BackColor = BackgroundColorHover;
-            ArsenalCasePicture.BackColor = ForegroundColorHover;
+            ArsenalNameLabel.ForeColor = AppColors.ForegroundColorHover;
+            SkillsOverAuraLabel.ForeColor = AppColors.ForegroundColorHover;
+            SaveButton.ForeColor = AppColors.ForegroundColorHover;
+            SaveDropdownMenu.ForeColor = AppColors.ForegroundColorHover;
+            MainContainer.BackColor = AppColors.BackgroundColorHover;
+            ArsenalCasePicture.BackColor = AppColors.ForegroundColorHover;
 
-            SchoolPicturePsycho.BackColor = SchoolPicturePsycho.Image == null ? Color.Transparent : ForegroundColorHover;
-            SchoolPictureOptical.BackColor = SchoolPictureOptical.Image == null ? Color.Transparent : ForegroundColorHover;
-            SchoolPictureNature.BackColor = SchoolPictureNature.Image == null ? Color.Transparent : ForegroundColorHover;
-            SchoolPictureKi.BackColor = SchoolPictureKi.Image == null ? Color.Transparent : ForegroundColorHover;
-            SchoolPictureFaith.BackColor = SchoolPictureFaith.Image == null ? Color.Transparent : ForegroundColorHover;
+            SchoolPicturePsycho.BackColor = SchoolPicturePsycho.Image == null ? Color.Transparent : AppColors.ForegroundColorHover;
+            SchoolPictureOptical.BackColor = SchoolPictureOptical.Image == null ? Color.Transparent : AppColors.ForegroundColorHover;
+            SchoolPictureNature.BackColor = SchoolPictureNature.Image == null ? Color.Transparent : AppColors.ForegroundColorHover;
+            SchoolPictureKi.BackColor = SchoolPictureKi.Image == null ? Color.Transparent : AppColors.ForegroundColorHover;
+            SchoolPictureFaith.BackColor = SchoolPictureFaith.Image == null ? Color.Transparent : AppColors.ForegroundColorHover;
 
         }
 
@@ -184,18 +180,18 @@ namespace PD_Helper
 
             IsActive = false;
 
-            ArsenalNameLabel.ForeColor = ForegroundColor;
-            SkillsOverAuraLabel.ForeColor = ForegroundColor;
-            SaveButton.ForeColor = ForegroundColor;
-            SaveDropdownMenu.ForeColor = ForegroundColor;
-            MainContainer.BackColor = BackgroundColor;
-            ArsenalCasePicture.BackColor = ForegroundColor;
+            ArsenalNameLabel.ForeColor = AppColors.ForegroundColor;
+            SkillsOverAuraLabel.ForeColor = AppColors.ForegroundColor;
+            SaveButton.ForeColor = AppColors.ForegroundColor;
+            SaveDropdownMenu.ForeColor = AppColors.ForegroundColor;
+            MainContainer.BackColor = AppColors.BackgroundColor;
+            ArsenalCasePicture.BackColor = AppColors.ForegroundColor;
 
-            SchoolPicturePsycho.BackColor = SchoolPicturePsycho.Image == null ? Color.Transparent : ForegroundColor;
-            SchoolPictureOptical.BackColor = SchoolPictureOptical.Image == null ? Color.Transparent : ForegroundColor;
-            SchoolPictureNature.BackColor = SchoolPictureNature.Image == null ? Color.Transparent : ForegroundColor;
-            SchoolPictureKi.BackColor = SchoolPictureKi.Image == null ? Color.Transparent : ForegroundColor;
-            SchoolPictureFaith.BackColor = SchoolPictureFaith.Image == null ? Color.Transparent : ForegroundColor;
+            SchoolPicturePsycho.BackColor = SchoolPicturePsycho.Image == null ? Color.Transparent : AppColors.ForegroundColor;
+            SchoolPictureOptical.BackColor = SchoolPictureOptical.Image == null ? Color.Transparent : AppColors.ForegroundColor;
+            SchoolPictureNature.BackColor = SchoolPictureNature.Image == null ? Color.Transparent : AppColors.ForegroundColor;
+            SchoolPictureKi.BackColor = SchoolPictureKi.Image == null ? Color.Transparent : AppColors.ForegroundColor;
+            SchoolPictureFaith.BackColor = SchoolPictureFaith.Image == null ? Color.Transparent : AppColors.ForegroundColor;
         }
 
         private void RedirectMouseEnter(object sender, EventArgs e)
