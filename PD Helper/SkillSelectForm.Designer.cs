@@ -30,18 +30,18 @@
         {
             this.MainLayout = new System.Windows.Forms.TableLayoutPanel();
             this.Header = new System.Windows.Forms.Panel();
-            this.EnvironmentalButton = new System.Windows.Forms.Button();
-            this.SpecialButton = new System.Windows.Forms.Button();
-            this.StatusButton = new System.Windows.Forms.Button();
-            this.FaithButton = new System.Windows.Forms.Button();
-            this.EraseButton = new System.Windows.Forms.Button();
-            this.KiButton = new System.Windows.Forms.Button();
-            this.DefenseButton = new System.Windows.Forms.Button();
-            this.NatureButton = new System.Windows.Forms.Button();
-            this.AttackButton = new System.Windows.Forms.Button();
-            this.OpticalButton = new System.Windows.Forms.Button();
-            this.AuraButton = new System.Windows.Forms.Button();
-            this.PsychoButton = new System.Windows.Forms.Button();
+            this.EnvironmentalCheckBox = new System.Windows.Forms.CheckBox();
+            this.SpecialCheckBox = new System.Windows.Forms.CheckBox();
+            this.StatusCheckBox = new System.Windows.Forms.CheckBox();
+            this.EraseCheckBox = new System.Windows.Forms.CheckBox();
+            this.DefenseCheckBox = new System.Windows.Forms.CheckBox();
+            this.AttackCheckBox = new System.Windows.Forms.CheckBox();
+            this.AuraCheckBox = new System.Windows.Forms.CheckBox();
+            this.FaithCheckBox = new System.Windows.Forms.CheckBox();
+            this.KiCheckBox = new System.Windows.Forms.CheckBox();
+            this.NatureCheckBox = new System.Windows.Forms.CheckBox();
+            this.OpticalCheckBox = new System.Windows.Forms.CheckBox();
+            this.PsychoCheckBox = new System.Windows.Forms.CheckBox();
             this.Subheader = new System.Windows.Forms.Panel();
             this.SortThenBy2Label = new System.Windows.Forms.Label();
             this.SortThenBy1Label = new System.Windows.Forms.Label();
@@ -97,143 +97,179 @@
             // Header
             // 
             this.MainLayout.SetColumnSpan(this.Header, 2);
-            this.Header.Controls.Add(this.EnvironmentalButton);
-            this.Header.Controls.Add(this.SpecialButton);
-            this.Header.Controls.Add(this.StatusButton);
-            this.Header.Controls.Add(this.FaithButton);
-            this.Header.Controls.Add(this.EraseButton);
-            this.Header.Controls.Add(this.KiButton);
-            this.Header.Controls.Add(this.DefenseButton);
-            this.Header.Controls.Add(this.NatureButton);
-            this.Header.Controls.Add(this.AttackButton);
-            this.Header.Controls.Add(this.OpticalButton);
-            this.Header.Controls.Add(this.AuraButton);
-            this.Header.Controls.Add(this.PsychoButton);
+            this.Header.Controls.Add(this.EnvironmentalCheckBox);
+            this.Header.Controls.Add(this.SpecialCheckBox);
+            this.Header.Controls.Add(this.StatusCheckBox);
+            this.Header.Controls.Add(this.EraseCheckBox);
+            this.Header.Controls.Add(this.DefenseCheckBox);
+            this.Header.Controls.Add(this.AttackCheckBox);
+            this.Header.Controls.Add(this.AuraCheckBox);
+            this.Header.Controls.Add(this.FaithCheckBox);
+            this.Header.Controls.Add(this.KiCheckBox);
+            this.Header.Controls.Add(this.NatureCheckBox);
+            this.Header.Controls.Add(this.OpticalCheckBox);
+            this.Header.Controls.Add(this.PsychoCheckBox);
             this.Header.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Header.Location = new System.Drawing.Point(3, 3);
             this.Header.Name = "Header";
             this.Header.Size = new System.Drawing.Size(668, 69);
             this.Header.TabIndex = 0;
             // 
-            // EnvironmentalButton
+            // EnvironmentalCheckBox
             // 
-            this.EnvironmentalButton.Location = new System.Drawing.Point(539, 43);
-            this.EnvironmentalButton.Name = "EnvironmentalButton";
-            this.EnvironmentalButton.Size = new System.Drawing.Size(75, 23);
-            this.EnvironmentalButton.TabIndex = 6;
-            this.EnvironmentalButton.Text = "Environmental";
-            this.EnvironmentalButton.UseVisualStyleBackColor = true;
-            this.EnvironmentalButton.Click += new System.EventHandler(this.EnvironmentalButton_Click);
+            this.EnvironmentalCheckBox.AutoSize = true;
+            this.EnvironmentalCheckBox.Checked = true;
+            this.EnvironmentalCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.EnvironmentalCheckBox.Location = new System.Drawing.Point(539, 43);
+            this.EnvironmentalCheckBox.Name = "EnvironmentalCheckBox";
+            this.EnvironmentalCheckBox.Size = new System.Drawing.Size(103, 19);
+            this.EnvironmentalCheckBox.TabIndex = 18;
+            this.EnvironmentalCheckBox.Text = "Environmental";
+            this.EnvironmentalCheckBox.UseVisualStyleBackColor = true;
+            this.EnvironmentalCheckBox.CheckedChanged += new System.EventHandler(this.FilterCheckBox_CheckedChanged);
             // 
-            // SpecialButton
+            // SpecialCheckBox
             // 
-            this.SpecialButton.Location = new System.Drawing.Point(458, 43);
-            this.SpecialButton.Name = "SpecialButton";
-            this.SpecialButton.Size = new System.Drawing.Size(75, 23);
-            this.SpecialButton.TabIndex = 5;
-            this.SpecialButton.Text = "Special";
-            this.SpecialButton.UseVisualStyleBackColor = true;
-            this.SpecialButton.Click += new System.EventHandler(this.SpecialButton_Click);
+            this.SpecialCheckBox.AutoSize = true;
+            this.SpecialCheckBox.Checked = true;
+            this.SpecialCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.SpecialCheckBox.Location = new System.Drawing.Point(458, 43);
+            this.SpecialCheckBox.Name = "SpecialCheckBox";
+            this.SpecialCheckBox.Size = new System.Drawing.Size(63, 19);
+            this.SpecialCheckBox.TabIndex = 17;
+            this.SpecialCheckBox.Text = "Special";
+            this.SpecialCheckBox.UseVisualStyleBackColor = true;
+            this.SpecialCheckBox.CheckedChanged += new System.EventHandler(this.FilterCheckBox_CheckedChanged);
             // 
-            // StatusButton
+            // StatusCheckBox
             // 
-            this.StatusButton.Location = new System.Drawing.Point(377, 43);
-            this.StatusButton.Name = "StatusButton";
-            this.StatusButton.Size = new System.Drawing.Size(75, 23);
-            this.StatusButton.TabIndex = 4;
-            this.StatusButton.Text = "Status";
-            this.StatusButton.UseVisualStyleBackColor = true;
-            this.StatusButton.Click += new System.EventHandler(this.StatusButton_Click);
+            this.StatusCheckBox.AutoSize = true;
+            this.StatusCheckBox.Checked = true;
+            this.StatusCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.StatusCheckBox.Location = new System.Drawing.Point(377, 43);
+            this.StatusCheckBox.Name = "StatusCheckBox";
+            this.StatusCheckBox.Size = new System.Drawing.Size(58, 19);
+            this.StatusCheckBox.TabIndex = 16;
+            this.StatusCheckBox.Text = "Status";
+            this.StatusCheckBox.UseVisualStyleBackColor = true;
+            this.StatusCheckBox.CheckedChanged += new System.EventHandler(this.FilterCheckBox_CheckedChanged);
             // 
-            // FaithButton
+            // EraseCheckBox
             // 
-            this.FaithButton.Location = new System.Drawing.Point(458, 9);
-            this.FaithButton.Name = "FaithButton";
-            this.FaithButton.Size = new System.Drawing.Size(75, 23);
-            this.FaithButton.TabIndex = 4;
-            this.FaithButton.Text = "Faith";
-            this.FaithButton.UseVisualStyleBackColor = true;
-            this.FaithButton.Click += new System.EventHandler(this.FaithButton_Click);
+            this.EraseCheckBox.AutoSize = true;
+            this.EraseCheckBox.Checked = true;
+            this.EraseCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.EraseCheckBox.Location = new System.Drawing.Point(296, 43);
+            this.EraseCheckBox.Name = "EraseCheckBox";
+            this.EraseCheckBox.Size = new System.Drawing.Size(53, 19);
+            this.EraseCheckBox.TabIndex = 15;
+            this.EraseCheckBox.Text = "Erase";
+            this.EraseCheckBox.UseVisualStyleBackColor = true;
+            this.EraseCheckBox.CheckedChanged += new System.EventHandler(this.FilterCheckBox_CheckedChanged);
             // 
-            // EraseButton
+            // DefenseCheckBox
             // 
-            this.EraseButton.Location = new System.Drawing.Point(296, 43);
-            this.EraseButton.Name = "EraseButton";
-            this.EraseButton.Size = new System.Drawing.Size(75, 23);
-            this.EraseButton.TabIndex = 3;
-            this.EraseButton.Text = "Erase";
-            this.EraseButton.UseVisualStyleBackColor = true;
-            this.EraseButton.Click += new System.EventHandler(this.EraseButton_Click);
+            this.DefenseCheckBox.AutoSize = true;
+            this.DefenseCheckBox.Checked = true;
+            this.DefenseCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.DefenseCheckBox.Location = new System.Drawing.Point(215, 43);
+            this.DefenseCheckBox.Name = "DefenseCheckBox";
+            this.DefenseCheckBox.Size = new System.Drawing.Size(68, 19);
+            this.DefenseCheckBox.TabIndex = 14;
+            this.DefenseCheckBox.Text = "Defense";
+            this.DefenseCheckBox.UseVisualStyleBackColor = true;
+            this.DefenseCheckBox.CheckedChanged += new System.EventHandler(this.FilterCheckBox_CheckedChanged);
             // 
-            // KiButton
+            // AttackCheckBox
             // 
-            this.KiButton.Location = new System.Drawing.Point(377, 9);
-            this.KiButton.Name = "KiButton";
-            this.KiButton.Size = new System.Drawing.Size(75, 23);
-            this.KiButton.TabIndex = 3;
-            this.KiButton.Text = "Ki";
-            this.KiButton.UseVisualStyleBackColor = true;
-            this.KiButton.Click += new System.EventHandler(this.KiButton_Click);
+            this.AttackCheckBox.AutoSize = true;
+            this.AttackCheckBox.Checked = true;
+            this.AttackCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.AttackCheckBox.Location = new System.Drawing.Point(134, 43);
+            this.AttackCheckBox.Name = "AttackCheckBox";
+            this.AttackCheckBox.Size = new System.Drawing.Size(60, 19);
+            this.AttackCheckBox.TabIndex = 13;
+            this.AttackCheckBox.Text = "Attack";
+            this.AttackCheckBox.UseVisualStyleBackColor = true;
+            this.AttackCheckBox.CheckedChanged += new System.EventHandler(this.FilterCheckBox_CheckedChanged);
             // 
-            // DefenseButton
+            // AuraCheckBox
             // 
-            this.DefenseButton.Location = new System.Drawing.Point(215, 43);
-            this.DefenseButton.Name = "DefenseButton";
-            this.DefenseButton.Size = new System.Drawing.Size(75, 23);
-            this.DefenseButton.TabIndex = 2;
-            this.DefenseButton.Text = "Defense";
-            this.DefenseButton.UseVisualStyleBackColor = true;
-            this.DefenseButton.Click += new System.EventHandler(this.DefenseButton_Click);
+            this.AuraCheckBox.AutoSize = true;
+            this.AuraCheckBox.Checked = true;
+            this.AuraCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.AuraCheckBox.Location = new System.Drawing.Point(53, 43);
+            this.AuraCheckBox.Name = "AuraCheckBox";
+            this.AuraCheckBox.Size = new System.Drawing.Size(51, 19);
+            this.AuraCheckBox.TabIndex = 12;
+            this.AuraCheckBox.Text = "Aura";
+            this.AuraCheckBox.UseVisualStyleBackColor = true;
+            this.AuraCheckBox.CheckedChanged += new System.EventHandler(this.FilterCheckBox_CheckedChanged);
             // 
-            // NatureButton
+            // FaithCheckBox
             // 
-            this.NatureButton.Location = new System.Drawing.Point(296, 9);
-            this.NatureButton.Name = "NatureButton";
-            this.NatureButton.Size = new System.Drawing.Size(75, 23);
-            this.NatureButton.TabIndex = 2;
-            this.NatureButton.Text = "Nature";
-            this.NatureButton.UseVisualStyleBackColor = true;
-            this.NatureButton.Click += new System.EventHandler(this.NatureButton_Click);
+            this.FaithCheckBox.AutoSize = true;
+            this.FaithCheckBox.Checked = true;
+            this.FaithCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.FaithCheckBox.Location = new System.Drawing.Point(458, 12);
+            this.FaithCheckBox.Name = "FaithCheckBox";
+            this.FaithCheckBox.Size = new System.Drawing.Size(52, 19);
+            this.FaithCheckBox.TabIndex = 11;
+            this.FaithCheckBox.Text = "Faith";
+            this.FaithCheckBox.UseVisualStyleBackColor = true;
+            this.FaithCheckBox.CheckedChanged += new System.EventHandler(this.FilterCheckBox_CheckedChanged);
             // 
-            // AttackButton
+            // KiCheckBox
             // 
-            this.AttackButton.Location = new System.Drawing.Point(134, 43);
-            this.AttackButton.Name = "AttackButton";
-            this.AttackButton.Size = new System.Drawing.Size(75, 23);
-            this.AttackButton.TabIndex = 1;
-            this.AttackButton.Text = "Attack";
-            this.AttackButton.UseVisualStyleBackColor = true;
-            this.AttackButton.Click += new System.EventHandler(this.AttackButton_Click);
+            this.KiCheckBox.AutoSize = true;
+            this.KiCheckBox.Checked = true;
+            this.KiCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.KiCheckBox.Location = new System.Drawing.Point(377, 12);
+            this.KiCheckBox.Name = "KiCheckBox";
+            this.KiCheckBox.Size = new System.Drawing.Size(36, 19);
+            this.KiCheckBox.TabIndex = 10;
+            this.KiCheckBox.Text = "Ki";
+            this.KiCheckBox.UseVisualStyleBackColor = true;
+            this.KiCheckBox.CheckedChanged += new System.EventHandler(this.FilterCheckBox_CheckedChanged);
             // 
-            // OpticalButton
+            // NatureCheckBox
             // 
-            this.OpticalButton.Location = new System.Drawing.Point(215, 9);
-            this.OpticalButton.Name = "OpticalButton";
-            this.OpticalButton.Size = new System.Drawing.Size(75, 23);
-            this.OpticalButton.TabIndex = 1;
-            this.OpticalButton.Text = "Optical";
-            this.OpticalButton.UseVisualStyleBackColor = true;
-            this.OpticalButton.Click += new System.EventHandler(this.OpticalButton_Click);
+            this.NatureCheckBox.AutoSize = true;
+            this.NatureCheckBox.Checked = true;
+            this.NatureCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.NatureCheckBox.Location = new System.Drawing.Point(296, 12);
+            this.NatureCheckBox.Name = "NatureCheckBox";
+            this.NatureCheckBox.Size = new System.Drawing.Size(62, 19);
+            this.NatureCheckBox.TabIndex = 9;
+            this.NatureCheckBox.Text = "Nature";
+            this.NatureCheckBox.UseVisualStyleBackColor = true;
+            this.NatureCheckBox.CheckedChanged += new System.EventHandler(this.FilterCheckBox_CheckedChanged);
             // 
-            // AuraButton
+            // OpticalCheckBox
             // 
-            this.AuraButton.Location = new System.Drawing.Point(53, 43);
-            this.AuraButton.Name = "AuraButton";
-            this.AuraButton.Size = new System.Drawing.Size(75, 23);
-            this.AuraButton.TabIndex = 0;
-            this.AuraButton.Text = "Aura";
-            this.AuraButton.UseVisualStyleBackColor = true;
-            this.AuraButton.Click += new System.EventHandler(this.AuraButton_Click);
+            this.OpticalCheckBox.AutoSize = true;
+            this.OpticalCheckBox.Checked = true;
+            this.OpticalCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.OpticalCheckBox.Location = new System.Drawing.Point(215, 12);
+            this.OpticalCheckBox.Name = "OpticalCheckBox";
+            this.OpticalCheckBox.Size = new System.Drawing.Size(64, 19);
+            this.OpticalCheckBox.TabIndex = 8;
+            this.OpticalCheckBox.Text = "Optical";
+            this.OpticalCheckBox.UseVisualStyleBackColor = true;
+            this.OpticalCheckBox.CheckedChanged += new System.EventHandler(this.FilterCheckBox_CheckedChanged);
             // 
-            // PsychoButton
+            // PsychoCheckBox
             // 
-            this.PsychoButton.Location = new System.Drawing.Point(134, 9);
-            this.PsychoButton.Name = "PsychoButton";
-            this.PsychoButton.Size = new System.Drawing.Size(75, 23);
-            this.PsychoButton.TabIndex = 0;
-            this.PsychoButton.Text = "Psycho";
-            this.PsychoButton.UseVisualStyleBackColor = true;
-            this.PsychoButton.Click += new System.EventHandler(this.PsychoButton_Click);
+            this.PsychoCheckBox.AutoSize = true;
+            this.PsychoCheckBox.Checked = true;
+            this.PsychoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.PsychoCheckBox.Location = new System.Drawing.Point(134, 12);
+            this.PsychoCheckBox.Name = "PsychoCheckBox";
+            this.PsychoCheckBox.Size = new System.Drawing.Size(64, 19);
+            this.PsychoCheckBox.TabIndex = 7;
+            this.PsychoCheckBox.Text = "Psycho";
+            this.PsychoCheckBox.UseVisualStyleBackColor = true;
+            this.PsychoCheckBox.CheckedChanged += new System.EventHandler(this.FilterCheckBox_CheckedChanged);
             // 
             // Subheader
             // 
@@ -480,6 +516,7 @@
             this.Text = "SkillSelectForm";
             this.MainLayout.ResumeLayout(false);
             this.Header.ResumeLayout(false);
+            this.Header.PerformLayout();
             this.Subheader.ResumeLayout(false);
             this.Subheader.PerformLayout();
             this.Footer.ResumeLayout(false);
@@ -502,18 +539,6 @@
         private Panel Footer;
         private FlowLayoutPanel SkillList;
         private Panel SkillDetail;
-        private Button FaithButton;
-        private Button KiButton;
-        private Button NatureButton;
-        private Button OpticalButton;
-        private Button PsychoButton;
-        private Button EnvironmentalButton;
-        private Button SpecialButton;
-        private Button StatusButton;
-        private Button EraseButton;
-        private Button DefenseButton;
-        private Button AttackButton;
-        private Button AuraButton;
         private Label SearchLabel;
         private TextBox SearchTextBox;
         private Label SortThenBy2Label;
@@ -531,5 +556,17 @@
         private Label CardDescription;
         private Label CardSubtitle;
         private Label CardTitle;
+        private CheckBox PsychoCheckBox;
+        private CheckBox FaithCheckBox;
+        private CheckBox KiCheckBox;
+        private CheckBox NatureCheckBox;
+        private CheckBox OpticalCheckBox;
+        private CheckBox EraseCheckBox;
+        private CheckBox DefenseCheckBox;
+        private CheckBox AttackCheckBox;
+        private CheckBox AuraCheckBox;
+        private CheckBox EnvironmentalCheckBox;
+        private CheckBox SpecialCheckBox;
+        private CheckBox StatusCheckBox;
     }
 }
