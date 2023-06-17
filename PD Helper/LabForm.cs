@@ -17,12 +17,10 @@ namespace PD_Helper
 {
     public partial class LabForm : Form
     {
-        private readonly GameService _gameService = new();
         private readonly ArsenalService _arsenalService = new();
         private readonly ArsenalSkill[] _arsenalSkills = new ArsenalSkill[30];
         private Dictionary<string, PictureBox> _schoolPictures;
-        private ArsenalListItem _currentArsenalListItem = null;
-        private Dictionary<int, string> _arsenalRows = new();
+        private ArsenalListItem _currentArsenalListItem;
         private List<ArsenalListItem> _arsenalListItems = new List<ArsenalListItem>();
 
         private struct ArsenalSkill
