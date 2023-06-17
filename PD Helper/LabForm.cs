@@ -248,6 +248,7 @@ namespace PD_Helper
             };
 
             ArsenalListBody.Controls.Add(arsenalListItem);
+            ArsenalListBody.Controls.SetChildIndex(arsenalListItem, 0);
         }
     }
 }
