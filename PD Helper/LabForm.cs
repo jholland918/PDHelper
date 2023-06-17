@@ -42,28 +42,27 @@ namespace PD_Helper
 
         private void ArsenalFilterTextBox_TextChanged(object? sender, EventArgs e)
         {
-            //jmh
-            //var searchTerm = ArsenalFilterTextBox.Text;
-            //if (searchTerm.Length == 0)
-            //{
-            //    foreach (var row in _arsenalRows)
-            //    {
-            //        ArsenalList.RowStyles[row.Key].SizeType = SizeType.AutoSize;
-            //    }
-            //    return;
-            //}
+            var searchTerm = ArsenalFilterTextBox.Text;
+            if (searchTerm.Length == 0)
+            {
+                foreach (Control control in ArsenalListBody.Controls)
+                {
+                    control.Show();
+                }
+                return;
+            }
 
-            //foreach (var row in _arsenalRows)
-            //{
-            //    if (row.Value.Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
-            //    {
-            //        ArsenalList.RowStyles[row.Key].SizeType = SizeType.AutoSize;
-            //    }
-            //    else
-            //    {
-            //        ArsenalList.RowStyles[row.Key].SizeType = SizeType.Absolute; // Since height is zero, this hides the row
-            //    }
-            //}
+            foreach (Control control in ArsenalListBody.Controls)
+            {
+                if (control.ToString().Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
+                {
+                    control.Show();
+                }
+                else
+                {
+                    control.Hide();
+                }
+            }
         }
 
         private void InitializeSchoolPictures()
@@ -117,8 +116,6 @@ namespace PD_Helper
                     RenderArsenal(arsenalListItem.ArsenalName, cards, schools, schoolCount, skillsOverAura);
                 };
 
-                //jmh
-                //AddItem(ArsenalList, arsenalListItem, arsenalName);
                 ArsenalListBody.Controls.Add(arsenalListItem);
             }
         }
@@ -210,10 +207,9 @@ namespace PD_Helper
             
             _arsenalService.Delete(arsenalName);
 
-            //jmh
-            //ArsenalList.Controls.Clear();
-            _arsenalListItems.Clear();
-            InitializeArsenalList();
+            var item = _arsenalListItems.Where(x => x.ToString() == arsenalName).First();
+            _arsenalListItems.Remove(item);
+            ArsenalListBody.Controls.Remove(item);
         }
 
         private void NewButton_Click(object sender, EventArgs e)
@@ -251,8 +247,7 @@ namespace PD_Helper
                 RenderArsenal(arsenalListItem.ArsenalName, cards, schools, schoolCount, skillsOverAura);
             };
 
-            //jmh
-            //AddItem(ArsenalList, arsenalListItem, arsenalName);
+            ArsenalListBody.Controls.Add(arsenalListItem);
         }
     }
 }

@@ -199,5 +199,10 @@ namespace PD_Helper
         {
             OnMouseEnter(e);
         }
+
+        public override string ToString()
+        {
+            return _arsenal.ArsenalName;
+        }
     }
 }
