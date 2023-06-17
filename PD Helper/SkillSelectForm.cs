@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PD_Helper.Library;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +22,30 @@ namespace PD_Helper
             this.arsenalListItem = arsenalListItem;
             this.card = card;
             InitializeComponent();
+            Initialize();
+        }
+
+        private void Initialize()
+        {
+            foreach (KeyValuePair<string, PDCard> skill in SkillDB.Skills)
+            {
+                var btn = new Button();
+                btn.Text = $"{skill.Value.NAME}";
+                btn.AccessibleName = skill.Key;
+                btn.MouseEnter += SkillButton_MouseEnter;
+                SkillList.Controls.Add(btn);
+            }
+        }
+
+        private void SkillButton_MouseEnter(object? sender, EventArgs e)
+        {
+            if (sender is Button button)
+            {
+                var skill = SkillDB.Skills[button.AccessibleName];
+                CardTitle.Text = skill.NAME;
+                CardSubtitle.Text = $"COST {skill.COST} STR {skill.DAMAGE} @ {skill.RANGE}";
+                CardDescription.Text = skill.DESCRIPTION;
+            }
         }
 
         private void PsychoButton_Click(object sender, EventArgs e)
