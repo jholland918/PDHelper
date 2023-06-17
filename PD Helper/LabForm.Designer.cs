@@ -392,6 +392,8 @@
             this.ArsenalSkill1.Text = "button1";
             this.ArsenalSkill1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill1.UseVisualStyleBackColor = true;
+            this.ArsenalSkill1.Click += new System.EventHandler(this.ArsenalSkill_Click);
+            this.ArsenalSkill1.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
             // 
             // ArsenalSkill21
             // 
@@ -405,6 +407,8 @@
             this.ArsenalSkill21.Text = "button21";
             this.ArsenalSkill21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill21.UseVisualStyleBackColor = true;
+            this.ArsenalSkill21.Click += new System.EventHandler(this.ArsenalSkill_Click);
+            this.ArsenalSkill21.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
             // 
             // ArsenalSkill8
             // 
@@ -418,6 +422,8 @@
             this.ArsenalSkill8.Text = "button8";
             this.ArsenalSkill8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill8.UseVisualStyleBackColor = true;
+            this.ArsenalSkill8.Click += new System.EventHandler(this.ArsenalSkill_Click);
+            this.ArsenalSkill8.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
             // 
             // ArsenalSkill20
             // 
@@ -431,6 +437,8 @@
             this.ArsenalSkill20.Text = "button20";
             this.ArsenalSkill20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill20.UseVisualStyleBackColor = true;
+            this.ArsenalSkill20.Click += new System.EventHandler(this.ArsenalSkill_Click);
+            this.ArsenalSkill20.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
             // 
             // ArsenalSkill22
             // 
@@ -444,6 +452,8 @@
             this.ArsenalSkill22.Text = "button22";
             this.ArsenalSkill22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill22.UseVisualStyleBackColor = true;
+            this.ArsenalSkill22.Click += new System.EventHandler(this.ArsenalSkill_Click);
+            this.ArsenalSkill22.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
             // 
             // ArsenalSkill7
             // 
@@ -457,6 +467,8 @@
             this.ArsenalSkill7.Text = "button7";
             this.ArsenalSkill7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill7.UseVisualStyleBackColor = true;
+            this.ArsenalSkill7.Click += new System.EventHandler(this.ArsenalSkill_Click);
+            this.ArsenalSkill7.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
             // 
             // ArsenalSkill19
             // 
@@ -470,6 +482,8 @@
             this.ArsenalSkill19.Text = "button19";
             this.ArsenalSkill19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill19.UseVisualStyleBackColor = true;
+            this.ArsenalSkill19.Click += new System.EventHandler(this.ArsenalSkill_Click);
+            this.ArsenalSkill19.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
             // 
             // ArsenalSkill23
             // 
@@ -483,6 +497,8 @@
             this.ArsenalSkill23.Text = "button23";
             this.ArsenalSkill23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill23.UseVisualStyleBackColor = true;
+            this.ArsenalSkill23.Click += new System.EventHandler(this.ArsenalSkill_Click);
+            this.ArsenalSkill23.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
             // 
             // ArsenalSkill6
             // 
@@ -496,6 +512,8 @@
             this.ArsenalSkill6.Text = "button6";
             this.ArsenalSkill6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill6.UseVisualStyleBackColor = true;
+            this.ArsenalSkill6.Click += new System.EventHandler(this.ArsenalSkill_Click);
+            this.ArsenalSkill6.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
             // 
             // ArsenalSkill18
             // 
@@ -509,6 +527,8 @@
             this.ArsenalSkill18.Text = "button18";
             this.ArsenalSkill18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill18.UseVisualStyleBackColor = true;
+            this.ArsenalSkill18.Click += new System.EventHandler(this.ArsenalSkill_Click);
+            this.ArsenalSkill18.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
             // 
             // ArsenalSkill24
             // 
@@ -522,6 +542,8 @@
             this.ArsenalSkill24.Text = "button24";
             this.ArsenalSkill24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill24.UseVisualStyleBackColor = true;
+            this.ArsenalSkill24.Click += new System.EventHandler(this.ArsenalSkill_Click);
+            this.ArsenalSkill24.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
             // 
             // ArsenalSkill5
             // 
@@ -535,6 +557,8 @@
             this.ArsenalSkill5.Text = "button5";
             this.ArsenalSkill5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill5.UseVisualStyleBackColor = true;
+            this.ArsenalSkill5.Click += new System.EventHandler(this.ArsenalSkill_Click);
+            this.ArsenalSkill5.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
             // 
             // ArsenalSkill17
             // 
@@ -548,6 +572,8 @@
             this.ArsenalSkill17.Text = "button17";
             this.ArsenalSkill17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill17.UseVisualStyleBackColor = true;
+            this.ArsenalSkill17.Click += new System.EventHandler(this.ArsenalSkill_Click);
+            this.ArsenalSkill17.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
             // 
             // ArsenalSkill25
             // 
@@ -561,6 +587,8 @@
             this.ArsenalSkill25.Text = "button25";
             this.ArsenalSkill25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill25.UseVisualStyleBackColor = true;
+            this.ArsenalSkill25.Click += new System.EventHandler(this.ArsenalSkill_Click);
+            this.ArsenalSkill25.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
             // 
             // ArsenalSkill4
             // 
@@ -574,6 +602,8 @@
             this.ArsenalSkill4.Text = "button4";
             this.ArsenalSkill4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill4.UseVisualStyleBackColor = true;
+            this.ArsenalSkill4.Click += new System.EventHandler(this.ArsenalSkill_Click);
+            this.ArsenalSkill4.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
             // 
             // ArsenalSkill16
             // 
@@ -587,6 +617,8 @@
             this.ArsenalSkill16.Text = "button16";
             this.ArsenalSkill16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill16.UseVisualStyleBackColor = true;
+            this.ArsenalSkill16.Click += new System.EventHandler(this.ArsenalSkill_Click);
+            this.ArsenalSkill16.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
             // 
             // ArsenalSkill26
             // 
@@ -600,6 +632,8 @@
             this.ArsenalSkill26.Text = "button26";
             this.ArsenalSkill26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill26.UseVisualStyleBackColor = true;
+            this.ArsenalSkill26.Click += new System.EventHandler(this.ArsenalSkill_Click);
+            this.ArsenalSkill26.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
             // 
             // ArsenalSkill3
             // 
@@ -613,6 +647,8 @@
             this.ArsenalSkill3.Text = "button3";
             this.ArsenalSkill3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill3.UseVisualStyleBackColor = true;
+            this.ArsenalSkill3.Click += new System.EventHandler(this.ArsenalSkill_Click);
+            this.ArsenalSkill3.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
             // 
             // ArsenalSkill15
             // 
@@ -626,6 +662,8 @@
             this.ArsenalSkill15.Text = "button15";
             this.ArsenalSkill15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill15.UseVisualStyleBackColor = true;
+            this.ArsenalSkill15.Click += new System.EventHandler(this.ArsenalSkill_Click);
+            this.ArsenalSkill15.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
             // 
             // ArsenalSkill27
             // 
@@ -639,6 +677,8 @@
             this.ArsenalSkill27.Text = "button27";
             this.ArsenalSkill27.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill27.UseVisualStyleBackColor = true;
+            this.ArsenalSkill27.Click += new System.EventHandler(this.ArsenalSkill_Click);
+            this.ArsenalSkill27.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
             // 
             // ArsenalSkill2
             // 
@@ -652,6 +692,8 @@
             this.ArsenalSkill2.Text = "button2";
             this.ArsenalSkill2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill2.UseVisualStyleBackColor = true;
+            this.ArsenalSkill2.Click += new System.EventHandler(this.ArsenalSkill_Click);
+            this.ArsenalSkill2.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
             // 
             // ArsenalSkill14
             // 
@@ -665,6 +707,8 @@
             this.ArsenalSkill14.Text = "button14";
             this.ArsenalSkill14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill14.UseVisualStyleBackColor = true;
+            this.ArsenalSkill14.Click += new System.EventHandler(this.ArsenalSkill_Click);
+            this.ArsenalSkill14.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
             // 
             // ArsenalSkill28
             // 
@@ -678,6 +722,8 @@
             this.ArsenalSkill28.Text = "button28";
             this.ArsenalSkill28.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill28.UseVisualStyleBackColor = true;
+            this.ArsenalSkill28.Click += new System.EventHandler(this.ArsenalSkill_Click);
+            this.ArsenalSkill28.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
             // 
             // ArsenalSkill9
             // 
@@ -691,6 +737,8 @@
             this.ArsenalSkill9.Text = "button9";
             this.ArsenalSkill9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill9.UseVisualStyleBackColor = true;
+            this.ArsenalSkill9.Click += new System.EventHandler(this.ArsenalSkill_Click);
+            this.ArsenalSkill9.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
             // 
             // ArsenalSkill13
             // 
@@ -704,6 +752,8 @@
             this.ArsenalSkill13.Text = "button13";
             this.ArsenalSkill13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill13.UseVisualStyleBackColor = true;
+            this.ArsenalSkill13.Click += new System.EventHandler(this.ArsenalSkill_Click);
+            this.ArsenalSkill13.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
             // 
             // ArsenalSkill29
             // 
@@ -717,6 +767,8 @@
             this.ArsenalSkill29.Text = "button29";
             this.ArsenalSkill29.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill29.UseVisualStyleBackColor = true;
+            this.ArsenalSkill29.Click += new System.EventHandler(this.ArsenalSkill_Click);
+            this.ArsenalSkill29.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
             // 
             // ArsenalSkill10
             // 
@@ -730,6 +782,8 @@
             this.ArsenalSkill10.Text = "button10";
             this.ArsenalSkill10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill10.UseVisualStyleBackColor = true;
+            this.ArsenalSkill10.Click += new System.EventHandler(this.ArsenalSkill_Click);
+            this.ArsenalSkill10.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
             // 
             // ArsenalSkill12
             // 
@@ -743,6 +797,8 @@
             this.ArsenalSkill12.Text = "button12";
             this.ArsenalSkill12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill12.UseVisualStyleBackColor = true;
+            this.ArsenalSkill12.Click += new System.EventHandler(this.ArsenalSkill_Click);
+            this.ArsenalSkill12.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
             // 
             // ArsenalSkill11
             // 
@@ -756,6 +812,8 @@
             this.ArsenalSkill11.Text = "button11";
             this.ArsenalSkill11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill11.UseVisualStyleBackColor = true;
+            this.ArsenalSkill11.Click += new System.EventHandler(this.ArsenalSkill_Click);
+            this.ArsenalSkill11.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
             // 
             // ArsenalSkill30
             // 
@@ -769,6 +827,8 @@
             this.ArsenalSkill30.Text = "button30";
             this.ArsenalSkill30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ArsenalSkill30.UseVisualStyleBackColor = true;
+            this.ArsenalSkill30.Click += new System.EventHandler(this.ArsenalSkill_Click);
+            this.ArsenalSkill30.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
             // 
             // ArsenalControlPanel
             // 

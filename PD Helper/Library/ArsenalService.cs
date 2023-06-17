@@ -1,13 +1,29 @@
 ﻿using System.Text.RegularExpressions;
-using static PD_Helper.Form1;
 
 namespace PD_Helper.Library
 {
     /// <summary>
-    /// Various methods to operate on an <see cref="Arsenal"/>
+    /// Operations for filesystem arsenals - filesystem arsenals are arsenals not within the game, but saved on the user's computer.
     /// </summary>
     internal class ArsenalService
     {
+        /// <summary>
+        /// Gets arsenal names from the user's filesystem
+        /// </summary>
+        public IEnumerable<string> GetArsenalNames()
+        {
+            DirectoryInfo directory = new DirectoryInfo(@"Arsenals\"); //Assuming Test is your Folder
+
+            FileInfo[] Files = directory.GetFiles("*.arsenal"); //Getting Text files
+
+            return Files.Select(f => Path.GetFileNameWithoutExtension(f.Name));
+        }
+
+        /// <summary>
+        /// Validates arsenal name uses valid characters and is within the character limit
+        /// </summary>
+        /// <param name="name"></param>
+        /// <exception cref="AppException"></exception>
         public void CheckArsenalName(string name)
         {
             if (name == null || name.Length == 0)
@@ -27,6 +43,9 @@ namespace PD_Helper.Library
             }
         }
 
+        /// <summary>
+        /// Deletes an arsenal from the user's filesystem
+        /// </summary>
         public void Delete(string arsenalName)
         {
             DirectoryInfo directory = new DirectoryInfo(@"Arsenals\");
@@ -40,7 +59,10 @@ namespace PD_Helper.Library
             File.Delete(file);
         }
 
-        public void Create(string arsenalName)
+        /// <summary>
+        /// Creates a new arsenal on the user's filesystem
+        /// </summary>
+        public Arsenal Create(string arsenalName)
         {
             CheckArsenalName(arsenalName);
             DirectoryInfo directory = new DirectoryInfo(@"Arsenals\");
@@ -53,8 +75,13 @@ namespace PD_Helper.Library
 
             var blankArsenal = "FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,01 00,\r\n";
             File.WriteAllText(file, blankArsenal);
+
+            return LoadArsenal(arsenalName);
         }
 
+        /// <summary>
+        /// Renames an arsenal on the user's filesystem
+        /// </summary>
         public void Rename(string oldName, string newName)
         {
             CheckArsenalName(newName);
@@ -75,6 +102,9 @@ namespace PD_Helper.Library
             File.Move(oldFile, newFile);
         }
 
+        /// <summary>
+        /// Reads an arsenal from the user's filesystem
+        /// </summary>
         public Arsenal LoadArsenal(string arsenalName)
         {
             var arsenal = new Arsenal();
@@ -113,25 +143,9 @@ namespace PD_Helper.Library
                 }
             }
 
+            arsenal.SortCards();
+
             return arsenal;
-        }
-
-        private static readonly Dictionary<string, int> _typeSort = new Dictionary<string, int>
-        {
-            ["Attack"] = 1,
-            ["Defense"] = 2,
-            ["Erase"] = 3,
-            ["Status"] = 4,
-            ["Special"] = 5,
-            ["Environment"] = 6,
-            ["Aura"] = 7,
-        };
-
-        public List<PDCard> SortCards(List<PDCard> cards)
-        {
-            // Phantom Dust's sorting seems pretty arbitrary except for sorting by skill type,
-            // so until I can figure it out I'm just going to sort by name after type.
-            return cards.OrderBy(c => _typeSort[c.TYPE]).ThenBy(c => c.NAME).ToList();
         }
     }
 }

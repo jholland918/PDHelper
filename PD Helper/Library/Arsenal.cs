@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static PD_Helper.Form1;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace PD_Helper.Library
 {
@@ -13,8 +14,24 @@ namespace PD_Helper.Library
     /// <remarks>
     /// This could be an arsenal that has been loaded from the Phantom Dust game, the filesystem, or created from scratch within PD Helper.
     /// </remarks>
-    internal class Arsenal
+    public class Arsenal
     {
+        private static readonly Dictionary<string, int> _typeSort = new Dictionary<string, int>
+        {
+            ["Attack"] = 1,
+            ["Defense"] = 2,
+            ["Erase"] = 3,
+            ["Status"] = 4,
+            ["Special"] = 5,
+            ["Environment"] = 6,
+            ["Aura"] = 7,
+        };
+
+        /// <summary>
+        /// Returns the string showing how many skills vs aura are in the arsenal.
+        /// </summary>
+        public string SkillsOverAura { get { return $"{Cards.Where(c => c.TYPE != "Aura").Count()}/30"; } }
+
         /// <summary>
         /// The arsenal index inside the game
         /// </summary>
@@ -47,7 +64,7 @@ namespace PD_Helper.Library
             }
         }
 
-        public PDCard[] Cards { get; } = new PDCard[30];
+        public PDCard[] Cards { get; private set; } = new PDCard[30];
 
         /// <summary>
         /// Creates a new instance using an arsenal index loaded from the game
@@ -70,6 +87,13 @@ namespace PD_Helper.Library
         public void SetSchoolAmount(string schoolAmountHex)
         {
             SchoolAmount = int.Parse(schoolAmountHex.Remove(schoolAmountHex.Length - 3));
+        }
+
+        public void SortCards()
+        {
+            // Phantom Dust's sorting seems pretty arbitrary except for sorting by skill type,
+            // so until I can figure it out I'm just going to sort by name after type.
+            Cards = Cards.OrderBy(c => _typeSort[c.TYPE]).ThenBy(c => c.NAME).ToArray();
         }
     }
 }

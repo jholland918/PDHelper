@@ -35,6 +35,8 @@ namespace PD_Helper
         private readonly Color ForegroundColorHover = Color.FromArgb(216, 185, 24);
         private bool IsActive = false;
 
+        public Arsenal Arsenal { get { return _arsenal; } }
+
         public string ArsenalName
         {
             get
@@ -49,10 +51,10 @@ namespace PD_Helper
             }
         }
 
-        public ArsenalListItem(string arsenalName)
+        public ArsenalListItem(Arsenal arsenal)
             : this()
         {
-            Initialize(arsenalName);
+            Initialize(arsenal);
         }
 
         public ArsenalListItem()
@@ -60,8 +62,10 @@ namespace PD_Helper
             InitializeComponent();
         }
 
-        private void Initialize(string arsenalName)
+        private void Initialize(Arsenal arsenal)
         {
+            _arsenal = arsenal;
+
             for (int i = 1; i <= 16; i++)
             {
                 var button = new ToolStripButton($"ARSENAL {i.ToString().PadLeft(2, '0')}");
@@ -81,7 +85,6 @@ namespace PD_Helper
             }
 
             InitializeSchoolPictures();
-            _arsenal = _arsenalService.LoadArsenal(arsenalName);
             var schools = _arsenal.Schools;
             int schoolCount = schools.Count();
             if (schoolCount == 0)
@@ -90,7 +93,7 @@ namespace PD_Helper
             }
             string skillsOverAura = $"{_arsenal.Cards.Where(c => c.TYPE != "Aura").Count()}/30";
             ArsenalCasePicture.Image = AppImages.GetArsenalCase(schoolCount);
-            ArsenalNameLabel.Text = arsenalName;
+            ArsenalNameLabel.Text = _arsenal.ArsenalName;
             foreach (KeyValuePair<string, PictureBox> schoolPicture in SchoolPictures)
             {
                 if (schools.Contains(schoolPicture.Key))

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,10 +19,21 @@ namespace PD_Helper
     {
         private readonly GameService _gameService = new();
         private readonly ArsenalService _arsenalService = new();
-        private readonly List<Button> _arsenalSkills = new();
+        private readonly ArsenalSkill[] _arsenalSkills = new ArsenalSkill[30];
         private Dictionary<string, PictureBox> _schoolPictures;
         private ArsenalListItem _currentArsenalListItem = null;
         private Dictionary<int, string> _arsenalRows = new();
+        private List<ArsenalListItem> _arsenalListItems = new List<ArsenalListItem>();
+
+        private struct ArsenalSkill
+        {
+            public ArsenalSkill(Button button)
+            {
+                Button = button;
+            }
+
+            public Button Button;
+        }
 
         public LabForm()
         {
@@ -33,7 +45,11 @@ namespace PD_Helper
         {
             InitializeSchoolPictures();
 
-            _arsenalSkills.AddRange(new[] { ArsenalSkill1, ArsenalSkill2, ArsenalSkill3, ArsenalSkill4, ArsenalSkill5, ArsenalSkill6, ArsenalSkill7, ArsenalSkill8, ArsenalSkill9, ArsenalSkill10, ArsenalSkill11, ArsenalSkill12, ArsenalSkill13, ArsenalSkill14, ArsenalSkill15, ArsenalSkill16, ArsenalSkill17, ArsenalSkill18, ArsenalSkill19, ArsenalSkill20, ArsenalSkill21, ArsenalSkill22, ArsenalSkill23, ArsenalSkill24, ArsenalSkill25, ArsenalSkill26, ArsenalSkill27, ArsenalSkill28, ArsenalSkill29, ArsenalSkill30 });
+            var skillButtons = new[] { ArsenalSkill1, ArsenalSkill2, ArsenalSkill3, ArsenalSkill4, ArsenalSkill5, ArsenalSkill6, ArsenalSkill7, ArsenalSkill8, ArsenalSkill9, ArsenalSkill10, ArsenalSkill11, ArsenalSkill12, ArsenalSkill13, ArsenalSkill14, ArsenalSkill15, ArsenalSkill16, ArsenalSkill17, ArsenalSkill18, ArsenalSkill19, ArsenalSkill20, ArsenalSkill21, ArsenalSkill22, ArsenalSkill23, ArsenalSkill24, ArsenalSkill25, ArsenalSkill26, ArsenalSkill27, ArsenalSkill28, ArsenalSkill29, ArsenalSkill30 };
+            for (int i = 0; i < 30; i++)
+            {
+                _arsenalSkills[i] = new ArsenalSkill(skillButtons[i]);
+            }
 
             InitializeArsenalList();
 
@@ -83,61 +99,35 @@ namespace PD_Helper
             };
         }
 
-        private List<ArsenalListItem> _arsenalListItems = new List<ArsenalListItem>();
-
         private void InitializeArsenalList()
         {
-            var arsenalNames = GetPdHelperArsenals();
+            var arsenalNames = _arsenalService.GetArsenalNames();
 
             foreach (var arsenalName in arsenalNames)
             {
-                var arsenal = _arsenalService.LoadArsenal(arsenalName);
-
-                var arsenalListItem = new ArsenalListItem(arsenalName);
-                _arsenalListItems.Add(arsenalListItem);
-
-                var cards = _arsenalService.SortCards(arsenal.Cards.ToList());
-
-                var schools = arsenal.Schools;
-
-                int schoolCount = schools.Count();
-
-                string skillsOverAura = $"{cards.Where(c => c.TYPE != "Aura").Count()}/30";
-
-                arsenalListItem.MouseEnter += (object? sender, EventArgs e) =>
-                {
-                    if (_currentArsenalListItem != arsenalListItem)
-                    {
-                        _currentArsenalListItem?.SetInactiveColors();
-                        _currentArsenalListItem = arsenalListItem;
-                        arsenalListItem.SetActiveColors();
-                    }
-
-                    RenderArsenal(arsenalListItem.ArsenalName, cards, schools, schoolCount, skillsOverAura);
-                };
-
-                ArsenalListBody.Controls.Add(arsenalListItem);
+                AddArsenalToList(_arsenalService.LoadArsenal(arsenalName));
             }
         }
 
-        private void RenderArsenal(string arsenalName, List<PDCard> cards, IEnumerable<string> schools, int schoolCount, string skillsOverAura)
+        private void RenderArsenal(ArsenalListItem arsenalListItem)
         {
             if (!ArsenalPanel.Visible)
             {
                 ArsenalPanel.Visible = true;
             }
 
-            if (schoolCount == 0)
+            int schoolCount = arsenalListItem.Arsenal.Schools.Count();
+            if (arsenalListItem.Arsenal.Schools.Count() == 0)
             {
                 schoolCount = 1; // Sometimes arsenals are all Aura, so set the school count to 1 minimum.
             }
 
             ArsenalCasePicture.Image = AppImages.GetArsenalCase(schoolCount);
-            ArsenalNameLabel.Text = arsenalName;
+            ArsenalNameLabel.Text = arsenalListItem.ArsenalName;
 
             foreach (KeyValuePair<string, PictureBox> schoolPicture in _schoolPictures)
             {
-                if (schools.Contains(schoolPicture.Key))
+                if (arsenalListItem.Arsenal.Schools.Contains(schoolPicture.Key))
                 {
                     schoolPicture.Value.Image = AppImages.GetSchool(schoolPicture.Key);
                     schoolPicture.Value.BackColor = Color.FromArgb(92, 172, 149);
@@ -149,38 +139,18 @@ namespace PD_Helper
                 }
             }
 
-            SkillsOverAuraLabel.Text = skillsOverAura;
+            SkillsOverAuraLabel.Text = arsenalListItem.Arsenal.SkillsOverAura;
 
             for (int i = 0; i < 30; i++)
             {
-                var card = cards[i];
-                var skill = _arsenalSkills[i];
+                var card = arsenalListItem.Arsenal.Cards[i];
+                var skill = _arsenalSkills[i].Button;
                 skill.Text = card.NAME;
                 skill.BackColor = AppColors.GetSkillColor(card.TYPE);
                 skill.Image = AppImages.GetSchool(card.SCHOOL);
-                skill.MouseEnter += (object? sender, EventArgs e) => RenderCard(card);
+                //skill.MouseEnter += (object? sender, EventArgs e) => RenderCard(card);
+                skill.AccessibleName = i.ToString(); // I should probably put this index on a subclass of Button instead of this hacky thing... :)
             }
-        }
-
-        private void RenderCard(PDCard card)
-        {
-            CardTitlePanel.BackColor = AppColors.GetSkillColor(card.TYPE);
-            CardSchoolPicture.Image = AppImages.GetSchool(card.SCHOOL);
-            CardTitleLabel.Text = card.NAME;
-            CardSubtitleLabel.Text = $"COST {card.COST} STR {card.DAMAGE} @ {card.RANGE}";
-            CardDescriptionLabel.Text = card.DESCRIPTION;
-        }
-
-        /// <summary>
-        /// Gets arsenal names for locally saved arsenal files
-        /// </summary>
-        private IEnumerable<string> GetPdHelperArsenals()
-        {
-            DirectoryInfo directory = new DirectoryInfo(@"Arsenals\"); //Assuming Test is your Folder
-
-            FileInfo[] Files = directory.GetFiles("*.arsenal"); //Getting Text files
-
-            return Files.Select(f => Path.GetFileNameWithoutExtension(f.Name));
         }
 
         private void RenameButton_Click(object sender, EventArgs e)
@@ -220,22 +190,34 @@ namespace PD_Helper
                 return;
             }
 
-            _arsenalService.Create(arsenalName);
+            var arsenal = _arsenalService.Create(arsenalName);
+            var arsenalListItem = AddArsenalToList(arsenal);
+            ArsenalListBody.Controls.SetChildIndex(arsenalListItem, 0);
+        }
 
-            var arsenal = _arsenalService.LoadArsenal(arsenalName);
+        private void ArsenalSkill_Click(object sender, EventArgs e)
+        {
+            var skillSelectForm = new SkillSelectForm(null, null);
+            skillSelectForm.Show();
+        }
 
-            var arsenalListItem = new ArsenalListItem(arsenalName);
-            _arsenalListItems.Add(arsenalListItem);
+        private void ArsenalSkill_MouseEnter(object sender, EventArgs e)
+        {
+            if (sender is Button button)
+            {
+                int index = int.Parse(button.AccessibleName);
+                var card = _currentArsenalListItem.Arsenal.Cards[index];
+                CardTitlePanel.BackColor = AppColors.GetSkillColor(card.TYPE);
+                CardSchoolPicture.Image = AppImages.GetSchool(card.SCHOOL);
+                CardTitleLabel.Text = card.NAME;
+                CardSubtitleLabel.Text = $"COST {card.COST} STR {card.DAMAGE} @ {card.RANGE}";
+                CardDescriptionLabel.Text = card.DESCRIPTION;
+            }
+        }
 
-            var cards = _arsenalService.SortCards(arsenal.Cards.ToList());
-
-            var schools = arsenal.Schools;
-
-            int schoolCount = schools.Count();
-
-            string skillsOverAura = $"{cards.Where(c => c.TYPE != "Aura").Count()}/30";
-
-            arsenalListItem.MouseEnter += (object? sender, EventArgs e) =>
+        private void ArsenalListItem_MouseEnter(object? sender, EventArgs e)
+        {
+            if (sender is ArsenalListItem arsenalListItem)
             {
                 if (_currentArsenalListItem != arsenalListItem)
                 {
@@ -244,11 +226,17 @@ namespace PD_Helper
                     arsenalListItem.SetActiveColors();
                 }
 
-                RenderArsenal(arsenalListItem.ArsenalName, cards, schools, schoolCount, skillsOverAura);
-            };
+                RenderArsenal(arsenalListItem);
+            }
+        }
 
+        private ArsenalListItem AddArsenalToList(Arsenal arsenal)
+        {
+            var arsenalListItem = new ArsenalListItem(arsenal);
+            _arsenalListItems.Add(arsenalListItem);
+            arsenalListItem.MouseEnter += ArsenalListItem_MouseEnter;
             ArsenalListBody.Controls.Add(arsenalListItem);
-            ArsenalListBody.Controls.SetChildIndex(arsenalListItem, 0);
+            return arsenalListItem;
         }
     }
 }
