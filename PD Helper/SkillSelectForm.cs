@@ -131,6 +131,12 @@ namespace PD_Helper
 
         private bool ShowSkill(PDCard card)
         {
+            var searchTerm = SearchTextBox.Text.Trim();
+            if (searchTerm.Length > 0 && !card.NAME.Contains(searchTerm,StringComparison.OrdinalIgnoreCase))
+            {
+                return false;
+            }
+
             // Type filter
             if (card.TYPE != activeType)
             {
@@ -259,6 +265,11 @@ namespace PD_Helper
                 schoolButtons[kvp.Key].BackColor = activeSchools[kvp.Key] ? AppColors.ForegroundColor : AppColors.BackgroundColorMedium;
             }
 
+            FilterSkills();
+        }
+
+        private void SearchTextBox_TextChanged(object sender, EventArgs e)
+        {
             FilterSkills();
         }
     }

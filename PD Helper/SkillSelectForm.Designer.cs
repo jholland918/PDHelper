@@ -404,6 +404,7 @@
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.Size = new System.Drawing.Size(139, 23);
             this.SearchTextBox.TabIndex = 0;
+            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
             // 
             // SkillList
             // 
@@ -430,6 +431,9 @@
             // 
             // CancelButton
             // 
+            this.CancelButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.CancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CancelButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
             this.CancelButton.Location = new System.Drawing.Point(469, 3);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(75, 23);
@@ -440,6 +444,9 @@
             // 
             // ConfirmButton
             // 
+            this.ConfirmButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.ConfirmButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ConfirmButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
             this.ConfirmButton.Location = new System.Drawing.Point(550, 3);
             this.ConfirmButton.Name = "ConfirmButton";
             this.ConfirmButton.Size = new System.Drawing.Size(75, 23);
@@ -450,6 +457,9 @@
             // 
             // ConfirmDropdown
             // 
+            this.ConfirmDropdown.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.ConfirmDropdown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ConfirmDropdown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
             this.ConfirmDropdown.Location = new System.Drawing.Point(624, 3);
             this.ConfirmDropdown.Name = "ConfirmDropdown";
             this.ConfirmDropdown.Size = new System.Drawing.Size(33, 23);
