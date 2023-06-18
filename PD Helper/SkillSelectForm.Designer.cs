@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SkillSelectForm));
             this.MainLayout = new System.Windows.Forms.TableLayoutPanel();
             this.Header = new System.Windows.Forms.Panel();
-            this.EnvironmentalCheckBox = new System.Windows.Forms.CheckBox();
-            this.SpecialCheckBox = new System.Windows.Forms.CheckBox();
-            this.StatusCheckBox = new System.Windows.Forms.CheckBox();
-            this.EraseCheckBox = new System.Windows.Forms.CheckBox();
-            this.DefenseCheckBox = new System.Windows.Forms.CheckBox();
-            this.AttackCheckBox = new System.Windows.Forms.CheckBox();
-            this.AuraCheckBox = new System.Windows.Forms.CheckBox();
-            this.FaithCheckBox = new System.Windows.Forms.CheckBox();
-            this.KiCheckBox = new System.Windows.Forms.CheckBox();
-            this.NatureCheckBox = new System.Windows.Forms.CheckBox();
-            this.OpticalCheckBox = new System.Windows.Forms.CheckBox();
-            this.PsychoCheckBox = new System.Windows.Forms.CheckBox();
+            this.PsychoButton = new System.Windows.Forms.Button();
+            this.FaithButton = new System.Windows.Forms.Button();
+            this.OpticalButton = new System.Windows.Forms.Button();
+            this.KiButton = new System.Windows.Forms.Button();
+            this.NatureButton = new System.Windows.Forms.Button();
+            this.AttackButton = new System.Windows.Forms.Button();
+            this.DefenseButton = new System.Windows.Forms.Button();
+            this.EnvironmentButton = new System.Windows.Forms.Button();
+            this.SpecialButton = new System.Windows.Forms.Button();
+            this.StatusButton = new System.Windows.Forms.Button();
+            this.EraseButton = new System.Windows.Forms.Button();
+            this.AuraButton = new System.Windows.Forms.Button();
             this.Subheader = new System.Windows.Forms.Panel();
             this.SortThenBy2Label = new System.Windows.Forms.Label();
             this.SortThenBy1Label = new System.Windows.Forms.Label();
@@ -62,6 +63,7 @@
             this.CardSubheaderPanel = new System.Windows.Forms.Panel();
             this.CardSubtitle = new System.Windows.Forms.Label();
             this.CardHeaderPanel = new System.Windows.Forms.Panel();
+            this.CardSchoolPicture = new System.Windows.Forms.PictureBox();
             this.CardTitle = new System.Windows.Forms.Label();
             this.MainLayout.SuspendLayout();
             this.Header.SuspendLayout();
@@ -71,6 +73,7 @@
             this.CardDescriptionPanel.SuspendLayout();
             this.CardSubheaderPanel.SuspendLayout();
             this.CardHeaderPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CardSchoolPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // MainLayout
@@ -87,8 +90,8 @@
             this.MainLayout.Location = new System.Drawing.Point(0, 0);
             this.MainLayout.Name = "MainLayout";
             this.MainLayout.RowCount = 4;
-            this.MainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.MainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.MainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 72F));
+            this.MainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.MainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.MainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.MainLayout.Size = new System.Drawing.Size(674, 450);
@@ -97,182 +100,188 @@
             // Header
             // 
             this.MainLayout.SetColumnSpan(this.Header, 2);
-            this.Header.Controls.Add(this.EnvironmentalCheckBox);
-            this.Header.Controls.Add(this.SpecialCheckBox);
-            this.Header.Controls.Add(this.StatusCheckBox);
-            this.Header.Controls.Add(this.EraseCheckBox);
-            this.Header.Controls.Add(this.DefenseCheckBox);
-            this.Header.Controls.Add(this.AttackCheckBox);
-            this.Header.Controls.Add(this.AuraCheckBox);
-            this.Header.Controls.Add(this.FaithCheckBox);
-            this.Header.Controls.Add(this.KiCheckBox);
-            this.Header.Controls.Add(this.NatureCheckBox);
-            this.Header.Controls.Add(this.OpticalCheckBox);
-            this.Header.Controls.Add(this.PsychoCheckBox);
+            this.Header.Controls.Add(this.PsychoButton);
+            this.Header.Controls.Add(this.FaithButton);
+            this.Header.Controls.Add(this.OpticalButton);
+            this.Header.Controls.Add(this.KiButton);
+            this.Header.Controls.Add(this.NatureButton);
+            this.Header.Controls.Add(this.AttackButton);
+            this.Header.Controls.Add(this.DefenseButton);
+            this.Header.Controls.Add(this.EnvironmentButton);
+            this.Header.Controls.Add(this.SpecialButton);
+            this.Header.Controls.Add(this.StatusButton);
+            this.Header.Controls.Add(this.EraseButton);
+            this.Header.Controls.Add(this.AuraButton);
             this.Header.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Header.Location = new System.Drawing.Point(3, 3);
             this.Header.Name = "Header";
-            this.Header.Size = new System.Drawing.Size(668, 69);
+            this.Header.Size = new System.Drawing.Size(668, 66);
             this.Header.TabIndex = 0;
             // 
-            // EnvironmentalCheckBox
+            // PsychoButton
             // 
-            this.EnvironmentalCheckBox.AutoSize = true;
-            this.EnvironmentalCheckBox.Checked = true;
-            this.EnvironmentalCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.EnvironmentalCheckBox.Location = new System.Drawing.Point(539, 43);
-            this.EnvironmentalCheckBox.Name = "EnvironmentalCheckBox";
-            this.EnvironmentalCheckBox.Size = new System.Drawing.Size(103, 19);
-            this.EnvironmentalCheckBox.TabIndex = 18;
-            this.EnvironmentalCheckBox.Text = "Environmental";
-            this.EnvironmentalCheckBox.UseVisualStyleBackColor = true;
-            this.EnvironmentalCheckBox.CheckedChanged += new System.EventHandler(this.FilterCheckBox_CheckedChanged);
+            this.PsychoButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.PsychoButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PsychoButton.BackgroundImage")));
+            this.PsychoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PsychoButton.FlatAppearance.BorderSize = 0;
+            this.PsychoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PsychoButton.Location = new System.Drawing.Point(99, 3);
+            this.PsychoButton.Name = "PsychoButton";
+            this.PsychoButton.Size = new System.Drawing.Size(94, 32);
+            this.PsychoButton.TabIndex = 23;
+            this.PsychoButton.UseVisualStyleBackColor = false;
+            this.PsychoButton.Click += new System.EventHandler(this.PsychoButton_Click);
             // 
-            // SpecialCheckBox
+            // FaithButton
             // 
-            this.SpecialCheckBox.AutoSize = true;
-            this.SpecialCheckBox.Checked = true;
-            this.SpecialCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.SpecialCheckBox.Location = new System.Drawing.Point(458, 43);
-            this.SpecialCheckBox.Name = "SpecialCheckBox";
-            this.SpecialCheckBox.Size = new System.Drawing.Size(63, 19);
-            this.SpecialCheckBox.TabIndex = 17;
-            this.SpecialCheckBox.Text = "Special";
-            this.SpecialCheckBox.UseVisualStyleBackColor = true;
-            this.SpecialCheckBox.CheckedChanged += new System.EventHandler(this.FilterCheckBox_CheckedChanged);
+            this.FaithButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.FaithButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("FaithButton.BackgroundImage")));
+            this.FaithButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FaithButton.FlatAppearance.BorderSize = 0;
+            this.FaithButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FaithButton.Location = new System.Drawing.Point(475, 3);
+            this.FaithButton.Name = "FaithButton";
+            this.FaithButton.Size = new System.Drawing.Size(94, 32);
+            this.FaithButton.TabIndex = 22;
+            this.FaithButton.UseVisualStyleBackColor = false;
+            this.FaithButton.Click += new System.EventHandler(this.FaithButton_Click);
             // 
-            // StatusCheckBox
+            // OpticalButton
             // 
-            this.StatusCheckBox.AutoSize = true;
-            this.StatusCheckBox.Checked = true;
-            this.StatusCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.StatusCheckBox.Location = new System.Drawing.Point(377, 43);
-            this.StatusCheckBox.Name = "StatusCheckBox";
-            this.StatusCheckBox.Size = new System.Drawing.Size(58, 19);
-            this.StatusCheckBox.TabIndex = 16;
-            this.StatusCheckBox.Text = "Status";
-            this.StatusCheckBox.UseVisualStyleBackColor = true;
-            this.StatusCheckBox.CheckedChanged += new System.EventHandler(this.FilterCheckBox_CheckedChanged);
+            this.OpticalButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.OpticalButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("OpticalButton.BackgroundImage")));
+            this.OpticalButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.OpticalButton.FlatAppearance.BorderSize = 0;
+            this.OpticalButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OpticalButton.Location = new System.Drawing.Point(193, 3);
+            this.OpticalButton.Name = "OpticalButton";
+            this.OpticalButton.Size = new System.Drawing.Size(94, 32);
+            this.OpticalButton.TabIndex = 21;
+            this.OpticalButton.UseVisualStyleBackColor = false;
+            this.OpticalButton.Click += new System.EventHandler(this.OpticalButton_Click);
             // 
-            // EraseCheckBox
+            // KiButton
             // 
-            this.EraseCheckBox.AutoSize = true;
-            this.EraseCheckBox.Checked = true;
-            this.EraseCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.EraseCheckBox.Location = new System.Drawing.Point(296, 43);
-            this.EraseCheckBox.Name = "EraseCheckBox";
-            this.EraseCheckBox.Size = new System.Drawing.Size(53, 19);
-            this.EraseCheckBox.TabIndex = 15;
-            this.EraseCheckBox.Text = "Erase";
-            this.EraseCheckBox.UseVisualStyleBackColor = true;
-            this.EraseCheckBox.CheckedChanged += new System.EventHandler(this.FilterCheckBox_CheckedChanged);
+            this.KiButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.KiButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("KiButton.BackgroundImage")));
+            this.KiButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.KiButton.FlatAppearance.BorderSize = 0;
+            this.KiButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.KiButton.Location = new System.Drawing.Point(381, 3);
+            this.KiButton.Name = "KiButton";
+            this.KiButton.Size = new System.Drawing.Size(94, 32);
+            this.KiButton.TabIndex = 20;
+            this.KiButton.UseVisualStyleBackColor = false;
+            this.KiButton.Click += new System.EventHandler(this.KiButton_Click);
             // 
-            // DefenseCheckBox
+            // NatureButton
             // 
-            this.DefenseCheckBox.AutoSize = true;
-            this.DefenseCheckBox.Checked = true;
-            this.DefenseCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.DefenseCheckBox.Location = new System.Drawing.Point(215, 43);
-            this.DefenseCheckBox.Name = "DefenseCheckBox";
-            this.DefenseCheckBox.Size = new System.Drawing.Size(68, 19);
-            this.DefenseCheckBox.TabIndex = 14;
-            this.DefenseCheckBox.Text = "Defense";
-            this.DefenseCheckBox.UseVisualStyleBackColor = true;
-            this.DefenseCheckBox.CheckedChanged += new System.EventHandler(this.FilterCheckBox_CheckedChanged);
+            this.NatureButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.NatureButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("NatureButton.BackgroundImage")));
+            this.NatureButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.NatureButton.FlatAppearance.BorderSize = 0;
+            this.NatureButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NatureButton.Location = new System.Drawing.Point(287, 3);
+            this.NatureButton.Name = "NatureButton";
+            this.NatureButton.Size = new System.Drawing.Size(94, 32);
+            this.NatureButton.TabIndex = 19;
+            this.NatureButton.UseVisualStyleBackColor = false;
+            this.NatureButton.Click += new System.EventHandler(this.NatureButton_Click);
             // 
-            // AttackCheckBox
+            // AttackButton
             // 
-            this.AttackCheckBox.AutoSize = true;
-            this.AttackCheckBox.Checked = true;
-            this.AttackCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.AttackCheckBox.Location = new System.Drawing.Point(134, 43);
-            this.AttackCheckBox.Name = "AttackCheckBox";
-            this.AttackCheckBox.Size = new System.Drawing.Size(60, 19);
-            this.AttackCheckBox.TabIndex = 13;
-            this.AttackCheckBox.Text = "Attack";
-            this.AttackCheckBox.UseVisualStyleBackColor = true;
-            this.AttackCheckBox.CheckedChanged += new System.EventHandler(this.FilterCheckBox_CheckedChanged);
+            this.AttackButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(107)))), ((int)(((byte)(69)))));
+            this.AttackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AttackButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(107)))), ((int)(((byte)(69)))));
+            this.AttackButton.Location = new System.Drawing.Point(97, 41);
+            this.AttackButton.Name = "AttackButton";
+            this.AttackButton.Size = new System.Drawing.Size(92, 23);
+            this.AttackButton.TabIndex = 18;
+            this.AttackButton.Text = "Attack";
+            this.AttackButton.UseVisualStyleBackColor = false;
+            this.AttackButton.Click += new System.EventHandler(this.AttackButton_Click);
             // 
-            // AuraCheckBox
+            // DefenseButton
             // 
-            this.AuraCheckBox.AutoSize = true;
-            this.AuraCheckBox.Checked = true;
-            this.AuraCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.AuraCheckBox.Location = new System.Drawing.Point(53, 43);
-            this.AuraCheckBox.Name = "AuraCheckBox";
-            this.AuraCheckBox.Size = new System.Drawing.Size(51, 19);
-            this.AuraCheckBox.TabIndex = 12;
-            this.AuraCheckBox.Text = "Aura";
-            this.AuraCheckBox.UseVisualStyleBackColor = true;
-            this.AuraCheckBox.CheckedChanged += new System.EventHandler(this.FilterCheckBox_CheckedChanged);
+            this.DefenseButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(97)))), ((int)(((byte)(220)))));
+            this.DefenseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DefenseButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(97)))), ((int)(((byte)(220)))));
+            this.DefenseButton.Location = new System.Drawing.Point(192, 41);
+            this.DefenseButton.Name = "DefenseButton";
+            this.DefenseButton.Size = new System.Drawing.Size(92, 23);
+            this.DefenseButton.TabIndex = 17;
+            this.DefenseButton.Text = "Defense";
+            this.DefenseButton.UseVisualStyleBackColor = false;
+            this.DefenseButton.Click += new System.EventHandler(this.DefenseButton_Click);
             // 
-            // FaithCheckBox
+            // EnvironmentButton
             // 
-            this.FaithCheckBox.AutoSize = true;
-            this.FaithCheckBox.Checked = true;
-            this.FaithCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.FaithCheckBox.Location = new System.Drawing.Point(458, 12);
-            this.FaithCheckBox.Name = "FaithCheckBox";
-            this.FaithCheckBox.Size = new System.Drawing.Size(52, 19);
-            this.FaithCheckBox.TabIndex = 11;
-            this.FaithCheckBox.Text = "Faith";
-            this.FaithCheckBox.UseVisualStyleBackColor = true;
-            this.FaithCheckBox.CheckedChanged += new System.EventHandler(this.FilterCheckBox_CheckedChanged);
+            this.EnvironmentButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(220)))), ((int)(((byte)(218)))));
+            this.EnvironmentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EnvironmentButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(220)))), ((int)(((byte)(218)))));
+            this.EnvironmentButton.Location = new System.Drawing.Point(575, 41);
+            this.EnvironmentButton.Name = "EnvironmentButton";
+            this.EnvironmentButton.Size = new System.Drawing.Size(92, 23);
+            this.EnvironmentButton.TabIndex = 16;
+            this.EnvironmentButton.Text = "Environment";
+            this.EnvironmentButton.UseVisualStyleBackColor = false;
+            this.EnvironmentButton.Click += new System.EventHandler(this.EnvironmentButton_Click);
             // 
-            // KiCheckBox
+            // SpecialButton
             // 
-            this.KiCheckBox.AutoSize = true;
-            this.KiCheckBox.Checked = true;
-            this.KiCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.KiCheckBox.Location = new System.Drawing.Point(377, 12);
-            this.KiCheckBox.Name = "KiCheckBox";
-            this.KiCheckBox.Size = new System.Drawing.Size(36, 19);
-            this.KiCheckBox.TabIndex = 10;
-            this.KiCheckBox.Text = "Ki";
-            this.KiCheckBox.UseVisualStyleBackColor = true;
-            this.KiCheckBox.CheckedChanged += new System.EventHandler(this.FilterCheckBox_CheckedChanged);
+            this.SpecialButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(218)))), ((int)(((byte)(75)))));
+            this.SpecialButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SpecialButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(218)))), ((int)(((byte)(75)))));
+            this.SpecialButton.Location = new System.Drawing.Point(479, 41);
+            this.SpecialButton.Name = "SpecialButton";
+            this.SpecialButton.Size = new System.Drawing.Size(92, 23);
+            this.SpecialButton.TabIndex = 15;
+            this.SpecialButton.Text = "Special";
+            this.SpecialButton.UseVisualStyleBackColor = false;
+            this.SpecialButton.Click += new System.EventHandler(this.SpecialButton_Click);
             // 
-            // NatureCheckBox
+            // StatusButton
             // 
-            this.NatureCheckBox.AutoSize = true;
-            this.NatureCheckBox.Checked = true;
-            this.NatureCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.NatureCheckBox.Location = new System.Drawing.Point(296, 12);
-            this.NatureCheckBox.Name = "NatureCheckBox";
-            this.NatureCheckBox.Size = new System.Drawing.Size(62, 19);
-            this.NatureCheckBox.TabIndex = 9;
-            this.NatureCheckBox.Text = "Nature";
-            this.NatureCheckBox.UseVisualStyleBackColor = true;
-            this.NatureCheckBox.CheckedChanged += new System.EventHandler(this.FilterCheckBox_CheckedChanged);
+            this.StatusButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(220)))), ((int)(((byte)(81)))));
+            this.StatusButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.StatusButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(220)))), ((int)(((byte)(81)))));
+            this.StatusButton.Location = new System.Drawing.Point(383, 41);
+            this.StatusButton.Name = "StatusButton";
+            this.StatusButton.Size = new System.Drawing.Size(92, 23);
+            this.StatusButton.TabIndex = 14;
+            this.StatusButton.Text = "Status";
+            this.StatusButton.UseVisualStyleBackColor = false;
+            this.StatusButton.Click += new System.EventHandler(this.StatusButton_Click);
             // 
-            // OpticalCheckBox
+            // EraseButton
             // 
-            this.OpticalCheckBox.AutoSize = true;
-            this.OpticalCheckBox.Checked = true;
-            this.OpticalCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.OpticalCheckBox.Location = new System.Drawing.Point(215, 12);
-            this.OpticalCheckBox.Name = "OpticalCheckBox";
-            this.OpticalCheckBox.Size = new System.Drawing.Size(64, 19);
-            this.OpticalCheckBox.TabIndex = 8;
-            this.OpticalCheckBox.Text = "Optical";
-            this.OpticalCheckBox.UseVisualStyleBackColor = true;
-            this.OpticalCheckBox.CheckedChanged += new System.EventHandler(this.FilterCheckBox_CheckedChanged);
+            this.EraseButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(75)))), ((int)(((byte)(220)))));
+            this.EraseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EraseButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(75)))), ((int)(((byte)(220)))));
+            this.EraseButton.Location = new System.Drawing.Point(288, 41);
+            this.EraseButton.Name = "EraseButton";
+            this.EraseButton.Size = new System.Drawing.Size(92, 23);
+            this.EraseButton.TabIndex = 13;
+            this.EraseButton.Text = "Erase";
+            this.EraseButton.UseVisualStyleBackColor = false;
+            this.EraseButton.Click += new System.EventHandler(this.EraseButton_Click);
             // 
-            // PsychoCheckBox
+            // AuraButton
             // 
-            this.PsychoCheckBox.AutoSize = true;
-            this.PsychoCheckBox.Checked = true;
-            this.PsychoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.PsychoCheckBox.Location = new System.Drawing.Point(134, 12);
-            this.PsychoCheckBox.Name = "PsychoCheckBox";
-            this.PsychoCheckBox.Size = new System.Drawing.Size(64, 19);
-            this.PsychoCheckBox.TabIndex = 7;
-            this.PsychoCheckBox.Text = "Psycho";
-            this.PsychoCheckBox.UseVisualStyleBackColor = true;
-            this.PsychoCheckBox.CheckedChanged += new System.EventHandler(this.FilterCheckBox_CheckedChanged);
+            this.AuraButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(177)))), ((int)(((byte)(150)))));
+            this.AuraButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AuraButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(177)))), ((int)(((byte)(150)))));
+            this.AuraButton.Location = new System.Drawing.Point(2, 41);
+            this.AuraButton.Name = "AuraButton";
+            this.AuraButton.Size = new System.Drawing.Size(92, 23);
+            this.AuraButton.TabIndex = 12;
+            this.AuraButton.Text = "Aura";
+            this.AuraButton.UseVisualStyleBackColor = false;
+            this.AuraButton.Click += new System.EventHandler(this.AuraButton_Click);
             // 
             // Subheader
             // 
+            this.Subheader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
             this.MainLayout.SetColumnSpan(this.Subheader, 2);
             this.Subheader.Controls.Add(this.SortThenBy2Label);
             this.Subheader.Controls.Add(this.SortThenBy1Label);
@@ -283,28 +292,31 @@
             this.Subheader.Controls.Add(this.SearchLabel);
             this.Subheader.Controls.Add(this.SearchTextBox);
             this.Subheader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Subheader.Location = new System.Drawing.Point(3, 78);
+            this.Subheader.Location = new System.Drawing.Point(0, 72);
+            this.Subheader.Margin = new System.Windows.Forms.Padding(0);
             this.Subheader.Name = "Subheader";
-            this.Subheader.Size = new System.Drawing.Size(668, 29);
+            this.Subheader.Size = new System.Drawing.Size(674, 40);
             this.Subheader.TabIndex = 1;
             // 
             // SortThenBy2Label
             // 
             this.SortThenBy2Label.AutoSize = true;
-            this.SortThenBy2Label.Location = new System.Drawing.Point(519, 6);
+            this.SortThenBy2Label.ForeColor = System.Drawing.Color.White;
+            this.SortThenBy2Label.Location = new System.Drawing.Point(517, 12);
             this.SortThenBy2Label.Name = "SortThenBy2Label";
-            this.SortThenBy2Label.Size = new System.Drawing.Size(15, 15);
+            this.SortThenBy2Label.Size = new System.Drawing.Size(17, 15);
             this.SortThenBy2Label.TabIndex = 7;
-            this.SortThenBy2Label.Text = ">";
+            this.SortThenBy2Label.Text = "▶";
             // 
             // SortThenBy1Label
             // 
             this.SortThenBy1Label.AutoSize = true;
-            this.SortThenBy1Label.Location = new System.Drawing.Point(374, 6);
+            this.SortThenBy1Label.ForeColor = System.Drawing.Color.White;
+            this.SortThenBy1Label.Location = new System.Drawing.Point(374, 12);
             this.SortThenBy1Label.Name = "SortThenBy1Label";
-            this.SortThenBy1Label.Size = new System.Drawing.Size(15, 15);
+            this.SortThenBy1Label.Size = new System.Drawing.Size(17, 15);
             this.SortThenBy1Label.TabIndex = 6;
-            this.SortThenBy1Label.Text = ">";
+            this.SortThenBy1Label.Text = "▶";
             // 
             // SortComboBox1
             // 
@@ -320,7 +332,7 @@
             "Rarity",
             "Amount",
             "None"});
-            this.SortComboBox1.Location = new System.Drawing.Point(247, 3);
+            this.SortComboBox1.Location = new System.Drawing.Point(250, 9);
             this.SortComboBox1.Name = "SortComboBox1";
             this.SortComboBox1.Size = new System.Drawing.Size(121, 23);
             this.SortComboBox1.TabIndex = 5;
@@ -329,7 +341,8 @@
             // SortLabel
             // 
             this.SortLabel.AutoSize = true;
-            this.SortLabel.Location = new System.Drawing.Point(213, 6);
+            this.SortLabel.ForeColor = System.Drawing.Color.White;
+            this.SortLabel.Location = new System.Drawing.Point(218, 12);
             this.SortLabel.Name = "SortLabel";
             this.SortLabel.Size = new System.Drawing.Size(28, 15);
             this.SortLabel.TabIndex = 4;
@@ -349,7 +362,7 @@
             "Rarity",
             "Amount",
             "None"});
-            this.SortComboBox2.Location = new System.Drawing.Point(392, 3);
+            this.SortComboBox2.Location = new System.Drawing.Point(394, 9);
             this.SortComboBox2.Name = "SortComboBox2";
             this.SortComboBox2.Size = new System.Drawing.Size(121, 23);
             this.SortComboBox2.TabIndex = 3;
@@ -369,7 +382,7 @@
             "Rarity",
             "Amount",
             "None"});
-            this.SortComboBox3.Location = new System.Drawing.Point(536, 3);
+            this.SortComboBox3.Location = new System.Drawing.Point(536, 9);
             this.SortComboBox3.Name = "SortComboBox3";
             this.SortComboBox3.Size = new System.Drawing.Size(121, 23);
             this.SortComboBox3.TabIndex = 2;
@@ -378,7 +391,8 @@
             // SearchLabel
             // 
             this.SearchLabel.AutoSize = true;
-            this.SearchLabel.Location = new System.Drawing.Point(9, 6);
+            this.SearchLabel.ForeColor = System.Drawing.Color.White;
+            this.SearchLabel.Location = new System.Drawing.Point(9, 12);
             this.SearchLabel.Name = "SearchLabel";
             this.SearchLabel.Size = new System.Drawing.Size(42, 15);
             this.SearchLabel.TabIndex = 1;
@@ -386,7 +400,7 @@
             // 
             // SearchTextBox
             // 
-            this.SearchTextBox.Location = new System.Drawing.Point(53, 3);
+            this.SearchTextBox.Location = new System.Drawing.Point(53, 9);
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.Size = new System.Drawing.Size(139, 23);
             this.SearchTextBox.TabIndex = 0;
@@ -396,9 +410,9 @@
             this.SkillList.AutoScroll = true;
             this.SkillList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SkillList.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.SkillList.Location = new System.Drawing.Point(3, 113);
+            this.SkillList.Location = new System.Drawing.Point(3, 115);
             this.SkillList.Name = "SkillList";
-            this.SkillList.Size = new System.Drawing.Size(331, 299);
+            this.SkillList.Size = new System.Drawing.Size(331, 297);
             this.SkillList.TabIndex = 3;
             this.SkillList.WrapContents = false;
             // 
@@ -450,23 +464,25 @@
             this.SkillDetail.Controls.Add(this.CardSubheaderPanel);
             this.SkillDetail.Controls.Add(this.CardHeaderPanel);
             this.SkillDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SkillDetail.Location = new System.Drawing.Point(340, 113);
+            this.SkillDetail.Location = new System.Drawing.Point(340, 115);
             this.SkillDetail.Name = "SkillDetail";
-            this.SkillDetail.Size = new System.Drawing.Size(331, 299);
+            this.SkillDetail.Size = new System.Drawing.Size(331, 297);
             this.SkillDetail.TabIndex = 4;
             // 
             // CardDescriptionPanel
             // 
+            this.CardDescriptionPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(168)))), ((int)(((byte)(158)))));
             this.CardDescriptionPanel.Controls.Add(this.CardDescription);
-            this.CardDescriptionPanel.Location = new System.Drawing.Point(3, 101);
+            this.CardDescriptionPanel.Location = new System.Drawing.Point(5, 63);
             this.CardDescriptionPanel.Name = "CardDescriptionPanel";
-            this.CardDescriptionPanel.Size = new System.Drawing.Size(382, 29);
+            this.CardDescriptionPanel.Size = new System.Drawing.Size(325, 95);
             this.CardDescriptionPanel.TabIndex = 2;
             // 
             // CardDescription
             // 
             this.CardDescription.AutoSize = true;
-            this.CardDescription.Location = new System.Drawing.Point(3, 0);
+            this.CardDescription.Location = new System.Drawing.Point(3, 4);
+            this.CardDescription.MaximumSize = new System.Drawing.Size(320, 90);
             this.CardDescription.Name = "CardDescription";
             this.CardDescription.Size = new System.Drawing.Size(95, 15);
             this.CardDescription.TabIndex = 0;
@@ -474,16 +490,18 @@
             // 
             // CardSubheaderPanel
             // 
+            this.CardSubheaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
             this.CardSubheaderPanel.Controls.Add(this.CardSubtitle);
-            this.CardSubheaderPanel.Location = new System.Drawing.Point(3, 66);
+            this.CardSubheaderPanel.Location = new System.Drawing.Point(5, 33);
             this.CardSubheaderPanel.Name = "CardSubheaderPanel";
-            this.CardSubheaderPanel.Size = new System.Drawing.Size(382, 29);
+            this.CardSubheaderPanel.Size = new System.Drawing.Size(325, 29);
             this.CardSubheaderPanel.TabIndex = 1;
             // 
             // CardSubtitle
             // 
             this.CardSubtitle.AutoSize = true;
-            this.CardSubtitle.Location = new System.Drawing.Point(3, 0);
+            this.CardSubtitle.ForeColor = System.Drawing.Color.White;
+            this.CardSubtitle.Location = new System.Drawing.Point(3, 7);
             this.CardSubtitle.Name = "CardSubtitle";
             this.CardSubtitle.Size = new System.Drawing.Size(75, 15);
             this.CardSubtitle.TabIndex = 0;
@@ -491,32 +509,46 @@
             // 
             // CardHeaderPanel
             // 
+            this.CardHeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(177)))), ((int)(((byte)(150)))));
+            this.CardHeaderPanel.Controls.Add(this.CardSchoolPicture);
             this.CardHeaderPanel.Controls.Add(this.CardTitle);
-            this.CardHeaderPanel.Location = new System.Drawing.Point(3, 31);
+            this.CardHeaderPanel.Location = new System.Drawing.Point(5, 3);
             this.CardHeaderPanel.Name = "CardHeaderPanel";
-            this.CardHeaderPanel.Size = new System.Drawing.Size(382, 29);
+            this.CardHeaderPanel.Size = new System.Drawing.Size(325, 29);
             this.CardHeaderPanel.TabIndex = 0;
+            // 
+            // CardSchoolPicture
+            // 
+            this.CardSchoolPicture.Image = ((System.Drawing.Image)(resources.GetObject("CardSchoolPicture.Image")));
+            this.CardSchoolPicture.Location = new System.Drawing.Point(280, 0);
+            this.CardSchoolPicture.Name = "CardSchoolPicture";
+            this.CardSchoolPicture.Size = new System.Drawing.Size(41, 29);
+            this.CardSchoolPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.CardSchoolPicture.TabIndex = 1;
+            this.CardSchoolPicture.TabStop = false;
             // 
             // CardTitle
             // 
+            this.CardTitle.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.CardTitle.AutoSize = true;
-            this.CardTitle.Location = new System.Drawing.Point(3, 0);
+            this.CardTitle.Location = new System.Drawing.Point(3, 7);
             this.CardTitle.Name = "CardTitle";
             this.CardTitle.Size = new System.Drawing.Size(57, 15);
             this.CardTitle.TabIndex = 0;
             this.CardTitle.Text = "Card Title";
+            this.CardTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // SkillSelectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(53)))), ((int)(((byte)(47)))));
             this.ClientSize = new System.Drawing.Size(674, 450);
             this.Controls.Add(this.MainLayout);
             this.Name = "SkillSelectForm";
             this.Text = "SkillSelectForm";
             this.MainLayout.ResumeLayout(false);
             this.Header.ResumeLayout(false);
-            this.Header.PerformLayout();
             this.Subheader.ResumeLayout(false);
             this.Subheader.PerformLayout();
             this.Footer.ResumeLayout(false);
@@ -527,6 +559,7 @@
             this.CardSubheaderPanel.PerformLayout();
             this.CardHeaderPanel.ResumeLayout(false);
             this.CardHeaderPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CardSchoolPicture)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -556,17 +589,18 @@
         private Label CardDescription;
         private Label CardSubtitle;
         private Label CardTitle;
-        private CheckBox PsychoCheckBox;
-        private CheckBox FaithCheckBox;
-        private CheckBox KiCheckBox;
-        private CheckBox NatureCheckBox;
-        private CheckBox OpticalCheckBox;
-        private CheckBox EraseCheckBox;
-        private CheckBox DefenseCheckBox;
-        private CheckBox AttackCheckBox;
-        private CheckBox AuraCheckBox;
-        private CheckBox EnvironmentalCheckBox;
-        private CheckBox SpecialCheckBox;
-        private CheckBox StatusCheckBox;
+        private Button AttackButton;
+        private Button DefenseButton;
+        private Button EnvironmentButton;
+        private Button SpecialButton;
+        private Button StatusButton;
+        private Button EraseButton;
+        private Button AuraButton;
+        private Button PsychoButton;
+        private Button FaithButton;
+        private Button OpticalButton;
+        private Button KiButton;
+        private Button NatureButton;
+        private PictureBox CardSchoolPicture;
     }
 }

@@ -19,6 +19,7 @@ namespace PD_Helper.Library
         public static readonly Color BackgroundColorHover = Color.FromArgb(67, 11, 15);
         public static readonly Color ForegroundColor = Color.FromArgb(92, 172, 149);
         public static readonly Color ForegroundColorHover = Color.FromArgb(216, 185, 24);
+        public static readonly Color BackgroundColorMedium = Color.FromArgb(45, 84, 73);
 
         private static readonly Dictionary<string, Color> SkillTypes = new Dictionary<string, Color>
         {
