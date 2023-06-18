@@ -15,10 +15,13 @@ namespace PD_Helper
 {
     public partial class SkillSelectForm : Form
     {
-        private ArsenalListItem arsenalListItem;
-        private PDCard card;
-        private List<SkillButton> skillButtons = new List<SkillButton>();
-        private Dictionary<string, bool> activeSchools = new Dictionary<string, bool>
+        private ArsenalListItem _arsenalListItem;
+        private PDCard _card;
+        private string _activeType = "Aura";
+        private Dictionary<string, Button> _typeButtons;
+        private List<SkillButton> _skillButtons = new List<SkillButton>();
+        private Dictionary<string, Button> _schoolButtons;
+        private Dictionary<string, bool> _activeSchools = new Dictionary<string, bool>
         {
             ["Psycho"] = true,
             ["Optical"] = true,
@@ -30,17 +33,24 @@ namespace PD_Helper
 
         public SkillSelectForm(ArsenalListItem arsenalListItem, PDCard card)
         {
-            this.arsenalListItem = arsenalListItem;
-            this.card = card;
+            _arsenalListItem = arsenalListItem;
+            _card = card;
             InitializeComponent();
             Initialize();
         }
 
-        private Dictionary<string, Button> schoolButtons;
-
         private void Initialize()
         {
-            typeButtons = new Dictionary<string, Button>
+            SortComboBox1.SelectedItem = "School";
+            SortComboBox1.SelectedText = "School";
+
+            SortComboBox2.SelectedItem = "Cost";
+            SortComboBox2.SelectedText = "Cost";
+
+            SortComboBox3.SelectedItem = "Strength";
+            SortComboBox3.SelectedText = "Strength";
+
+            _typeButtons = new Dictionary<string, Button>
             {
                 ["Aura"] = AuraButton,
                 ["Attack"] = AttackButton,
@@ -51,7 +61,7 @@ namespace PD_Helper
                 ["Environment"] = EnvironmentButton,
             };
 
-            schoolButtons = new Dictionary<string, Button>
+            _schoolButtons = new Dictionary<string, Button>
             {
                 ["Psycho"] = PsychoButton,
                 ["Optical"] = OpticalButton,
@@ -63,7 +73,7 @@ namespace PD_Helper
             foreach (KeyValuePair<string, PDCard> skill in SkillDB.Skills)
             {
                 var button = new SkillButton(skill);
-                skillButtons.Add(button);
+                _skillButtons.Add(button);
                 button.MouseEnter += SkillButton_MouseEnter;
                 SkillList.Controls.Add(button);
             }
@@ -101,17 +111,17 @@ namespace PD_Helper
 
         private void SortComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            SortSkills();
         }
 
         private void SortComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            SortSkills();
         }
 
         private void SortComboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            SortSkills();
         }
 
         private void FilterCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -122,7 +132,7 @@ namespace PD_Helper
         private void FilterSkills()
         {
             SkillList.SuspendLayout();
-            foreach(var skillButton in skillButtons)
+            foreach(var skillButton in _skillButtons)
             {
                 skillButton.Visible = ShowSkill(skillButton.Card);
             }
@@ -138,42 +148,39 @@ namespace PD_Helper
             }
 
             // Type filter
-            if (card.TYPE != activeType)
+            if (card.TYPE != _activeType)
             {
                 return false;
             }
 
             // School filters
-            if (!activeSchools["Psycho"] && card.SCHOOL == "Psycho")
+            if (!_activeSchools["Psycho"] && card.SCHOOL == "Psycho")
             {
                 return false;
             }
 
-            if (!activeSchools["Optical"] && card.SCHOOL == "Optical")
+            if (!_activeSchools["Optical"] && card.SCHOOL == "Optical")
             {
                 return false;
             }
 
-            if (!activeSchools["Nature"] && card.SCHOOL == "Nature")
+            if (!_activeSchools["Nature"] && card.SCHOOL == "Nature")
             {
                 return false;
             }
 
-            if (!activeSchools["Ki"] && card.SCHOOL == "Ki")
+            if (!_activeSchools["Ki"] && card.SCHOOL == "Ki")
             {
                 return false;
             }
 
-            if (!activeSchools["Faith"] && card.SCHOOL == "Faith")
+            if (!_activeSchools["Faith"] && card.SCHOOL == "Faith")
             {
                 return false;
             }
 
             return true;
         }
-
-        private string activeType = "Aura";
-        private Dictionary<string, Button> typeButtons;
 
         private void AuraButton_Click(object sender, EventArgs e)
         {
@@ -237,10 +244,10 @@ namespace PD_Helper
 
         private void SetActiveType(string type)
         {
-            activeType = type;
-            foreach (var kvp in typeButtons)
+            _activeType = type;
+            foreach (var kvp in _typeButtons)
             {
-                if (kvp.Key == activeType)
+                if (kvp.Key == _activeType)
                 {
                     //kvp.Value.Font = new Font(kvp.Value.Font, FontStyle.Bold);
                     kvp.Value.BackColor = AppColors.GetSkillColor(kvp.Key);
@@ -259,10 +266,10 @@ namespace PD_Helper
 
         private void SetActiveSchool(string school)
         {
-            activeSchools[school] = !activeSchools[school];
-            foreach(var kvp in activeSchools)
+            _activeSchools[school] = !_activeSchools[school];
+            foreach(var kvp in _activeSchools)
             {
-                schoolButtons[kvp.Key].BackColor = activeSchools[kvp.Key] ? AppColors.ForegroundColor : AppColors.BackgroundColorMedium;
+                _schoolButtons[kvp.Key].BackColor = _activeSchools[kvp.Key] ? AppColors.ForegroundColor : AppColors.BackgroundColorMedium;
             }
 
             FilterSkills();
@@ -271,6 +278,19 @@ namespace PD_Helper
         private void SearchTextBox_TextChanged(object sender, EventArgs e)
         {
             FilterSkills();
+        }
+
+        private void SortSkills()
+        {
+            //School
+            //Cost
+            //Strength
+            //Number of Uses
+            //Range
+            //ID
+            //Rarity
+            //Amount
+            //None
         }
     }
 }
