@@ -79,6 +79,10 @@
             this.ArsenalSkill11 = new System.Windows.Forms.Button();
             this.ArsenalSkill30 = new System.Windows.Forms.Button();
             this.ArsenalControlPanel = new System.Windows.Forms.Panel();
+            this.ReplaceSkillIcon = new System.Windows.Forms.PictureBox();
+            this.ReplaceSkillLabel = new System.Windows.Forms.Label();
+            this.AddSameSkillIcon = new System.Windows.Forms.PictureBox();
+            this.AddSameSkillLabel = new System.Windows.Forms.Label();
             this.SaveChangesButton = new System.Windows.Forms.Button();
             this.CancelChangesButton = new System.Windows.Forms.Button();
             this.SortButton = new System.Windows.Forms.Button();
@@ -105,6 +109,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureFaith)).BeginInit();
             this.ArsenalDeckPanel.SuspendLayout();
             this.ArsenalControlPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ReplaceSkillIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddSameSkillIcon)).BeginInit();
             this.CardPanel.SuspendLayout();
             this.CardTitlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CardSchoolPicture)).BeginInit();
@@ -394,6 +400,7 @@
             this.ArsenalSkill1.UseVisualStyleBackColor = true;
             this.ArsenalSkill1.Click += new System.EventHandler(this.ArsenalSkill_Click);
             this.ArsenalSkill1.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
+            this.ArsenalSkill1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
             // 
             // ArsenalSkill21
             // 
@@ -409,6 +416,7 @@
             this.ArsenalSkill21.UseVisualStyleBackColor = true;
             this.ArsenalSkill21.Click += new System.EventHandler(this.ArsenalSkill_Click);
             this.ArsenalSkill21.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
+            this.ArsenalSkill21.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
             // 
             // ArsenalSkill8
             // 
@@ -424,6 +432,7 @@
             this.ArsenalSkill8.UseVisualStyleBackColor = true;
             this.ArsenalSkill8.Click += new System.EventHandler(this.ArsenalSkill_Click);
             this.ArsenalSkill8.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
+            this.ArsenalSkill8.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
             // 
             // ArsenalSkill20
             // 
@@ -439,6 +448,7 @@
             this.ArsenalSkill20.UseVisualStyleBackColor = true;
             this.ArsenalSkill20.Click += new System.EventHandler(this.ArsenalSkill_Click);
             this.ArsenalSkill20.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
+            this.ArsenalSkill20.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
             // 
             // ArsenalSkill22
             // 
@@ -454,6 +464,7 @@
             this.ArsenalSkill22.UseVisualStyleBackColor = true;
             this.ArsenalSkill22.Click += new System.EventHandler(this.ArsenalSkill_Click);
             this.ArsenalSkill22.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
+            this.ArsenalSkill22.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
             // 
             // ArsenalSkill7
             // 
@@ -469,6 +480,7 @@
             this.ArsenalSkill7.UseVisualStyleBackColor = true;
             this.ArsenalSkill7.Click += new System.EventHandler(this.ArsenalSkill_Click);
             this.ArsenalSkill7.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
+            this.ArsenalSkill7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
             // 
             // ArsenalSkill19
             // 
@@ -484,6 +496,7 @@
             this.ArsenalSkill19.UseVisualStyleBackColor = true;
             this.ArsenalSkill19.Click += new System.EventHandler(this.ArsenalSkill_Click);
             this.ArsenalSkill19.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
+            this.ArsenalSkill19.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
             // 
             // ArsenalSkill23
             // 
@@ -499,6 +512,7 @@
             this.ArsenalSkill23.UseVisualStyleBackColor = true;
             this.ArsenalSkill23.Click += new System.EventHandler(this.ArsenalSkill_Click);
             this.ArsenalSkill23.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
+            this.ArsenalSkill23.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
             // 
             // ArsenalSkill6
             // 
@@ -514,6 +528,7 @@
             this.ArsenalSkill6.UseVisualStyleBackColor = true;
             this.ArsenalSkill6.Click += new System.EventHandler(this.ArsenalSkill_Click);
             this.ArsenalSkill6.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
+            this.ArsenalSkill6.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
             // 
             // ArsenalSkill18
             // 
@@ -529,6 +544,7 @@
             this.ArsenalSkill18.UseVisualStyleBackColor = true;
             this.ArsenalSkill18.Click += new System.EventHandler(this.ArsenalSkill_Click);
             this.ArsenalSkill18.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
+            this.ArsenalSkill18.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
             // 
             // ArsenalSkill24
             // 
@@ -544,6 +560,7 @@
             this.ArsenalSkill24.UseVisualStyleBackColor = true;
             this.ArsenalSkill24.Click += new System.EventHandler(this.ArsenalSkill_Click);
             this.ArsenalSkill24.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
+            this.ArsenalSkill24.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
             // 
             // ArsenalSkill5
             // 
@@ -559,6 +576,7 @@
             this.ArsenalSkill5.UseVisualStyleBackColor = true;
             this.ArsenalSkill5.Click += new System.EventHandler(this.ArsenalSkill_Click);
             this.ArsenalSkill5.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
+            this.ArsenalSkill5.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
             // 
             // ArsenalSkill17
             // 
@@ -574,6 +592,7 @@
             this.ArsenalSkill17.UseVisualStyleBackColor = true;
             this.ArsenalSkill17.Click += new System.EventHandler(this.ArsenalSkill_Click);
             this.ArsenalSkill17.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
+            this.ArsenalSkill17.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
             // 
             // ArsenalSkill25
             // 
@@ -589,6 +608,7 @@
             this.ArsenalSkill25.UseVisualStyleBackColor = true;
             this.ArsenalSkill25.Click += new System.EventHandler(this.ArsenalSkill_Click);
             this.ArsenalSkill25.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
+            this.ArsenalSkill25.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
             // 
             // ArsenalSkill4
             // 
@@ -604,6 +624,7 @@
             this.ArsenalSkill4.UseVisualStyleBackColor = true;
             this.ArsenalSkill4.Click += new System.EventHandler(this.ArsenalSkill_Click);
             this.ArsenalSkill4.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
+            this.ArsenalSkill4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
             // 
             // ArsenalSkill16
             // 
@@ -619,6 +640,7 @@
             this.ArsenalSkill16.UseVisualStyleBackColor = true;
             this.ArsenalSkill16.Click += new System.EventHandler(this.ArsenalSkill_Click);
             this.ArsenalSkill16.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
+            this.ArsenalSkill16.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
             // 
             // ArsenalSkill26
             // 
@@ -634,6 +656,7 @@
             this.ArsenalSkill26.UseVisualStyleBackColor = true;
             this.ArsenalSkill26.Click += new System.EventHandler(this.ArsenalSkill_Click);
             this.ArsenalSkill26.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
+            this.ArsenalSkill26.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
             // 
             // ArsenalSkill3
             // 
@@ -649,6 +672,7 @@
             this.ArsenalSkill3.UseVisualStyleBackColor = true;
             this.ArsenalSkill3.Click += new System.EventHandler(this.ArsenalSkill_Click);
             this.ArsenalSkill3.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
+            this.ArsenalSkill3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
             // 
             // ArsenalSkill15
             // 
@@ -664,6 +688,7 @@
             this.ArsenalSkill15.UseVisualStyleBackColor = true;
             this.ArsenalSkill15.Click += new System.EventHandler(this.ArsenalSkill_Click);
             this.ArsenalSkill15.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
+            this.ArsenalSkill15.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
             // 
             // ArsenalSkill27
             // 
@@ -679,6 +704,7 @@
             this.ArsenalSkill27.UseVisualStyleBackColor = true;
             this.ArsenalSkill27.Click += new System.EventHandler(this.ArsenalSkill_Click);
             this.ArsenalSkill27.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
+            this.ArsenalSkill27.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
             // 
             // ArsenalSkill2
             // 
@@ -694,6 +720,7 @@
             this.ArsenalSkill2.UseVisualStyleBackColor = true;
             this.ArsenalSkill2.Click += new System.EventHandler(this.ArsenalSkill_Click);
             this.ArsenalSkill2.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
+            this.ArsenalSkill2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
             // 
             // ArsenalSkill14
             // 
@@ -709,6 +736,7 @@
             this.ArsenalSkill14.UseVisualStyleBackColor = true;
             this.ArsenalSkill14.Click += new System.EventHandler(this.ArsenalSkill_Click);
             this.ArsenalSkill14.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
+            this.ArsenalSkill14.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
             // 
             // ArsenalSkill28
             // 
@@ -724,6 +752,7 @@
             this.ArsenalSkill28.UseVisualStyleBackColor = true;
             this.ArsenalSkill28.Click += new System.EventHandler(this.ArsenalSkill_Click);
             this.ArsenalSkill28.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
+            this.ArsenalSkill28.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
             // 
             // ArsenalSkill9
             // 
@@ -739,6 +768,7 @@
             this.ArsenalSkill9.UseVisualStyleBackColor = true;
             this.ArsenalSkill9.Click += new System.EventHandler(this.ArsenalSkill_Click);
             this.ArsenalSkill9.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
+            this.ArsenalSkill9.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
             // 
             // ArsenalSkill13
             // 
@@ -754,6 +784,7 @@
             this.ArsenalSkill13.UseVisualStyleBackColor = true;
             this.ArsenalSkill13.Click += new System.EventHandler(this.ArsenalSkill_Click);
             this.ArsenalSkill13.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
+            this.ArsenalSkill13.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
             // 
             // ArsenalSkill29
             // 
@@ -769,6 +800,7 @@
             this.ArsenalSkill29.UseVisualStyleBackColor = true;
             this.ArsenalSkill29.Click += new System.EventHandler(this.ArsenalSkill_Click);
             this.ArsenalSkill29.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
+            this.ArsenalSkill29.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
             // 
             // ArsenalSkill10
             // 
@@ -784,6 +816,7 @@
             this.ArsenalSkill10.UseVisualStyleBackColor = true;
             this.ArsenalSkill10.Click += new System.EventHandler(this.ArsenalSkill_Click);
             this.ArsenalSkill10.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
+            this.ArsenalSkill10.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
             // 
             // ArsenalSkill12
             // 
@@ -799,6 +832,7 @@
             this.ArsenalSkill12.UseVisualStyleBackColor = true;
             this.ArsenalSkill12.Click += new System.EventHandler(this.ArsenalSkill_Click);
             this.ArsenalSkill12.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
+            this.ArsenalSkill12.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
             // 
             // ArsenalSkill11
             // 
@@ -814,6 +848,7 @@
             this.ArsenalSkill11.UseVisualStyleBackColor = true;
             this.ArsenalSkill11.Click += new System.EventHandler(this.ArsenalSkill_Click);
             this.ArsenalSkill11.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
+            this.ArsenalSkill11.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
             // 
             // ArsenalSkill30
             // 
@@ -829,9 +864,14 @@
             this.ArsenalSkill30.UseVisualStyleBackColor = true;
             this.ArsenalSkill30.Click += new System.EventHandler(this.ArsenalSkill_Click);
             this.ArsenalSkill30.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
+            this.ArsenalSkill30.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
             // 
             // ArsenalControlPanel
             // 
+            this.ArsenalControlPanel.Controls.Add(this.ReplaceSkillIcon);
+            this.ArsenalControlPanel.Controls.Add(this.ReplaceSkillLabel);
+            this.ArsenalControlPanel.Controls.Add(this.AddSameSkillIcon);
+            this.ArsenalControlPanel.Controls.Add(this.AddSameSkillLabel);
             this.ArsenalControlPanel.Controls.Add(this.SaveChangesButton);
             this.ArsenalControlPanel.Controls.Add(this.CancelChangesButton);
             this.ArsenalControlPanel.Controls.Add(this.SortButton);
@@ -841,6 +881,46 @@
             this.ArsenalControlPanel.Name = "ArsenalControlPanel";
             this.ArsenalControlPanel.Size = new System.Drawing.Size(202, 185);
             this.ArsenalControlPanel.TabIndex = 32;
+            // 
+            // ReplaceSkillIcon
+            // 
+            this.ReplaceSkillIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.ReplaceSkillIcon.Location = new System.Drawing.Point(7, 114);
+            this.ReplaceSkillIcon.Name = "ReplaceSkillIcon";
+            this.ReplaceSkillIcon.Size = new System.Drawing.Size(30, 30);
+            this.ReplaceSkillIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ReplaceSkillIcon.TabIndex = 15;
+            this.ReplaceSkillIcon.TabStop = false;
+            // 
+            // ReplaceSkillLabel
+            // 
+            this.ReplaceSkillLabel.AutoSize = true;
+            this.ReplaceSkillLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.ReplaceSkillLabel.Location = new System.Drawing.Point(43, 129);
+            this.ReplaceSkillLabel.Name = "ReplaceSkillLabel";
+            this.ReplaceSkillLabel.Size = new System.Drawing.Size(72, 15);
+            this.ReplaceSkillLabel.TabIndex = 14;
+            this.ReplaceSkillLabel.Text = "Replace Skill";
+            // 
+            // AddSameSkillIcon
+            // 
+            this.AddSameSkillIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.AddSameSkillIcon.Location = new System.Drawing.Point(7, 149);
+            this.AddSameSkillIcon.Name = "AddSameSkillIcon";
+            this.AddSameSkillIcon.Size = new System.Drawing.Size(30, 30);
+            this.AddSameSkillIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.AddSameSkillIcon.TabIndex = 13;
+            this.AddSameSkillIcon.TabStop = false;
+            // 
+            // AddSameSkillLabel
+            // 
+            this.AddSameSkillLabel.AutoSize = true;
+            this.AddSameSkillLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.AddSameSkillLabel.Location = new System.Drawing.Point(43, 164);
+            this.AddSameSkillLabel.Name = "AddSameSkillLabel";
+            this.AddSameSkillLabel.Size = new System.Drawing.Size(85, 15);
+            this.AddSameSkillLabel.TabIndex = 12;
+            this.AddSameSkillLabel.Text = "Add Same Skill";
             // 
             // SaveChangesButton
             // 
@@ -1033,6 +1113,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureFaith)).EndInit();
             this.ArsenalDeckPanel.ResumeLayout(false);
             this.ArsenalControlPanel.ResumeLayout(false);
+            this.ArsenalControlPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ReplaceSkillIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddSameSkillIcon)).EndInit();
             this.CardPanel.ResumeLayout(false);
             this.CardTitlePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CardSchoolPicture)).EndInit();
@@ -1110,5 +1193,9 @@
         private TableLayoutPanel ArsenalListLayout;
         private FlowLayoutPanel ArsenalListBody;
         private TableLayoutPanel MainLayout;
+        private PictureBox AddSameSkillIcon;
+        private Label AddSameSkillLabel;
+        private PictureBox ReplaceSkillIcon;
+        private Label ReplaceSkillLabel;
     }
 }

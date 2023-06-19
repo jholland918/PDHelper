@@ -30,6 +30,21 @@ namespace PD_Helper
             ["Faith"] = true,
         };
 
+        private List<string> _sortOptions = new List<string>
+        {
+            "School",
+            "Cost",
+            "Strength",
+            "Number of Uses",
+            "Range",
+            "ID",
+            "Amount",
+            "None"
+        };
+
+        public PDCard SelectedSkill { get; private set; }
+
+        public int ConfirmCount { get; private set; } = 0;
 
         public SkillSelectForm(ArsenalListItem arsenalListItem, PDCard card)
         {
@@ -41,14 +56,15 @@ namespace PD_Helper
 
         private void Initialize()
         {
-            SortComboBox1.SelectedItem = "School";
-            SortComboBox1.SelectedText = "School";
-
-            SortComboBox2.SelectedItem = "Cost";
-            SortComboBox2.SelectedText = "Cost";
-
-            SortComboBox3.SelectedItem = "Strength";
-            SortComboBox3.SelectedText = "Strength";
+            SortComboBox1.DataSource = _sortOptions;
+            SortComboBox2.DataSource = _sortOptions;
+            SortComboBox3.DataSource = _sortOptions;
+            SortComboBox1.SelectedIndex = 0;
+            SortComboBox2.SelectedIndex = 1;
+            SortComboBox3.SelectedIndex = 2;
+            SortComboBox1.SelectedIndexChanged += SortComboBox_SelectedIndexChanged;
+            SortComboBox2.SelectedIndexChanged += SortComboBox_SelectedIndexChanged;
+            SortComboBox3.SelectedIndexChanged += SortComboBox_SelectedIndexChanged;
 
             _typeButtons = new Dictionary<string, Button>
             {
@@ -70,69 +86,32 @@ namespace PD_Helper
                 ["Faith"] = FaithButton,
             };
 
-            foreach (KeyValuePair<string, PDCard> skill in SkillDB.Skills)
+            var skills = SkillDB.Skills.OrderBy(x => x.Value.SCHOOL).ThenBy(x => x.Value.COST).ThenBy(x => x.Value.DAMAGE);
+            foreach (KeyValuePair<string, PDCard> skill in skills)
             {
                 var button = new SkillButton(skill);
                 _skillButtons.Add(button);
                 button.MouseEnter += SkillButton_MouseEnter;
+                button.Click += SkillButton_Click;
                 SkillList.Controls.Add(button);
             }
 
             FilterSkills();
         }
 
-        private void SkillButton_MouseEnter(object? sender, EventArgs e)
+        private void SkillButton_Click(object? sender, EventArgs e)
         {
             if (sender is SkillButton button)
             {
-                var skill = SkillDB.Skills[button.SkillKey];
-                CardHeaderPanel.BackColor = AppColors.GetSkillColor(skill.TYPE);
-                CardSchoolPicture.Image = AppImages.GetSchool(skill.SCHOOL);
-                CardTitle.Text = skill.NAME;
-                CardSubtitle.Text = $"COST {skill.COST} STR {skill.DAMAGE} @ {skill.RANGE}";
-                CardDescription.Text = skill.DESCRIPTION;
+                SelectedSkill = SkillDB.Skills[button.SkillKey];
+                Close();
             }
-        }
-
-        private void CancelButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ConfirmButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ConfirmDropdown_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SortComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            SortSkills();
-        }
-
-        private void SortComboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            SortSkills();
-        }
-
-        private void SortComboBox3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            SortSkills();
-        }
-
-        private void FilterCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            FilterSkills();
         }
 
         private void FilterSkills()
         {
             SkillList.SuspendLayout();
-            foreach(var skillButton in _skillButtons)
+            foreach (var skillButton in _skillButtons)
             {
                 skillButton.Visible = ShowSkill(skillButton.Card);
             }
@@ -142,7 +121,7 @@ namespace PD_Helper
         private bool ShowSkill(PDCard card)
         {
             var searchTerm = SearchTextBox.Text.Trim();
-            if (searchTerm.Length > 0 && !card.NAME.Contains(searchTerm,StringComparison.OrdinalIgnoreCase))
+            if (searchTerm.Length > 0 && !card.NAME.Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
             {
                 return false;
             }
@@ -182,39 +161,136 @@ namespace PD_Helper
             return true;
         }
 
+        private void SetActiveType(string type)
+        {
+            _activeType = type;
+            foreach (var kvp in _typeButtons)
+            {
+                if (kvp.Key == _activeType)
+                {
+                    kvp.Value.BackColor = AppColors.GetSkillColor(kvp.Key);
+                    kvp.Value.ForeColor = AppColors.BackgroundColor;
+                }
+                else
+                {
+                    kvp.Value.BackColor = AppColors.BackgroundColor;
+                    kvp.Value.ForeColor = AppColors.GetSkillColor(kvp.Key);
+                }
+            }
+
+            FilterSkills();
+        }
+
+        private void SetActiveSchool(string school)
+        {
+            _activeSchools[school] = !_activeSchools[school];
+            foreach (var kvp in _activeSchools)
+            {
+                _schoolButtons[kvp.Key].BackColor = _activeSchools[kvp.Key] ? AppColors.ForegroundColor : AppColors.BackgroundColorMedium;
+            }
+
+            FilterSkills();
+        }
+
+        private void SortSkills()
+        {
+            object GetSortProp(PDCard card, string sortType)
+            {
+                switch (sortType)
+                {
+                    case "School":
+                        return card.SCHOOL;
+                    case "Cost":
+                        return card.COST;
+                    case "Strength":
+                        return card.DAMAGE;
+                    case "Number of Uses":
+                        return card.USAGE;
+                    case "Range":
+                        return card.RANGE;
+                    case "ID":
+                        return card.ID;
+                    case "Amount":
+                        return card.COST;
+                    default:
+                        return 1;
+                }
+            }
+
+            var sortType1 = SortComboBox1.SelectedItem.ToString();
+            var sortType2 = SortComboBox2.SelectedItem.ToString();
+            var sortType3 = SortComboBox3.SelectedItem.ToString();
+            var sortedControls =
+                SkillList.Controls.Cast<SkillButton>()
+                .OrderBy(x => GetSortProp(x.Card, sortType1))
+                .ThenBy(x => GetSortProp(x.Card, sortType2))
+                .ThenBy(x => GetSortProp(x.Card, sortType3))
+                .ToArray();
+
+            SkillList.SuspendLayout();
+            SkillList.Controls.Clear();
+            SkillList.Controls.AddRange(sortedControls);
+            SkillList.ResumeLayout();
+        }
+
+        private void SkillButton_MouseEnter(object? sender, EventArgs e)
+        {
+            if (sender is SkillButton button)
+            {
+                var skill = SkillDB.Skills[button.SkillKey];
+                CardHeaderPanel.BackColor = AppColors.GetSkillColor(skill.TYPE);
+                CardSchoolPicture.Image = AppImages.GetSchool(skill.SCHOOL);
+                CardTitle.Text = skill.NAME;
+                CardSubtitle.Text = $"COST {skill.COST} STR {skill.DAMAGE} @ {skill.RANGE}";
+                CardDescription.Text = skill.DESCRIPTION;
+            }
+        }
+
+        #region Event Handlers
+
+        private void SearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            FilterSkills();
+        }
+
+        private void SortComboBox_SelectedIndexChanged(object? sender, EventArgs e)
+        {
+            SortSkills();
+        }
+
         private void AuraButton_Click(object sender, EventArgs e)
         {
-            SetActiveType( "Aura");
+            SetActiveType("Aura");
         }
 
         private void AttackButton_Click(object sender, EventArgs e)
         {
-            SetActiveType( "Attack");
+            SetActiveType("Attack");
         }
 
         private void DefenseButton_Click(object sender, EventArgs e)
         {
-            SetActiveType( "Defense");
+            SetActiveType("Defense");
         }
 
         private void EraseButton_Click(object sender, EventArgs e)
         {
-            SetActiveType( "Erase");
+            SetActiveType("Erase");
         }
 
         private void StatusButton_Click(object sender, EventArgs e)
         {
-            SetActiveType ("Status");
+            SetActiveType("Status");
         }
 
         private void SpecialButton_Click(object sender, EventArgs e)
         {
-            SetActiveType( "Special");
+            SetActiveType("Special");
         }
 
         private void EnvironmentButton_Click(object sender, EventArgs e)
         {
-            SetActiveType( "Environment");
+            SetActiveType("Environment");
         }
 
         private void PsychoButton_Click(object sender, EventArgs e)
@@ -242,55 +318,6 @@ namespace PD_Helper
             SetActiveSchool("Faith");
         }
 
-        private void SetActiveType(string type)
-        {
-            _activeType = type;
-            foreach (var kvp in _typeButtons)
-            {
-                if (kvp.Key == _activeType)
-                {
-                    //kvp.Value.Font = new Font(kvp.Value.Font, FontStyle.Bold);
-                    kvp.Value.BackColor = AppColors.GetSkillColor(kvp.Key);
-                    kvp.Value.ForeColor = AppColors.BackgroundColor;
-                }
-                else
-                {
-                    //kvp.Value.Font = new Font(kvp.Value.Font, FontStyle.Regular);
-                    kvp.Value.BackColor = AppColors.BackgroundColor;
-                    kvp.Value.ForeColor = AppColors.GetSkillColor(kvp.Key);
-                }
-            }
-
-            FilterSkills();
-        }
-
-        private void SetActiveSchool(string school)
-        {
-            _activeSchools[school] = !_activeSchools[school];
-            foreach(var kvp in _activeSchools)
-            {
-                _schoolButtons[kvp.Key].BackColor = _activeSchools[kvp.Key] ? AppColors.ForegroundColor : AppColors.BackgroundColorMedium;
-            }
-
-            FilterSkills();
-        }
-
-        private void SearchTextBox_TextChanged(object sender, EventArgs e)
-        {
-            FilterSkills();
-        }
-
-        private void SortSkills()
-        {
-            //School
-            //Cost
-            //Strength
-            //Number of Uses
-            //Range
-            //ID
-            //Rarity
-            //Amount
-            //None
-        }
+        #endregion Event Handlers
     }
 }

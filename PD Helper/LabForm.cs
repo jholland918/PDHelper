@@ -41,6 +41,9 @@ namespace PD_Helper
 
         private void Initialize()
         {
+            ReplaceSkillIcon.Image = AppImages.MouseLeft;
+            AddSameSkillIcon.Image = AppImages.MouseRight;
+
             InitializeSchoolPictures();
 
             var skillButtons = new[] { ArsenalSkill1, ArsenalSkill2, ArsenalSkill3, ArsenalSkill4, ArsenalSkill5, ArsenalSkill6, ArsenalSkill7, ArsenalSkill8, ArsenalSkill9, ArsenalSkill10, ArsenalSkill11, ArsenalSkill12, ArsenalSkill13, ArsenalSkill14, ArsenalSkill15, ArsenalSkill16, ArsenalSkill17, ArsenalSkill18, ArsenalSkill19, ArsenalSkill20, ArsenalSkill21, ArsenalSkill22, ArsenalSkill23, ArsenalSkill24, ArsenalSkill25, ArsenalSkill26, ArsenalSkill27, ArsenalSkill28, ArsenalSkill29, ArsenalSkill30 };
@@ -192,12 +195,6 @@ namespace PD_Helper
             ArsenalListBody.Controls.SetChildIndex(arsenalListItem, 0);
         }
 
-        private void ArsenalSkill_Click(object sender, EventArgs e)
-        {
-            var skillSelectForm = new SkillSelectForm(null, null);
-            skillSelectForm.Show();
-        }
-
         private void ArsenalSkill_MouseEnter(object sender, EventArgs e)
         {
             if (sender is Button button)
@@ -234,6 +231,54 @@ namespace PD_Helper
             arsenalListItem.MouseEnter += ArsenalListItem_MouseEnter;
             ArsenalListBody.Controls.Add(arsenalListItem);
             return arsenalListItem;
+        }
+
+        private PDCard _lastCardSelected;
+
+        private void ArsenalSkill_Click(object sender, EventArgs e)
+        {
+            var skillSelectForm = new SkillSelectForm(null, null);
+            skillSelectForm.ShowDialog();
+
+            if (skillSelectForm.SelectedSkill == null)
+            {
+                return;
+            }
+
+            _lastCardSelected = skillSelectForm.SelectedSkill;
+
+            if (sender is Button button)
+            {
+                UpdateArsenalCard(button, _lastCardSelected);
+            }
+        }
+
+        private void ArsenalSkill_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                if (sender is Button button)
+                {
+                    UpdateArsenalCard(button, _lastCardSelected);
+                }
+            }
+            else if (e.Button == MouseButtons.Middle)
+            {
+                if (sender is Button button)
+                {
+                    UpdateArsenalCard(button, SkillDB.Skills["FF FF"]);
+                }
+            }
+        }
+
+        private void UpdateArsenalCard(Button button, PDCard card)
+        {
+            var cardIndex = int.Parse(button.AccessibleName);
+            var skill = _arsenalSkills[cardIndex].Button;
+            _currentArsenalListItem.Arsenal.Cards[cardIndex] = card;
+            skill.Text = card.NAME;
+            skill.BackColor = AppColors.GetSkillColor(card.TYPE);
+            skill.Image = AppImages.GetSchool(card.SCHOOL);
         }
     }
 }

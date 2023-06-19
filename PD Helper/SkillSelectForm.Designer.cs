@@ -54,9 +54,6 @@
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.SkillList = new System.Windows.Forms.FlowLayoutPanel();
             this.Footer = new System.Windows.Forms.Panel();
-            this.CancelButton = new System.Windows.Forms.Button();
-            this.ConfirmButton = new System.Windows.Forms.Button();
-            this.ConfirmDropdown = new System.Windows.Forms.Button();
             this.SkillDetail = new System.Windows.Forms.Panel();
             this.CardDescriptionPanel = new System.Windows.Forms.Panel();
             this.CardDescription = new System.Windows.Forms.Label();
@@ -68,7 +65,6 @@
             this.MainLayout.SuspendLayout();
             this.Header.SuspendLayout();
             this.Subheader.SuspendLayout();
-            this.Footer.SuspendLayout();
             this.SkillDetail.SuspendLayout();
             this.CardDescriptionPanel.SuspendLayout();
             this.CardSubheaderPanel.SuspendLayout();
@@ -322,21 +318,10 @@
             // 
             this.SortComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SortComboBox1.FormattingEnabled = true;
-            this.SortComboBox1.Items.AddRange(new object[] {
-            "School",
-            "Cost",
-            "Strength",
-            "Number of Uses",
-            "Range",
-            "ID",
-            "Rarity",
-            "Amount",
-            "None"});
             this.SortComboBox1.Location = new System.Drawing.Point(250, 9);
             this.SortComboBox1.Name = "SortComboBox1";
             this.SortComboBox1.Size = new System.Drawing.Size(121, 23);
             this.SortComboBox1.TabIndex = 5;
-            this.SortComboBox1.SelectedIndexChanged += new System.EventHandler(this.SortComboBox1_SelectedIndexChanged);
             // 
             // SortLabel
             // 
@@ -352,41 +337,19 @@
             // 
             this.SortComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SortComboBox2.FormattingEnabled = true;
-            this.SortComboBox2.Items.AddRange(new object[] {
-            "School",
-            "Cost",
-            "Strength",
-            "Number of Uses",
-            "Range",
-            "ID",
-            "Rarity",
-            "Amount",
-            "None"});
             this.SortComboBox2.Location = new System.Drawing.Point(394, 9);
             this.SortComboBox2.Name = "SortComboBox2";
             this.SortComboBox2.Size = new System.Drawing.Size(121, 23);
             this.SortComboBox2.TabIndex = 3;
-            this.SortComboBox2.SelectedIndexChanged += new System.EventHandler(this.SortComboBox2_SelectedIndexChanged);
             // 
             // SortComboBox3
             // 
             this.SortComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SortComboBox3.FormattingEnabled = true;
-            this.SortComboBox3.Items.AddRange(new object[] {
-            "School",
-            "Cost",
-            "Strength",
-            "Number of Uses",
-            "Range",
-            "ID",
-            "Rarity",
-            "Amount",
-            "None"});
             this.SortComboBox3.Location = new System.Drawing.Point(536, 9);
             this.SortComboBox3.Name = "SortComboBox3";
             this.SortComboBox3.Size = new System.Drawing.Size(121, 23);
             this.SortComboBox3.TabIndex = 2;
-            this.SortComboBox3.SelectedIndexChanged += new System.EventHandler(this.SortComboBox3_SelectedIndexChanged);
             // 
             // SearchLabel
             // 
@@ -420,53 +383,11 @@
             // Footer
             // 
             this.MainLayout.SetColumnSpan(this.Footer, 2);
-            this.Footer.Controls.Add(this.CancelButton);
-            this.Footer.Controls.Add(this.ConfirmButton);
-            this.Footer.Controls.Add(this.ConfirmDropdown);
             this.Footer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Footer.Location = new System.Drawing.Point(3, 418);
             this.Footer.Name = "Footer";
             this.Footer.Size = new System.Drawing.Size(668, 29);
             this.Footer.TabIndex = 2;
-            // 
-            // CancelButton
-            // 
-            this.CancelButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.CancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CancelButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.CancelButton.Location = new System.Drawing.Point(469, 3);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(75, 23);
-            this.CancelButton.TabIndex = 2;
-            this.CancelButton.Text = "Cancel";
-            this.CancelButton.UseVisualStyleBackColor = true;
-            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
-            // 
-            // ConfirmButton
-            // 
-            this.ConfirmButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.ConfirmButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ConfirmButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.ConfirmButton.Location = new System.Drawing.Point(550, 3);
-            this.ConfirmButton.Name = "ConfirmButton";
-            this.ConfirmButton.Size = new System.Drawing.Size(75, 23);
-            this.ConfirmButton.TabIndex = 1;
-            this.ConfirmButton.Text = "Confirm";
-            this.ConfirmButton.UseVisualStyleBackColor = true;
-            this.ConfirmButton.Click += new System.EventHandler(this.ConfirmButton_Click);
-            // 
-            // ConfirmDropdown
-            // 
-            this.ConfirmDropdown.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.ConfirmDropdown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ConfirmDropdown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.ConfirmDropdown.Location = new System.Drawing.Point(624, 3);
-            this.ConfirmDropdown.Name = "ConfirmDropdown";
-            this.ConfirmDropdown.Size = new System.Drawing.Size(33, 23);
-            this.ConfirmDropdown.TabIndex = 0;
-            this.ConfirmDropdown.Text = "⯆";
-            this.ConfirmDropdown.UseVisualStyleBackColor = true;
-            this.ConfirmDropdown.Click += new System.EventHandler(this.ConfirmDropdown_Click);
             // 
             // SkillDetail
             // 
@@ -561,7 +482,6 @@
             this.Header.ResumeLayout(false);
             this.Subheader.ResumeLayout(false);
             this.Subheader.PerformLayout();
-            this.Footer.ResumeLayout(false);
             this.SkillDetail.ResumeLayout(false);
             this.CardDescriptionPanel.ResumeLayout(false);
             this.CardDescriptionPanel.PerformLayout();
@@ -590,9 +510,6 @@
         private Label SortLabel;
         private ComboBox SortComboBox2;
         private ComboBox SortComboBox3;
-        private Button CancelButton;
-        private Button ConfirmButton;
-        private Button ConfirmDropdown;
         private Panel CardDescriptionPanel;
         private Panel CardSubheaderPanel;
         private Panel CardHeaderPanel;
