@@ -43,6 +43,15 @@ namespace PD_Helper
 
         private void Initialize()
         {
+            // Tooltip all the things
+            var toolTips = new ToolTip();
+            toolTips.SetToolTip(SaveChangesButton, "Save to filesystem");
+            toolTips.SetToolTip(CancelChangesButton, "Cancel edit mode");
+            toolTips.SetToolTip(SortButton, "Sort skills");
+            toolTips.SetToolTip(DeleteButton, "Delete from filesystem");
+            toolTips.SetToolTip(NewButton, "Create arsenal");
+            toolTips.SetToolTip(RenameButton, "Rename arsenal on filesystem");
+
             ReplaceSkillIcon.Image = AppImages.MouseLeft;
             AddSameSkillIcon.Image = AppImages.MouseRight;
 

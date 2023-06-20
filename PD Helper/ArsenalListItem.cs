@@ -60,6 +60,9 @@ namespace PD_Helper
 
         private void Initialize(Arsenal arsenal)
         {
+            var toolTips = new System.Windows.Forms.ToolTip();
+            toolTips.SetToolTip(SaveButton, "Save to game at selected slot");
+
             _arsenal = arsenal;
 
             for (int i = 1; i <= 16; i++)
