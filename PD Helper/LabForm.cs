@@ -46,7 +46,7 @@ namespace PD_Helper
             // Tooltip all the things
             var toolTips = new ToolTip();
             toolTips.SetToolTip(SaveChangesButton, "Save to filesystem");
-            toolTips.SetToolTip(CancelChangesButton, "Cancel edit mode");
+            toolTips.SetToolTip(EditButton, "Toggle edit mode on/off");
             toolTips.SetToolTip(SortButton, "Sort skills");
             toolTips.SetToolTip(DeleteButton, "Delete from filesystem");
             toolTips.SetToolTip(NewButton, "Create arsenal");
@@ -252,7 +252,7 @@ namespace PD_Helper
 
         private void ArsenalSkill_Click(object sender, EventArgs e)
         {
-            _isEditMode = true;
+            SetEditMode(true);
             var skillSelectForm = new SkillSelectForm(null, null);
             skillSelectForm.ShowDialog();
 
@@ -299,13 +299,24 @@ namespace PD_Helper
 
         private void SaveChangesButton_Click(object sender, EventArgs e)
         {
-            _isEditMode = false;
+            SetEditMode(false);
             _arsenalService.Update(_currentArsenalListItem.Arsenal);
         }
 
-        private void CancelChangesButton_Click(object sender, EventArgs e)
+        private void EditButton_Click(object sender, EventArgs e)
         {
-            _isEditMode = false;
+            SetEditMode(!_isEditMode);
+        }
+
+        private void SetEditMode(bool isEditMode)
+        {
+            _isEditMode = isEditMode;
+            EditButton.Text = _isEditMode ? "Edit: On" : "Edit: Off";
+        }
+
+        private void SortButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

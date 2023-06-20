@@ -79,10 +79,14 @@
             this.ArsenalSkill11 = new System.Windows.Forms.Button();
             this.ArsenalSkill30 = new System.Windows.Forms.Button();
             this.ArsenalControlPanel = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.SaveChangesButton = new System.Windows.Forms.Button();
-            this.CancelChangesButton = new System.Windows.Forms.Button();
+            this.EditButton = new System.Windows.Forms.Button();
             this.SortButton = new System.Windows.Forms.Button();
             this.RenameButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
@@ -95,10 +99,6 @@
             this.CardDescriptionPanel = new System.Windows.Forms.Panel();
             this.CardDescriptionLabel = new System.Windows.Forms.Label();
             this.MainLayout = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.ArsenalListLayout.SuspendLayout();
             this.ArsenalListHeader.SuspendLayout();
             this.ArsenalPanel.SuspendLayout();
@@ -875,7 +875,7 @@
             this.ArsenalControlPanel.Controls.Add(this.label5);
             this.ArsenalControlPanel.Controls.Add(this.label6);
             this.ArsenalControlPanel.Controls.Add(this.SaveChangesButton);
-            this.ArsenalControlPanel.Controls.Add(this.CancelChangesButton);
+            this.ArsenalControlPanel.Controls.Add(this.EditButton);
             this.ArsenalControlPanel.Controls.Add(this.SortButton);
             this.ArsenalControlPanel.Controls.Add(this.RenameButton);
             this.ArsenalControlPanel.Controls.Add(this.DeleteButton);
@@ -883,6 +883,49 @@
             this.ArsenalControlPanel.Name = "ArsenalControlPanel";
             this.ArsenalControlPanel.Size = new System.Drawing.Size(202, 185);
             this.ArsenalControlPanel.TabIndex = 32;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.label4.Location = new System.Drawing.Point(30, 137);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 15);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Left-click :";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.label3.Location = new System.Drawing.Point(22, 152);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(72, 15);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Right-click :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.label2.Location = new System.Drawing.Point(13, 167);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 15);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Middle-click :";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.label1.Location = new System.Drawing.Point(92, 137);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 15);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Replace Skill";
             // 
             // label5
             // 
@@ -917,18 +960,18 @@
             this.SaveChangesButton.UseVisualStyleBackColor = true;
             this.SaveChangesButton.Click += new System.EventHandler(this.SaveChangesButton_Click);
             // 
-            // CancelChangesButton
+            // EditButton
             // 
-            this.CancelChangesButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.CancelChangesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CancelChangesButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.CancelChangesButton.Location = new System.Drawing.Point(103, 3);
-            this.CancelChangesButton.Name = "CancelChangesButton";
-            this.CancelChangesButton.Size = new System.Drawing.Size(94, 23);
-            this.CancelChangesButton.TabIndex = 5;
-            this.CancelChangesButton.Text = "Cancel";
-            this.CancelChangesButton.UseVisualStyleBackColor = true;
-            this.CancelChangesButton.Click += new System.EventHandler(this.CancelChangesButton_Click);
+            this.EditButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.EditButton.Location = new System.Drawing.Point(103, 3);
+            this.EditButton.Name = "EditButton";
+            this.EditButton.Size = new System.Drawing.Size(94, 23);
+            this.EditButton.TabIndex = 5;
+            this.EditButton.Text = "Edit: Off";
+            this.EditButton.UseVisualStyleBackColor = true;
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
             // SortButton
             // 
@@ -941,6 +984,7 @@
             this.SortButton.TabIndex = 6;
             this.SortButton.Text = "Sort";
             this.SortButton.UseVisualStyleBackColor = true;
+            this.SortButton.Click += new System.EventHandler(this.SortButton_Click);
             // 
             // RenameButton
             // 
@@ -1075,49 +1119,6 @@
             this.MainLayout.Size = new System.Drawing.Size(1240, 590);
             this.MainLayout.TabIndex = 33;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.label1.Location = new System.Drawing.Point(92, 137);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 15);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Replace Skill";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.label2.Location = new System.Drawing.Point(13, 167);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 15);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Middle-click :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.label3.Location = new System.Drawing.Point(22, 152);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 15);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "Right-click :";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.label4.Location = new System.Drawing.Point(30, 137);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 15);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Left-click :";
-            // 
             // LabForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1209,7 +1210,7 @@
         private Button NewButton;
         private Button RenameButton;
         private Button SortButton;
-        private Button CancelChangesButton;
+        private Button EditButton;
         private Button SaveChangesButton;
         private Panel ArsenalHeaderPanel;
         private Panel ArsenalDeckPanel;
