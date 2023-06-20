@@ -44,42 +44,6 @@ namespace PD_Helper.Library
         }
 
         /// <summary>
-        /// Deletes an arsenal from the user's filesystem
-        /// </summary>
-        public void Delete(string arsenalName)
-        {
-            DirectoryInfo directory = new DirectoryInfo(@"Arsenals\");
-
-            var file = Path.Combine(directory.FullName, $"{arsenalName}.arsenal");
-            if (!File.Exists(file))
-            {
-                throw new AppException($"File not found! [{file}]");
-            }
-
-            File.Delete(file);
-        }
-
-        /// <summary>
-        /// Creates a new arsenal on the user's filesystem
-        /// </summary>
-        public Arsenal Create(string arsenalName)
-        {
-            CheckArsenalName(arsenalName);
-            DirectoryInfo directory = new DirectoryInfo(@"Arsenals\");
-
-            var file = Path.Combine(directory.FullName, $"{arsenalName}.arsenal");
-            if (File.Exists(file))
-            {
-                throw new AppException($"File already exists! [{file}]");
-            }
-
-            var blankArsenal = "FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,01 00,\r\n";
-            File.WriteAllText(file, blankArsenal);
-
-            return LoadArsenal(arsenalName);
-        }
-
-        /// <summary>
         /// Renames an arsenal on the user's filesystem
         /// </summary>
         public void Rename(string oldName, string newName)
@@ -103,9 +67,29 @@ namespace PD_Helper.Library
         }
 
         /// <summary>
+        /// Creates a new arsenal on the user's filesystem
+        /// </summary>
+        public Arsenal Create(string arsenalName)
+        {
+            CheckArsenalName(arsenalName);
+            DirectoryInfo directory = new DirectoryInfo(@"Arsenals\");
+
+            var file = Path.Combine(directory.FullName, $"{arsenalName}.arsenal");
+            if (File.Exists(file))
+            {
+                throw new AppException($"File already exists! [{file}]");
+            }
+
+            var blankArsenal = "FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,FF FF,01 00,\r\n";
+            File.WriteAllText(file, blankArsenal);
+
+            return Read(arsenalName);
+        }
+
+        /// <summary>
         /// Reads an arsenal from the user's filesystem
         /// </summary>
-        public Arsenal LoadArsenal(string arsenalName)
+        public Arsenal Read(string arsenalName)
         {
             var arsenal = new Arsenal();
             arsenal.ArsenalName = arsenalName;
@@ -146,6 +130,48 @@ namespace PD_Helper.Library
             arsenal.SortCards();
 
             return arsenal;
+        }
+
+        /// <summary>
+        /// Updates an arsenal on the user's filesystem
+        /// </summary>
+        public void Update(Arsenal arsenal)
+        {
+            CheckArsenalName(arsenal.ArsenalName);
+
+            DirectoryInfo directory = new DirectoryInfo(@"Arsenals\");
+            var file = Path.Combine(directory.FullName, $"{arsenal.ArsenalName}.arsenal");
+            if (!File.Exists(file))
+            {
+                throw new AppException($"File doesn't exist! [{file}]");
+            }
+
+            string skillString = string.Join(',', arsenal.Cards.Select(c => c.HEX));
+
+            var schools = arsenal.Schools;
+            int schoolCount = schools.Count();
+            if (schoolCount == 0)
+            {
+                schoolCount = 1; // Sometimes arsenals are all Aura, so set the school count to 1 minimum.
+            }
+
+            File.WriteAllText(file, $"{skillString},0{schoolCount} 00,");
+        }
+
+        /// <summary>
+        /// Deletes an arsenal from the user's filesystem
+        /// </summary>
+        public void Delete(string arsenalName)
+        {
+            DirectoryInfo directory = new DirectoryInfo(@"Arsenals\");
+
+            var file = Path.Combine(directory.FullName, $"{arsenalName}.arsenal");
+            if (!File.Exists(file))
+            {
+                throw new AppException($"File not found! [{file}]");
+            }
+
+            File.Delete(file);
         }
     }
 }

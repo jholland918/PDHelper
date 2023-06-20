@@ -933,6 +933,7 @@
             this.SaveChangesButton.TabIndex = 4;
             this.SaveChangesButton.Text = "Save";
             this.SaveChangesButton.UseVisualStyleBackColor = true;
+            this.SaveChangesButton.Click += new System.EventHandler(this.SaveChangesButton_Click);
             // 
             // CancelChangesButton
             // 
@@ -945,6 +946,7 @@
             this.CancelChangesButton.TabIndex = 5;
             this.CancelChangesButton.Text = "Cancel";
             this.CancelChangesButton.UseVisualStyleBackColor = true;
+            this.CancelChangesButton.Click += new System.EventHandler(this.CancelChangesButton_Click);
             // 
             // SortButton
             // 

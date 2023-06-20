@@ -22,6 +22,7 @@ namespace PD_Helper
         private Dictionary<string, PictureBox> _schoolPictures;
         private ArsenalListItem _currentArsenalListItem;
         private List<ArsenalListItem> _arsenalListItems = new List<ArsenalListItem>();
+        private bool _isEditMode = false;
 
         private struct ArsenalSkill
         {
@@ -106,7 +107,7 @@ namespace PD_Helper
 
             foreach (var arsenalName in arsenalNames)
             {
-                AddArsenalToList(_arsenalService.LoadArsenal(arsenalName));
+                AddArsenalToList(_arsenalService.Read(arsenalName));
             }
         }
 
@@ -211,6 +212,11 @@ namespace PD_Helper
 
         private void ArsenalListItem_MouseEnter(object? sender, EventArgs e)
         {
+            if (_isEditMode)
+            {
+                return;
+            }
+
             if (sender is ArsenalListItem arsenalListItem)
             {
                 if (_currentArsenalListItem != arsenalListItem)
@@ -237,6 +243,7 @@ namespace PD_Helper
 
         private void ArsenalSkill_Click(object sender, EventArgs e)
         {
+            _isEditMode = true;
             var skillSelectForm = new SkillSelectForm(null, null);
             skillSelectForm.ShowDialog();
 
@@ -279,6 +286,17 @@ namespace PD_Helper
             skill.Text = card.NAME;
             skill.BackColor = AppColors.GetSkillColor(card.TYPE);
             skill.Image = AppImages.GetSchool(card.SCHOOL);
+        }
+
+        private void SaveChangesButton_Click(object sender, EventArgs e)
+        {
+            _isEditMode = false;
+            _arsenalService.Update(_currentArsenalListItem.Arsenal);
+        }
+
+        private void CancelChangesButton_Click(object sender, EventArgs e)
+        {
+            _isEditMode = false;
         }
     }
 }
