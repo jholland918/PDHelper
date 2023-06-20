@@ -22,6 +22,7 @@ namespace PD_Helper
         private Dictionary<string, PictureBox> _schoolPictures;
         private ArsenalListItem _currentArsenalListItem;
         private List<ArsenalListItem> _arsenalListItems = new List<ArsenalListItem>();
+        private PDCard _lastCardSelected;
         private bool _isEditMode = false;
 
         private struct ArsenalSkill
@@ -56,31 +57,6 @@ namespace PD_Helper
             InitializeArsenalList();
 
             ArsenalFilterTextBox.TextChanged += ArsenalFilterTextBox_TextChanged;
-        }
-
-        private void ArsenalFilterTextBox_TextChanged(object? sender, EventArgs e)
-        {
-            var searchTerm = ArsenalFilterTextBox.Text;
-            if (searchTerm.Length == 0)
-            {
-                foreach (Control control in ArsenalListBody.Controls)
-                {
-                    control.Show();
-                }
-                return;
-            }
-
-            foreach (Control control in ArsenalListBody.Controls)
-            {
-                if (control.ToString().Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
-                {
-                    control.Show();
-                }
-                else
-                {
-                    control.Hide();
-                }
-            }
         }
 
         private void InitializeSchoolPictures()
@@ -152,6 +128,35 @@ namespace PD_Helper
                 skill.Image = AppImages.GetSchool(card.SCHOOL);
                 skill.AccessibleName = i.ToString(); // I should probably put this index on a subclass of Button instead of this hacky thing... :)
             }
+        }
+
+        private void ArsenalFilterTextBox_TextChanged(object? sender, EventArgs e)
+        {
+            var searchTerm = ArsenalFilterTextBox.Text;
+            if (searchTerm.Length == 0)
+            {
+                ArsenalListBody.SuspendLayout();
+                foreach (Control control in ArsenalListBody.Controls)
+                {
+                    control.Show();
+                }
+                ArsenalListBody.ResumeLayout();
+                return;
+            }
+
+            ArsenalListBody.SuspendLayout();
+            foreach (Control control in ArsenalListBody.Controls)
+            {
+                if (control.ToString().Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
+                {
+                    control.Show();
+                }
+                else
+                {
+                    control.Hide();
+                }
+            }
+            ArsenalListBody.ResumeLayout();
         }
 
         private void RenameButton_Click(object sender, EventArgs e)
@@ -238,8 +243,6 @@ namespace PD_Helper
             ArsenalListBody.Controls.Add(arsenalListItem);
             return arsenalListItem;
         }
-
-        private PDCard _lastCardSelected;
 
         private void ArsenalSkill_Click(object sender, EventArgs e)
         {
