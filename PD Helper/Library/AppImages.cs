@@ -18,9 +18,6 @@ namespace PD_Helper.Library
         public static readonly Image ArsenalCase2 = Image.FromFile(@"Assets\arsenal_case_2_140.png");
         public static readonly Image ArsenalCase3 = Image.FromFile(@"Assets\arsenal_case_3_140.png");
 
-        public static readonly Image MouseLeft = Image.FromFile(@"Assets\left-mouse-30.png");
-        public static readonly Image MouseRight = Image.FromFile(@"Assets\right-mouse-30.png");
-
         private static readonly Dictionary<string, Image> Schools = new Dictionary<string, Image>
         {
             ["Aura"] = Aura,

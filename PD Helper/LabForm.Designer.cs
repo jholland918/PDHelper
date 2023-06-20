@@ -79,10 +79,8 @@
             this.ArsenalSkill11 = new System.Windows.Forms.Button();
             this.ArsenalSkill30 = new System.Windows.Forms.Button();
             this.ArsenalControlPanel = new System.Windows.Forms.Panel();
-            this.ReplaceSkillIcon = new System.Windows.Forms.PictureBox();
-            this.ReplaceSkillLabel = new System.Windows.Forms.Label();
-            this.AddSameSkillIcon = new System.Windows.Forms.PictureBox();
-            this.AddSameSkillLabel = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.SaveChangesButton = new System.Windows.Forms.Button();
             this.CancelChangesButton = new System.Windows.Forms.Button();
             this.SortButton = new System.Windows.Forms.Button();
@@ -97,6 +95,10 @@
             this.CardDescriptionPanel = new System.Windows.Forms.Panel();
             this.CardDescriptionLabel = new System.Windows.Forms.Label();
             this.MainLayout = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.ArsenalListLayout.SuspendLayout();
             this.ArsenalListHeader.SuspendLayout();
             this.ArsenalPanel.SuspendLayout();
@@ -109,8 +111,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureFaith)).BeginInit();
             this.ArsenalDeckPanel.SuspendLayout();
             this.ArsenalControlPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ReplaceSkillIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AddSameSkillIcon)).BeginInit();
             this.CardPanel.SuspendLayout();
             this.CardTitlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CardSchoolPicture)).BeginInit();
@@ -868,10 +868,12 @@
             // 
             // ArsenalControlPanel
             // 
-            this.ArsenalControlPanel.Controls.Add(this.ReplaceSkillIcon);
-            this.ArsenalControlPanel.Controls.Add(this.ReplaceSkillLabel);
-            this.ArsenalControlPanel.Controls.Add(this.AddSameSkillIcon);
-            this.ArsenalControlPanel.Controls.Add(this.AddSameSkillLabel);
+            this.ArsenalControlPanel.Controls.Add(this.label4);
+            this.ArsenalControlPanel.Controls.Add(this.label3);
+            this.ArsenalControlPanel.Controls.Add(this.label2);
+            this.ArsenalControlPanel.Controls.Add(this.label1);
+            this.ArsenalControlPanel.Controls.Add(this.label5);
+            this.ArsenalControlPanel.Controls.Add(this.label6);
             this.ArsenalControlPanel.Controls.Add(this.SaveChangesButton);
             this.ArsenalControlPanel.Controls.Add(this.CancelChangesButton);
             this.ArsenalControlPanel.Controls.Add(this.SortButton);
@@ -882,45 +884,25 @@
             this.ArsenalControlPanel.Size = new System.Drawing.Size(202, 185);
             this.ArsenalControlPanel.TabIndex = 32;
             // 
-            // ReplaceSkillIcon
+            // label5
             // 
-            this.ReplaceSkillIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.ReplaceSkillIcon.Location = new System.Drawing.Point(7, 114);
-            this.ReplaceSkillIcon.Name = "ReplaceSkillIcon";
-            this.ReplaceSkillIcon.Size = new System.Drawing.Size(30, 30);
-            this.ReplaceSkillIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ReplaceSkillIcon.TabIndex = 15;
-            this.ReplaceSkillIcon.TabStop = false;
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.label5.Location = new System.Drawing.Point(92, 152);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(85, 15);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Add Same Skill";
             // 
-            // ReplaceSkillLabel
+            // label6
             // 
-            this.ReplaceSkillLabel.AutoSize = true;
-            this.ReplaceSkillLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.ReplaceSkillLabel.Location = new System.Drawing.Point(43, 129);
-            this.ReplaceSkillLabel.Name = "ReplaceSkillLabel";
-            this.ReplaceSkillLabel.Size = new System.Drawing.Size(72, 15);
-            this.ReplaceSkillLabel.TabIndex = 14;
-            this.ReplaceSkillLabel.Text = "Replace Skill";
-            // 
-            // AddSameSkillIcon
-            // 
-            this.AddSameSkillIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.AddSameSkillIcon.Location = new System.Drawing.Point(7, 149);
-            this.AddSameSkillIcon.Name = "AddSameSkillIcon";
-            this.AddSameSkillIcon.Size = new System.Drawing.Size(30, 30);
-            this.AddSameSkillIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.AddSameSkillIcon.TabIndex = 13;
-            this.AddSameSkillIcon.TabStop = false;
-            // 
-            // AddSameSkillLabel
-            // 
-            this.AddSameSkillLabel.AutoSize = true;
-            this.AddSameSkillLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.AddSameSkillLabel.Location = new System.Drawing.Point(43, 164);
-            this.AddSameSkillLabel.Name = "AddSameSkillLabel";
-            this.AddSameSkillLabel.Size = new System.Drawing.Size(85, 15);
-            this.AddSameSkillLabel.TabIndex = 12;
-            this.AddSameSkillLabel.Text = "Add Same Skill";
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.label6.Location = new System.Drawing.Point(92, 167);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(102, 15);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Replace with Aura";
             // 
             // SaveChangesButton
             // 
@@ -1093,6 +1075,49 @@
             this.MainLayout.Size = new System.Drawing.Size(1240, 590);
             this.MainLayout.TabIndex = 33;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.label1.Location = new System.Drawing.Point(92, 137);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 15);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Replace Skill";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.label2.Location = new System.Drawing.Point(13, 167);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 15);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Middle-click :";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.label3.Location = new System.Drawing.Point(22, 152);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(72, 15);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Right-click :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.label4.Location = new System.Drawing.Point(30, 137);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 15);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Left-click :";
+            // 
             // LabForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1116,8 +1141,6 @@
             this.ArsenalDeckPanel.ResumeLayout(false);
             this.ArsenalControlPanel.ResumeLayout(false);
             this.ArsenalControlPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ReplaceSkillIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AddSameSkillIcon)).EndInit();
             this.CardPanel.ResumeLayout(false);
             this.CardTitlePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CardSchoolPicture)).EndInit();
@@ -1195,9 +1218,11 @@
         private TableLayoutPanel ArsenalListLayout;
         private FlowLayoutPanel ArsenalListBody;
         private TableLayoutPanel MainLayout;
-        private PictureBox AddSameSkillIcon;
-        private Label AddSameSkillLabel;
-        private PictureBox ReplaceSkillIcon;
-        private Label ReplaceSkillLabel;
+        private Label label6;
+        private Label label5;
+        private Label label4;
+        private Label label3;
+        private Label label2;
+        private Label label1;
     }
 }
