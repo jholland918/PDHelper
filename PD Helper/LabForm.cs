@@ -316,7 +316,8 @@ namespace PD_Helper
 
         private void SortButton_Click(object sender, EventArgs e)
         {
-
+            _currentArsenalListItem.Arsenal.SortCards();
+            RenderArsenal(_currentArsenalListItem);
         }
     }
 }
