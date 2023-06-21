@@ -17,11 +17,11 @@ namespace PD_Helper
     {
         private ArsenalListItem _arsenalListItem;
         private PDCard _card;
-        private string _activeType = "Aura";
+        private static string _activeType = "Aura";
         private Dictionary<string, Button> _typeButtons;
         private List<SkillButton> _skillButtons = new List<SkillButton>();
         private Dictionary<string, Button> _schoolButtons;
-        private Dictionary<string, bool> _activeSchools = new Dictionary<string, bool>
+        private static Dictionary<string, bool> _activeSchools = new Dictionary<string, bool>
         {
             ["Psycho"] = true,
             ["Optical"] = true,
@@ -54,14 +54,16 @@ namespace PD_Helper
             Initialize();
         }
 
+        private static int[] _selectedSortOptions = new[] { 0, 1, 2 };
+
         private void Initialize()
         {
-            SortComboBox1.DataSource = _sortOptions;
-            SortComboBox2.DataSource = _sortOptions;
-            SortComboBox3.DataSource = _sortOptions;
-            SortComboBox1.SelectedIndex = 0;
-            SortComboBox2.SelectedIndex = 1;
-            SortComboBox3.SelectedIndex = 2;
+            SortComboBox1.DataSource = new List<string>(_sortOptions);
+            SortComboBox2.DataSource = new List<string>(_sortOptions);
+            SortComboBox3.DataSource = new List<string>(_sortOptions);
+            SortComboBox1.SelectedIndex = _selectedSortOptions[0];
+            SortComboBox2.SelectedIndex = _selectedSortOptions[1];
+            SortComboBox3.SelectedIndex = _selectedSortOptions[2];
             SortComboBox1.SelectedIndexChanged += SortComboBox_SelectedIndexChanged;
             SortComboBox2.SelectedIndexChanged += SortComboBox_SelectedIndexChanged;
             SortComboBox3.SelectedIndexChanged += SortComboBox_SelectedIndexChanged;
@@ -77,7 +79,7 @@ namespace PD_Helper
                 ["Environment"] = EnvironmentButton,
             };
 
-            SetActiveType("Aura");
+            SetActiveType();
 
             _schoolButtons = new Dictionary<string, Button>
             {
@@ -87,6 +89,11 @@ namespace PD_Helper
                 ["Ki"] = KiButton,
                 ["Faith"] = FaithButton,
             };
+
+            foreach (var kvp in _activeSchools)
+            {
+                _schoolButtons[kvp.Key].BackColor = _activeSchools[kvp.Key] ? AppColors.ForegroundColor : AppColors.BackgroundColor;
+            }
 
             var skills = SkillDB.Skills.OrderBy(x => x.Value.SCHOOL).ThenBy(x => x.Value.COST).ThenBy(x => x.Value.DAMAGE);
             foreach (KeyValuePair<string, PDCard> skill in skills)
@@ -163,9 +170,13 @@ namespace PD_Helper
             return true;
         }
 
-        private void SetActiveType(string type)
+        private void SetActiveType(string? type = null)
         {
-            _activeType = type;
+            if (type != null)
+            {
+                _activeType = type;
+            }
+
             foreach (var kvp in _typeButtons)
             {
                 if (kvp.Key == _activeType)
@@ -244,6 +255,10 @@ namespace PD_Helper
                 }
             }
 
+            _selectedSortOptions[0] = SortComboBox1.SelectedIndex;
+            _selectedSortOptions[1] = SortComboBox2.SelectedIndex;
+            _selectedSortOptions[2] = SortComboBox3.SelectedIndex;
+
             var sortType1 = SortComboBox1.SelectedItem.ToString();
             var sortType2 = SortComboBox2.SelectedItem.ToString();
             var sortType3 = SortComboBox3.SelectedItem.ToString();
@@ -268,7 +283,7 @@ namespace PD_Helper
                 CardHeaderPanel.BackColor = AppColors.GetSkillColor(skill.TYPE);
                 CardSchoolPicture.Image = AppImages.GetSchool(skill.SCHOOL);
                 CardTitle.Text = skill.NAME;
-                CardSubtitle.Text = $"COST {skill.COST} STR {skill.DAMAGE} @ {skill.RANGE}";
+                CardSubtitle.Text = $"COST {skill.COST} STR {skill.DAMAGE} @ {skill.USAGE} {skill.RANGE}";
                 CardDescription.Text = skill.DESCRIPTION;
             }
         }
