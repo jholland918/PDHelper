@@ -77,6 +77,8 @@ namespace PD_Helper
                 ["Environment"] = EnvironmentButton,
             };
 
+            SetActiveType("Aura");
+
             _schoolButtons = new Dictionary<string, Button>
             {
                 ["Psycho"] = PsychoButton,
@@ -192,6 +194,31 @@ namespace PD_Helper
             FilterSkills();
         }
 
+        private void SetExclusiveSchool(MouseEventArgs e, string school)
+        {
+            if (e.Button != MouseButtons.Right)
+            {
+                return;
+            }
+
+            foreach (var kvp in _activeSchools)
+            {
+                if (kvp.Key == school)
+                {
+                    _activeSchools[kvp.Key] = true;
+                    _schoolButtons[kvp.Key].BackColor = AppColors.ForegroundColor;
+                }
+                else
+                {
+                    _activeSchools[kvp.Key] = false;
+                    _schoolButtons[kvp.Key].BackColor = AppColors.BackgroundColorMedium;
+
+                }
+            }
+
+            FilterSkills();
+        }
+
         private void SortSkills()
         {
             object GetSortProp(PDCard card, string sortType)
@@ -247,77 +274,25 @@ namespace PD_Helper
         }
 
         #region Event Handlers
-
-        private void SearchTextBox_TextChanged(object sender, EventArgs e)
-        {
-            FilterSkills();
-        }
-
-        private void SortComboBox_SelectedIndexChanged(object? sender, EventArgs e)
-        {
-            SortSkills();
-        }
-
-        private void AuraButton_Click(object sender, EventArgs e)
-        {
-            SetActiveType("Aura");
-        }
-
-        private void AttackButton_Click(object sender, EventArgs e)
-        {
-            SetActiveType("Attack");
-        }
-
-        private void DefenseButton_Click(object sender, EventArgs e)
-        {
-            SetActiveType("Defense");
-        }
-
-        private void EraseButton_Click(object sender, EventArgs e)
-        {
-            SetActiveType("Erase");
-        }
-
-        private void StatusButton_Click(object sender, EventArgs e)
-        {
-            SetActiveType("Status");
-        }
-
-        private void SpecialButton_Click(object sender, EventArgs e)
-        {
-            SetActiveType("Special");
-        }
-
-        private void EnvironmentButton_Click(object sender, EventArgs e)
-        {
-            SetActiveType("Environment");
-        }
-
-        private void PsychoButton_Click(object sender, EventArgs e)
-        {
-            SetActiveSchool("Psycho");
-        }
-
-        private void OpticalButton_Click(object sender, EventArgs e)
-        {
-            SetActiveSchool("Optical");
-        }
-
-        private void NatureButton_Click(object sender, EventArgs e)
-        {
-            SetActiveSchool("Nature");
-        }
-
-        private void KiButton_Click(object sender, EventArgs e)
-        {
-            SetActiveSchool("Ki");
-        }
-
-        private void FaithButton_Click(object sender, EventArgs e)
-        {
-            SetActiveSchool("Faith");
-        }
-
+        private void SearchTextBox_TextChanged(object sender, EventArgs e) => FilterSkills();
+        private void SortComboBox_SelectedIndexChanged(object? sender, EventArgs e) => SortSkills();
+        private void AuraButton_Click(object sender, EventArgs e) => SetActiveType("Aura");
+        private void AttackButton_Click(object sender, EventArgs e) => SetActiveType("Attack");
+        private void DefenseButton_Click(object sender, EventArgs e) => SetActiveType("Defense");
+        private void EraseButton_Click(object sender, EventArgs e) => SetActiveType("Erase");
+        private void StatusButton_Click(object sender, EventArgs e) => SetActiveType("Status");
+        private void SpecialButton_Click(object sender, EventArgs e) => SetActiveType("Special");
+        private void EnvironmentButton_Click(object sender, EventArgs e) => SetActiveType("Environment");
+        private void PsychoButton_Click(object sender, EventArgs e) => SetActiveSchool("Psycho");
+        private void OpticalButton_Click(object sender, EventArgs e) => SetActiveSchool("Optical");
+        private void NatureButton_Click(object sender, EventArgs e) => SetActiveSchool("Nature");
+        private void KiButton_Click(object sender, EventArgs e) => SetActiveSchool("Ki");
+        private void FaithButton_Click(object sender, EventArgs e) => SetActiveSchool("Faith");
+        private void PsychoButton_MouseUp(object sender, MouseEventArgs e) => SetExclusiveSchool(e, "Psycho");
+        private void OpticalButton_MouseUp(object sender, MouseEventArgs e) => SetExclusiveSchool(e, "Optical");
+        private void NatureButton_MouseUp(object sender, MouseEventArgs e) => SetExclusiveSchool(e, "Nature");
+        private void KiButton_MouseUp(object sender, MouseEventArgs e) => SetExclusiveSchool(e, "Ki");
+        private void FaithButton_MouseUp(object sender, MouseEventArgs e) => SetExclusiveSchool(e, "Faith");
         #endregion Event Handlers
     }
 }

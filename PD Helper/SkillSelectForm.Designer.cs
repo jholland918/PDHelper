@@ -127,6 +127,7 @@
             this.PsychoButton.TabIndex = 23;
             this.PsychoButton.UseVisualStyleBackColor = false;
             this.PsychoButton.Click += new System.EventHandler(this.PsychoButton_Click);
+            this.PsychoButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PsychoButton_MouseUp);
             // 
             // FaithButton
             // 
@@ -141,6 +142,7 @@
             this.FaithButton.TabIndex = 22;
             this.FaithButton.UseVisualStyleBackColor = false;
             this.FaithButton.Click += new System.EventHandler(this.FaithButton_Click);
+            this.FaithButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FaithButton_MouseUp);
             // 
             // OpticalButton
             // 
@@ -155,6 +157,7 @@
             this.OpticalButton.TabIndex = 21;
             this.OpticalButton.UseVisualStyleBackColor = false;
             this.OpticalButton.Click += new System.EventHandler(this.OpticalButton_Click);
+            this.OpticalButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.OpticalButton_MouseUp);
             // 
             // KiButton
             // 
@@ -169,6 +172,7 @@
             this.KiButton.TabIndex = 20;
             this.KiButton.UseVisualStyleBackColor = false;
             this.KiButton.Click += new System.EventHandler(this.KiButton_Click);
+            this.KiButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.KiButton_MouseUp);
             // 
             // NatureButton
             // 
@@ -183,6 +187,7 @@
             this.NatureButton.TabIndex = 19;
             this.NatureButton.UseVisualStyleBackColor = false;
             this.NatureButton.Click += new System.EventHandler(this.NatureButton_Click);
+            this.NatureButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.NatureButton_MouseUp);
             // 
             // AttackButton
             // 
