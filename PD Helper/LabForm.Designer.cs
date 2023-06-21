@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LabForm));
             this.ArsenalListLayout = new System.Windows.Forms.TableLayoutPanel();
             this.ArsenalListHeader = new System.Windows.Forms.Panel();
@@ -99,6 +100,7 @@
             this.CardDescriptionPanel = new System.Windows.Forms.Panel();
             this.CardDescriptionLabel = new System.Windows.Forms.Label();
             this.MainLayout = new System.Windows.Forms.TableLayoutPanel();
+            this.SaveChangesAnimationTimer = new System.Windows.Forms.Timer(this.components);
             this.ArsenalListLayout.SuspendLayout();
             this.ArsenalListHeader.SuspendLayout();
             this.ArsenalPanel.SuspendLayout();
@@ -1119,6 +1121,10 @@
             this.MainLayout.Size = new System.Drawing.Size(1240, 590);
             this.MainLayout.TabIndex = 33;
             // 
+            // SaveChangesAnimationTimer
+            // 
+            this.SaveChangesAnimationTimer.Tick += new System.EventHandler(this.SaveChangesAnimationTimer_Tick);
+            // 
             // LabForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1225,5 +1231,6 @@
         private Label label3;
         private Label label2;
         private Label label1;
+        private System.Windows.Forms.Timer SaveChangesAnimationTimer;
     }
 }

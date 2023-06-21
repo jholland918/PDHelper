@@ -186,7 +186,7 @@ namespace PD_Helper
             {
                 return;
             }
-            
+
             _arsenalService.Delete(arsenalName);
 
             var item = _arsenalListItems.Where(x => x.ToString() == arsenalName).First();
@@ -312,12 +312,43 @@ namespace PD_Helper
         {
             _isEditMode = isEditMode;
             EditButton.Text = _isEditMode ? "Edit: On" : "Edit: Off";
+            SaveChangesAnimationTimer.Enabled = isEditMode;
         }
 
         private void SortButton_Click(object sender, EventArgs e)
         {
             _currentArsenalListItem.Arsenal.SortCards();
             RenderArsenal(_currentArsenalListItem);
+        }
+
+        private int _saveButtonOpacity = 0;
+        private int _saveButtonAmount = 20;
+        private int _saveButtonRest = 0;
+        private void SaveChangesAnimationTimer_Tick(object sender, EventArgs e)
+        {
+            if (_saveButtonRest > 0)
+            {
+                _saveButtonRest -= 20;
+                return;
+            }
+
+            _saveButtonOpacity += _saveButtonAmount;
+            if (_saveButtonOpacity > 255)
+            {
+                _saveButtonAmount = -20;
+                _saveButtonOpacity = 255;
+            }
+
+            if (_saveButtonOpacity < 0)
+            {
+                _saveButtonRest = 400;
+
+                _saveButtonAmount = 20;
+                _saveButtonOpacity = 0;
+            }
+
+            SaveChangesButton.BackColor = Color.FromArgb(_saveButtonOpacity, AppColors.ForegroundColor);
+            
         }
     }
 }
