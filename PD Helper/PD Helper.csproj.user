@@ -7,6 +7,9 @@
     <Compile Update="ArsenalListItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="ArsenalRandomizerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ConfirmForm.cs">
       <SubType>Form</SubType>
     </Compile>
