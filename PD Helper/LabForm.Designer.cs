@@ -101,6 +101,7 @@
             this.CardDescriptionLabel = new System.Windows.Forms.Label();
             this.MainLayout = new System.Windows.Forms.TableLayoutPanel();
             this.SaveChangesAnimationTimer = new System.Windows.Forms.Timer(this.components);
+            this.RandomizerButton = new System.Windows.Forms.Button();
             this.ArsenalListLayout.SuspendLayout();
             this.ArsenalListHeader.SuspendLayout();
             this.ArsenalPanel.SuspendLayout();
@@ -870,6 +871,7 @@
             // 
             // ArsenalControlPanel
             // 
+            this.ArsenalControlPanel.Controls.Add(this.RandomizerButton);
             this.ArsenalControlPanel.Controls.Add(this.label4);
             this.ArsenalControlPanel.Controls.Add(this.label3);
             this.ArsenalControlPanel.Controls.Add(this.label2);
@@ -1125,6 +1127,19 @@
             // 
             this.SaveChangesAnimationTimer.Tick += new System.EventHandler(this.SaveChangesAnimationTimer_Tick);
             // 
+            // RandomizerButton
+            // 
+            this.RandomizerButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.RandomizerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RandomizerButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.RandomizerButton.Location = new System.Drawing.Point(5, 61);
+            this.RandomizerButton.Name = "RandomizerButton";
+            this.RandomizerButton.Size = new System.Drawing.Size(94, 23);
+            this.RandomizerButton.TabIndex = 19;
+            this.RandomizerButton.Text = "Randomizer";
+            this.RandomizerButton.UseVisualStyleBackColor = true;
+            this.RandomizerButton.Click += new System.EventHandler(this.RandomizerButton_Click);
+            // 
             // LabForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1232,5 +1247,6 @@
         private Label label2;
         private Label label1;
         private System.Windows.Forms.Timer SaveChangesAnimationTimer;
+        private Button RandomizerButton;
     }
 }

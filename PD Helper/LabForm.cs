@@ -350,5 +350,25 @@ namespace PD_Helper
             SaveChangesButton.BackColor = Color.FromArgb(_saveButtonOpacity, AppColors.ForegroundColor);
             
         }
+
+        private void RandomizerButton_Click(object sender, EventArgs e)
+        {
+            var form = new ArsenalRandomizerForm();
+            form.ShowDialog();
+
+            if (form.Arsenal == null)
+            {
+                return;
+            }
+
+            for (int i = 0; i < 30; i++)
+            {
+                var btn = _arsenalSkills[i].Button;
+                UpdateArsenalCard(btn, form.Arsenal[i]);
+            }
+
+            _currentArsenalListItem.Arsenal.SortCards();
+            RenderArsenal(_currentArsenalListItem);
+        }
     }
 }

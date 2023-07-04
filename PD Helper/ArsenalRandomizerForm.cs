@@ -1,4 +1,5 @@
 ﻿using PD_Helper.Library;
+using PD_Helper.Library.ArsenalGeneration;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,13 +9,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static PD_Helper.Form1;
 
 namespace PD_Helper
 {
     public partial class ArsenalRandomizerForm : Form
     {
+        private ArsenalGenerator _arsenalGenerator = new ArsenalGenerator();
         private Dictionary<object, bool> _caseButtons;
         private Dictionary<object, bool> _schoolButtons;
+
+        /// <summary>
+        /// The arsenal generated from the randomizer
+        /// </summary>
+        public List<PDCard> Arsenal { get; private set; }
 
         public ArsenalRandomizerForm()
         {
@@ -91,7 +99,75 @@ namespace PD_Helper
 
         private void GenerateButton_Click(object sender, EventArgs e)
         {
+            var caseSizes = new List<int>();
+            if (_caseButtons[OneSchoolCaseButton])
+            {
+                caseSizes.Add(1);
+            }
+            if (_caseButtons[TwoSchoolCaseButton])
+            {
+                caseSizes.Add(2);
+            }
+            if (_caseButtons[ThreeSchoolCaseButton])
+            {
+                caseSizes.Add(3);
+            }
 
+            var schools = new List<string>();
+            if (_schoolButtons[PsychoSchoolButton])
+            {
+                schools.Add("Psycho");
+            }
+            if (_schoolButtons[OpticalSchoolButton])
+            {
+                schools.Add("Optical");
+            }
+            if (_schoolButtons[NatureSchoolButton])
+            {
+                schools.Add("Nature");
+            }
+            if (_schoolButtons[KiSchoolButton])
+            {
+                schools.Add("Ki");
+            }
+            if (_schoolButtons[FaithSchoolButton])
+            {
+                schools.Add("Faith");
+            }
+
+            var typeMinimums = new Dictionary<string, int>
+            {
+                ["Aura"] = (int)AuraMin.Value,
+                ["Attack"] = (int)AttackMin.Value,
+                ["Defense"] = (int)DefenseMin.Value,
+                ["Erase"] = (int)EraseMin.Value,
+                ["Status"] = (int)StatusMin.Value,
+                ["Special"] = (int)SpecialMin.Value,
+                ["Environment"] = (int)EnvironmentMin.Value,
+            };
+
+            var typeMaximums = new Dictionary<string, int>
+            {
+                ["Aura"] = (int)AuraMax.Value,
+                ["Attack"] = (int)AttackMax.Value,
+                ["Defense"] = (int)DefenseMax.Value,
+                ["Erase"] = (int)EraseMax.Value,
+                ["Status"] = (int)StatusMax.Value,
+                ["Special"] = (int)SpecialMax.Value,
+                ["Environment"] = (int)EnvironmentMax.Value,
+            };
+
+            var options = new GeneratorOptions
+            {
+                CaseSizes = caseSizes,
+                Schools = schools,
+                TypeMinimums = typeMinimums,
+                TypeMaximums = typeMaximums,
+            };
+
+            Arsenal = _arsenalGenerator.Execute(SkillDB.Skills.Values.ToList(), options);
+
+            this.Close();
         }
     }
 }
