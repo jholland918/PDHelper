@@ -100,19 +100,18 @@ namespace PD_Helper.Library.ArsenalGeneration
 
         private List<PDCard> BuildArsenal(GeneratorOptions options, List<PDCard> shuffledSkills, PDCard auraSkill)
         {
-            var randomArsenal = new List<PDCard>();
-            var arsenalCounter = new ArsenalCounter { Total = 0 };
+            var arsenal = new WorkArsenal();
 
-            BuildArsenalMinimums(options, randomArsenal, arsenalCounter, shuffledSkills, auraSkill);
+            BuildArsenalMinimums(options, arsenal, shuffledSkills, auraSkill);
 
-            BuildAuraByRandomCount(options, randomArsenal, arsenalCounter, auraSkill);
+            BuildAuraByRandomCount(options, arsenal, auraSkill);
 
-            BuildArsenalRandoms(randomArsenal, arsenalCounter, shuffledSkills);
+            BuildArsenalRandoms(arsenal, shuffledSkills);
 
-            return randomArsenal;
+            return arsenal.Cards;
         }
 
-        private void BuildArsenalMinimums(GeneratorOptions options, List<PDCard> randomArsenal, ArsenalCounter arsenalCounter, List<PDCard> shuffledSkills, PDCard auraSkill)
+        private void BuildArsenalMinimums(GeneratorOptions options, WorkArsenal arsenal, List<PDCard> shuffledSkills, PDCard auraSkill)
         {
             foreach (var typeKey in options.TypeMinimums.Keys)
             {
@@ -127,8 +126,8 @@ namespace PD_Helper.Library.ArsenalGeneration
                 {
                     for (int i = 0; i < minimum; i++)
                     {
-                        randomArsenal.Add(auraSkill);
-                        arsenalCounter.Total++;
+                        arsenal.Cards.Add(auraSkill);
+                        arsenal.Total++;
                     }
                 }
                 else
@@ -136,36 +135,55 @@ namespace PD_Helper.Library.ArsenalGeneration
                     for (int i = 0; i < minimum; i++)
                     {
                         var index = shuffledSkills.FindIndex(skill => skill.TYPE == typeKey);
-                        randomArsenal.Add(shuffledSkills[index]);
+                        arsenal.Cards.Add(shuffledSkills[index]);
                         shuffledSkills.RemoveAt(index);
-                        arsenalCounter.Total++;
+                        arsenal.Total++;
                     }
                 }
             }
         }
 
-        private void BuildAuraByRandomCount(GeneratorOptions options, List<PDCard> randomArsenal, ArsenalCounter arsenalCounter, PDCard auraSkill)
+        private void BuildAuraByRandomCount(GeneratorOptions options, WorkArsenal arsenal, PDCard auraSkill)
         {
-            if (!options.TypeMinimums.ContainsKey("Aura"))
-            {
-                var remainingArsenalSlots = 30 - arsenalCounter.Total;
-                var numOfAuraToAdd = GetRandomInt(1, remainingArsenalSlots);
+            int auraMax = options.TypeMaximums["Aura"];
+            int currentAuraCount = arsenal.Cards.Count(c => c.TYPE == auraSkill.TYPE);
 
-                for (int i = 0; i < numOfAuraToAdd; i++)
+            if (currentAuraCount >= auraMax)
+            {
+                return;
+            }
+
+            int remainingArsenalSlots = 30 - arsenal.Total;
+
+            int randomMax = remainingArsenalSlots;
+
+            // Limit max by specified aura max if applicable
+            if (auraMax > 0 && auraMax > currentAuraCount)
+            {
+                int additionalAuraAllowed = auraMax - currentAuraCount;
+                if (additionalAuraAllowed <= remainingArsenalSlots)
                 {
-                    randomArsenal.Add(auraSkill);
-                    arsenalCounter.Total++;
+                    randomMax = additionalAuraAllowed;
                 }
+            }
+
+            var numOfAuraToAdd = GetRandomInt(1, randomMax);
+
+            for (int i = 0; i < numOfAuraToAdd; i++)
+            {
+                arsenal.Cards.Add(auraSkill);
+                arsenal.Total++;
             }
         }
 
-        private void BuildArsenalRandoms(List<PDCard> randomArsenal, ArsenalCounter arsenalCounter, List<PDCard> shuffledSkills)
+        private void BuildArsenalRandoms(WorkArsenal arsenal, List<PDCard> shuffledSkills)
         {
-            var remainingOpenEntries = 30 - arsenalCounter.Total;
+            // TODO: Implement type maximums
+            var remainingOpenEntries = 30 - arsenal.Total;
 
             for (int i = 0; i < remainingOpenEntries; i++)
             {
-                randomArsenal.Add(shuffledSkills[i]);
+                arsenal.Cards.Add(shuffledSkills[i]);
             }
         }
 
@@ -181,9 +199,11 @@ namespace PD_Helper.Library.ArsenalGeneration
             return random.Next(inputArray.Count);
         }
 
-        private class ArsenalCounter
+        private class WorkArsenal
         {
             public int Total { get; set; }
+
+            public List<PDCard> Cards { get; set; } = new List<PDCard>();
         }
     }
 }
