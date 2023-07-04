@@ -30,6 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ArsenalRandomizerForm));
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.LongAttackRangeCheckbox = new System.Windows.Forms.CheckBox();
+            this.MediumAttackRangeCheckbox = new System.Windows.Forms.CheckBox();
+            this.ShortAttackRangeCheckbox = new System.Windows.Forms.CheckBox();
+            this.MineAttackRangeCheckbox = new System.Windows.Forms.CheckBox();
+            this.AllAttackRangeCheckbox = new System.Windows.Forms.CheckBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.TypeHelpLabel = new System.Windows.Forms.Label();
             this.CancelButton = new System.Windows.Forms.Button();
             this.GenerateButton = new System.Windows.Forms.Button();
             this.FaithSchoolButton = new System.Windows.Forms.Button();
@@ -86,6 +93,13 @@
             // MainPanel
             // 
             this.MainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(49)))));
+            this.MainPanel.Controls.Add(this.LongAttackRangeCheckbox);
+            this.MainPanel.Controls.Add(this.MediumAttackRangeCheckbox);
+            this.MainPanel.Controls.Add(this.ShortAttackRangeCheckbox);
+            this.MainPanel.Controls.Add(this.MineAttackRangeCheckbox);
+            this.MainPanel.Controls.Add(this.AllAttackRangeCheckbox);
+            this.MainPanel.Controls.Add(this.label13);
+            this.MainPanel.Controls.Add(this.TypeHelpLabel);
             this.MainPanel.Controls.Add(this.CancelButton);
             this.MainPanel.Controls.Add(this.GenerateButton);
             this.MainPanel.Controls.Add(this.FaithSchoolButton);
@@ -129,6 +143,87 @@
             this.MainPanel.Size = new System.Drawing.Size(681, 450);
             this.MainPanel.TabIndex = 0;
             // 
+            // LongAttackRangeCheckbox
+            // 
+            this.LongAttackRangeCheckbox.AutoSize = true;
+            this.LongAttackRangeCheckbox.Checked = true;
+            this.LongAttackRangeCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.LongAttackRangeCheckbox.Location = new System.Drawing.Point(598, 144);
+            this.LongAttackRangeCheckbox.Name = "LongAttackRangeCheckbox";
+            this.LongAttackRangeCheckbox.Size = new System.Drawing.Size(53, 19);
+            this.LongAttackRangeCheckbox.TabIndex = 44;
+            this.LongAttackRangeCheckbox.Text = "Long";
+            this.LongAttackRangeCheckbox.UseVisualStyleBackColor = true;
+            // 
+            // MediumAttackRangeCheckbox
+            // 
+            this.MediumAttackRangeCheckbox.AutoSize = true;
+            this.MediumAttackRangeCheckbox.Checked = true;
+            this.MediumAttackRangeCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.MediumAttackRangeCheckbox.Location = new System.Drawing.Point(517, 144);
+            this.MediumAttackRangeCheckbox.Name = "MediumAttackRangeCheckbox";
+            this.MediumAttackRangeCheckbox.Size = new System.Drawing.Size(71, 19);
+            this.MediumAttackRangeCheckbox.TabIndex = 43;
+            this.MediumAttackRangeCheckbox.Text = "Medium";
+            this.MediumAttackRangeCheckbox.UseVisualStyleBackColor = true;
+            // 
+            // ShortAttackRangeCheckbox
+            // 
+            this.ShortAttackRangeCheckbox.AutoSize = true;
+            this.ShortAttackRangeCheckbox.Checked = true;
+            this.ShortAttackRangeCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ShortAttackRangeCheckbox.Location = new System.Drawing.Point(436, 144);
+            this.ShortAttackRangeCheckbox.Name = "ShortAttackRangeCheckbox";
+            this.ShortAttackRangeCheckbox.Size = new System.Drawing.Size(54, 19);
+            this.ShortAttackRangeCheckbox.TabIndex = 42;
+            this.ShortAttackRangeCheckbox.Text = "Short";
+            this.ShortAttackRangeCheckbox.UseVisualStyleBackColor = true;
+            // 
+            // MineAttackRangeCheckbox
+            // 
+            this.MineAttackRangeCheckbox.AutoSize = true;
+            this.MineAttackRangeCheckbox.Checked = true;
+            this.MineAttackRangeCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.MineAttackRangeCheckbox.Location = new System.Drawing.Point(355, 144);
+            this.MineAttackRangeCheckbox.Name = "MineAttackRangeCheckbox";
+            this.MineAttackRangeCheckbox.Size = new System.Drawing.Size(53, 19);
+            this.MineAttackRangeCheckbox.TabIndex = 41;
+            this.MineAttackRangeCheckbox.Text = "Mine";
+            this.MineAttackRangeCheckbox.UseVisualStyleBackColor = true;
+            // 
+            // AllAttackRangeCheckbox
+            // 
+            this.AllAttackRangeCheckbox.AutoSize = true;
+            this.AllAttackRangeCheckbox.Checked = true;
+            this.AllAttackRangeCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.AllAttackRangeCheckbox.Location = new System.Drawing.Point(274, 144);
+            this.AllAttackRangeCheckbox.Name = "AllAttackRangeCheckbox";
+            this.AllAttackRangeCheckbox.Size = new System.Drawing.Size(40, 19);
+            this.AllAttackRangeCheckbox.TabIndex = 40;
+            this.AllAttackRangeCheckbox.Text = "All";
+            this.AllAttackRangeCheckbox.UseVisualStyleBackColor = true;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.label13.Location = new System.Drawing.Point(267, 109);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(118, 21);
+            this.label13.TabIndex = 39;
+            this.label13.Text = "Attack Ranges";
+            // 
+            // TypeHelpLabel
+            // 
+            this.TypeHelpLabel.AutoSize = true;
+            this.TypeHelpLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.TypeHelpLabel.Location = new System.Drawing.Point(15, 376);
+            this.TypeHelpLabel.Name = "TypeHelpLabel";
+            this.TypeHelpLabel.Size = new System.Drawing.Size(240, 15);
+            this.TypeHelpLabel.TabIndex = 38;
+            this.TypeHelpLabel.Text = "Use \"-1\" to specify no Minimum/Maximum ";
+            // 
             // CancelButton
             // 
             this.CancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -138,6 +233,7 @@
             this.CancelButton.TabIndex = 37;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // GenerateButton
             // 
@@ -543,7 +639,7 @@
             this.EnvironmentMax.Size = new System.Drawing.Size(62, 23);
             this.EnvironmentMax.TabIndex = 13;
             this.EnvironmentMax.Value = new decimal(new int[] {
-            2,
+            1,
             0,
             0,
             0});
@@ -564,6 +660,11 @@
             this.EnvironmentMin.Name = "EnvironmentMin";
             this.EnvironmentMin.Size = new System.Drawing.Size(62, 23);
             this.EnvironmentMin.TabIndex = 12;
+            this.EnvironmentMin.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
             // 
             // label12
             // 
@@ -762,5 +863,12 @@
         private Button PsychoSchoolButton;
         private Button GenerateButton;
         private Button CancelButton;
+        private Label TypeHelpLabel;
+        private Label label13;
+        private CheckBox LongAttackRangeCheckbox;
+        private CheckBox MediumAttackRangeCheckbox;
+        private CheckBox ShortAttackRangeCheckbox;
+        private CheckBox MineAttackRangeCheckbox;
+        private CheckBox AllAttackRangeCheckbox;
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static PD_Helper.Form1;
+using static System.Windows.Forms.Design.AxImporter;
 
 namespace PD_Helper.Library.ArsenalGeneration
 {
@@ -11,11 +12,14 @@ namespace PD_Helper.Library.ArsenalGeneration
     {
         private static Random _random = new Random();
 
-        public List<PDCard> Execute(List<PDCard> skills, GeneratorOptions options)
-        {
-            int caseSize = GetCaseSize(options.CaseSizes);
 
-            List<string> schools = GetSchools(options.Schools, caseSize);
+        public List<PDCard> Execute(GeneratorOptions options)
+        {
+            List<PDCard> skills = SkillDB.Skills.Values.ToList();
+
+            int caseSize = GetCaseSize(options);
+
+            List<string> schools = GetSchools(options, caseSize);
 
             PDCard auraSkill = GetAuraSkill(skills);
 
@@ -23,30 +27,30 @@ namespace PD_Helper.Library.ArsenalGeneration
 
             skills = FilterSkillsBySchool(skills, schools);
 
-            //skills = FilterSkillsByAttackRange(skills, options.AttackRanges);
+            skills = FilterSkillsByAttackRange(options, skills);
 
             List<PDCard> shuffledSkills = ShuffleSkills(skills);
 
-            List<PDCard> randomArsenal = BuildArsenal(shuffledSkills, auraSkill, options.TypeMinimums);
+            List<PDCard> randomArsenal = BuildArsenal(options, shuffledSkills, auraSkill);
 
             return randomArsenal;
         }
 
-        private int GetCaseSize(List<int> caseSizes)
+        private int GetCaseSize(GeneratorOptions options)
         {
-            int next = _random.Next(caseSizes.Count);
-            return caseSizes[next];
+            int next = _random.Next(options.CaseSizes.Count);
+            return options.CaseSizes[next];
         }
 
-        private List<string> GetSchools(List<string> schoolsInput, int caseSize)
+        private List<string> GetSchools(GeneratorOptions options, int caseSize)
         {
             var schools = new List<string>();
 
             for (int i = 0; i < caseSize; i++)
             {
-                var index = GetRandomIndex(schoolsInput);
-                schools.Add(schoolsInput[index]);
-                schoolsInput.RemoveAt(index);
+                var index = GetRandomIndex(options.Schools);
+                schools.Add(options.Schools[index]);
+                options.Schools.RemoveAt(index);
             }
 
             return schools;
@@ -67,10 +71,10 @@ namespace PD_Helper.Library.ArsenalGeneration
             return skills.Where(skill => schools.Contains(skill.SCHOOL)).ToList();
         }
 
-        private List<PDCard> FilterSkillsByAttackRange(List<PDCard> skills, List<string> attackRanges)
+        private List<PDCard> FilterSkillsByAttackRange(GeneratorOptions options, List<PDCard> skills)
         {
             var attackRangeOptions = new List<string> { "all", "mine", "short", "medium", "long" };
-            var attackRangesNotChosen = attackRangeOptions.Except(attackRanges).ToList();
+            var attackRangesNotChosen = attackRangeOptions.Except(options.AttackRanges).ToList();
 
             foreach (var attackRange in attackRangesNotChosen)
             {
@@ -94,25 +98,30 @@ namespace PD_Helper.Library.ArsenalGeneration
             return skillPool.OrderBy(x => _random.Next()).ToList();
         }
 
-        private List<PDCard> BuildArsenal(List<PDCard> shuffledSkills, PDCard auraSkill, Dictionary<string, int> typeMinimums)
+        private List<PDCard> BuildArsenal(GeneratorOptions options, List<PDCard> shuffledSkills, PDCard auraSkill)
         {
             var randomArsenal = new List<PDCard>();
             var arsenalCounter = new ArsenalCounter { Total = 0 };
 
-            BuildArsenalMinimums(randomArsenal, arsenalCounter, typeMinimums, shuffledSkills, auraSkill);
+            BuildArsenalMinimums(options, randomArsenal, arsenalCounter, shuffledSkills, auraSkill);
 
-            BuildAuraByRandomCount(randomArsenal, arsenalCounter, auraSkill, typeMinimums);
+            BuildAuraByRandomCount(options, randomArsenal, arsenalCounter, auraSkill);
 
             BuildArsenalRandoms(randomArsenal, arsenalCounter, shuffledSkills);
 
             return randomArsenal;
         }
 
-        private void BuildArsenalMinimums(List<PDCard> randomArsenal, ArsenalCounter arsenalCounter, Dictionary<string, int> typeMinimums, List<PDCard> shuffledSkills, PDCard auraSkill)
+        private void BuildArsenalMinimums(GeneratorOptions options, List<PDCard> randomArsenal, ArsenalCounter arsenalCounter, List<PDCard> shuffledSkills, PDCard auraSkill)
         {
-            foreach (var typeKey in typeMinimums.Keys)
+            foreach (var typeKey in options.TypeMinimums.Keys)
             {
-                var minimum = typeMinimums[typeKey];
+                var minimum = options.TypeMinimums[typeKey];
+
+                if (minimum == -1)
+                {
+                    continue;
+                }
 
                 if (typeKey == "Aura")
                 {
@@ -135,9 +144,9 @@ namespace PD_Helper.Library.ArsenalGeneration
             }
         }
 
-        private void BuildAuraByRandomCount(List<PDCard> randomArsenal, ArsenalCounter arsenalCounter, PDCard auraSkill, Dictionary<string, int> typeMinimums)
+        private void BuildAuraByRandomCount(GeneratorOptions options, List<PDCard> randomArsenal, ArsenalCounter arsenalCounter, PDCard auraSkill)
         {
-            if (!typeMinimums.ContainsKey("Aura"))
+            if (!options.TypeMinimums.ContainsKey("Aura"))
             {
                 var remainingArsenalSlots = 30 - arsenalCounter.Total;
                 var numOfAuraToAdd = GetRandomInt(1, remainingArsenalSlots);

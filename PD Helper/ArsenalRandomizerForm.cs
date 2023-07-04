@@ -157,17 +157,49 @@ namespace PD_Helper
                 ["Environment"] = (int)EnvironmentMax.Value,
             };
 
+            var attackRanges = new List<string>();
+            if (AllAttackRangeCheckbox.Checked)
+            {
+                attackRanges.Add("all");
+            }
+
+            if (MineAttackRangeCheckbox.Checked)
+            {
+                attackRanges.Add("mine");
+            }
+
+            if (ShortAttackRangeCheckbox.Checked)
+            {
+                attackRanges.Add("short");
+            }
+
+            if (MediumAttackRangeCheckbox.Checked)
+            {
+                attackRanges.Add("medium");
+            }
+
+            if (LongAttackRangeCheckbox.Checked)
+            {
+                attackRanges.Add("long");
+            }
+
             var options = new GeneratorOptions
             {
                 CaseSizes = caseSizes,
                 Schools = schools,
                 TypeMinimums = typeMinimums,
                 TypeMaximums = typeMaximums,
+                AttackRanges = attackRanges,
             };
 
-            Arsenal = _arsenalGenerator.Execute(SkillDB.Skills.Values.ToList(), options);
+            Arsenal = _arsenalGenerator.Execute(options);
 
-            this.Close();
+            Close();
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
