@@ -30,13 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ArsenalRandomizerForm));
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.ErrorLabel = new System.Windows.Forms.Label();
+            this.MinimumTotalDiff = new System.Windows.Forms.Label();
+            this.MinimumTotal = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.LongAttackRangeCheckbox = new System.Windows.Forms.CheckBox();
             this.MediumAttackRangeCheckbox = new System.Windows.Forms.CheckBox();
             this.ShortAttackRangeCheckbox = new System.Windows.Forms.CheckBox();
             this.MineAttackRangeCheckbox = new System.Windows.Forms.CheckBox();
             this.AllAttackRangeCheckbox = new System.Windows.Forms.CheckBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.TypeHelpLabel = new System.Windows.Forms.Label();
+            this.SlotsCountLabel = new System.Windows.Forms.Label();
             this.CancelButton = new System.Windows.Forms.Button();
             this.GenerateButton = new System.Windows.Forms.Button();
             this.FaithSchoolButton = new System.Windows.Forms.Button();
@@ -47,7 +51,6 @@
             this.ThreeSchoolCaseButton = new System.Windows.Forms.Button();
             this.TwoSchoolCaseButton = new System.Windows.Forms.Button();
             this.OneSchoolCaseButton = new System.Windows.Forms.Button();
-            this.AuraMax = new System.Windows.Forms.NumericUpDown();
             this.AttackMax = new System.Windows.Forms.NumericUpDown();
             this.DefenseMax = new System.Windows.Forms.NumericUpDown();
             this.EraseMax = new System.Windows.Forms.NumericUpDown();
@@ -74,7 +77,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.MainPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AuraMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AttackMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DefenseMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EraseMax)).BeginInit();
@@ -93,13 +95,17 @@
             // MainPanel
             // 
             this.MainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(49)))));
+            this.MainPanel.Controls.Add(this.ErrorLabel);
+            this.MainPanel.Controls.Add(this.MinimumTotalDiff);
+            this.MainPanel.Controls.Add(this.MinimumTotal);
+            this.MainPanel.Controls.Add(this.label14);
             this.MainPanel.Controls.Add(this.LongAttackRangeCheckbox);
             this.MainPanel.Controls.Add(this.MediumAttackRangeCheckbox);
             this.MainPanel.Controls.Add(this.ShortAttackRangeCheckbox);
             this.MainPanel.Controls.Add(this.MineAttackRangeCheckbox);
             this.MainPanel.Controls.Add(this.AllAttackRangeCheckbox);
             this.MainPanel.Controls.Add(this.label13);
-            this.MainPanel.Controls.Add(this.TypeHelpLabel);
+            this.MainPanel.Controls.Add(this.SlotsCountLabel);
             this.MainPanel.Controls.Add(this.CancelButton);
             this.MainPanel.Controls.Add(this.GenerateButton);
             this.MainPanel.Controls.Add(this.FaithSchoolButton);
@@ -110,7 +116,6 @@
             this.MainPanel.Controls.Add(this.ThreeSchoolCaseButton);
             this.MainPanel.Controls.Add(this.TwoSchoolCaseButton);
             this.MainPanel.Controls.Add(this.OneSchoolCaseButton);
-            this.MainPanel.Controls.Add(this.AuraMax);
             this.MainPanel.Controls.Add(this.AttackMax);
             this.MainPanel.Controls.Add(this.DefenseMax);
             this.MainPanel.Controls.Add(this.EraseMax);
@@ -142,6 +147,45 @@
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(681, 450);
             this.MainPanel.TabIndex = 0;
+            // 
+            // ErrorLabel
+            // 
+            this.ErrorLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.ErrorLabel.Location = new System.Drawing.Point(15, 415);
+            this.ErrorLabel.Name = "ErrorLabel";
+            this.ErrorLabel.Size = new System.Drawing.Size(489, 23);
+            this.ErrorLabel.TabIndex = 48;
+            this.ErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // MinimumTotalDiff
+            // 
+            this.MinimumTotalDiff.AutoSize = true;
+            this.MinimumTotalDiff.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.MinimumTotalDiff.Location = new System.Drawing.Point(178, 376);
+            this.MinimumTotalDiff.Name = "MinimumTotalDiff";
+            this.MinimumTotalDiff.Size = new System.Drawing.Size(19, 15);
+            this.MinimumTotalDiff.TabIndex = 47;
+            this.MinimumTotalDiff.Text = "30";
+            // 
+            // MinimumTotal
+            // 
+            this.MinimumTotal.AutoSize = true;
+            this.MinimumTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.MinimumTotal.Location = new System.Drawing.Point(100, 376);
+            this.MinimumTotal.Name = "MinimumTotal";
+            this.MinimumTotal.Size = new System.Drawing.Size(19, 15);
+            this.MinimumTotal.TabIndex = 46;
+            this.MinimumTotal.Text = "30";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.label14.Location = new System.Drawing.Point(11, 394);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(185, 15);
+            this.label14.TabIndex = 45;
+            this.label14.Text = "Input \"-1\" to specify no Min/Max ";
             // 
             // LongAttackRangeCheckbox
             // 
@@ -214,15 +258,15 @@
             this.label13.TabIndex = 39;
             this.label13.Text = "Attack Ranges";
             // 
-            // TypeHelpLabel
+            // SlotsCountLabel
             // 
-            this.TypeHelpLabel.AutoSize = true;
-            this.TypeHelpLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.TypeHelpLabel.Location = new System.Drawing.Point(15, 376);
-            this.TypeHelpLabel.Name = "TypeHelpLabel";
-            this.TypeHelpLabel.Size = new System.Drawing.Size(240, 15);
-            this.TypeHelpLabel.TabIndex = 38;
-            this.TypeHelpLabel.Text = "Use \"-1\" to specify no Minimum/Maximum ";
+            this.SlotsCountLabel.AutoSize = true;
+            this.SlotsCountLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.SlotsCountLabel.Location = new System.Drawing.Point(11, 376);
+            this.SlotsCountLabel.Name = "SlotsCountLabel";
+            this.SlotsCountLabel.Size = new System.Drawing.Size(88, 15);
+            this.SlotsCountLabel.TabIndex = 38;
+            this.SlotsCountLabel.Text = "Slots Used/Free";
             // 
             // CancelButton
             // 
@@ -358,28 +402,6 @@
             this.OneSchoolCaseButton.UseVisualStyleBackColor = false;
             this.OneSchoolCaseButton.Click += new System.EventHandler(this.CaseButton_Click);
             // 
-            // AuraMax
-            // 
-            this.AuraMax.Location = new System.Drawing.Point(178, 141);
-            this.AuraMax.Maximum = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
-            this.AuraMax.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
-            this.AuraMax.Name = "AuraMax";
-            this.AuraMax.Size = new System.Drawing.Size(62, 23);
-            this.AuraMax.TabIndex = 25;
-            this.AuraMax.Value = new decimal(new int[] {
-            16,
-            0,
-            0,
-            0});
-            // 
             // AttackMax
             // 
             this.AttackMax.Location = new System.Drawing.Point(178, 176);
@@ -507,10 +529,11 @@
             this.AuraMin.Size = new System.Drawing.Size(62, 23);
             this.AuraMin.TabIndex = 19;
             this.AuraMin.Value = new decimal(new int[] {
-            14,
+            15,
             0,
             0,
             0});
+            this.AuraMin.ValueChanged += new System.EventHandler(this.TypeMin_ValueChanged);
             // 
             // AttackMin
             // 
@@ -529,10 +552,11 @@
             this.AttackMin.Size = new System.Drawing.Size(62, 23);
             this.AttackMin.TabIndex = 18;
             this.AttackMin.Value = new decimal(new int[] {
-            4,
+            5,
             0,
             0,
             0});
+            this.AttackMin.ValueChanged += new System.EventHandler(this.TypeMin_ValueChanged);
             // 
             // DefenseMin
             // 
@@ -551,10 +575,11 @@
             this.DefenseMin.Size = new System.Drawing.Size(62, 23);
             this.DefenseMin.TabIndex = 17;
             this.DefenseMin.Value = new decimal(new int[] {
-            3,
+            4,
             0,
             0,
             0});
+            this.DefenseMin.ValueChanged += new System.EventHandler(this.TypeMin_ValueChanged);
             // 
             // EraseMin
             // 
@@ -577,6 +602,7 @@
             0,
             0,
             0});
+            this.EraseMin.ValueChanged += new System.EventHandler(this.TypeMin_ValueChanged);
             // 
             // StatusMin
             // 
@@ -599,6 +625,7 @@
             0,
             0,
             0});
+            this.StatusMin.ValueChanged += new System.EventHandler(this.TypeMin_ValueChanged);
             // 
             // SpecialMin
             // 
@@ -621,6 +648,7 @@
             0,
             0,
             0});
+            this.SpecialMin.ValueChanged += new System.EventHandler(this.TypeMin_ValueChanged);
             // 
             // EnvironmentMax
             // 
@@ -664,7 +692,8 @@
             1,
             0,
             0,
-            -2147483648});
+            0});
+            this.EnvironmentMin.ValueChanged += new System.EventHandler(this.TypeMin_ValueChanged);
             // 
             // label12
             // 
@@ -806,7 +835,6 @@
             this.Text = "ArsenalRandomizerForm";
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AuraMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AttackMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DefenseMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EraseMax)).EndInit();
@@ -840,7 +868,6 @@
         private Label label7;
         private Label label12;
         private NumericUpDown EnvironmentMin;
-        private NumericUpDown AuraMax;
         private NumericUpDown AttackMax;
         private NumericUpDown DefenseMax;
         private NumericUpDown EraseMax;
@@ -863,12 +890,16 @@
         private Button PsychoSchoolButton;
         private Button GenerateButton;
         private Button CancelButton;
-        private Label TypeHelpLabel;
+        private Label SlotsCountLabel;
         private Label label13;
         private CheckBox LongAttackRangeCheckbox;
         private CheckBox MediumAttackRangeCheckbox;
         private CheckBox ShortAttackRangeCheckbox;
         private CheckBox MineAttackRangeCheckbox;
         private CheckBox AllAttackRangeCheckbox;
+        private Label MinimumTotal;
+        private Label label14;
+        private Label MinimumTotalDiff;
+        private Label ErrorLabel;
     }
 }

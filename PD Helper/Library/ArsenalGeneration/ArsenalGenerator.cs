@@ -102,16 +102,14 @@ namespace PD_Helper.Library.ArsenalGeneration
         {
             var arsenal = new WorkArsenal();
 
-            BuildArsenalMinimums(options, arsenal, shuffledSkills, auraSkill);
+            AddMinimumSkills(options, arsenal, shuffledSkills, auraSkill);
 
-            BuildAuraByRandomCount(options, arsenal, auraSkill);
-
-            BuildArsenalRandoms(arsenal, shuffledSkills);
+            AddMaximumSkills(options, arsenal, shuffledSkills);
 
             return arsenal.Cards;
         }
 
-        private void BuildArsenalMinimums(GeneratorOptions options, WorkArsenal arsenal, List<PDCard> shuffledSkills, PDCard auraSkill)
+        private void AddMinimumSkills(GeneratorOptions options, WorkArsenal arsenal, List<PDCard> shuffledSkills, PDCard auraSkill)
         {
             foreach (var typeKey in options.TypeMinimums.Keys)
             {
@@ -127,7 +125,6 @@ namespace PD_Helper.Library.ArsenalGeneration
                     for (int i = 0; i < minimum; i++)
                     {
                         arsenal.Cards.Add(auraSkill);
-                        arsenal.Total++;
                     }
                 }
                 else
@@ -137,60 +134,34 @@ namespace PD_Helper.Library.ArsenalGeneration
                         var index = shuffledSkills.FindIndex(skill => skill.TYPE == typeKey);
                         arsenal.Cards.Add(shuffledSkills[index]);
                         shuffledSkills.RemoveAt(index);
-                        arsenal.Total++;
                     }
                 }
             }
         }
 
-        private void BuildAuraByRandomCount(GeneratorOptions options, WorkArsenal arsenal, PDCard auraSkill)
+        private void AddMaximumSkills(GeneratorOptions options, WorkArsenal arsenal, List<PDCard> shuffledSkills)
         {
-            int auraMax = options.TypeMaximums["Aura"];
-            int currentAuraCount = arsenal.Cards.Count(c => c.TYPE == auraSkill.TYPE);
-
-            if (currentAuraCount >= auraMax)
+            foreach(var skill in shuffledSkills)
             {
-                return;
-            }
-
-            int remainingArsenalSlots = 30 - arsenal.Total;
-
-            int randomMax = remainingArsenalSlots;
-
-            // Limit max by specified aura max if applicable
-            if (auraMax > 0 && auraMax > currentAuraCount)
-            {
-                int additionalAuraAllowed = auraMax - currentAuraCount;
-                if (additionalAuraAllowed <= remainingArsenalSlots)
+                if (arsenal.Cards.Count >= 30)
                 {
-                    randomMax = additionalAuraAllowed;
+                    break;
+                }
+
+                int max = options.TypeMaximums[skill.TYPE];
+
+                if (max == -1)
+                {
+                    arsenal.Cards.Add(skill);
+                    continue;
+                }
+
+                if (arsenal.Cards.Count(c => c.TYPE == skill.TYPE) < max)
+                {
+                    arsenal.Cards.Add(skill);
+                    continue;
                 }
             }
-
-            var numOfAuraToAdd = GetRandomInt(1, randomMax);
-
-            for (int i = 0; i < numOfAuraToAdd; i++)
-            {
-                arsenal.Cards.Add(auraSkill);
-                arsenal.Total++;
-            }
-        }
-
-        private void BuildArsenalRandoms(WorkArsenal arsenal, List<PDCard> shuffledSkills)
-        {
-            // TODO: Implement type maximums
-            var remainingOpenEntries = 30 - arsenal.Total;
-
-            for (int i = 0; i < remainingOpenEntries; i++)
-            {
-                arsenal.Cards.Add(shuffledSkills[i]);
-            }
-        }
-
-        private int GetRandomInt(int min, int max)
-        {
-            var random = new Random();
-            return random.Next(min, max + 1);
         }
 
         private int GetRandomIndex(List<string> inputArray)
@@ -201,8 +172,6 @@ namespace PD_Helper.Library.ArsenalGeneration
 
         private class WorkArsenal
         {
-            public int Total { get; set; }
-
             public List<PDCard> Cards { get; set; } = new List<PDCard>();
         }
     }

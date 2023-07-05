@@ -15,6 +15,7 @@ namespace PD_Helper
 {
     public partial class ArsenalRandomizerForm : Form
     {
+        NumericUpDown[] _typeMinimumControls;
         private ArsenalGenerator _arsenalGenerator = new ArsenalGenerator();
         private Dictionary<object, bool> _caseButtons;
         private Dictionary<object, bool> _schoolButtons;
@@ -32,6 +33,17 @@ namespace PD_Helper
 
         private void Initialize()
         {
+            _typeMinimumControls = new NumericUpDown[]
+            {
+                AuraMin,
+                AttackMin,
+                DefenseMin,
+                EraseMin,
+                StatusMin,
+                SpecialMin,
+                EnvironmentMin,
+            };
+
             _caseButtons = new Dictionary<object, bool>
              {
                 [OneSchoolCaseButton] = true,
@@ -148,7 +160,6 @@ namespace PD_Helper
 
             var typeMaximums = new Dictionary<string, int>
             {
-                ["Aura"] = (int)AuraMax.Value,
                 ["Attack"] = (int)AttackMax.Value,
                 ["Defense"] = (int)DefenseMax.Value,
                 ["Erase"] = (int)EraseMax.Value,
@@ -200,6 +211,24 @@ namespace PD_Helper
         private void CancelButton_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void TypeMin_ValueChanged(object sender, EventArgs e)
+        {
+            int minimumTotal = (int)_typeMinimumControls.Sum(x => x.Value != -1 ? x.Value : 0);
+            MinimumTotal.Text = minimumTotal.ToString();
+            MinimumTotalDiff.Text = (30 - minimumTotal).ToString();
+
+            if (minimumTotal > 30)
+            {
+                GenerateButton.Enabled = false;
+                ErrorLabel.Text = $"Minimum total [{minimumTotal}] exceeds 30, please reduce to continue.";
+            }
+            else
+            {
+                GenerateButton.Enabled = true;
+                ErrorLabel.Text = "";
+            }
         }
     }
 }
