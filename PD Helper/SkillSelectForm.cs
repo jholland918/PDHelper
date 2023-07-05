@@ -120,7 +120,6 @@ namespace PD_Helper
             if (skillButton != null)
             {
                 SkillList.ScrollControlIntoView(skillButton);
-                skillButton.Focus();
             }
         }
 
