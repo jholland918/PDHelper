@@ -253,7 +253,10 @@ namespace PD_Helper
         private void ArsenalSkill_Click(object sender, EventArgs e)
         {
             SetEditMode(true);
-            var skillSelectForm = new SkillSelectForm(null, null);
+            var button = (Button)sender;
+            var cardIndex = int.Parse(button.AccessibleName);
+            var card = _currentArsenalListItem.Arsenal.Cards[cardIndex];
+            var skillSelectForm = new SkillSelectForm(_currentArsenalListItem, card);
             skillSelectForm.ShowDialog();
 
             if (skillSelectForm.SelectedSkill == null)
@@ -263,10 +266,7 @@ namespace PD_Helper
 
             _lastCardSelected = skillSelectForm.SelectedSkill;
 
-            if (sender is Button button)
-            {
-                UpdateArsenalCard(button, _lastCardSelected);
-            }
+            UpdateArsenalCard(button, _lastCardSelected);
         }
 
         private void ArsenalSkill_MouseUp(object sender, MouseEventArgs e)

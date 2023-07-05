@@ -79,7 +79,7 @@ namespace PD_Helper
                 ["Environment"] = EnvironmentButton,
             };
 
-            SetActiveType();
+            SetActiveType(_card.TYPE);
 
             _schoolButtons = new Dictionary<string, Button>
             {
@@ -89,6 +89,15 @@ namespace PD_Helper
                 ["Ki"] = KiButton,
                 ["Faith"] = FaithButton,
             };
+
+            var arsenalSchools = _arsenalListItem.Arsenal.Cards.Select(c => c.SCHOOL).Distinct();
+            if (arsenalSchools.Any())
+            {
+                foreach (string key in _activeSchools.Keys)
+                {
+                    _activeSchools[key] = arsenalSchools.Contains(key);
+                }
+            }
 
             foreach (var kvp in _activeSchools)
             {
