@@ -115,6 +115,13 @@ namespace PD_Helper
             }
 
             FilterSkills();
+
+            var skillButton = _skillButtons.FirstOrDefault(b => b.Card.ID == _card.ID);
+            if (skillButton != null)
+            {
+                SkillList.ScrollControlIntoView(skillButton);
+                skillButton.Focus();
+            }
         }
 
         private void SkillButton_Click(object? sender, EventArgs e)
