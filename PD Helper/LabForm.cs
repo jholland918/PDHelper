@@ -216,7 +216,8 @@ namespace PD_Helper
                 CardTitlePanel.BackColor = AppColors.GetSkillColor(card.TYPE);
                 CardSchoolPicture.Image = AppImages.GetSchool(card.SCHOOL);
                 CardTitleLabel.Text = card.NAME;
-                CardSubtitleLabel.Text = $"COST {card.COST} STR {card.DAMAGE} @ {card.USAGE} {card.RANGE}";
+                CardSubtitleLeftLabel.Text = $"COST {card.COST} STR {card.DAMAGE}";
+                CardSubtitleRightLabel.Text = $"@ {card.USAGE} {card.RANGE}";
                 CardDescriptionLabel.Text = card.DESCRIPTION;
                 RangePictureBox.Image = AppImages.GetRange(card.RANGE);
             }

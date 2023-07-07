@@ -58,7 +58,9 @@
             this.CardDescriptionPanel = new System.Windows.Forms.Panel();
             this.CardDescription = new System.Windows.Forms.Label();
             this.CardSubheaderPanel = new System.Windows.Forms.Panel();
-            this.CardSubtitle = new System.Windows.Forms.Label();
+            this.CardRange = new System.Windows.Forms.PictureBox();
+            this.CardSubtitleRight = new System.Windows.Forms.Label();
+            this.CardSubtitleLeft = new System.Windows.Forms.Label();
             this.CardHeaderPanel = new System.Windows.Forms.Panel();
             this.CardSchoolPicture = new System.Windows.Forms.PictureBox();
             this.CardTitle = new System.Windows.Forms.Label();
@@ -68,6 +70,7 @@
             this.SkillDetail.SuspendLayout();
             this.CardDescriptionPanel.SuspendLayout();
             this.CardSubheaderPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CardRange)).BeginInit();
             this.CardHeaderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CardSchoolPicture)).BeginInit();
             this.SuspendLayout();
@@ -427,21 +430,42 @@
             // CardSubheaderPanel
             // 
             this.CardSubheaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
-            this.CardSubheaderPanel.Controls.Add(this.CardSubtitle);
+            this.CardSubheaderPanel.Controls.Add(this.CardRange);
+            this.CardSubheaderPanel.Controls.Add(this.CardSubtitleRight);
+            this.CardSubheaderPanel.Controls.Add(this.CardSubtitleLeft);
             this.CardSubheaderPanel.Location = new System.Drawing.Point(5, 33);
             this.CardSubheaderPanel.Name = "CardSubheaderPanel";
             this.CardSubheaderPanel.Size = new System.Drawing.Size(325, 29);
             this.CardSubheaderPanel.TabIndex = 1;
             // 
-            // CardSubtitle
+            // CardRange
             // 
-            this.CardSubtitle.AutoSize = true;
-            this.CardSubtitle.ForeColor = System.Drawing.Color.White;
-            this.CardSubtitle.Location = new System.Drawing.Point(3, 7);
-            this.CardSubtitle.Name = "CardSubtitle";
-            this.CardSubtitle.Size = new System.Drawing.Size(75, 15);
-            this.CardSubtitle.TabIndex = 0;
-            this.CardSubtitle.Text = "Card Subtitle";
+            this.CardRange.Location = new System.Drawing.Point(267, 5);
+            this.CardRange.Name = "CardRange";
+            this.CardRange.Size = new System.Drawing.Size(50, 19);
+            this.CardRange.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.CardRange.TabIndex = 2;
+            this.CardRange.TabStop = false;
+            // 
+            // CardSubtitleRight
+            // 
+            this.CardSubtitleRight.AutoSize = true;
+            this.CardSubtitleRight.ForeColor = System.Drawing.Color.White;
+            this.CardSubtitleRight.Location = new System.Drawing.Point(152, 7);
+            this.CardSubtitleRight.Name = "CardSubtitleRight";
+            this.CardSubtitleRight.Size = new System.Drawing.Size(75, 15);
+            this.CardSubtitleRight.TabIndex = 1;
+            this.CardSubtitleRight.Text = "Card Subtitle";
+            // 
+            // CardSubtitleLeft
+            // 
+            this.CardSubtitleLeft.AutoSize = true;
+            this.CardSubtitleLeft.ForeColor = System.Drawing.Color.White;
+            this.CardSubtitleLeft.Location = new System.Drawing.Point(3, 7);
+            this.CardSubtitleLeft.Name = "CardSubtitleLeft";
+            this.CardSubtitleLeft.Size = new System.Drawing.Size(75, 15);
+            this.CardSubtitleLeft.TabIndex = 0;
+            this.CardSubtitleLeft.Text = "Card Subtitle";
             // 
             // CardHeaderPanel
             // 
@@ -492,6 +516,7 @@
             this.CardDescriptionPanel.PerformLayout();
             this.CardSubheaderPanel.ResumeLayout(false);
             this.CardSubheaderPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CardRange)).EndInit();
             this.CardHeaderPanel.ResumeLayout(false);
             this.CardHeaderPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CardSchoolPicture)).EndInit();
@@ -519,7 +544,7 @@
         private Panel CardSubheaderPanel;
         private Panel CardHeaderPanel;
         private Label CardDescription;
-        private Label CardSubtitle;
+        private Label CardSubtitleLeft;
         private Label CardTitle;
         private Button AttackButton;
         private Button DefenseButton;
@@ -534,5 +559,7 @@
         private Button KiButton;
         private Button NatureButton;
         private PictureBox CardSchoolPicture;
+        private PictureBox CardRange;
+        private Label CardSubtitleRight;
     }
 }

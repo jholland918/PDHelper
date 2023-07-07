@@ -97,8 +97,9 @@
             this.CardSchoolPicture = new System.Windows.Forms.PictureBox();
             this.CardTitleLabel = new System.Windows.Forms.Label();
             this.CardSubtitlePanel = new System.Windows.Forms.Panel();
+            this.CardSubtitleRightLabel = new System.Windows.Forms.Label();
             this.RangePictureBox = new System.Windows.Forms.PictureBox();
-            this.CardSubtitleLabel = new System.Windows.Forms.Label();
+            this.CardSubtitleLeftLabel = new System.Windows.Forms.Label();
             this.CardDescriptionPanel = new System.Windows.Forms.Panel();
             this.CardDescriptionLabel = new System.Windows.Forms.Label();
             this.MainLayout = new System.Windows.Forms.TableLayoutPanel();
@@ -1078,35 +1079,47 @@
             // CardSubtitlePanel
             // 
             this.CardSubtitlePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
+            this.CardSubtitlePanel.Controls.Add(this.CardSubtitleRightLabel);
             this.CardSubtitlePanel.Controls.Add(this.RangePictureBox);
-            this.CardSubtitlePanel.Controls.Add(this.CardSubtitleLabel);
-            this.CardSubtitlePanel.Location = new System.Drawing.Point(-4, 38);
+            this.CardSubtitlePanel.Controls.Add(this.CardSubtitleLeftLabel);
+            this.CardSubtitlePanel.Location = new System.Drawing.Point(0, 38);
             this.CardSubtitlePanel.Margin = new System.Windows.Forms.Padding(0);
             this.CardSubtitlePanel.Name = "CardSubtitlePanel";
             this.CardSubtitlePanel.Size = new System.Drawing.Size(404, 37);
             this.CardSubtitlePanel.TabIndex = 1;
             // 
+            // CardSubtitleRightLabel
+            // 
+            this.CardSubtitleRightLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CardSubtitleRightLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(162)))), ((int)(((byte)(165)))));
+            this.CardSubtitleRightLabel.Location = new System.Drawing.Point(179, 0);
+            this.CardSubtitleRightLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.CardSubtitleRightLabel.Name = "CardSubtitleRightLabel";
+            this.CardSubtitleRightLabel.Size = new System.Drawing.Size(137, 37);
+            this.CardSubtitleRightLabel.TabIndex = 3;
+            this.CardSubtitleRightLabel.Text = "CardSubtitleRight";
+            this.CardSubtitleRightLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // RangePictureBox
             // 
-            this.RangePictureBox.Location = new System.Drawing.Point(293, 5);
+            this.RangePictureBox.Location = new System.Drawing.Point(320, 5);
             this.RangePictureBox.Name = "RangePictureBox";
-            this.RangePictureBox.Size = new System.Drawing.Size(100, 26);
+            this.RangePictureBox.Size = new System.Drawing.Size(73, 26);
             this.RangePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.RangePictureBox.TabIndex = 2;
             this.RangePictureBox.TabStop = false;
             // 
-            // CardSubtitleLabel
+            // CardSubtitleLeftLabel
             // 
-            this.CardSubtitleLabel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.CardSubtitleLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CardSubtitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(162)))), ((int)(((byte)(165)))));
-            this.CardSubtitleLabel.Location = new System.Drawing.Point(0, 0);
-            this.CardSubtitleLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.CardSubtitleLabel.Name = "CardSubtitleLabel";
-            this.CardSubtitleLabel.Size = new System.Drawing.Size(290, 37);
-            this.CardSubtitleLabel.TabIndex = 1;
-            this.CardSubtitleLabel.Text = "CardSubtitleLabel";
-            this.CardSubtitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CardSubtitleLeftLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CardSubtitleLeftLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(162)))), ((int)(((byte)(165)))));
+            this.CardSubtitleLeftLabel.Location = new System.Drawing.Point(0, 0);
+            this.CardSubtitleLeftLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.CardSubtitleLeftLabel.Name = "CardSubtitleLeftLabel";
+            this.CardSubtitleLeftLabel.Size = new System.Drawing.Size(179, 37);
+            this.CardSubtitleLeftLabel.TabIndex = 1;
+            this.CardSubtitleLeftLabel.Text = "CardSubtitleLeft";
+            this.CardSubtitleLeftLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // CardDescriptionPanel
             // 
@@ -1221,7 +1234,7 @@
         private Button ArsenalSkill29;
         private Button ArsenalSkill30;
         private Label CardTitleLabel;
-        private Label CardSubtitleLabel;
+        private Label CardSubtitleLeftLabel;
         private Label CardDescriptionLabel;
         private PictureBox ArsenalCasePicture;
         private Label ArsenalNameLabel;
@@ -1262,5 +1275,6 @@
         private System.Windows.Forms.Timer SaveChangesAnimationTimer;
         private Button RandomizerButton;
         private PictureBox RangePictureBox;
+        private Label CardSubtitleRightLabel;
     }
 }
