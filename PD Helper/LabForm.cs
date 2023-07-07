@@ -218,6 +218,7 @@ namespace PD_Helper
                 CardTitleLabel.Text = card.NAME;
                 CardSubtitleLabel.Text = $"COST {card.COST} STR {card.DAMAGE} @ {card.USAGE} {card.RANGE}";
                 CardDescriptionLabel.Text = card.DESCRIPTION;
+                RangePictureBox.Image = AppImages.GetRange(card.RANGE);
             }
         }
 

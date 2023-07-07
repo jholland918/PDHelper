@@ -80,6 +80,7 @@
             this.ArsenalSkill11 = new System.Windows.Forms.Button();
             this.ArsenalSkill30 = new System.Windows.Forms.Button();
             this.ArsenalControlPanel = new System.Windows.Forms.Panel();
+            this.RandomizerButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -96,12 +97,12 @@
             this.CardSchoolPicture = new System.Windows.Forms.PictureBox();
             this.CardTitleLabel = new System.Windows.Forms.Label();
             this.CardSubtitlePanel = new System.Windows.Forms.Panel();
+            this.RangePictureBox = new System.Windows.Forms.PictureBox();
             this.CardSubtitleLabel = new System.Windows.Forms.Label();
             this.CardDescriptionPanel = new System.Windows.Forms.Panel();
             this.CardDescriptionLabel = new System.Windows.Forms.Label();
             this.MainLayout = new System.Windows.Forms.TableLayoutPanel();
             this.SaveChangesAnimationTimer = new System.Windows.Forms.Timer(this.components);
-            this.RandomizerButton = new System.Windows.Forms.Button();
             this.ArsenalListLayout.SuspendLayout();
             this.ArsenalListHeader.SuspendLayout();
             this.ArsenalPanel.SuspendLayout();
@@ -118,6 +119,7 @@
             this.CardTitlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CardSchoolPicture)).BeginInit();
             this.CardSubtitlePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RangePictureBox)).BeginInit();
             this.CardDescriptionPanel.SuspendLayout();
             this.MainLayout.SuspendLayout();
             this.SuspendLayout();
@@ -888,6 +890,19 @@
             this.ArsenalControlPanel.Size = new System.Drawing.Size(202, 185);
             this.ArsenalControlPanel.TabIndex = 32;
             // 
+            // RandomizerButton
+            // 
+            this.RandomizerButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.RandomizerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RandomizerButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.RandomizerButton.Location = new System.Drawing.Point(5, 61);
+            this.RandomizerButton.Name = "RandomizerButton";
+            this.RandomizerButton.Size = new System.Drawing.Size(94, 23);
+            this.RandomizerButton.TabIndex = 19;
+            this.RandomizerButton.Text = "Randomizer";
+            this.RandomizerButton.UseVisualStyleBackColor = true;
+            this.RandomizerButton.Click += new System.EventHandler(this.RandomizerButton_Click);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -1063,12 +1078,22 @@
             // CardSubtitlePanel
             // 
             this.CardSubtitlePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
+            this.CardSubtitlePanel.Controls.Add(this.RangePictureBox);
             this.CardSubtitlePanel.Controls.Add(this.CardSubtitleLabel);
-            this.CardSubtitlePanel.Location = new System.Drawing.Point(2, 38);
+            this.CardSubtitlePanel.Location = new System.Drawing.Point(-4, 38);
             this.CardSubtitlePanel.Margin = new System.Windows.Forms.Padding(0);
             this.CardSubtitlePanel.Name = "CardSubtitlePanel";
-            this.CardSubtitlePanel.Size = new System.Drawing.Size(398, 37);
+            this.CardSubtitlePanel.Size = new System.Drawing.Size(404, 37);
             this.CardSubtitlePanel.TabIndex = 1;
+            // 
+            // RangePictureBox
+            // 
+            this.RangePictureBox.Location = new System.Drawing.Point(293, 5);
+            this.RangePictureBox.Name = "RangePictureBox";
+            this.RangePictureBox.Size = new System.Drawing.Size(100, 26);
+            this.RangePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.RangePictureBox.TabIndex = 2;
+            this.RangePictureBox.TabStop = false;
             // 
             // CardSubtitleLabel
             // 
@@ -1078,7 +1103,7 @@
             this.CardSubtitleLabel.Location = new System.Drawing.Point(0, 0);
             this.CardSubtitleLabel.Margin = new System.Windows.Forms.Padding(0);
             this.CardSubtitleLabel.Name = "CardSubtitleLabel";
-            this.CardSubtitleLabel.Size = new System.Drawing.Size(398, 37);
+            this.CardSubtitleLabel.Size = new System.Drawing.Size(290, 37);
             this.CardSubtitleLabel.TabIndex = 1;
             this.CardSubtitleLabel.Text = "CardSubtitleLabel";
             this.CardSubtitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1127,19 +1152,6 @@
             // 
             this.SaveChangesAnimationTimer.Tick += new System.EventHandler(this.SaveChangesAnimationTimer_Tick);
             // 
-            // RandomizerButton
-            // 
-            this.RandomizerButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.RandomizerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RandomizerButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.RandomizerButton.Location = new System.Drawing.Point(5, 61);
-            this.RandomizerButton.Name = "RandomizerButton";
-            this.RandomizerButton.Size = new System.Drawing.Size(94, 23);
-            this.RandomizerButton.TabIndex = 19;
-            this.RandomizerButton.Text = "Randomizer";
-            this.RandomizerButton.UseVisualStyleBackColor = true;
-            this.RandomizerButton.Click += new System.EventHandler(this.RandomizerButton_Click);
-            // 
             // LabForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1167,6 +1179,7 @@
             this.CardTitlePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CardSchoolPicture)).EndInit();
             this.CardSubtitlePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.RangePictureBox)).EndInit();
             this.CardDescriptionPanel.ResumeLayout(false);
             this.CardDescriptionPanel.PerformLayout();
             this.MainLayout.ResumeLayout(false);
@@ -1248,5 +1261,6 @@
         private Label label1;
         private System.Windows.Forms.Timer SaveChangesAnimationTimer;
         private Button RandomizerButton;
+        private PictureBox RangePictureBox;
     }
 }

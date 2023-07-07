@@ -18,6 +18,29 @@ namespace PD_Helper.Library
         public static readonly Image ArsenalCase2 = Image.FromFile(@"Assets\arsenal_case_2_140.png");
         public static readonly Image ArsenalCase3 = Image.FromFile(@"Assets\arsenal_case_3_140.png");
 
+        public static readonly Image ArrowAll = Image.FromFile(@"Assets\arrow-all.png");
+        public static readonly Image ArrowAuto = Image.FromFile(@"Assets\arrow-auto.png");
+        public static readonly Image ArrowEnv = Image.FromFile(@"Assets\arrow-env.png");
+        public static readonly Image ArrowLong = Image.FromFile(@"Assets\arrow-long.png");
+        public static readonly Image ArrowMedium = Image.FromFile(@"Assets\arrow-medium.png");
+        public static readonly Image ArrowShort = Image.FromFile(@"Assets\arrow-short.png");
+        public static readonly Image ArrowSelf = Image.FromFile(@"Assets\arrow-self.png");
+        public static readonly Image Capsule = Image.FromFile(@"Assets\capsule.png");
+        public static readonly Image Mine = Image.FromFile(@"Assets\mine.png");
+
+        private static readonly Dictionary<string, Image> Ranges = new Dictionary<string, Image>
+        {
+            ["all"] = ArrowAll,
+            ["auto"] = ArrowAuto,
+            ["capsule"] = Capsule,
+            ["env"] = ArrowEnv,
+            ["long"] = ArrowLong,
+            ["medium"] = ArrowMedium,
+            ["mine"] = Mine,
+            ["self"] = ArrowSelf,
+            ["short"] = ArrowShort,
+        };
+
         private static readonly Dictionary<string, Image> Schools = new Dictionary<string, Image>
         {
             ["Aura"] = Aura,
@@ -53,6 +76,19 @@ namespace PD_Helper.Library
             try
             {
                 return Schools[schoolName];
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return Bug;
+            }
+        }
+
+        internal static Image GetRange(string range)
+        {
+            try
+            {
+                return Ranges[range];
             }
             catch (Exception ex)
             {
