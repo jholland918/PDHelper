@@ -298,7 +298,22 @@ namespace PD_Helper
                 CardHeaderPanel.BackColor = AppColors.GetSkillColor(skill.TYPE);
                 CardSchoolPicture.Image = AppImages.GetSchool(skill.SCHOOL);
                 CardTitle.Text = skill.NAME;
-                CardSubtitleLeft.Text = $"COST {skill.COST} STR {skill.DAMAGE}";
+
+                string strengthText;
+                switch (skill.TYPE)
+                {
+                    case "Attack":
+                        strengthText = "DEF";
+                        break;
+                    case "Defense":
+                        strengthText = "DEF";
+                        break;
+                    default:
+                        strengthText = "---";
+                        break;
+                }
+
+                CardSubtitleLeft.Text = $"COST {skill.COST} {strengthText} {skill.DAMAGE}";
                 CardSubtitleRight.Text = $"@ {skill.USAGE} {skill.RANGE}";
                 CardRange.Image = AppImages.GetRange(skill.RANGE);
                 CardDescription.Text = skill.DESCRIPTION;
