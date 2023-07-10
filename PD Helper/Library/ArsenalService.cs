@@ -7,6 +7,8 @@ namespace PD_Helper.Library
     /// </summary>
     internal class ArsenalService
     {
+        private AppData _appData = AppData.Instance;
+
         /// <summary>
         /// Gets arsenal names from the user's filesystem
         /// </summary>
@@ -110,14 +112,15 @@ namespace PD_Helper.Library
                     arsenal.SchoolAmount = int.Parse(loadSchoolAmount);
                     for (int i = 0; i < 30; i++)
                     {
-                        if (!SkillDB.Skills.ContainsKey(deckStrings[i]))
+                        var skill = _appData.GetSkill(deckStrings[i]);
+                        if (skill == null)
                         {
                             MessageBox.Show("ERROR09: A Skill from your loaded arsenal does not exist in the game and could not be loaded. The arsenal has been tampered with or was corrupted. Please try loading another arsenal.");
                             break;
                         }
                         else
                         {
-                            arsenal.Cards[i] = SkillDB.Skills[deckStrings[i]];
+                            arsenal.Cards[i] = skill;
                         }
                     }
                 }
@@ -146,7 +149,7 @@ namespace PD_Helper.Library
                 throw new AppException($"File doesn't exist! [{file}]");
             }
 
-            string skillString = string.Join(',', arsenal.Cards.Select(c => c.HEX));
+            string skillString = string.Join(',', arsenal.Cards.Select(c => c.Hex));
 
             var schools = arsenal.Schools;
             int schoolCount = schools.Count();

@@ -23,7 +23,7 @@ namespace PD_Helper
         /// <summary>
         /// The arsenal generated from the randomizer
         /// </summary>
-        public List<PDCard> Arsenal { get; private set; }
+        public List<Skill> Arsenal { get; private set; }
 
         public ArsenalRandomizerForm()
         {

@@ -90,7 +90,7 @@ namespace PD_Helper
             {
                 schoolCount = 1; // Sometimes arsenals are all Aura, so set the school count to 1 minimum.
             }
-            string skillsOverAura = $"{_arsenal.Cards.Where(c => c.TYPE != "Aura").Count()}/30";
+            string skillsOverAura = $"{_arsenal.Cards.Where(c => c.Type != "Aura").Count()}/30";
             ArsenalCasePicture.Image = AppImages.GetArsenalCase(schoolCount);
             ArsenalNameLabel.Text = _arsenal.ArsenalName;
             foreach (KeyValuePair<string, PictureBox> schoolPicture in SchoolPictures)

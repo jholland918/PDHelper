@@ -30,7 +30,7 @@ namespace PD_Helper.Library
         /// <summary>
         /// Returns the string showing how many skills vs aura are in the arsenal.
         /// </summary>
-        public string SkillsOverAura { get { return $"{Cards.Where(c => c.TYPE != "Aura").Count()}/30"; } }
+        public string SkillsOverAura { get { return $"{Cards.Where(c => c.Type != "Aura").Count()}/30"; } }
 
         /// <summary>
         /// The arsenal index inside the game
@@ -60,11 +60,11 @@ namespace PD_Helper.Library
         {
             get
             {
-                return Cards.Select(c => c.SCHOOL).Distinct().Where(s => s != "Aura").ToArray();
+                return Cards.Select(c => c.School).Distinct().Where(s => s != "Aura").ToArray();
             }
         }
 
-        public PDCard[] Cards { get; private set; } = new PDCard[30];
+        public Skill[] Cards { get; private set; } = new Skill[30];
 
         /// <summary>
         /// Creates a new instance using an arsenal index loaded from the game
@@ -93,7 +93,7 @@ namespace PD_Helper.Library
         {
             // Phantom Dust's sorting seems pretty arbitrary except for sorting by skill type,
             // so until I can figure it out I'm just going to sort by name after type.
-            Cards = Cards.OrderBy(c => _typeSort[c.TYPE]).ThenBy(c => c.NAME).ToArray();
+            Cards = Cards.OrderBy(c => _typeSort[c.Type]).ThenBy(c => c.Name).ToArray();
         }
     }
 }

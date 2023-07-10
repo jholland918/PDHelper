@@ -15,8 +15,9 @@ namespace PD_Helper
 {
     public partial class SkillSelectForm : Form
     {
+        private AppData _appData = AppData.Instance;
         private ArsenalListItem _arsenalListItem;
-        private PDCard _card;
+        private Skill _card;
         private static string _activeType = "Aura";
         private Dictionary<string, Button> _typeButtons;
         private List<SkillButton> _skillButtons = new List<SkillButton>();
@@ -42,11 +43,11 @@ namespace PD_Helper
             "None"
         };
 
-        public PDCard SelectedSkill { get; private set; }
+        public Skill SelectedSkill { get; private set; }
 
         public int ConfirmCount { get; private set; } = 0;
 
-        public SkillSelectForm(ArsenalListItem arsenalListItem, PDCard card)
+        public SkillSelectForm(ArsenalListItem arsenalListItem, Skill card)
         {
             _arsenalListItem = arsenalListItem;
             _card = card;
@@ -79,7 +80,7 @@ namespace PD_Helper
                 ["Environment"] = EnvironmentButton,
             };
 
-            SetActiveType(_card.TYPE);
+            SetActiveType(_card.Type);
 
             _schoolButtons = new Dictionary<string, Button>
             {
@@ -90,7 +91,7 @@ namespace PD_Helper
                 ["Faith"] = FaithButton,
             };
 
-            var arsenalSchools = _arsenalListItem.Arsenal.Cards.Select(c => c.SCHOOL).Distinct();
+            var arsenalSchools = _arsenalListItem.Arsenal.Cards.Select(c => c.School).Distinct();
             if (arsenalSchools.Any())
             {
                 foreach (string key in _activeSchools.Keys)
@@ -104,8 +105,8 @@ namespace PD_Helper
                 _schoolButtons[kvp.Key].BackColor = _activeSchools[kvp.Key] ? AppColors.ForegroundColor : AppColors.BackgroundColor;
             }
 
-            var skills = SkillDB.Skills.OrderBy(x => x.Value.SCHOOL).ThenBy(x => x.Value.COST).ThenBy(x => x.Value.DAMAGE);
-            foreach (KeyValuePair<string, PDCard> skill in skills)
+            var skills = _appData.Skills.FindAll().OrderBy(x => x.School).ThenBy(x => x.Cost).ThenBy(x => x.Damage);
+            foreach (var skill in skills)
             {
                 var button = new SkillButton(skill);
                 _skillButtons.Add(button);
@@ -116,7 +117,7 @@ namespace PD_Helper
 
             FilterSkills();
 
-            var skillButton = _skillButtons.FirstOrDefault(b => b.Card.ID == _card.ID);
+            var skillButton = _skillButtons.FirstOrDefault(b => b.Card.PdId == _card.PdId);
             if (skillButton != null)
             {
                 SkillList.ScrollControlIntoView(skillButton);
@@ -127,7 +128,7 @@ namespace PD_Helper
         {
             if (sender is SkillButton button)
             {
-                SelectedSkill = SkillDB.Skills[button.SkillKey];
+                SelectedSkill = _appData.GetSkill(button.SkillKey);
                 Close();
             }
         }
@@ -142,42 +143,42 @@ namespace PD_Helper
             SkillList.ResumeLayout();
         }
 
-        private bool ShowSkill(PDCard card)
+        private bool ShowSkill(Skill card)
         {
             var searchTerm = SearchTextBox.Text.Trim();
-            if (searchTerm.Length > 0 && !card.NAME.Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
+            if (searchTerm.Length > 0 && !card.Name.Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
             {
                 return false;
             }
 
             // Type filter
-            if (card.TYPE != _activeType)
+            if (card.Type != _activeType)
             {
                 return false;
             }
 
             // School filters
-            if (!_activeSchools["Psycho"] && card.SCHOOL == "Psycho")
+            if (!_activeSchools["Psycho"] && card.School == "Psycho")
             {
                 return false;
             }
 
-            if (!_activeSchools["Optical"] && card.SCHOOL == "Optical")
+            if (!_activeSchools["Optical"] && card.School == "Optical")
             {
                 return false;
             }
 
-            if (!_activeSchools["Nature"] && card.SCHOOL == "Nature")
+            if (!_activeSchools["Nature"] && card.School == "Nature")
             {
                 return false;
             }
 
-            if (!_activeSchools["Ki"] && card.SCHOOL == "Ki")
+            if (!_activeSchools["Ki"] && card.School == "Ki")
             {
                 return false;
             }
 
-            if (!_activeSchools["Faith"] && card.SCHOOL == "Faith")
+            if (!_activeSchools["Faith"] && card.School == "Faith")
             {
                 return false;
             }
@@ -247,24 +248,24 @@ namespace PD_Helper
 
         private void SortSkills()
         {
-            object GetSortProp(PDCard card, string sortType)
+            object GetSortProp(Skill card, string sortType)
             {
                 switch (sortType)
                 {
                     case "School":
-                        return card.SCHOOL;
+                        return card.School;
                     case "Cost":
-                        return card.COST;
+                        return card.Cost;
                     case "Strength":
-                        return card.DAMAGE;
+                        return card.Damage;
                     case "Number of Uses":
-                        return card.USAGE;
+                        return card.Usage;
                     case "Range":
-                        return card.RANGE;
+                        return card.Range;
                     case "ID":
-                        return card.ID;
+                        return card.PdId;
                     case "Amount":
-                        return card.COST;
+                        return card.Cost;
                     default:
                         return 1;
                 }
@@ -294,13 +295,13 @@ namespace PD_Helper
         {
             if (sender is SkillButton button)
             {
-                var skill = SkillDB.Skills[button.SkillKey];
-                CardHeaderPanel.BackColor = AppColors.GetSkillColor(skill.TYPE);
-                CardSchoolPicture.Image = AppImages.GetSchool(skill.SCHOOL);
-                CardTitle.Text = skill.NAME;
+                var skill = _appData.GetSkill(button.SkillKey);
+                CardHeaderPanel.BackColor = AppColors.GetSkillColor(skill.Type);
+                CardSchoolPicture.Image = AppImages.GetSchool(skill.School);
+                CardTitle.Text = skill.Name;
 
                 string strengthText;
-                switch (skill.TYPE)
+                switch (skill.Type)
                 {
                     case "Attack":
                         strengthText = "DEF";
@@ -313,10 +314,10 @@ namespace PD_Helper
                         break;
                 }
 
-                CardSubtitleLeft.Text = $"COST {skill.COST} {strengthText} {skill.DAMAGE}";
-                CardSubtitleRight.Text = $"@ {skill.USAGE} {skill.RANGE}";
-                CardRange.Image = AppImages.GetRange(skill.RANGE);
-                CardDescription.Text = skill.DESCRIPTION;
+                CardSubtitleLeft.Text = $"COST {skill.Cost} {strengthText} {skill.Damage}";
+                CardSubtitleRight.Text = $"@ {skill.Usage} {skill.Range}";
+                CardRange.Image = AppImages.GetRange(skill.Range);
+                CardDescription.Text = skill.Description;
             }
         }
 

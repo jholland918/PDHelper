@@ -1,33 +1,11 @@
-﻿using Newtonsoft.Json;
-using static PD_Helper.Form1;
-
-namespace PD_Helper.Library
+﻿namespace PD_Helper.Library
 {
-    internal static class SkillDB
+    internal static class SkillMap
     {
-        static SkillDB()
-        {
-            foreach(var skill in Skills)
-            {
-                if (!SkillMap.ContainsKey(skill.Key))
-                {
-                    throw new AppException($"The SkillDB.json file is corrupted, key [{skill.Key}] is invalid.");
-                }
-
-                if (skill.Value.SCHOOL != SkillMap[skill.Key])
-                {
-                    throw new AppException($"The SkillDB.json file is corrupted, school mapping is invalid for key [{skill.Key}]. Expected [{SkillMap[skill.Key]}] but found [{skill.Value.SCHOOL}]");
-                }
-            }
-        }
-
-        public static readonly Dictionary<string, PDCard> Skills = JsonConvert.DeserializeObject<Dictionary<string, PDCard>>(File.ReadAllText("SkillDB.json"));
-
-        #region Skill Map
         /// <summary>
-        /// Authoritative skill-to-school mapping for validation use.
+        /// Authoritative skill-to-school mapping for validation use just in case the db/json/whatever gets messed up somehow.
         /// </summary>
-        public static readonly Dictionary<string, string> SkillMap = new Dictionary<string, string>
+        public static readonly Dictionary<string, string> Items = new Dictionary<string, string>
         {
             ["FF FF"] = "Aura",
             ["01 00"] = "Psycho",
@@ -405,6 +383,5 @@ namespace PD_Helper.Library
             ["75 01"] = "Faith",
             ["76 01"] = "Faith",
         };
-        #endregion Skill Map
     }
 }

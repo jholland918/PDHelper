@@ -8,6 +8,7 @@ namespace PD_Helper.Library
     /// </summary>
     internal class GameService
     {
+        private AppData _appData = AppData.Instance;
         private readonly string[] arsenalNameOffsets = { "8", "6C", "D0", "134", "198", "1FC", "260", "2C4", "328", "38C", "3F0", "454", "4B8", "51C", "580", "5E4" };
         private readonly string[] arsenalSkillOffsets = { "18", "7C", "E0", "144", "1A8", "20C", "270", "2D4", "338", "39C", "400", "464", "4C8", "52C", "590", "5F4" };
 
@@ -73,7 +74,7 @@ namespace PD_Helper.Library
                 if (i < 30)
                 {
                     // The cards are the first thirty hex values.
-                    arsenal.Cards[i] = SkillDB.Skills[currentHexString];
+                    arsenal.Cards[i] = _appData.GetSkill(currentHexString);
                 }
                 else
                 {
@@ -107,7 +108,7 @@ namespace PD_Helper.Library
             for (int i = 0; i <= 30; i++)
             {
                 // The cards are the first thirty hex values and the final hex value is the school amount.
-                var hex = i < 30 ? arsenal.Cards[i].HEX : $"0{arsenal.SchoolAmount} 00";
+                var hex = i < 30 ? arsenal.Cards[i].Hex : $"0{arsenal.SchoolAmount} 00";
                 dataToWrite[o] = Convert.ToByte(hex.Remove(2), 16);
                 dataToWrite[o + 1] = Convert.ToByte(hex.Remove(0, 3), 16);
                 o += 2;
@@ -123,14 +124,14 @@ namespace PD_Helper.Library
         {
             foreach (var card in arsenal.Cards)
             {
-                if (!SkillDB.SkillMap.ContainsKey(card.HEX))
+                if (!SkillMap.Items.ContainsKey(card.Hex))
                 {
-                    throw new AppException($"Arsenal card invalid, key [{card.HEX}] is invalid.");
+                    throw new AppException($"Arsenal card invalid, key [{card.Hex}] is invalid.");
                 }
 
-                if (card.SCHOOL != SkillDB.SkillMap[card.HEX])
+                if (card.School != SkillMap.Items[card.Hex])
                 {
-                    throw new AppException($"Arsenal card invalid, school is invalid for key [{card.HEX}]. Expected [{SkillDB.SkillMap[card.HEX]}] but found [{card.SCHOOL}]");
+                    throw new AppException($"Arsenal card invalid, school is invalid for key [{card.Hex}]. Expected [{SkillMap.Items[card.Hex]}] but found [{card.School}]");
                 }
             }
 
@@ -150,7 +151,7 @@ namespace PD_Helper.Library
             Dictionary<string, int> skillDupes = new Dictionary<string, int>();
             foreach (var card in arsenal.Cards)
             {
-                switch (card.SCHOOL)
+                switch (card.School)
                 {
                     case "Psycho":
                         psy++;
@@ -172,13 +173,13 @@ namespace PD_Helper.Library
 
                 }
 
-                if (skillDupes.ContainsKey(card.NAME))
+                if (skillDupes.ContainsKey(card.Name))
                 {
-                    skillDupes[card.NAME]++;
+                    skillDupes[card.Name]++;
                 }
                 else
                 {
-                    skillDupes.Add(card.NAME, 1);
+                    skillDupes.Add(card.Name, 1);
                 }
             }
 

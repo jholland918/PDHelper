@@ -11,17 +11,17 @@ namespace PD_Helper.Library.ArsenalGeneration
     public class ArsenalGenerator
     {
         private static Random _random = new Random();
+        private AppData _appData = AppData.Instance;
 
-
-        public List<PDCard> Execute(GeneratorOptions options)
+        public List<Skill> Execute(GeneratorOptions options)
         {
-            List<PDCard> skills = SkillDB.Skills.Values.ToList();
+            List<Skill> skills = _appData.Skills.FindAll().ToList();
 
             int caseSize = GetCaseSize(options);
 
             List<string> schools = GetSchools(options, caseSize);
 
-            PDCard auraSkill = GetAuraSkill(skills);
+            var auraSkill = GetAuraSkill(skills);
 
             skills = FilterAuraFromSkills(skills);
 
@@ -29,9 +29,9 @@ namespace PD_Helper.Library.ArsenalGeneration
 
             skills = FilterSkillsByAttackRange(options, skills);
 
-            List<PDCard> shuffledSkills = ShuffleSkills(skills);
+            var shuffledSkills = ShuffleSkills(skills);
 
-            List<PDCard> randomArsenal = BuildArsenal(options, shuffledSkills, auraSkill);
+            var randomArsenal = BuildArsenal(options, shuffledSkills, auraSkill);
 
             return randomArsenal;
         }
@@ -56,37 +56,37 @@ namespace PD_Helper.Library.ArsenalGeneration
             return schools;
         }
 
-        private PDCard GetAuraSkill(List<PDCard> skills)
+        private Skill GetAuraSkill(IEnumerable<Skill> skills)
         {
-            return skills.FirstOrDefault(skill => skill.TYPE == "Aura");
+            return skills.FirstOrDefault(skill => skill.Type == "Aura");
         }
 
-        private List<PDCard> FilterAuraFromSkills(List<PDCard> skills)
+        private List<Skill> FilterAuraFromSkills(List<Skill> skills)
         {
-            return skills.Where(skill => skill.TYPE != "Aura").ToList();
+            return skills.Where(skill => skill.Type != "Aura").ToList();
         }
 
-        private List<PDCard> FilterSkillsBySchool(List<PDCard> skills, List<string> schools)
+        private List<Skill> FilterSkillsBySchool(List<Skill> skills, List<string> schools)
         {
-            return skills.Where(skill => schools.Contains(skill.SCHOOL)).ToList();
+            return skills.Where(skill => schools.Contains(skill.School)).ToList();
         }
 
-        private List<PDCard> FilterSkillsByAttackRange(GeneratorOptions options, List<PDCard> skills)
+        private List<Skill> FilterSkillsByAttackRange(GeneratorOptions options, List<Skill> skills)
         {
             var attackRangeOptions = new List<string> { "all", "mine", "short", "medium", "long" };
             var attackRangesNotChosen = attackRangeOptions.Except(options.AttackRanges).ToList();
 
             foreach (var attackRange in attackRangesNotChosen)
             {
-                skills = skills.Where(skill => skill.RANGE != attackRange).ToList();
+                skills = skills.Where(skill => skill.Type != attackRange).ToList();
             }
 
             return skills;
         }
 
-        private List<PDCard> ShuffleSkills(List<PDCard> skills)
+        private List<Skill> ShuffleSkills(List<Skill> skills)
         {
-            var skillPool = new List<PDCard>();
+            var skillPool = new List<Skill>();
 
             // Add max amount of skills in the skill pool
             for (int i = 0; i < 3; i++)
@@ -98,7 +98,7 @@ namespace PD_Helper.Library.ArsenalGeneration
             return skillPool.OrderBy(x => _random.Next()).ToList();
         }
 
-        private List<PDCard> BuildArsenal(GeneratorOptions options, List<PDCard> shuffledSkills, PDCard auraSkill)
+        private List<Skill> BuildArsenal(GeneratorOptions options, List<Skill> shuffledSkills, Skill auraSkill)
         {
             var arsenal = new WorkArsenal();
 
@@ -109,7 +109,7 @@ namespace PD_Helper.Library.ArsenalGeneration
             return arsenal.Cards;
         }
 
-        private void AddMinimumSkills(GeneratorOptions options, WorkArsenal arsenal, List<PDCard> shuffledSkills, PDCard auraSkill)
+        private void AddMinimumSkills(GeneratorOptions options, WorkArsenal arsenal, List<Skill> shuffledSkills, Skill auraSkill)
         {
             foreach (var typeKey in options.TypeMinimums.Keys)
             {
@@ -131,7 +131,7 @@ namespace PD_Helper.Library.ArsenalGeneration
                 {
                     for (int i = 0; i < minimum; i++)
                     {
-                        var index = shuffledSkills.FindIndex(skill => skill.TYPE == typeKey);
+                        var index = shuffledSkills.FindIndex(skill => skill.Type == typeKey);
                         arsenal.Cards.Add(shuffledSkills[index]);
                         shuffledSkills.RemoveAt(index);
                     }
@@ -139,7 +139,7 @@ namespace PD_Helper.Library.ArsenalGeneration
             }
         }
 
-        private void AddMaximumSkills(GeneratorOptions options, WorkArsenal arsenal, List<PDCard> shuffledSkills)
+        private void AddMaximumSkills(GeneratorOptions options, WorkArsenal arsenal, IEnumerable<Skill> shuffledSkills)
         {
             foreach(var skill in shuffledSkills)
             {
@@ -148,7 +148,7 @@ namespace PD_Helper.Library.ArsenalGeneration
                     break;
                 }
 
-                int max = options.TypeMaximums[skill.TYPE];
+                int max = options.TypeMaximums[skill.Type];
 
                 if (max == -1)
                 {
@@ -156,7 +156,7 @@ namespace PD_Helper.Library.ArsenalGeneration
                     continue;
                 }
 
-                if (arsenal.Cards.Count(c => c.TYPE == skill.TYPE) < max)
+                if (arsenal.Cards.Count(c => c.Type == skill.Type) < max)
                 {
                     arsenal.Cards.Add(skill);
                     continue;
@@ -172,7 +172,7 @@ namespace PD_Helper.Library.ArsenalGeneration
 
         private class WorkArsenal
         {
-            public List<PDCard> Cards { get; set; } = new List<PDCard>();
+            public List<Skill> Cards { get; set; } = new List<Skill>();
         }
     }
 }

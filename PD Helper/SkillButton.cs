@@ -11,16 +11,16 @@ namespace PD_Helper
     internal class SkillButton : Button
     {
         internal string SkillKey { get; private set; }
-        internal PDCard Card { get; private set; }
+        internal Skill Card { get; private set; }
 
-        internal SkillButton(KeyValuePair<string, PDCard> skill) : base()
+        internal SkillButton(Skill skill) : base()
         {
-            SkillKey = skill.Key;
-            Card = skill.Value;
+            SkillKey = skill.Hex;
+            Card = skill;
 
-            Text = $"{Card.NAME}";
-            BackColor = AppColors.GetSkillColor(Card.TYPE);
-            Image = AppImages.GetSchool(Card.SCHOOL);
+            Text = $"{Card.Name}";
+            BackColor = AppColors.GetSkillColor(Card.Type);
+            Image = AppImages.GetSchool(Card.School);
 
             FlatStyle = FlatStyle.Flat;
             FlatAppearance.BorderSize = 0;

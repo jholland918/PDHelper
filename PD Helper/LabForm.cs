@@ -22,8 +22,9 @@ namespace PD_Helper
         private Dictionary<string, PictureBox> _schoolPictures;
         private ArsenalListItem _currentArsenalListItem;
         private List<ArsenalListItem> _arsenalListItems = new List<ArsenalListItem>();
-        private PDCard _lastCardSelected;
+        private Skill _lastCardSelected;
         private bool _isEditMode = false;
+        private AppData _appData = AppData.Instance;
 
         private struct ArsenalSkill
         {
@@ -129,9 +130,9 @@ namespace PD_Helper
             {
                 var card = arsenalListItem.Arsenal.Cards[i];
                 var skill = _arsenalSkills[i].Button;
-                skill.Text = card.NAME;
-                skill.BackColor = AppColors.GetSkillColor(card.TYPE);
-                skill.Image = AppImages.GetSchool(card.SCHOOL);
+                skill.Text = card.Name;
+                skill.BackColor = AppColors.GetSkillColor(card.Type);
+                skill.Image = AppImages.GetSchool(card.School);
                 skill.AccessibleName = i.ToString(); // I should probably put this index on a subclass of Button instead of this hacky thing... :)
             }
         }
@@ -213,12 +214,12 @@ namespace PD_Helper
             {
                 int index = int.Parse(button.AccessibleName);
                 var card = _currentArsenalListItem.Arsenal.Cards[index];
-                CardTitlePanel.BackColor = AppColors.GetSkillColor(card.TYPE);
-                CardSchoolPicture.Image = AppImages.GetSchool(card.SCHOOL);
-                CardTitleLabel.Text = card.NAME;
+                CardTitlePanel.BackColor = AppColors.GetSkillColor(card.Type);
+                CardSchoolPicture.Image = AppImages.GetSchool(card.School);
+                CardTitleLabel.Text = card.Name;
 
                 string strengthText;
-                switch (card.TYPE)
+                switch (card.Type)
                 {
                     case "Attack":
                         strengthText = "DEF";
@@ -231,10 +232,10 @@ namespace PD_Helper
                         break;
                 }
 
-                CardSubtitleLeftLabel.Text = $"COST {card.COST} {strengthText} {card.DAMAGE}";
-                CardSubtitleRightLabel.Text = $"@ {card.USAGE} {card.RANGE}";
-                CardDescriptionLabel.Text = card.DESCRIPTION;
-                RangePictureBox.Image = AppImages.GetRange(card.RANGE);
+                CardSubtitleLeftLabel.Text = $"COST {card.Cost} {strengthText} {card.Damage}";
+                CardSubtitleRightLabel.Text = $"@ {card.Usage} {card.Range}";
+                CardDescriptionLabel.Text = card.Description;
+                RangePictureBox.Image = AppImages.GetRange(card.Range);
             }
         }
 
@@ -299,19 +300,19 @@ namespace PD_Helper
             {
                 if (sender is Button button)
                 {
-                    UpdateArsenalCard(button, SkillDB.Skills["FF FF"]);
+                    UpdateArsenalCard(button, _appData.GetSkill("FF FF"));
                 }
             }
         }
 
-        private void UpdateArsenalCard(Button button, PDCard card)
+        private void UpdateArsenalCard(Button button, Skill card)
         {
             var cardIndex = int.Parse(button.AccessibleName);
             var skill = _arsenalSkills[cardIndex].Button;
             _currentArsenalListItem.Arsenal.Cards[cardIndex] = card;
-            skill.Text = card.NAME;
-            skill.BackColor = AppColors.GetSkillColor(card.TYPE);
-            skill.Image = AppImages.GetSchool(card.SCHOOL);
+            skill.Text = card.Name;
+            skill.BackColor = AppColors.GetSkillColor(card.Type);
+            skill.Image = AppImages.GetSchool(card.School);
         }
 
         private void SaveChangesButton_Click(object sender, EventArgs e)
