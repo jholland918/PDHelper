@@ -28,1177 +28,1157 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LabForm));
-            this.ArsenalListLayout = new System.Windows.Forms.TableLayoutPanel();
-            this.ArsenalListHeader = new System.Windows.Forms.Panel();
-            this.ArsenalFilterTextBox = new PD_Helper.CueTextBox();
-            this.SaveToGameLabel = new System.Windows.Forms.Label();
-            this.SearchLabel = new System.Windows.Forms.Label();
-            this.ArsenalListTitle = new System.Windows.Forms.Label();
-            this.NewButton = new System.Windows.Forms.Button();
-            this.ArsenalListBody = new System.Windows.Forms.FlowLayoutPanel();
-            this.ArsenalPanel = new System.Windows.Forms.Panel();
-            this.ArsenalHeaderPanel = new System.Windows.Forms.Panel();
-            this.ArsenalCasePicture = new System.Windows.Forms.PictureBox();
-            this.ArsenalNameLabel = new System.Windows.Forms.Label();
-            this.SkillsOverAuraLabel = new System.Windows.Forms.Label();
-            this.SchoolPicturePsycho = new System.Windows.Forms.PictureBox();
-            this.SchoolPictureOptical = new System.Windows.Forms.PictureBox();
-            this.SchoolPictureNature = new System.Windows.Forms.PictureBox();
-            this.SchoolPictureKi = new System.Windows.Forms.PictureBox();
-            this.SchoolPictureFaith = new System.Windows.Forms.PictureBox();
-            this.ArsenalDeckPanel = new System.Windows.Forms.Panel();
-            this.ArsenalSkill1 = new System.Windows.Forms.Button();
-            this.ArsenalSkill21 = new System.Windows.Forms.Button();
-            this.ArsenalSkill8 = new System.Windows.Forms.Button();
-            this.ArsenalSkill20 = new System.Windows.Forms.Button();
-            this.ArsenalSkill22 = new System.Windows.Forms.Button();
-            this.ArsenalSkill7 = new System.Windows.Forms.Button();
-            this.ArsenalSkill19 = new System.Windows.Forms.Button();
-            this.ArsenalSkill23 = new System.Windows.Forms.Button();
-            this.ArsenalSkill6 = new System.Windows.Forms.Button();
-            this.ArsenalSkill18 = new System.Windows.Forms.Button();
-            this.ArsenalSkill24 = new System.Windows.Forms.Button();
-            this.ArsenalSkill5 = new System.Windows.Forms.Button();
-            this.ArsenalSkill17 = new System.Windows.Forms.Button();
-            this.ArsenalSkill25 = new System.Windows.Forms.Button();
-            this.ArsenalSkill4 = new System.Windows.Forms.Button();
-            this.ArsenalSkill16 = new System.Windows.Forms.Button();
-            this.ArsenalSkill26 = new System.Windows.Forms.Button();
-            this.ArsenalSkill3 = new System.Windows.Forms.Button();
-            this.ArsenalSkill15 = new System.Windows.Forms.Button();
-            this.ArsenalSkill27 = new System.Windows.Forms.Button();
-            this.ArsenalSkill2 = new System.Windows.Forms.Button();
-            this.ArsenalSkill14 = new System.Windows.Forms.Button();
-            this.ArsenalSkill28 = new System.Windows.Forms.Button();
-            this.ArsenalSkill9 = new System.Windows.Forms.Button();
-            this.ArsenalSkill13 = new System.Windows.Forms.Button();
-            this.ArsenalSkill29 = new System.Windows.Forms.Button();
-            this.ArsenalSkill10 = new System.Windows.Forms.Button();
-            this.ArsenalSkill12 = new System.Windows.Forms.Button();
-            this.ArsenalSkill11 = new System.Windows.Forms.Button();
-            this.ArsenalSkill30 = new System.Windows.Forms.Button();
-            this.ArsenalControlPanel = new System.Windows.Forms.Panel();
-            this.RandomizerButton = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.SaveChangesButton = new System.Windows.Forms.Button();
-            this.EditButton = new System.Windows.Forms.Button();
-            this.SortButton = new System.Windows.Forms.Button();
-            this.RenameButton = new System.Windows.Forms.Button();
-            this.DeleteButton = new System.Windows.Forms.Button();
-            this.CardPanel = new System.Windows.Forms.Panel();
-            this.CardTitlePanel = new System.Windows.Forms.Panel();
-            this.CardSchoolPicture = new System.Windows.Forms.PictureBox();
-            this.CardTitleLabel = new System.Windows.Forms.Label();
-            this.CardSubtitlePanel = new System.Windows.Forms.Panel();
-            this.CardSubtitleRightLabel = new System.Windows.Forms.Label();
-            this.RangePictureBox = new System.Windows.Forms.PictureBox();
-            this.CardSubtitleLeftLabel = new System.Windows.Forms.Label();
-            this.CardDescriptionPanel = new System.Windows.Forms.Panel();
-            this.CardDescriptionLabel = new System.Windows.Forms.Label();
-            this.MainLayout = new System.Windows.Forms.TableLayoutPanel();
-            this.SaveChangesAnimationTimer = new System.Windows.Forms.Timer(this.components);
-            this.ArsenalListLayout.SuspendLayout();
-            this.ArsenalListHeader.SuspendLayout();
-            this.ArsenalPanel.SuspendLayout();
-            this.ArsenalHeaderPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ArsenalCasePicture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SchoolPicturePsycho)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureOptical)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureNature)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureKi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureFaith)).BeginInit();
-            this.ArsenalDeckPanel.SuspendLayout();
-            this.ArsenalControlPanel.SuspendLayout();
-            this.CardPanel.SuspendLayout();
-            this.CardTitlePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CardSchoolPicture)).BeginInit();
-            this.CardSubtitlePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.RangePictureBox)).BeginInit();
-            this.CardDescriptionPanel.SuspendLayout();
-            this.MainLayout.SuspendLayout();
-            this.SuspendLayout();
+            ArsenalListLayout = new TableLayoutPanel();
+            ArsenalListHeader = new Panel();
+            ArsenalFilterTextBox = new CueTextBox();
+            SaveToGameLabel = new Label();
+            SearchLabel = new Label();
+            ArsenalListTitle = new Label();
+            NewButton = new Button();
+            ArsenalListBody = new FlowLayoutPanel();
+            ArsenalPanel = new Panel();
+            ArsenalHeaderPanel = new Panel();
+            ArsenalCasePicture = new PictureBox();
+            ArsenalNameLabel = new Label();
+            SkillsOverAuraLabel = new Label();
+            SchoolPicturePsycho = new PictureBox();
+            SchoolPictureOptical = new PictureBox();
+            SchoolPictureNature = new PictureBox();
+            SchoolPictureKi = new PictureBox();
+            SchoolPictureFaith = new PictureBox();
+            ArsenalDeckPanel = new Panel();
+            ArsenalSkill1 = new Button();
+            ArsenalSkill21 = new Button();
+            ArsenalSkill8 = new Button();
+            ArsenalSkill20 = new Button();
+            ArsenalSkill22 = new Button();
+            ArsenalSkill7 = new Button();
+            ArsenalSkill19 = new Button();
+            ArsenalSkill23 = new Button();
+            ArsenalSkill6 = new Button();
+            ArsenalSkill18 = new Button();
+            ArsenalSkill24 = new Button();
+            ArsenalSkill5 = new Button();
+            ArsenalSkill17 = new Button();
+            ArsenalSkill25 = new Button();
+            ArsenalSkill4 = new Button();
+            ArsenalSkill16 = new Button();
+            ArsenalSkill26 = new Button();
+            ArsenalSkill3 = new Button();
+            ArsenalSkill15 = new Button();
+            ArsenalSkill27 = new Button();
+            ArsenalSkill2 = new Button();
+            ArsenalSkill14 = new Button();
+            ArsenalSkill28 = new Button();
+            ArsenalSkill9 = new Button();
+            ArsenalSkill13 = new Button();
+            ArsenalSkill29 = new Button();
+            ArsenalSkill10 = new Button();
+            ArsenalSkill12 = new Button();
+            ArsenalSkill11 = new Button();
+            ArsenalSkill30 = new Button();
+            ArsenalControlPanel = new Panel();
+            RandomizerButton = new Button();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            SaveChangesButton = new Button();
+            SortButton = new Button();
+            RenameButton = new Button();
+            DeleteButton = new Button();
+            CardPanel = new Panel();
+            CardTitlePanel = new Panel();
+            CardSchoolPicture = new PictureBox();
+            CardTitleLabel = new Label();
+            CardSubtitlePanel = new Panel();
+            CardSubtitleRightLabel = new Label();
+            RangePictureBox = new PictureBox();
+            CardSubtitleLeftLabel = new Label();
+            CardDescriptionPanel = new Panel();
+            CardDescriptionLabel = new Label();
+            MainLayout = new TableLayoutPanel();
+            SaveChangesAnimationTimer = new System.Windows.Forms.Timer(components);
+            ArsenalListLayout.SuspendLayout();
+            ArsenalListHeader.SuspendLayout();
+            ArsenalPanel.SuspendLayout();
+            ArsenalHeaderPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ArsenalCasePicture).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)SchoolPicturePsycho).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)SchoolPictureOptical).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)SchoolPictureNature).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)SchoolPictureKi).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)SchoolPictureFaith).BeginInit();
+            ArsenalDeckPanel.SuspendLayout();
+            ArsenalControlPanel.SuspendLayout();
+            CardPanel.SuspendLayout();
+            CardTitlePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)CardSchoolPicture).BeginInit();
+            CardSubtitlePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)RangePictureBox).BeginInit();
+            CardDescriptionPanel.SuspendLayout();
+            MainLayout.SuspendLayout();
+            SuspendLayout();
             // 
             // ArsenalListLayout
             // 
-            this.ArsenalListLayout.AutoSize = true;
-            this.ArsenalListLayout.ColumnCount = 1;
-            this.ArsenalListLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.ArsenalListLayout.Controls.Add(this.ArsenalListHeader, 0, 0);
-            this.ArsenalListLayout.Controls.Add(this.ArsenalListBody, 0, 2);
-            this.ArsenalListLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ArsenalListLayout.Location = new System.Drawing.Point(3, 3);
-            this.ArsenalListLayout.Name = "ArsenalListLayout";
-            this.ArsenalListLayout.RowCount = 3;
-            this.ArsenalListLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
-            this.ArsenalListLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.ArsenalListLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.ArsenalListLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.ArsenalListLayout.Size = new System.Drawing.Size(594, 593);
-            this.ArsenalListLayout.TabIndex = 0;
+            ArsenalListLayout.AutoSize = true;
+            ArsenalListLayout.ColumnCount = 1;
+            ArsenalListLayout.ColumnStyles.Add(new ColumnStyle());
+            ArsenalListLayout.Controls.Add(ArsenalListHeader, 0, 0);
+            ArsenalListLayout.Controls.Add(ArsenalListBody, 0, 2);
+            ArsenalListLayout.Dock = DockStyle.Fill;
+            ArsenalListLayout.Location = new Point(3, 3);
+            ArsenalListLayout.Name = "ArsenalListLayout";
+            ArsenalListLayout.RowCount = 3;
+            ArsenalListLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 65F));
+            ArsenalListLayout.RowStyles.Add(new RowStyle());
+            ArsenalListLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            ArsenalListLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            ArsenalListLayout.Size = new Size(594, 593);
+            ArsenalListLayout.TabIndex = 0;
             // 
             // ArsenalListHeader
             // 
-            this.ArsenalListHeader.BackColor = System.Drawing.Color.Transparent;
-            this.ArsenalListHeader.Controls.Add(this.ArsenalFilterTextBox);
-            this.ArsenalListHeader.Controls.Add(this.SaveToGameLabel);
-            this.ArsenalListHeader.Controls.Add(this.SearchLabel);
-            this.ArsenalListHeader.Controls.Add(this.ArsenalListTitle);
-            this.ArsenalListHeader.Controls.Add(this.NewButton);
-            this.ArsenalListHeader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ArsenalListHeader.Location = new System.Drawing.Point(3, 3);
-            this.ArsenalListHeader.Name = "ArsenalListHeader";
-            this.ArsenalListHeader.Size = new System.Drawing.Size(608, 59);
-            this.ArsenalListHeader.TabIndex = 3;
+            ArsenalListHeader.BackColor = Color.Transparent;
+            ArsenalListHeader.Controls.Add(ArsenalFilterTextBox);
+            ArsenalListHeader.Controls.Add(SaveToGameLabel);
+            ArsenalListHeader.Controls.Add(SearchLabel);
+            ArsenalListHeader.Controls.Add(ArsenalListTitle);
+            ArsenalListHeader.Controls.Add(NewButton);
+            ArsenalListHeader.Dock = DockStyle.Fill;
+            ArsenalListHeader.Location = new Point(3, 3);
+            ArsenalListHeader.Name = "ArsenalListHeader";
+            ArsenalListHeader.Size = new Size(608, 59);
+            ArsenalListHeader.TabIndex = 3;
             // 
             // ArsenalFilterTextBox
             // 
-            this.ArsenalFilterTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(168)))), ((int)(((byte)(158)))));
-            this.ArsenalFilterTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ArsenalFilterTextBox.Cue = "Search Arsenals...";
-            this.ArsenalFilterTextBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ArsenalFilterTextBox.Location = new System.Drawing.Point(30, 5);
-            this.ArsenalFilterTextBox.Name = "ArsenalFilterTextBox";
-            this.ArsenalFilterTextBox.Size = new System.Drawing.Size(496, 25);
-            this.ArsenalFilterTextBox.TabIndex = 3;
+            ArsenalFilterTextBox.BackColor = Color.FromArgb(161, 168, 158);
+            ArsenalFilterTextBox.BorderStyle = BorderStyle.None;
+            ArsenalFilterTextBox.Cue = "Search Arsenals...";
+            ArsenalFilterTextBox.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            ArsenalFilterTextBox.Location = new Point(30, 5);
+            ArsenalFilterTextBox.Name = "ArsenalFilterTextBox";
+            ArsenalFilterTextBox.Size = new Size(496, 25);
+            ArsenalFilterTextBox.TabIndex = 3;
             // 
             // SaveToGameLabel
             // 
-            this.SaveToGameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.SaveToGameLabel.AutoSize = true;
-            this.SaveToGameLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SaveToGameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SaveToGameLabel.Location = new System.Drawing.Point(410, 37);
-            this.SaveToGameLabel.Name = "SaveToGameLabel";
-            this.SaveToGameLabel.Size = new System.Drawing.Size(116, 21);
-            this.SaveToGameLabel.TabIndex = 1;
-            this.SaveToGameLabel.Text = "Save To Game";
-            this.SaveToGameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            SaveToGameLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            SaveToGameLabel.AutoSize = true;
+            SaveToGameLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            SaveToGameLabel.ForeColor = Color.FromArgb(92, 172, 149);
+            SaveToGameLabel.Location = new Point(410, 37);
+            SaveToGameLabel.Name = "SaveToGameLabel";
+            SaveToGameLabel.Size = new Size(116, 21);
+            SaveToGameLabel.TabIndex = 1;
+            SaveToGameLabel.Text = "Save To Game";
+            SaveToGameLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // SearchLabel
             // 
-            this.SearchLabel.AutoSize = true;
-            this.SearchLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SearchLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SearchLabel.Location = new System.Drawing.Point(3, 3);
-            this.SearchLabel.Name = "SearchLabel";
-            this.SearchLabel.Size = new System.Drawing.Size(32, 21);
-            this.SearchLabel.TabIndex = 2;
-            this.SearchLabel.Text = ">>";
-            this.SearchLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            SearchLabel.AutoSize = true;
+            SearchLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            SearchLabel.ForeColor = Color.FromArgb(92, 172, 149);
+            SearchLabel.Location = new Point(3, 3);
+            SearchLabel.Name = "SearchLabel";
+            SearchLabel.Size = new Size(32, 21);
+            SearchLabel.TabIndex = 2;
+            SearchLabel.Text = ">>";
+            SearchLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // ArsenalListTitle
             // 
-            this.ArsenalListTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ArsenalListTitle.AutoSize = true;
-            this.ArsenalListTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ArsenalListTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.ArsenalListTitle.Location = new System.Drawing.Point(3, 37);
-            this.ArsenalListTitle.Name = "ArsenalListTitle";
-            this.ArsenalListTitle.Size = new System.Drawing.Size(97, 21);
-            this.ArsenalListTitle.TabIndex = 0;
-            this.ArsenalListTitle.Text = "Arsenal List";
-            this.ArsenalListTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            ArsenalListTitle.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            ArsenalListTitle.AutoSize = true;
+            ArsenalListTitle.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            ArsenalListTitle.ForeColor = Color.FromArgb(92, 172, 149);
+            ArsenalListTitle.Location = new Point(3, 37);
+            ArsenalListTitle.Name = "ArsenalListTitle";
+            ArsenalListTitle.Size = new Size(97, 21);
+            ArsenalListTitle.TabIndex = 0;
+            ArsenalListTitle.Text = "Arsenal List";
+            ArsenalListTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // NewButton
             // 
-            this.NewButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(49)))));
-            this.NewButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.NewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.NewButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.NewButton.Location = new System.Drawing.Point(106, 35);
-            this.NewButton.Name = "NewButton";
-            this.NewButton.Size = new System.Drawing.Size(62, 23);
-            this.NewButton.TabIndex = 10;
-            this.NewButton.Text = "New";
-            this.NewButton.UseVisualStyleBackColor = false;
-            this.NewButton.Click += new System.EventHandler(this.NewButton_Click);
+            NewButton.BackColor = Color.FromArgb(35, 55, 49);
+            NewButton.FlatAppearance.BorderColor = Color.FromArgb(92, 172, 149);
+            NewButton.FlatStyle = FlatStyle.Flat;
+            NewButton.ForeColor = Color.FromArgb(92, 172, 149);
+            NewButton.Location = new Point(106, 35);
+            NewButton.Name = "NewButton";
+            NewButton.Size = new Size(62, 23);
+            NewButton.TabIndex = 10;
+            NewButton.Text = "New";
+            NewButton.UseVisualStyleBackColor = false;
+            NewButton.Click += NewButton_Click;
             // 
             // ArsenalListBody
             // 
-            this.ArsenalListBody.AutoScroll = true;
-            this.ArsenalListBody.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ArsenalListBody.Location = new System.Drawing.Point(3, 68);
-            this.ArsenalListBody.Name = "ArsenalListBody";
-            this.ArsenalListBody.Size = new System.Drawing.Size(580, 522);
-            this.ArsenalListBody.TabIndex = 4;
+            ArsenalListBody.AutoScroll = true;
+            ArsenalListBody.Dock = DockStyle.Left;
+            ArsenalListBody.Location = new Point(3, 68);
+            ArsenalListBody.Name = "ArsenalListBody";
+            ArsenalListBody.Size = new Size(580, 522);
+            ArsenalListBody.TabIndex = 4;
             // 
             // ArsenalPanel
             // 
-            this.ArsenalPanel.Controls.Add(this.ArsenalHeaderPanel);
-            this.ArsenalPanel.Controls.Add(this.ArsenalDeckPanel);
-            this.ArsenalPanel.Controls.Add(this.ArsenalControlPanel);
-            this.ArsenalPanel.Controls.Add(this.CardPanel);
-            this.ArsenalPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ArsenalPanel.Location = new System.Drawing.Point(603, 3);
-            this.ArsenalPanel.Name = "ArsenalPanel";
-            this.ArsenalPanel.Size = new System.Drawing.Size(694, 593);
-            this.ArsenalPanel.TabIndex = 0;
-            this.ArsenalPanel.Visible = false;
+            ArsenalPanel.Controls.Add(ArsenalHeaderPanel);
+            ArsenalPanel.Controls.Add(ArsenalDeckPanel);
+            ArsenalPanel.Controls.Add(ArsenalControlPanel);
+            ArsenalPanel.Controls.Add(CardPanel);
+            ArsenalPanel.Dock = DockStyle.Fill;
+            ArsenalPanel.Location = new Point(603, 3);
+            ArsenalPanel.Name = "ArsenalPanel";
+            ArsenalPanel.Size = new Size(694, 593);
+            ArsenalPanel.TabIndex = 0;
+            ArsenalPanel.Visible = false;
             // 
             // ArsenalHeaderPanel
             // 
-            this.ArsenalHeaderPanel.Controls.Add(this.ArsenalCasePicture);
-            this.ArsenalHeaderPanel.Controls.Add(this.ArsenalNameLabel);
-            this.ArsenalHeaderPanel.Controls.Add(this.SkillsOverAuraLabel);
-            this.ArsenalHeaderPanel.Controls.Add(this.SchoolPicturePsycho);
-            this.ArsenalHeaderPanel.Controls.Add(this.SchoolPictureOptical);
-            this.ArsenalHeaderPanel.Controls.Add(this.SchoolPictureNature);
-            this.ArsenalHeaderPanel.Controls.Add(this.SchoolPictureKi);
-            this.ArsenalHeaderPanel.Controls.Add(this.SchoolPictureFaith);
-            this.ArsenalHeaderPanel.Location = new System.Drawing.Point(3, 3);
-            this.ArsenalHeaderPanel.Name = "ArsenalHeaderPanel";
-            this.ArsenalHeaderPanel.Size = new System.Drawing.Size(603, 67);
-            this.ArsenalHeaderPanel.TabIndex = 12;
+            ArsenalHeaderPanel.Controls.Add(ArsenalCasePicture);
+            ArsenalHeaderPanel.Controls.Add(ArsenalNameLabel);
+            ArsenalHeaderPanel.Controls.Add(SkillsOverAuraLabel);
+            ArsenalHeaderPanel.Controls.Add(SchoolPicturePsycho);
+            ArsenalHeaderPanel.Controls.Add(SchoolPictureOptical);
+            ArsenalHeaderPanel.Controls.Add(SchoolPictureNature);
+            ArsenalHeaderPanel.Controls.Add(SchoolPictureKi);
+            ArsenalHeaderPanel.Controls.Add(SchoolPictureFaith);
+            ArsenalHeaderPanel.Location = new Point(3, 3);
+            ArsenalHeaderPanel.Name = "ArsenalHeaderPanel";
+            ArsenalHeaderPanel.Size = new Size(603, 67);
+            ArsenalHeaderPanel.TabIndex = 12;
             // 
             // ArsenalCasePicture
             // 
-            this.ArsenalCasePicture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.ArsenalCasePicture.InitialImage = ((System.Drawing.Image)(resources.GetObject("ArsenalCasePicture.InitialImage")));
-            this.ArsenalCasePicture.Location = new System.Drawing.Point(4, 3);
-            this.ArsenalCasePicture.Name = "ArsenalCasePicture";
-            this.ArsenalCasePicture.Size = new System.Drawing.Size(54, 61);
-            this.ArsenalCasePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ArsenalCasePicture.TabIndex = 0;
-            this.ArsenalCasePicture.TabStop = false;
+            ArsenalCasePicture.BackColor = Color.FromArgb(92, 172, 149);
+            ArsenalCasePicture.InitialImage = (Image)resources.GetObject("ArsenalCasePicture.InitialImage");
+            ArsenalCasePicture.Location = new Point(4, 3);
+            ArsenalCasePicture.Name = "ArsenalCasePicture";
+            ArsenalCasePicture.Size = new Size(54, 61);
+            ArsenalCasePicture.SizeMode = PictureBoxSizeMode.Zoom;
+            ArsenalCasePicture.TabIndex = 0;
+            ArsenalCasePicture.TabStop = false;
             // 
             // ArsenalNameLabel
             // 
-            this.ArsenalNameLabel.AutoSize = true;
-            this.ArsenalNameLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ArsenalNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.ArsenalNameLabel.Location = new System.Drawing.Point(64, 6);
-            this.ArsenalNameLabel.Name = "ArsenalNameLabel";
-            this.ArsenalNameLabel.Size = new System.Drawing.Size(117, 21);
-            this.ArsenalNameLabel.TabIndex = 1;
-            this.ArsenalNameLabel.Text = "Arsenal Name";
+            ArsenalNameLabel.AutoSize = true;
+            ArsenalNameLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            ArsenalNameLabel.ForeColor = Color.FromArgb(92, 172, 149);
+            ArsenalNameLabel.Location = new Point(64, 6);
+            ArsenalNameLabel.Name = "ArsenalNameLabel";
+            ArsenalNameLabel.Size = new Size(117, 21);
+            ArsenalNameLabel.TabIndex = 1;
+            ArsenalNameLabel.Text = "Arsenal Name";
             // 
             // SkillsOverAuraLabel
             // 
-            this.SkillsOverAuraLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SkillsOverAuraLabel.AutoSize = true;
-            this.SkillsOverAuraLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SkillsOverAuraLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SkillsOverAuraLabel.Location = new System.Drawing.Point(542, 9);
-            this.SkillsOverAuraLabel.Name = "SkillsOverAuraLabel";
-            this.SkillsOverAuraLabel.Size = new System.Drawing.Size(44, 21);
-            this.SkillsOverAuraLabel.TabIndex = 3;
-            this.SkillsOverAuraLabel.Text = "0/30";
+            SkillsOverAuraLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            SkillsOverAuraLabel.AutoSize = true;
+            SkillsOverAuraLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            SkillsOverAuraLabel.ForeColor = Color.FromArgb(92, 172, 149);
+            SkillsOverAuraLabel.Location = new Point(542, 9);
+            SkillsOverAuraLabel.Name = "SkillsOverAuraLabel";
+            SkillsOverAuraLabel.Size = new Size(44, 21);
+            SkillsOverAuraLabel.TabIndex = 3;
+            SkillsOverAuraLabel.Text = "0/30";
             // 
             // SchoolPicturePsycho
             // 
-            this.SchoolPicturePsycho.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SchoolPicturePsycho.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SchoolPicturePsycho.Location = new System.Drawing.Point(60, 37);
-            this.SchoolPicturePsycho.Margin = new System.Windows.Forms.Padding(0);
-            this.SchoolPicturePsycho.Name = "SchoolPicturePsycho";
-            this.SchoolPicturePsycho.Size = new System.Drawing.Size(38, 27);
-            this.SchoolPicturePsycho.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.SchoolPicturePsycho.TabIndex = 0;
-            this.SchoolPicturePsycho.TabStop = false;
+            SchoolPicturePsycho.BackColor = Color.FromArgb(92, 172, 149);
+            SchoolPicturePsycho.BorderStyle = BorderStyle.FixedSingle;
+            SchoolPicturePsycho.Location = new Point(60, 37);
+            SchoolPicturePsycho.Margin = new Padding(0);
+            SchoolPicturePsycho.Name = "SchoolPicturePsycho";
+            SchoolPicturePsycho.Size = new Size(38, 27);
+            SchoolPicturePsycho.SizeMode = PictureBoxSizeMode.Zoom;
+            SchoolPicturePsycho.TabIndex = 0;
+            SchoolPicturePsycho.TabStop = false;
             // 
             // SchoolPictureOptical
             // 
-            this.SchoolPictureOptical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SchoolPictureOptical.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SchoolPictureOptical.Location = new System.Drawing.Point(99, 37);
-            this.SchoolPictureOptical.Margin = new System.Windows.Forms.Padding(0);
-            this.SchoolPictureOptical.Name = "SchoolPictureOptical";
-            this.SchoolPictureOptical.Size = new System.Drawing.Size(38, 27);
-            this.SchoolPictureOptical.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.SchoolPictureOptical.TabIndex = 1;
-            this.SchoolPictureOptical.TabStop = false;
+            SchoolPictureOptical.BackColor = Color.FromArgb(92, 172, 149);
+            SchoolPictureOptical.BorderStyle = BorderStyle.FixedSingle;
+            SchoolPictureOptical.Location = new Point(99, 37);
+            SchoolPictureOptical.Margin = new Padding(0);
+            SchoolPictureOptical.Name = "SchoolPictureOptical";
+            SchoolPictureOptical.Size = new Size(38, 27);
+            SchoolPictureOptical.SizeMode = PictureBoxSizeMode.Zoom;
+            SchoolPictureOptical.TabIndex = 1;
+            SchoolPictureOptical.TabStop = false;
             // 
             // SchoolPictureNature
             // 
-            this.SchoolPictureNature.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SchoolPictureNature.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SchoolPictureNature.Location = new System.Drawing.Point(138, 37);
-            this.SchoolPictureNature.Margin = new System.Windows.Forms.Padding(0);
-            this.SchoolPictureNature.Name = "SchoolPictureNature";
-            this.SchoolPictureNature.Size = new System.Drawing.Size(38, 27);
-            this.SchoolPictureNature.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.SchoolPictureNature.TabIndex = 2;
-            this.SchoolPictureNature.TabStop = false;
+            SchoolPictureNature.BackColor = Color.FromArgb(92, 172, 149);
+            SchoolPictureNature.BorderStyle = BorderStyle.FixedSingle;
+            SchoolPictureNature.Location = new Point(138, 37);
+            SchoolPictureNature.Margin = new Padding(0);
+            SchoolPictureNature.Name = "SchoolPictureNature";
+            SchoolPictureNature.Size = new Size(38, 27);
+            SchoolPictureNature.SizeMode = PictureBoxSizeMode.Zoom;
+            SchoolPictureNature.TabIndex = 2;
+            SchoolPictureNature.TabStop = false;
             // 
             // SchoolPictureKi
             // 
-            this.SchoolPictureKi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SchoolPictureKi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SchoolPictureKi.Location = new System.Drawing.Point(177, 37);
-            this.SchoolPictureKi.Margin = new System.Windows.Forms.Padding(0);
-            this.SchoolPictureKi.Name = "SchoolPictureKi";
-            this.SchoolPictureKi.Size = new System.Drawing.Size(38, 27);
-            this.SchoolPictureKi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.SchoolPictureKi.TabIndex = 3;
-            this.SchoolPictureKi.TabStop = false;
+            SchoolPictureKi.BackColor = Color.FromArgb(92, 172, 149);
+            SchoolPictureKi.BorderStyle = BorderStyle.FixedSingle;
+            SchoolPictureKi.Location = new Point(177, 37);
+            SchoolPictureKi.Margin = new Padding(0);
+            SchoolPictureKi.Name = "SchoolPictureKi";
+            SchoolPictureKi.Size = new Size(38, 27);
+            SchoolPictureKi.SizeMode = PictureBoxSizeMode.Zoom;
+            SchoolPictureKi.TabIndex = 3;
+            SchoolPictureKi.TabStop = false;
             // 
             // SchoolPictureFaith
             // 
-            this.SchoolPictureFaith.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SchoolPictureFaith.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SchoolPictureFaith.Location = new System.Drawing.Point(216, 37);
-            this.SchoolPictureFaith.Margin = new System.Windows.Forms.Padding(0);
-            this.SchoolPictureFaith.Name = "SchoolPictureFaith";
-            this.SchoolPictureFaith.Size = new System.Drawing.Size(42, 27);
-            this.SchoolPictureFaith.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.SchoolPictureFaith.TabIndex = 4;
-            this.SchoolPictureFaith.TabStop = false;
+            SchoolPictureFaith.BackColor = Color.FromArgb(92, 172, 149);
+            SchoolPictureFaith.BorderStyle = BorderStyle.FixedSingle;
+            SchoolPictureFaith.Location = new Point(216, 37);
+            SchoolPictureFaith.Margin = new Padding(0);
+            SchoolPictureFaith.Name = "SchoolPictureFaith";
+            SchoolPictureFaith.Size = new Size(42, 27);
+            SchoolPictureFaith.SizeMode = PictureBoxSizeMode.Zoom;
+            SchoolPictureFaith.TabIndex = 4;
+            SchoolPictureFaith.TabStop = false;
             // 
             // ArsenalDeckPanel
             // 
-            this.ArsenalDeckPanel.Controls.Add(this.ArsenalSkill1);
-            this.ArsenalDeckPanel.Controls.Add(this.ArsenalSkill21);
-            this.ArsenalDeckPanel.Controls.Add(this.ArsenalSkill8);
-            this.ArsenalDeckPanel.Controls.Add(this.ArsenalSkill20);
-            this.ArsenalDeckPanel.Controls.Add(this.ArsenalSkill22);
-            this.ArsenalDeckPanel.Controls.Add(this.ArsenalSkill7);
-            this.ArsenalDeckPanel.Controls.Add(this.ArsenalSkill19);
-            this.ArsenalDeckPanel.Controls.Add(this.ArsenalSkill23);
-            this.ArsenalDeckPanel.Controls.Add(this.ArsenalSkill6);
-            this.ArsenalDeckPanel.Controls.Add(this.ArsenalSkill18);
-            this.ArsenalDeckPanel.Controls.Add(this.ArsenalSkill24);
-            this.ArsenalDeckPanel.Controls.Add(this.ArsenalSkill5);
-            this.ArsenalDeckPanel.Controls.Add(this.ArsenalSkill17);
-            this.ArsenalDeckPanel.Controls.Add(this.ArsenalSkill25);
-            this.ArsenalDeckPanel.Controls.Add(this.ArsenalSkill4);
-            this.ArsenalDeckPanel.Controls.Add(this.ArsenalSkill16);
-            this.ArsenalDeckPanel.Controls.Add(this.ArsenalSkill26);
-            this.ArsenalDeckPanel.Controls.Add(this.ArsenalSkill3);
-            this.ArsenalDeckPanel.Controls.Add(this.ArsenalSkill15);
-            this.ArsenalDeckPanel.Controls.Add(this.ArsenalSkill27);
-            this.ArsenalDeckPanel.Controls.Add(this.ArsenalSkill2);
-            this.ArsenalDeckPanel.Controls.Add(this.ArsenalSkill14);
-            this.ArsenalDeckPanel.Controls.Add(this.ArsenalSkill28);
-            this.ArsenalDeckPanel.Controls.Add(this.ArsenalSkill9);
-            this.ArsenalDeckPanel.Controls.Add(this.ArsenalSkill13);
-            this.ArsenalDeckPanel.Controls.Add(this.ArsenalSkill29);
-            this.ArsenalDeckPanel.Controls.Add(this.ArsenalSkill10);
-            this.ArsenalDeckPanel.Controls.Add(this.ArsenalSkill12);
-            this.ArsenalDeckPanel.Controls.Add(this.ArsenalSkill11);
-            this.ArsenalDeckPanel.Controls.Add(this.ArsenalSkill30);
-            this.ArsenalDeckPanel.Location = new System.Drawing.Point(6, 73);
-            this.ArsenalDeckPanel.Name = "ArsenalDeckPanel";
-            this.ArsenalDeckPanel.Size = new System.Drawing.Size(596, 317);
-            this.ArsenalDeckPanel.TabIndex = 30;
+            ArsenalDeckPanel.Controls.Add(ArsenalSkill1);
+            ArsenalDeckPanel.Controls.Add(ArsenalSkill21);
+            ArsenalDeckPanel.Controls.Add(ArsenalSkill8);
+            ArsenalDeckPanel.Controls.Add(ArsenalSkill20);
+            ArsenalDeckPanel.Controls.Add(ArsenalSkill22);
+            ArsenalDeckPanel.Controls.Add(ArsenalSkill7);
+            ArsenalDeckPanel.Controls.Add(ArsenalSkill19);
+            ArsenalDeckPanel.Controls.Add(ArsenalSkill23);
+            ArsenalDeckPanel.Controls.Add(ArsenalSkill6);
+            ArsenalDeckPanel.Controls.Add(ArsenalSkill18);
+            ArsenalDeckPanel.Controls.Add(ArsenalSkill24);
+            ArsenalDeckPanel.Controls.Add(ArsenalSkill5);
+            ArsenalDeckPanel.Controls.Add(ArsenalSkill17);
+            ArsenalDeckPanel.Controls.Add(ArsenalSkill25);
+            ArsenalDeckPanel.Controls.Add(ArsenalSkill4);
+            ArsenalDeckPanel.Controls.Add(ArsenalSkill16);
+            ArsenalDeckPanel.Controls.Add(ArsenalSkill26);
+            ArsenalDeckPanel.Controls.Add(ArsenalSkill3);
+            ArsenalDeckPanel.Controls.Add(ArsenalSkill15);
+            ArsenalDeckPanel.Controls.Add(ArsenalSkill27);
+            ArsenalDeckPanel.Controls.Add(ArsenalSkill2);
+            ArsenalDeckPanel.Controls.Add(ArsenalSkill14);
+            ArsenalDeckPanel.Controls.Add(ArsenalSkill28);
+            ArsenalDeckPanel.Controls.Add(ArsenalSkill9);
+            ArsenalDeckPanel.Controls.Add(ArsenalSkill13);
+            ArsenalDeckPanel.Controls.Add(ArsenalSkill29);
+            ArsenalDeckPanel.Controls.Add(ArsenalSkill10);
+            ArsenalDeckPanel.Controls.Add(ArsenalSkill12);
+            ArsenalDeckPanel.Controls.Add(ArsenalSkill11);
+            ArsenalDeckPanel.Controls.Add(ArsenalSkill30);
+            ArsenalDeckPanel.Location = new Point(6, 73);
+            ArsenalDeckPanel.Name = "ArsenalDeckPanel";
+            ArsenalDeckPanel.Size = new Size(596, 317);
+            ArsenalDeckPanel.TabIndex = 30;
             // 
             // ArsenalSkill1
             // 
-            this.ArsenalSkill1.FlatAppearance.BorderSize = 0;
-            this.ArsenalSkill1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ArsenalSkill1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ArsenalSkill1.Location = new System.Drawing.Point(3, 3);
-            this.ArsenalSkill1.Name = "ArsenalSkill1";
-            this.ArsenalSkill1.Size = new System.Drawing.Size(192, 25);
-            this.ArsenalSkill1.TabIndex = 0;
-            this.ArsenalSkill1.Text = "button1";
-            this.ArsenalSkill1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ArsenalSkill1.UseVisualStyleBackColor = true;
-            this.ArsenalSkill1.Click += new System.EventHandler(this.ArsenalSkill_Click);
-            this.ArsenalSkill1.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
-            this.ArsenalSkill1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
+            ArsenalSkill1.FlatAppearance.BorderSize = 0;
+            ArsenalSkill1.FlatStyle = FlatStyle.Flat;
+            ArsenalSkill1.ImageAlign = ContentAlignment.MiddleRight;
+            ArsenalSkill1.Location = new Point(3, 3);
+            ArsenalSkill1.Name = "ArsenalSkill1";
+            ArsenalSkill1.Size = new Size(192, 25);
+            ArsenalSkill1.TabIndex = 0;
+            ArsenalSkill1.Text = "button1";
+            ArsenalSkill1.TextAlign = ContentAlignment.MiddleLeft;
+            ArsenalSkill1.UseVisualStyleBackColor = true;
+            ArsenalSkill1.Click += ArsenalSkill_Click;
+            ArsenalSkill1.MouseEnter += ArsenalSkill_MouseEnter;
+            ArsenalSkill1.MouseUp += ArsenalSkill_MouseUp;
             // 
             // ArsenalSkill21
             // 
-            this.ArsenalSkill21.FlatAppearance.BorderSize = 0;
-            this.ArsenalSkill21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ArsenalSkill21.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ArsenalSkill21.Location = new System.Drawing.Point(405, 3);
-            this.ArsenalSkill21.Name = "ArsenalSkill21";
-            this.ArsenalSkill21.Size = new System.Drawing.Size(194, 25);
-            this.ArsenalSkill21.TabIndex = 20;
-            this.ArsenalSkill21.Text = "button21";
-            this.ArsenalSkill21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ArsenalSkill21.UseVisualStyleBackColor = true;
-            this.ArsenalSkill21.Click += new System.EventHandler(this.ArsenalSkill_Click);
-            this.ArsenalSkill21.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
-            this.ArsenalSkill21.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
+            ArsenalSkill21.FlatAppearance.BorderSize = 0;
+            ArsenalSkill21.FlatStyle = FlatStyle.Flat;
+            ArsenalSkill21.ImageAlign = ContentAlignment.MiddleRight;
+            ArsenalSkill21.Location = new Point(405, 3);
+            ArsenalSkill21.Name = "ArsenalSkill21";
+            ArsenalSkill21.Size = new Size(194, 25);
+            ArsenalSkill21.TabIndex = 20;
+            ArsenalSkill21.Text = "button21";
+            ArsenalSkill21.TextAlign = ContentAlignment.MiddleLeft;
+            ArsenalSkill21.UseVisualStyleBackColor = true;
+            ArsenalSkill21.Click += ArsenalSkill_Click;
+            ArsenalSkill21.MouseEnter += ArsenalSkill_MouseEnter;
+            ArsenalSkill21.MouseUp += ArsenalSkill_MouseUp;
             // 
             // ArsenalSkill8
             // 
-            this.ArsenalSkill8.FlatAppearance.BorderSize = 0;
-            this.ArsenalSkill8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ArsenalSkill8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ArsenalSkill8.Location = new System.Drawing.Point(3, 220);
-            this.ArsenalSkill8.Name = "ArsenalSkill8";
-            this.ArsenalSkill8.Size = new System.Drawing.Size(192, 25);
-            this.ArsenalSkill8.TabIndex = 7;
-            this.ArsenalSkill8.Text = "button8";
-            this.ArsenalSkill8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ArsenalSkill8.UseVisualStyleBackColor = true;
-            this.ArsenalSkill8.Click += new System.EventHandler(this.ArsenalSkill_Click);
-            this.ArsenalSkill8.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
-            this.ArsenalSkill8.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
+            ArsenalSkill8.FlatAppearance.BorderSize = 0;
+            ArsenalSkill8.FlatStyle = FlatStyle.Flat;
+            ArsenalSkill8.ImageAlign = ContentAlignment.MiddleRight;
+            ArsenalSkill8.Location = new Point(3, 220);
+            ArsenalSkill8.Name = "ArsenalSkill8";
+            ArsenalSkill8.Size = new Size(192, 25);
+            ArsenalSkill8.TabIndex = 7;
+            ArsenalSkill8.Text = "button8";
+            ArsenalSkill8.TextAlign = ContentAlignment.MiddleLeft;
+            ArsenalSkill8.UseVisualStyleBackColor = true;
+            ArsenalSkill8.Click += ArsenalSkill_Click;
+            ArsenalSkill8.MouseEnter += ArsenalSkill_MouseEnter;
+            ArsenalSkill8.MouseUp += ArsenalSkill_MouseUp;
             // 
             // ArsenalSkill20
             // 
-            this.ArsenalSkill20.FlatAppearance.BorderSize = 0;
-            this.ArsenalSkill20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ArsenalSkill20.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ArsenalSkill20.Location = new System.Drawing.Point(201, 282);
-            this.ArsenalSkill20.Name = "ArsenalSkill20";
-            this.ArsenalSkill20.Size = new System.Drawing.Size(198, 29);
-            this.ArsenalSkill20.TabIndex = 19;
-            this.ArsenalSkill20.Text = "button20";
-            this.ArsenalSkill20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ArsenalSkill20.UseVisualStyleBackColor = true;
-            this.ArsenalSkill20.Click += new System.EventHandler(this.ArsenalSkill_Click);
-            this.ArsenalSkill20.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
-            this.ArsenalSkill20.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
+            ArsenalSkill20.FlatAppearance.BorderSize = 0;
+            ArsenalSkill20.FlatStyle = FlatStyle.Flat;
+            ArsenalSkill20.ImageAlign = ContentAlignment.MiddleRight;
+            ArsenalSkill20.Location = new Point(201, 282);
+            ArsenalSkill20.Name = "ArsenalSkill20";
+            ArsenalSkill20.Size = new Size(198, 29);
+            ArsenalSkill20.TabIndex = 19;
+            ArsenalSkill20.Text = "button20";
+            ArsenalSkill20.TextAlign = ContentAlignment.MiddleLeft;
+            ArsenalSkill20.UseVisualStyleBackColor = true;
+            ArsenalSkill20.Click += ArsenalSkill_Click;
+            ArsenalSkill20.MouseEnter += ArsenalSkill_MouseEnter;
+            ArsenalSkill20.MouseUp += ArsenalSkill_MouseUp;
             // 
             // ArsenalSkill22
             // 
-            this.ArsenalSkill22.FlatAppearance.BorderSize = 0;
-            this.ArsenalSkill22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ArsenalSkill22.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ArsenalSkill22.Location = new System.Drawing.Point(405, 34);
-            this.ArsenalSkill22.Name = "ArsenalSkill22";
-            this.ArsenalSkill22.Size = new System.Drawing.Size(194, 25);
-            this.ArsenalSkill22.TabIndex = 21;
-            this.ArsenalSkill22.Text = "button22";
-            this.ArsenalSkill22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ArsenalSkill22.UseVisualStyleBackColor = true;
-            this.ArsenalSkill22.Click += new System.EventHandler(this.ArsenalSkill_Click);
-            this.ArsenalSkill22.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
-            this.ArsenalSkill22.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
+            ArsenalSkill22.FlatAppearance.BorderSize = 0;
+            ArsenalSkill22.FlatStyle = FlatStyle.Flat;
+            ArsenalSkill22.ImageAlign = ContentAlignment.MiddleRight;
+            ArsenalSkill22.Location = new Point(405, 34);
+            ArsenalSkill22.Name = "ArsenalSkill22";
+            ArsenalSkill22.Size = new Size(194, 25);
+            ArsenalSkill22.TabIndex = 21;
+            ArsenalSkill22.Text = "button22";
+            ArsenalSkill22.TextAlign = ContentAlignment.MiddleLeft;
+            ArsenalSkill22.UseVisualStyleBackColor = true;
+            ArsenalSkill22.Click += ArsenalSkill_Click;
+            ArsenalSkill22.MouseEnter += ArsenalSkill_MouseEnter;
+            ArsenalSkill22.MouseUp += ArsenalSkill_MouseUp;
             // 
             // ArsenalSkill7
             // 
-            this.ArsenalSkill7.FlatAppearance.BorderSize = 0;
-            this.ArsenalSkill7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ArsenalSkill7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ArsenalSkill7.Location = new System.Drawing.Point(3, 189);
-            this.ArsenalSkill7.Name = "ArsenalSkill7";
-            this.ArsenalSkill7.Size = new System.Drawing.Size(192, 25);
-            this.ArsenalSkill7.TabIndex = 6;
-            this.ArsenalSkill7.Text = "button7";
-            this.ArsenalSkill7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ArsenalSkill7.UseVisualStyleBackColor = true;
-            this.ArsenalSkill7.Click += new System.EventHandler(this.ArsenalSkill_Click);
-            this.ArsenalSkill7.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
-            this.ArsenalSkill7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
+            ArsenalSkill7.FlatAppearance.BorderSize = 0;
+            ArsenalSkill7.FlatStyle = FlatStyle.Flat;
+            ArsenalSkill7.ImageAlign = ContentAlignment.MiddleRight;
+            ArsenalSkill7.Location = new Point(3, 189);
+            ArsenalSkill7.Name = "ArsenalSkill7";
+            ArsenalSkill7.Size = new Size(192, 25);
+            ArsenalSkill7.TabIndex = 6;
+            ArsenalSkill7.Text = "button7";
+            ArsenalSkill7.TextAlign = ContentAlignment.MiddleLeft;
+            ArsenalSkill7.UseVisualStyleBackColor = true;
+            ArsenalSkill7.Click += ArsenalSkill_Click;
+            ArsenalSkill7.MouseEnter += ArsenalSkill_MouseEnter;
+            ArsenalSkill7.MouseUp += ArsenalSkill_MouseUp;
             // 
             // ArsenalSkill19
             // 
-            this.ArsenalSkill19.FlatAppearance.BorderSize = 0;
-            this.ArsenalSkill19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ArsenalSkill19.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ArsenalSkill19.Location = new System.Drawing.Point(201, 251);
-            this.ArsenalSkill19.Name = "ArsenalSkill19";
-            this.ArsenalSkill19.Size = new System.Drawing.Size(198, 25);
-            this.ArsenalSkill19.TabIndex = 18;
-            this.ArsenalSkill19.Text = "button19";
-            this.ArsenalSkill19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ArsenalSkill19.UseVisualStyleBackColor = true;
-            this.ArsenalSkill19.Click += new System.EventHandler(this.ArsenalSkill_Click);
-            this.ArsenalSkill19.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
-            this.ArsenalSkill19.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
+            ArsenalSkill19.FlatAppearance.BorderSize = 0;
+            ArsenalSkill19.FlatStyle = FlatStyle.Flat;
+            ArsenalSkill19.ImageAlign = ContentAlignment.MiddleRight;
+            ArsenalSkill19.Location = new Point(201, 251);
+            ArsenalSkill19.Name = "ArsenalSkill19";
+            ArsenalSkill19.Size = new Size(198, 25);
+            ArsenalSkill19.TabIndex = 18;
+            ArsenalSkill19.Text = "button19";
+            ArsenalSkill19.TextAlign = ContentAlignment.MiddleLeft;
+            ArsenalSkill19.UseVisualStyleBackColor = true;
+            ArsenalSkill19.Click += ArsenalSkill_Click;
+            ArsenalSkill19.MouseEnter += ArsenalSkill_MouseEnter;
+            ArsenalSkill19.MouseUp += ArsenalSkill_MouseUp;
             // 
             // ArsenalSkill23
             // 
-            this.ArsenalSkill23.FlatAppearance.BorderSize = 0;
-            this.ArsenalSkill23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ArsenalSkill23.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ArsenalSkill23.Location = new System.Drawing.Point(405, 65);
-            this.ArsenalSkill23.Name = "ArsenalSkill23";
-            this.ArsenalSkill23.Size = new System.Drawing.Size(194, 25);
-            this.ArsenalSkill23.TabIndex = 22;
-            this.ArsenalSkill23.Text = "button23";
-            this.ArsenalSkill23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ArsenalSkill23.UseVisualStyleBackColor = true;
-            this.ArsenalSkill23.Click += new System.EventHandler(this.ArsenalSkill_Click);
-            this.ArsenalSkill23.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
-            this.ArsenalSkill23.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
+            ArsenalSkill23.FlatAppearance.BorderSize = 0;
+            ArsenalSkill23.FlatStyle = FlatStyle.Flat;
+            ArsenalSkill23.ImageAlign = ContentAlignment.MiddleRight;
+            ArsenalSkill23.Location = new Point(405, 65);
+            ArsenalSkill23.Name = "ArsenalSkill23";
+            ArsenalSkill23.Size = new Size(194, 25);
+            ArsenalSkill23.TabIndex = 22;
+            ArsenalSkill23.Text = "button23";
+            ArsenalSkill23.TextAlign = ContentAlignment.MiddleLeft;
+            ArsenalSkill23.UseVisualStyleBackColor = true;
+            ArsenalSkill23.Click += ArsenalSkill_Click;
+            ArsenalSkill23.MouseEnter += ArsenalSkill_MouseEnter;
+            ArsenalSkill23.MouseUp += ArsenalSkill_MouseUp;
             // 
             // ArsenalSkill6
             // 
-            this.ArsenalSkill6.FlatAppearance.BorderSize = 0;
-            this.ArsenalSkill6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ArsenalSkill6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ArsenalSkill6.Location = new System.Drawing.Point(3, 158);
-            this.ArsenalSkill6.Name = "ArsenalSkill6";
-            this.ArsenalSkill6.Size = new System.Drawing.Size(192, 25);
-            this.ArsenalSkill6.TabIndex = 5;
-            this.ArsenalSkill6.Text = "button6";
-            this.ArsenalSkill6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ArsenalSkill6.UseVisualStyleBackColor = true;
-            this.ArsenalSkill6.Click += new System.EventHandler(this.ArsenalSkill_Click);
-            this.ArsenalSkill6.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
-            this.ArsenalSkill6.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
+            ArsenalSkill6.FlatAppearance.BorderSize = 0;
+            ArsenalSkill6.FlatStyle = FlatStyle.Flat;
+            ArsenalSkill6.ImageAlign = ContentAlignment.MiddleRight;
+            ArsenalSkill6.Location = new Point(3, 158);
+            ArsenalSkill6.Name = "ArsenalSkill6";
+            ArsenalSkill6.Size = new Size(192, 25);
+            ArsenalSkill6.TabIndex = 5;
+            ArsenalSkill6.Text = "button6";
+            ArsenalSkill6.TextAlign = ContentAlignment.MiddleLeft;
+            ArsenalSkill6.UseVisualStyleBackColor = true;
+            ArsenalSkill6.Click += ArsenalSkill_Click;
+            ArsenalSkill6.MouseEnter += ArsenalSkill_MouseEnter;
+            ArsenalSkill6.MouseUp += ArsenalSkill_MouseUp;
             // 
             // ArsenalSkill18
             // 
-            this.ArsenalSkill18.FlatAppearance.BorderSize = 0;
-            this.ArsenalSkill18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ArsenalSkill18.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ArsenalSkill18.Location = new System.Drawing.Point(201, 220);
-            this.ArsenalSkill18.Name = "ArsenalSkill18";
-            this.ArsenalSkill18.Size = new System.Drawing.Size(198, 25);
-            this.ArsenalSkill18.TabIndex = 17;
-            this.ArsenalSkill18.Text = "button18";
-            this.ArsenalSkill18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ArsenalSkill18.UseVisualStyleBackColor = true;
-            this.ArsenalSkill18.Click += new System.EventHandler(this.ArsenalSkill_Click);
-            this.ArsenalSkill18.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
-            this.ArsenalSkill18.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
+            ArsenalSkill18.FlatAppearance.BorderSize = 0;
+            ArsenalSkill18.FlatStyle = FlatStyle.Flat;
+            ArsenalSkill18.ImageAlign = ContentAlignment.MiddleRight;
+            ArsenalSkill18.Location = new Point(201, 220);
+            ArsenalSkill18.Name = "ArsenalSkill18";
+            ArsenalSkill18.Size = new Size(198, 25);
+            ArsenalSkill18.TabIndex = 17;
+            ArsenalSkill18.Text = "button18";
+            ArsenalSkill18.TextAlign = ContentAlignment.MiddleLeft;
+            ArsenalSkill18.UseVisualStyleBackColor = true;
+            ArsenalSkill18.Click += ArsenalSkill_Click;
+            ArsenalSkill18.MouseEnter += ArsenalSkill_MouseEnter;
+            ArsenalSkill18.MouseUp += ArsenalSkill_MouseUp;
             // 
             // ArsenalSkill24
             // 
-            this.ArsenalSkill24.FlatAppearance.BorderSize = 0;
-            this.ArsenalSkill24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ArsenalSkill24.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ArsenalSkill24.Location = new System.Drawing.Point(405, 96);
-            this.ArsenalSkill24.Name = "ArsenalSkill24";
-            this.ArsenalSkill24.Size = new System.Drawing.Size(194, 25);
-            this.ArsenalSkill24.TabIndex = 23;
-            this.ArsenalSkill24.Text = "button24";
-            this.ArsenalSkill24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ArsenalSkill24.UseVisualStyleBackColor = true;
-            this.ArsenalSkill24.Click += new System.EventHandler(this.ArsenalSkill_Click);
-            this.ArsenalSkill24.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
-            this.ArsenalSkill24.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
+            ArsenalSkill24.FlatAppearance.BorderSize = 0;
+            ArsenalSkill24.FlatStyle = FlatStyle.Flat;
+            ArsenalSkill24.ImageAlign = ContentAlignment.MiddleRight;
+            ArsenalSkill24.Location = new Point(405, 96);
+            ArsenalSkill24.Name = "ArsenalSkill24";
+            ArsenalSkill24.Size = new Size(194, 25);
+            ArsenalSkill24.TabIndex = 23;
+            ArsenalSkill24.Text = "button24";
+            ArsenalSkill24.TextAlign = ContentAlignment.MiddleLeft;
+            ArsenalSkill24.UseVisualStyleBackColor = true;
+            ArsenalSkill24.Click += ArsenalSkill_Click;
+            ArsenalSkill24.MouseEnter += ArsenalSkill_MouseEnter;
+            ArsenalSkill24.MouseUp += ArsenalSkill_MouseUp;
             // 
             // ArsenalSkill5
             // 
-            this.ArsenalSkill5.FlatAppearance.BorderSize = 0;
-            this.ArsenalSkill5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ArsenalSkill5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ArsenalSkill5.Location = new System.Drawing.Point(3, 127);
-            this.ArsenalSkill5.Name = "ArsenalSkill5";
-            this.ArsenalSkill5.Size = new System.Drawing.Size(192, 25);
-            this.ArsenalSkill5.TabIndex = 4;
-            this.ArsenalSkill5.Text = "button5";
-            this.ArsenalSkill5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ArsenalSkill5.UseVisualStyleBackColor = true;
-            this.ArsenalSkill5.Click += new System.EventHandler(this.ArsenalSkill_Click);
-            this.ArsenalSkill5.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
-            this.ArsenalSkill5.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
+            ArsenalSkill5.FlatAppearance.BorderSize = 0;
+            ArsenalSkill5.FlatStyle = FlatStyle.Flat;
+            ArsenalSkill5.ImageAlign = ContentAlignment.MiddleRight;
+            ArsenalSkill5.Location = new Point(3, 127);
+            ArsenalSkill5.Name = "ArsenalSkill5";
+            ArsenalSkill5.Size = new Size(192, 25);
+            ArsenalSkill5.TabIndex = 4;
+            ArsenalSkill5.Text = "button5";
+            ArsenalSkill5.TextAlign = ContentAlignment.MiddleLeft;
+            ArsenalSkill5.UseVisualStyleBackColor = true;
+            ArsenalSkill5.Click += ArsenalSkill_Click;
+            ArsenalSkill5.MouseEnter += ArsenalSkill_MouseEnter;
+            ArsenalSkill5.MouseUp += ArsenalSkill_MouseUp;
             // 
             // ArsenalSkill17
             // 
-            this.ArsenalSkill17.FlatAppearance.BorderSize = 0;
-            this.ArsenalSkill17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ArsenalSkill17.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ArsenalSkill17.Location = new System.Drawing.Point(201, 189);
-            this.ArsenalSkill17.Name = "ArsenalSkill17";
-            this.ArsenalSkill17.Size = new System.Drawing.Size(198, 25);
-            this.ArsenalSkill17.TabIndex = 16;
-            this.ArsenalSkill17.Text = "button17";
-            this.ArsenalSkill17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ArsenalSkill17.UseVisualStyleBackColor = true;
-            this.ArsenalSkill17.Click += new System.EventHandler(this.ArsenalSkill_Click);
-            this.ArsenalSkill17.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
-            this.ArsenalSkill17.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
+            ArsenalSkill17.FlatAppearance.BorderSize = 0;
+            ArsenalSkill17.FlatStyle = FlatStyle.Flat;
+            ArsenalSkill17.ImageAlign = ContentAlignment.MiddleRight;
+            ArsenalSkill17.Location = new Point(201, 189);
+            ArsenalSkill17.Name = "ArsenalSkill17";
+            ArsenalSkill17.Size = new Size(198, 25);
+            ArsenalSkill17.TabIndex = 16;
+            ArsenalSkill17.Text = "button17";
+            ArsenalSkill17.TextAlign = ContentAlignment.MiddleLeft;
+            ArsenalSkill17.UseVisualStyleBackColor = true;
+            ArsenalSkill17.Click += ArsenalSkill_Click;
+            ArsenalSkill17.MouseEnter += ArsenalSkill_MouseEnter;
+            ArsenalSkill17.MouseUp += ArsenalSkill_MouseUp;
             // 
             // ArsenalSkill25
             // 
-            this.ArsenalSkill25.FlatAppearance.BorderSize = 0;
-            this.ArsenalSkill25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ArsenalSkill25.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ArsenalSkill25.Location = new System.Drawing.Point(405, 127);
-            this.ArsenalSkill25.Name = "ArsenalSkill25";
-            this.ArsenalSkill25.Size = new System.Drawing.Size(194, 25);
-            this.ArsenalSkill25.TabIndex = 24;
-            this.ArsenalSkill25.Text = "button25";
-            this.ArsenalSkill25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ArsenalSkill25.UseVisualStyleBackColor = true;
-            this.ArsenalSkill25.Click += new System.EventHandler(this.ArsenalSkill_Click);
-            this.ArsenalSkill25.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
-            this.ArsenalSkill25.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
+            ArsenalSkill25.FlatAppearance.BorderSize = 0;
+            ArsenalSkill25.FlatStyle = FlatStyle.Flat;
+            ArsenalSkill25.ImageAlign = ContentAlignment.MiddleRight;
+            ArsenalSkill25.Location = new Point(405, 127);
+            ArsenalSkill25.Name = "ArsenalSkill25";
+            ArsenalSkill25.Size = new Size(194, 25);
+            ArsenalSkill25.TabIndex = 24;
+            ArsenalSkill25.Text = "button25";
+            ArsenalSkill25.TextAlign = ContentAlignment.MiddleLeft;
+            ArsenalSkill25.UseVisualStyleBackColor = true;
+            ArsenalSkill25.Click += ArsenalSkill_Click;
+            ArsenalSkill25.MouseEnter += ArsenalSkill_MouseEnter;
+            ArsenalSkill25.MouseUp += ArsenalSkill_MouseUp;
             // 
             // ArsenalSkill4
             // 
-            this.ArsenalSkill4.FlatAppearance.BorderSize = 0;
-            this.ArsenalSkill4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ArsenalSkill4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ArsenalSkill4.Location = new System.Drawing.Point(3, 96);
-            this.ArsenalSkill4.Name = "ArsenalSkill4";
-            this.ArsenalSkill4.Size = new System.Drawing.Size(192, 25);
-            this.ArsenalSkill4.TabIndex = 3;
-            this.ArsenalSkill4.Text = "button4";
-            this.ArsenalSkill4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ArsenalSkill4.UseVisualStyleBackColor = true;
-            this.ArsenalSkill4.Click += new System.EventHandler(this.ArsenalSkill_Click);
-            this.ArsenalSkill4.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
-            this.ArsenalSkill4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
+            ArsenalSkill4.FlatAppearance.BorderSize = 0;
+            ArsenalSkill4.FlatStyle = FlatStyle.Flat;
+            ArsenalSkill4.ImageAlign = ContentAlignment.MiddleRight;
+            ArsenalSkill4.Location = new Point(3, 96);
+            ArsenalSkill4.Name = "ArsenalSkill4";
+            ArsenalSkill4.Size = new Size(192, 25);
+            ArsenalSkill4.TabIndex = 3;
+            ArsenalSkill4.Text = "button4";
+            ArsenalSkill4.TextAlign = ContentAlignment.MiddleLeft;
+            ArsenalSkill4.UseVisualStyleBackColor = true;
+            ArsenalSkill4.Click += ArsenalSkill_Click;
+            ArsenalSkill4.MouseEnter += ArsenalSkill_MouseEnter;
+            ArsenalSkill4.MouseUp += ArsenalSkill_MouseUp;
             // 
             // ArsenalSkill16
             // 
-            this.ArsenalSkill16.FlatAppearance.BorderSize = 0;
-            this.ArsenalSkill16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ArsenalSkill16.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ArsenalSkill16.Location = new System.Drawing.Point(201, 158);
-            this.ArsenalSkill16.Name = "ArsenalSkill16";
-            this.ArsenalSkill16.Size = new System.Drawing.Size(198, 25);
-            this.ArsenalSkill16.TabIndex = 15;
-            this.ArsenalSkill16.Text = "button16";
-            this.ArsenalSkill16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ArsenalSkill16.UseVisualStyleBackColor = true;
-            this.ArsenalSkill16.Click += new System.EventHandler(this.ArsenalSkill_Click);
-            this.ArsenalSkill16.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
-            this.ArsenalSkill16.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
+            ArsenalSkill16.FlatAppearance.BorderSize = 0;
+            ArsenalSkill16.FlatStyle = FlatStyle.Flat;
+            ArsenalSkill16.ImageAlign = ContentAlignment.MiddleRight;
+            ArsenalSkill16.Location = new Point(201, 158);
+            ArsenalSkill16.Name = "ArsenalSkill16";
+            ArsenalSkill16.Size = new Size(198, 25);
+            ArsenalSkill16.TabIndex = 15;
+            ArsenalSkill16.Text = "button16";
+            ArsenalSkill16.TextAlign = ContentAlignment.MiddleLeft;
+            ArsenalSkill16.UseVisualStyleBackColor = true;
+            ArsenalSkill16.Click += ArsenalSkill_Click;
+            ArsenalSkill16.MouseEnter += ArsenalSkill_MouseEnter;
+            ArsenalSkill16.MouseUp += ArsenalSkill_MouseUp;
             // 
             // ArsenalSkill26
             // 
-            this.ArsenalSkill26.FlatAppearance.BorderSize = 0;
-            this.ArsenalSkill26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ArsenalSkill26.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ArsenalSkill26.Location = new System.Drawing.Point(405, 158);
-            this.ArsenalSkill26.Name = "ArsenalSkill26";
-            this.ArsenalSkill26.Size = new System.Drawing.Size(194, 25);
-            this.ArsenalSkill26.TabIndex = 25;
-            this.ArsenalSkill26.Text = "button26";
-            this.ArsenalSkill26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ArsenalSkill26.UseVisualStyleBackColor = true;
-            this.ArsenalSkill26.Click += new System.EventHandler(this.ArsenalSkill_Click);
-            this.ArsenalSkill26.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
-            this.ArsenalSkill26.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
+            ArsenalSkill26.FlatAppearance.BorderSize = 0;
+            ArsenalSkill26.FlatStyle = FlatStyle.Flat;
+            ArsenalSkill26.ImageAlign = ContentAlignment.MiddleRight;
+            ArsenalSkill26.Location = new Point(405, 158);
+            ArsenalSkill26.Name = "ArsenalSkill26";
+            ArsenalSkill26.Size = new Size(194, 25);
+            ArsenalSkill26.TabIndex = 25;
+            ArsenalSkill26.Text = "button26";
+            ArsenalSkill26.TextAlign = ContentAlignment.MiddleLeft;
+            ArsenalSkill26.UseVisualStyleBackColor = true;
+            ArsenalSkill26.Click += ArsenalSkill_Click;
+            ArsenalSkill26.MouseEnter += ArsenalSkill_MouseEnter;
+            ArsenalSkill26.MouseUp += ArsenalSkill_MouseUp;
             // 
             // ArsenalSkill3
             // 
-            this.ArsenalSkill3.FlatAppearance.BorderSize = 0;
-            this.ArsenalSkill3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ArsenalSkill3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ArsenalSkill3.Location = new System.Drawing.Point(3, 65);
-            this.ArsenalSkill3.Name = "ArsenalSkill3";
-            this.ArsenalSkill3.Size = new System.Drawing.Size(192, 25);
-            this.ArsenalSkill3.TabIndex = 2;
-            this.ArsenalSkill3.Text = "button3";
-            this.ArsenalSkill3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ArsenalSkill3.UseVisualStyleBackColor = true;
-            this.ArsenalSkill3.Click += new System.EventHandler(this.ArsenalSkill_Click);
-            this.ArsenalSkill3.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
-            this.ArsenalSkill3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
+            ArsenalSkill3.FlatAppearance.BorderSize = 0;
+            ArsenalSkill3.FlatStyle = FlatStyle.Flat;
+            ArsenalSkill3.ImageAlign = ContentAlignment.MiddleRight;
+            ArsenalSkill3.Location = new Point(3, 65);
+            ArsenalSkill3.Name = "ArsenalSkill3";
+            ArsenalSkill3.Size = new Size(192, 25);
+            ArsenalSkill3.TabIndex = 2;
+            ArsenalSkill3.Text = "button3";
+            ArsenalSkill3.TextAlign = ContentAlignment.MiddleLeft;
+            ArsenalSkill3.UseVisualStyleBackColor = true;
+            ArsenalSkill3.Click += ArsenalSkill_Click;
+            ArsenalSkill3.MouseEnter += ArsenalSkill_MouseEnter;
+            ArsenalSkill3.MouseUp += ArsenalSkill_MouseUp;
             // 
             // ArsenalSkill15
             // 
-            this.ArsenalSkill15.FlatAppearance.BorderSize = 0;
-            this.ArsenalSkill15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ArsenalSkill15.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ArsenalSkill15.Location = new System.Drawing.Point(201, 127);
-            this.ArsenalSkill15.Name = "ArsenalSkill15";
-            this.ArsenalSkill15.Size = new System.Drawing.Size(198, 25);
-            this.ArsenalSkill15.TabIndex = 14;
-            this.ArsenalSkill15.Text = "button15";
-            this.ArsenalSkill15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ArsenalSkill15.UseVisualStyleBackColor = true;
-            this.ArsenalSkill15.Click += new System.EventHandler(this.ArsenalSkill_Click);
-            this.ArsenalSkill15.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
-            this.ArsenalSkill15.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
+            ArsenalSkill15.FlatAppearance.BorderSize = 0;
+            ArsenalSkill15.FlatStyle = FlatStyle.Flat;
+            ArsenalSkill15.ImageAlign = ContentAlignment.MiddleRight;
+            ArsenalSkill15.Location = new Point(201, 127);
+            ArsenalSkill15.Name = "ArsenalSkill15";
+            ArsenalSkill15.Size = new Size(198, 25);
+            ArsenalSkill15.TabIndex = 14;
+            ArsenalSkill15.Text = "button15";
+            ArsenalSkill15.TextAlign = ContentAlignment.MiddleLeft;
+            ArsenalSkill15.UseVisualStyleBackColor = true;
+            ArsenalSkill15.Click += ArsenalSkill_Click;
+            ArsenalSkill15.MouseEnter += ArsenalSkill_MouseEnter;
+            ArsenalSkill15.MouseUp += ArsenalSkill_MouseUp;
             // 
             // ArsenalSkill27
             // 
-            this.ArsenalSkill27.FlatAppearance.BorderSize = 0;
-            this.ArsenalSkill27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ArsenalSkill27.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ArsenalSkill27.Location = new System.Drawing.Point(405, 189);
-            this.ArsenalSkill27.Name = "ArsenalSkill27";
-            this.ArsenalSkill27.Size = new System.Drawing.Size(194, 25);
-            this.ArsenalSkill27.TabIndex = 26;
-            this.ArsenalSkill27.Text = "button27";
-            this.ArsenalSkill27.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ArsenalSkill27.UseVisualStyleBackColor = true;
-            this.ArsenalSkill27.Click += new System.EventHandler(this.ArsenalSkill_Click);
-            this.ArsenalSkill27.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
-            this.ArsenalSkill27.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
+            ArsenalSkill27.FlatAppearance.BorderSize = 0;
+            ArsenalSkill27.FlatStyle = FlatStyle.Flat;
+            ArsenalSkill27.ImageAlign = ContentAlignment.MiddleRight;
+            ArsenalSkill27.Location = new Point(405, 189);
+            ArsenalSkill27.Name = "ArsenalSkill27";
+            ArsenalSkill27.Size = new Size(194, 25);
+            ArsenalSkill27.TabIndex = 26;
+            ArsenalSkill27.Text = "button27";
+            ArsenalSkill27.TextAlign = ContentAlignment.MiddleLeft;
+            ArsenalSkill27.UseVisualStyleBackColor = true;
+            ArsenalSkill27.Click += ArsenalSkill_Click;
+            ArsenalSkill27.MouseEnter += ArsenalSkill_MouseEnter;
+            ArsenalSkill27.MouseUp += ArsenalSkill_MouseUp;
             // 
             // ArsenalSkill2
             // 
-            this.ArsenalSkill2.FlatAppearance.BorderSize = 0;
-            this.ArsenalSkill2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ArsenalSkill2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ArsenalSkill2.Location = new System.Drawing.Point(3, 34);
-            this.ArsenalSkill2.Name = "ArsenalSkill2";
-            this.ArsenalSkill2.Size = new System.Drawing.Size(192, 25);
-            this.ArsenalSkill2.TabIndex = 1;
-            this.ArsenalSkill2.Text = "button2";
-            this.ArsenalSkill2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ArsenalSkill2.UseVisualStyleBackColor = true;
-            this.ArsenalSkill2.Click += new System.EventHandler(this.ArsenalSkill_Click);
-            this.ArsenalSkill2.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
-            this.ArsenalSkill2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
+            ArsenalSkill2.FlatAppearance.BorderSize = 0;
+            ArsenalSkill2.FlatStyle = FlatStyle.Flat;
+            ArsenalSkill2.ImageAlign = ContentAlignment.MiddleRight;
+            ArsenalSkill2.Location = new Point(3, 34);
+            ArsenalSkill2.Name = "ArsenalSkill2";
+            ArsenalSkill2.Size = new Size(192, 25);
+            ArsenalSkill2.TabIndex = 1;
+            ArsenalSkill2.Text = "button2";
+            ArsenalSkill2.TextAlign = ContentAlignment.MiddleLeft;
+            ArsenalSkill2.UseVisualStyleBackColor = true;
+            ArsenalSkill2.Click += ArsenalSkill_Click;
+            ArsenalSkill2.MouseEnter += ArsenalSkill_MouseEnter;
+            ArsenalSkill2.MouseUp += ArsenalSkill_MouseUp;
             // 
             // ArsenalSkill14
             // 
-            this.ArsenalSkill14.FlatAppearance.BorderSize = 0;
-            this.ArsenalSkill14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ArsenalSkill14.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ArsenalSkill14.Location = new System.Drawing.Point(201, 96);
-            this.ArsenalSkill14.Name = "ArsenalSkill14";
-            this.ArsenalSkill14.Size = new System.Drawing.Size(198, 25);
-            this.ArsenalSkill14.TabIndex = 13;
-            this.ArsenalSkill14.Text = "button14";
-            this.ArsenalSkill14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ArsenalSkill14.UseVisualStyleBackColor = true;
-            this.ArsenalSkill14.Click += new System.EventHandler(this.ArsenalSkill_Click);
-            this.ArsenalSkill14.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
-            this.ArsenalSkill14.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
+            ArsenalSkill14.FlatAppearance.BorderSize = 0;
+            ArsenalSkill14.FlatStyle = FlatStyle.Flat;
+            ArsenalSkill14.ImageAlign = ContentAlignment.MiddleRight;
+            ArsenalSkill14.Location = new Point(201, 96);
+            ArsenalSkill14.Name = "ArsenalSkill14";
+            ArsenalSkill14.Size = new Size(198, 25);
+            ArsenalSkill14.TabIndex = 13;
+            ArsenalSkill14.Text = "button14";
+            ArsenalSkill14.TextAlign = ContentAlignment.MiddleLeft;
+            ArsenalSkill14.UseVisualStyleBackColor = true;
+            ArsenalSkill14.Click += ArsenalSkill_Click;
+            ArsenalSkill14.MouseEnter += ArsenalSkill_MouseEnter;
+            ArsenalSkill14.MouseUp += ArsenalSkill_MouseUp;
             // 
             // ArsenalSkill28
             // 
-            this.ArsenalSkill28.FlatAppearance.BorderSize = 0;
-            this.ArsenalSkill28.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ArsenalSkill28.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ArsenalSkill28.Location = new System.Drawing.Point(405, 220);
-            this.ArsenalSkill28.Name = "ArsenalSkill28";
-            this.ArsenalSkill28.Size = new System.Drawing.Size(194, 25);
-            this.ArsenalSkill28.TabIndex = 27;
-            this.ArsenalSkill28.Text = "button28";
-            this.ArsenalSkill28.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ArsenalSkill28.UseVisualStyleBackColor = true;
-            this.ArsenalSkill28.Click += new System.EventHandler(this.ArsenalSkill_Click);
-            this.ArsenalSkill28.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
-            this.ArsenalSkill28.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
+            ArsenalSkill28.FlatAppearance.BorderSize = 0;
+            ArsenalSkill28.FlatStyle = FlatStyle.Flat;
+            ArsenalSkill28.ImageAlign = ContentAlignment.MiddleRight;
+            ArsenalSkill28.Location = new Point(405, 220);
+            ArsenalSkill28.Name = "ArsenalSkill28";
+            ArsenalSkill28.Size = new Size(194, 25);
+            ArsenalSkill28.TabIndex = 27;
+            ArsenalSkill28.Text = "button28";
+            ArsenalSkill28.TextAlign = ContentAlignment.MiddleLeft;
+            ArsenalSkill28.UseVisualStyleBackColor = true;
+            ArsenalSkill28.Click += ArsenalSkill_Click;
+            ArsenalSkill28.MouseEnter += ArsenalSkill_MouseEnter;
+            ArsenalSkill28.MouseUp += ArsenalSkill_MouseUp;
             // 
             // ArsenalSkill9
             // 
-            this.ArsenalSkill9.FlatAppearance.BorderSize = 0;
-            this.ArsenalSkill9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ArsenalSkill9.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ArsenalSkill9.Location = new System.Drawing.Point(3, 251);
-            this.ArsenalSkill9.Name = "ArsenalSkill9";
-            this.ArsenalSkill9.Size = new System.Drawing.Size(192, 25);
-            this.ArsenalSkill9.TabIndex = 8;
-            this.ArsenalSkill9.Text = "button9";
-            this.ArsenalSkill9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ArsenalSkill9.UseVisualStyleBackColor = true;
-            this.ArsenalSkill9.Click += new System.EventHandler(this.ArsenalSkill_Click);
-            this.ArsenalSkill9.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
-            this.ArsenalSkill9.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
+            ArsenalSkill9.FlatAppearance.BorderSize = 0;
+            ArsenalSkill9.FlatStyle = FlatStyle.Flat;
+            ArsenalSkill9.ImageAlign = ContentAlignment.MiddleRight;
+            ArsenalSkill9.Location = new Point(3, 251);
+            ArsenalSkill9.Name = "ArsenalSkill9";
+            ArsenalSkill9.Size = new Size(192, 25);
+            ArsenalSkill9.TabIndex = 8;
+            ArsenalSkill9.Text = "button9";
+            ArsenalSkill9.TextAlign = ContentAlignment.MiddleLeft;
+            ArsenalSkill9.UseVisualStyleBackColor = true;
+            ArsenalSkill9.Click += ArsenalSkill_Click;
+            ArsenalSkill9.MouseEnter += ArsenalSkill_MouseEnter;
+            ArsenalSkill9.MouseUp += ArsenalSkill_MouseUp;
             // 
             // ArsenalSkill13
             // 
-            this.ArsenalSkill13.FlatAppearance.BorderSize = 0;
-            this.ArsenalSkill13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ArsenalSkill13.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ArsenalSkill13.Location = new System.Drawing.Point(201, 65);
-            this.ArsenalSkill13.Name = "ArsenalSkill13";
-            this.ArsenalSkill13.Size = new System.Drawing.Size(198, 25);
-            this.ArsenalSkill13.TabIndex = 12;
-            this.ArsenalSkill13.Text = "button13";
-            this.ArsenalSkill13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ArsenalSkill13.UseVisualStyleBackColor = true;
-            this.ArsenalSkill13.Click += new System.EventHandler(this.ArsenalSkill_Click);
-            this.ArsenalSkill13.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
-            this.ArsenalSkill13.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
+            ArsenalSkill13.FlatAppearance.BorderSize = 0;
+            ArsenalSkill13.FlatStyle = FlatStyle.Flat;
+            ArsenalSkill13.ImageAlign = ContentAlignment.MiddleRight;
+            ArsenalSkill13.Location = new Point(201, 65);
+            ArsenalSkill13.Name = "ArsenalSkill13";
+            ArsenalSkill13.Size = new Size(198, 25);
+            ArsenalSkill13.TabIndex = 12;
+            ArsenalSkill13.Text = "button13";
+            ArsenalSkill13.TextAlign = ContentAlignment.MiddleLeft;
+            ArsenalSkill13.UseVisualStyleBackColor = true;
+            ArsenalSkill13.Click += ArsenalSkill_Click;
+            ArsenalSkill13.MouseEnter += ArsenalSkill_MouseEnter;
+            ArsenalSkill13.MouseUp += ArsenalSkill_MouseUp;
             // 
             // ArsenalSkill29
             // 
-            this.ArsenalSkill29.FlatAppearance.BorderSize = 0;
-            this.ArsenalSkill29.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ArsenalSkill29.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ArsenalSkill29.Location = new System.Drawing.Point(405, 251);
-            this.ArsenalSkill29.Name = "ArsenalSkill29";
-            this.ArsenalSkill29.Size = new System.Drawing.Size(194, 25);
-            this.ArsenalSkill29.TabIndex = 28;
-            this.ArsenalSkill29.Text = "button29";
-            this.ArsenalSkill29.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ArsenalSkill29.UseVisualStyleBackColor = true;
-            this.ArsenalSkill29.Click += new System.EventHandler(this.ArsenalSkill_Click);
-            this.ArsenalSkill29.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
-            this.ArsenalSkill29.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
+            ArsenalSkill29.FlatAppearance.BorderSize = 0;
+            ArsenalSkill29.FlatStyle = FlatStyle.Flat;
+            ArsenalSkill29.ImageAlign = ContentAlignment.MiddleRight;
+            ArsenalSkill29.Location = new Point(405, 251);
+            ArsenalSkill29.Name = "ArsenalSkill29";
+            ArsenalSkill29.Size = new Size(194, 25);
+            ArsenalSkill29.TabIndex = 28;
+            ArsenalSkill29.Text = "button29";
+            ArsenalSkill29.TextAlign = ContentAlignment.MiddleLeft;
+            ArsenalSkill29.UseVisualStyleBackColor = true;
+            ArsenalSkill29.Click += ArsenalSkill_Click;
+            ArsenalSkill29.MouseEnter += ArsenalSkill_MouseEnter;
+            ArsenalSkill29.MouseUp += ArsenalSkill_MouseUp;
             // 
             // ArsenalSkill10
             // 
-            this.ArsenalSkill10.FlatAppearance.BorderSize = 0;
-            this.ArsenalSkill10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ArsenalSkill10.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ArsenalSkill10.Location = new System.Drawing.Point(3, 282);
-            this.ArsenalSkill10.Name = "ArsenalSkill10";
-            this.ArsenalSkill10.Size = new System.Drawing.Size(192, 29);
-            this.ArsenalSkill10.TabIndex = 9;
-            this.ArsenalSkill10.Text = "button10";
-            this.ArsenalSkill10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ArsenalSkill10.UseVisualStyleBackColor = true;
-            this.ArsenalSkill10.Click += new System.EventHandler(this.ArsenalSkill_Click);
-            this.ArsenalSkill10.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
-            this.ArsenalSkill10.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
+            ArsenalSkill10.FlatAppearance.BorderSize = 0;
+            ArsenalSkill10.FlatStyle = FlatStyle.Flat;
+            ArsenalSkill10.ImageAlign = ContentAlignment.MiddleRight;
+            ArsenalSkill10.Location = new Point(3, 282);
+            ArsenalSkill10.Name = "ArsenalSkill10";
+            ArsenalSkill10.Size = new Size(192, 29);
+            ArsenalSkill10.TabIndex = 9;
+            ArsenalSkill10.Text = "button10";
+            ArsenalSkill10.TextAlign = ContentAlignment.MiddleLeft;
+            ArsenalSkill10.UseVisualStyleBackColor = true;
+            ArsenalSkill10.Click += ArsenalSkill_Click;
+            ArsenalSkill10.MouseEnter += ArsenalSkill_MouseEnter;
+            ArsenalSkill10.MouseUp += ArsenalSkill_MouseUp;
             // 
             // ArsenalSkill12
             // 
-            this.ArsenalSkill12.FlatAppearance.BorderSize = 0;
-            this.ArsenalSkill12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ArsenalSkill12.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ArsenalSkill12.Location = new System.Drawing.Point(201, 34);
-            this.ArsenalSkill12.Name = "ArsenalSkill12";
-            this.ArsenalSkill12.Size = new System.Drawing.Size(198, 25);
-            this.ArsenalSkill12.TabIndex = 11;
-            this.ArsenalSkill12.Text = "button12";
-            this.ArsenalSkill12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ArsenalSkill12.UseVisualStyleBackColor = true;
-            this.ArsenalSkill12.Click += new System.EventHandler(this.ArsenalSkill_Click);
-            this.ArsenalSkill12.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
-            this.ArsenalSkill12.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
+            ArsenalSkill12.FlatAppearance.BorderSize = 0;
+            ArsenalSkill12.FlatStyle = FlatStyle.Flat;
+            ArsenalSkill12.ImageAlign = ContentAlignment.MiddleRight;
+            ArsenalSkill12.Location = new Point(201, 34);
+            ArsenalSkill12.Name = "ArsenalSkill12";
+            ArsenalSkill12.Size = new Size(198, 25);
+            ArsenalSkill12.TabIndex = 11;
+            ArsenalSkill12.Text = "button12";
+            ArsenalSkill12.TextAlign = ContentAlignment.MiddleLeft;
+            ArsenalSkill12.UseVisualStyleBackColor = true;
+            ArsenalSkill12.Click += ArsenalSkill_Click;
+            ArsenalSkill12.MouseEnter += ArsenalSkill_MouseEnter;
+            ArsenalSkill12.MouseUp += ArsenalSkill_MouseUp;
             // 
             // ArsenalSkill11
             // 
-            this.ArsenalSkill11.FlatAppearance.BorderSize = 0;
-            this.ArsenalSkill11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ArsenalSkill11.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ArsenalSkill11.Location = new System.Drawing.Point(201, 3);
-            this.ArsenalSkill11.Name = "ArsenalSkill11";
-            this.ArsenalSkill11.Size = new System.Drawing.Size(198, 25);
-            this.ArsenalSkill11.TabIndex = 10;
-            this.ArsenalSkill11.Text = "button11";
-            this.ArsenalSkill11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ArsenalSkill11.UseVisualStyleBackColor = true;
-            this.ArsenalSkill11.Click += new System.EventHandler(this.ArsenalSkill_Click);
-            this.ArsenalSkill11.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
-            this.ArsenalSkill11.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
+            ArsenalSkill11.FlatAppearance.BorderSize = 0;
+            ArsenalSkill11.FlatStyle = FlatStyle.Flat;
+            ArsenalSkill11.ImageAlign = ContentAlignment.MiddleRight;
+            ArsenalSkill11.Location = new Point(201, 3);
+            ArsenalSkill11.Name = "ArsenalSkill11";
+            ArsenalSkill11.Size = new Size(198, 25);
+            ArsenalSkill11.TabIndex = 10;
+            ArsenalSkill11.Text = "button11";
+            ArsenalSkill11.TextAlign = ContentAlignment.MiddleLeft;
+            ArsenalSkill11.UseVisualStyleBackColor = true;
+            ArsenalSkill11.Click += ArsenalSkill_Click;
+            ArsenalSkill11.MouseEnter += ArsenalSkill_MouseEnter;
+            ArsenalSkill11.MouseUp += ArsenalSkill_MouseUp;
             // 
             // ArsenalSkill30
             // 
-            this.ArsenalSkill30.FlatAppearance.BorderSize = 0;
-            this.ArsenalSkill30.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ArsenalSkill30.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ArsenalSkill30.Location = new System.Drawing.Point(405, 282);
-            this.ArsenalSkill30.Name = "ArsenalSkill30";
-            this.ArsenalSkill30.Size = new System.Drawing.Size(194, 29);
-            this.ArsenalSkill30.TabIndex = 29;
-            this.ArsenalSkill30.Text = "button30";
-            this.ArsenalSkill30.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ArsenalSkill30.UseVisualStyleBackColor = true;
-            this.ArsenalSkill30.Click += new System.EventHandler(this.ArsenalSkill_Click);
-            this.ArsenalSkill30.MouseEnter += new System.EventHandler(this.ArsenalSkill_MouseEnter);
-            this.ArsenalSkill30.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ArsenalSkill_MouseUp);
+            ArsenalSkill30.FlatAppearance.BorderSize = 0;
+            ArsenalSkill30.FlatStyle = FlatStyle.Flat;
+            ArsenalSkill30.ImageAlign = ContentAlignment.MiddleRight;
+            ArsenalSkill30.Location = new Point(405, 282);
+            ArsenalSkill30.Name = "ArsenalSkill30";
+            ArsenalSkill30.Size = new Size(194, 29);
+            ArsenalSkill30.TabIndex = 29;
+            ArsenalSkill30.Text = "button30";
+            ArsenalSkill30.TextAlign = ContentAlignment.MiddleLeft;
+            ArsenalSkill30.UseVisualStyleBackColor = true;
+            ArsenalSkill30.Click += ArsenalSkill_Click;
+            ArsenalSkill30.MouseEnter += ArsenalSkill_MouseEnter;
+            ArsenalSkill30.MouseUp += ArsenalSkill_MouseUp;
             // 
             // ArsenalControlPanel
             // 
-            this.ArsenalControlPanel.Controls.Add(this.RandomizerButton);
-            this.ArsenalControlPanel.Controls.Add(this.label4);
-            this.ArsenalControlPanel.Controls.Add(this.label3);
-            this.ArsenalControlPanel.Controls.Add(this.label2);
-            this.ArsenalControlPanel.Controls.Add(this.label1);
-            this.ArsenalControlPanel.Controls.Add(this.label5);
-            this.ArsenalControlPanel.Controls.Add(this.label6);
-            this.ArsenalControlPanel.Controls.Add(this.SaveChangesButton);
-            this.ArsenalControlPanel.Controls.Add(this.EditButton);
-            this.ArsenalControlPanel.Controls.Add(this.SortButton);
-            this.ArsenalControlPanel.Controls.Add(this.RenameButton);
-            this.ArsenalControlPanel.Controls.Add(this.DeleteButton);
-            this.ArsenalControlPanel.Location = new System.Drawing.Point(0, 396);
-            this.ArsenalControlPanel.Name = "ArsenalControlPanel";
-            this.ArsenalControlPanel.Size = new System.Drawing.Size(202, 185);
-            this.ArsenalControlPanel.TabIndex = 32;
+            ArsenalControlPanel.Controls.Add(RandomizerButton);
+            ArsenalControlPanel.Controls.Add(label4);
+            ArsenalControlPanel.Controls.Add(label3);
+            ArsenalControlPanel.Controls.Add(label2);
+            ArsenalControlPanel.Controls.Add(label1);
+            ArsenalControlPanel.Controls.Add(label5);
+            ArsenalControlPanel.Controls.Add(label6);
+            ArsenalControlPanel.Controls.Add(SaveChangesButton);
+            ArsenalControlPanel.Controls.Add(SortButton);
+            ArsenalControlPanel.Controls.Add(RenameButton);
+            ArsenalControlPanel.Controls.Add(DeleteButton);
+            ArsenalControlPanel.Location = new Point(0, 396);
+            ArsenalControlPanel.Name = "ArsenalControlPanel";
+            ArsenalControlPanel.Size = new Size(202, 185);
+            ArsenalControlPanel.TabIndex = 32;
             // 
             // RandomizerButton
             // 
-            this.RandomizerButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.RandomizerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RandomizerButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.RandomizerButton.Location = new System.Drawing.Point(5, 61);
-            this.RandomizerButton.Name = "RandomizerButton";
-            this.RandomizerButton.Size = new System.Drawing.Size(94, 23);
-            this.RandomizerButton.TabIndex = 19;
-            this.RandomizerButton.Text = "Randomizer";
-            this.RandomizerButton.UseVisualStyleBackColor = true;
-            this.RandomizerButton.Click += new System.EventHandler(this.RandomizerButton_Click);
+            RandomizerButton.FlatAppearance.BorderColor = Color.FromArgb(92, 172, 149);
+            RandomizerButton.FlatStyle = FlatStyle.Flat;
+            RandomizerButton.ForeColor = Color.FromArgb(92, 172, 149);
+            RandomizerButton.Location = new Point(5, 61);
+            RandomizerButton.Name = "RandomizerButton";
+            RandomizerButton.Size = new Size(94, 23);
+            RandomizerButton.TabIndex = 19;
+            RandomizerButton.Text = "Randomizer";
+            RandomizerButton.UseVisualStyleBackColor = true;
+            RandomizerButton.Click += RandomizerButton_Click;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.label4.Location = new System.Drawing.Point(30, 137);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 15);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Left-click :";
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = Color.FromArgb(92, 172, 149);
+            label4.Location = new Point(30, 137);
+            label4.Name = "label4";
+            label4.Size = new Size(65, 15);
+            label4.TabIndex = 18;
+            label4.Text = "Left-click :";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.label3.Location = new System.Drawing.Point(22, 152);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 15);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "Right-click :";
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = Color.FromArgb(92, 172, 149);
+            label3.Location = new Point(22, 152);
+            label3.Name = "label3";
+            label3.Size = new Size(72, 15);
+            label3.TabIndex = 17;
+            label3.Text = "Right-click :";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.label2.Location = new System.Drawing.Point(13, 167);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 15);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Middle-click :";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.FromArgb(92, 172, 149);
+            label2.Location = new Point(13, 167);
+            label2.Name = "label2";
+            label2.Size = new Size(81, 15);
+            label2.TabIndex = 16;
+            label2.Text = "Middle-click :";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.label1.Location = new System.Drawing.Point(92, 137);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 15);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Replace Skill";
+            label1.AutoSize = true;
+            label1.ForeColor = Color.FromArgb(92, 172, 149);
+            label1.Location = new Point(92, 137);
+            label1.Name = "label1";
+            label1.Size = new Size(72, 15);
+            label1.TabIndex = 15;
+            label1.Text = "Replace Skill";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.label5.Location = new System.Drawing.Point(92, 152);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 15);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Add Same Skill";
+            label5.AutoSize = true;
+            label5.ForeColor = Color.FromArgb(92, 172, 149);
+            label5.Location = new Point(92, 152);
+            label5.Name = "label5";
+            label5.Size = new Size(85, 15);
+            label5.TabIndex = 14;
+            label5.Text = "Add Same Skill";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.label6.Location = new System.Drawing.Point(92, 167);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(102, 15);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Replace with Aura";
+            label6.AutoSize = true;
+            label6.ForeColor = Color.FromArgb(92, 172, 149);
+            label6.Location = new Point(92, 167);
+            label6.Name = "label6";
+            label6.Size = new Size(102, 15);
+            label6.TabIndex = 12;
+            label6.Text = "Replace with Aura";
             // 
             // SaveChangesButton
             // 
-            this.SaveChangesButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SaveChangesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SaveChangesButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SaveChangesButton.Location = new System.Drawing.Point(5, 3);
-            this.SaveChangesButton.Name = "SaveChangesButton";
-            this.SaveChangesButton.Size = new System.Drawing.Size(94, 23);
-            this.SaveChangesButton.TabIndex = 4;
-            this.SaveChangesButton.Text = "Save";
-            this.SaveChangesButton.UseVisualStyleBackColor = true;
-            this.SaveChangesButton.Click += new System.EventHandler(this.SaveChangesButton_Click);
-            // 
-            // EditButton
-            // 
-            this.EditButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.EditButton.Location = new System.Drawing.Point(103, 3);
-            this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(94, 23);
-            this.EditButton.TabIndex = 5;
-            this.EditButton.Text = "Edit: Off";
-            this.EditButton.UseVisualStyleBackColor = true;
-            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
+            SaveChangesButton.FlatAppearance.BorderColor = Color.FromArgb(92, 172, 149);
+            SaveChangesButton.FlatStyle = FlatStyle.Flat;
+            SaveChangesButton.ForeColor = Color.FromArgb(92, 172, 149);
+            SaveChangesButton.Location = new Point(5, 3);
+            SaveChangesButton.Name = "SaveChangesButton";
+            SaveChangesButton.Size = new Size(94, 23);
+            SaveChangesButton.TabIndex = 4;
+            SaveChangesButton.Text = "Save";
+            SaveChangesButton.UseVisualStyleBackColor = true;
+            SaveChangesButton.Click += SaveChangesButton_Click;
             // 
             // SortButton
             // 
-            this.SortButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SortButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SortButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SortButton.Location = new System.Drawing.Point(5, 32);
-            this.SortButton.Name = "SortButton";
-            this.SortButton.Size = new System.Drawing.Size(94, 23);
-            this.SortButton.TabIndex = 6;
-            this.SortButton.Text = "Sort";
-            this.SortButton.UseVisualStyleBackColor = true;
-            this.SortButton.Click += new System.EventHandler(this.SortButton_Click);
+            SortButton.FlatAppearance.BorderColor = Color.FromArgb(92, 172, 149);
+            SortButton.FlatStyle = FlatStyle.Flat;
+            SortButton.ForeColor = Color.FromArgb(92, 172, 149);
+            SortButton.Location = new Point(5, 32);
+            SortButton.Name = "SortButton";
+            SortButton.Size = new Size(94, 23);
+            SortButton.TabIndex = 6;
+            SortButton.Text = "Sort";
+            SortButton.UseVisualStyleBackColor = true;
+            SortButton.Click += SortButton_Click;
             // 
             // RenameButton
             // 
-            this.RenameButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.RenameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RenameButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.RenameButton.Location = new System.Drawing.Point(103, 32);
-            this.RenameButton.Name = "RenameButton";
-            this.RenameButton.Size = new System.Drawing.Size(94, 23);
-            this.RenameButton.TabIndex = 7;
-            this.RenameButton.Text = "Rename";
-            this.RenameButton.UseVisualStyleBackColor = true;
-            this.RenameButton.Click += new System.EventHandler(this.RenameButton_Click);
+            RenameButton.FlatAppearance.BorderColor = Color.FromArgb(92, 172, 149);
+            RenameButton.FlatStyle = FlatStyle.Flat;
+            RenameButton.ForeColor = Color.FromArgb(92, 172, 149);
+            RenameButton.Location = new Point(103, 3);
+            RenameButton.Name = "RenameButton";
+            RenameButton.Size = new Size(94, 23);
+            RenameButton.TabIndex = 7;
+            RenameButton.Text = "Rename";
+            RenameButton.UseVisualStyleBackColor = true;
+            RenameButton.Click += RenameButton_Click;
             // 
             // DeleteButton
             // 
-            this.DeleteButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.DeleteButton.Location = new System.Drawing.Point(103, 61);
-            this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(94, 23);
-            this.DeleteButton.TabIndex = 11;
-            this.DeleteButton.Text = "Delete";
-            this.DeleteButton.UseVisualStyleBackColor = true;
-            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            DeleteButton.FlatAppearance.BorderColor = Color.FromArgb(92, 172, 149);
+            DeleteButton.FlatStyle = FlatStyle.Flat;
+            DeleteButton.ForeColor = Color.FromArgb(92, 172, 149);
+            DeleteButton.Location = new Point(103, 32);
+            DeleteButton.Name = "DeleteButton";
+            DeleteButton.Size = new Size(94, 23);
+            DeleteButton.TabIndex = 11;
+            DeleteButton.Text = "Delete";
+            DeleteButton.UseVisualStyleBackColor = true;
+            DeleteButton.Click += DeleteButton_Click;
             // 
             // CardPanel
             // 
-            this.CardPanel.Controls.Add(this.CardTitlePanel);
-            this.CardPanel.Controls.Add(this.CardSubtitlePanel);
-            this.CardPanel.Controls.Add(this.CardDescriptionPanel);
-            this.CardPanel.Location = new System.Drawing.Point(209, 396);
-            this.CardPanel.Name = "CardPanel";
-            this.CardPanel.Size = new System.Drawing.Size(397, 185);
-            this.CardPanel.TabIndex = 31;
+            CardPanel.Controls.Add(CardTitlePanel);
+            CardPanel.Controls.Add(CardSubtitlePanel);
+            CardPanel.Controls.Add(CardDescriptionPanel);
+            CardPanel.Location = new Point(209, 396);
+            CardPanel.Name = "CardPanel";
+            CardPanel.Size = new Size(397, 185);
+            CardPanel.TabIndex = 31;
             // 
             // CardTitlePanel
             // 
-            this.CardTitlePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(177)))), ((int)(((byte)(150)))));
-            this.CardTitlePanel.Controls.Add(this.CardSchoolPicture);
-            this.CardTitlePanel.Controls.Add(this.CardTitleLabel);
-            this.CardTitlePanel.Location = new System.Drawing.Point(0, 0);
-            this.CardTitlePanel.Margin = new System.Windows.Forms.Padding(0);
-            this.CardTitlePanel.Name = "CardTitlePanel";
-            this.CardTitlePanel.Size = new System.Drawing.Size(398, 37);
-            this.CardTitlePanel.TabIndex = 0;
+            CardTitlePanel.BackColor = Color.FromArgb(127, 177, 150);
+            CardTitlePanel.Controls.Add(CardSchoolPicture);
+            CardTitlePanel.Controls.Add(CardTitleLabel);
+            CardTitlePanel.Location = new Point(0, 0);
+            CardTitlePanel.Margin = new Padding(0);
+            CardTitlePanel.Name = "CardTitlePanel";
+            CardTitlePanel.Size = new Size(398, 37);
+            CardTitlePanel.TabIndex = 0;
             // 
             // CardSchoolPicture
             // 
-            this.CardSchoolPicture.Dock = System.Windows.Forms.DockStyle.Right;
-            this.CardSchoolPicture.Location = new System.Drawing.Point(298, 0);
-            this.CardSchoolPicture.Margin = new System.Windows.Forms.Padding(0);
-            this.CardSchoolPicture.Name = "CardSchoolPicture";
-            this.CardSchoolPicture.Size = new System.Drawing.Size(100, 37);
-            this.CardSchoolPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.CardSchoolPicture.TabIndex = 1;
-            this.CardSchoolPicture.TabStop = false;
+            CardSchoolPicture.Dock = DockStyle.Right;
+            CardSchoolPicture.Location = new Point(298, 0);
+            CardSchoolPicture.Margin = new Padding(0);
+            CardSchoolPicture.Name = "CardSchoolPicture";
+            CardSchoolPicture.Size = new Size(100, 37);
+            CardSchoolPicture.SizeMode = PictureBoxSizeMode.Zoom;
+            CardSchoolPicture.TabIndex = 1;
+            CardSchoolPicture.TabStop = false;
             // 
             // CardTitleLabel
             // 
-            this.CardTitleLabel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.CardTitleLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CardTitleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
-            this.CardTitleLabel.Location = new System.Drawing.Point(0, 0);
-            this.CardTitleLabel.Name = "CardTitleLabel";
-            this.CardTitleLabel.Size = new System.Drawing.Size(484, 37);
-            this.CardTitleLabel.TabIndex = 0;
-            this.CardTitleLabel.Text = "CardTitleLabel";
-            this.CardTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            CardTitleLabel.Dock = DockStyle.Left;
+            CardTitleLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            CardTitleLabel.ForeColor = Color.FromArgb(38, 33, 37);
+            CardTitleLabel.Location = new Point(0, 0);
+            CardTitleLabel.Name = "CardTitleLabel";
+            CardTitleLabel.Size = new Size(484, 37);
+            CardTitleLabel.TabIndex = 0;
+            CardTitleLabel.Text = "CardTitleLabel";
+            CardTitleLabel.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // CardSubtitlePanel
             // 
-            this.CardSubtitlePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(33)))), ((int)(((byte)(37)))));
-            this.CardSubtitlePanel.Controls.Add(this.CardSubtitleRightLabel);
-            this.CardSubtitlePanel.Controls.Add(this.RangePictureBox);
-            this.CardSubtitlePanel.Controls.Add(this.CardSubtitleLeftLabel);
-            this.CardSubtitlePanel.Location = new System.Drawing.Point(0, 38);
-            this.CardSubtitlePanel.Margin = new System.Windows.Forms.Padding(0);
-            this.CardSubtitlePanel.Name = "CardSubtitlePanel";
-            this.CardSubtitlePanel.Size = new System.Drawing.Size(404, 37);
-            this.CardSubtitlePanel.TabIndex = 1;
+            CardSubtitlePanel.BackColor = Color.FromArgb(38, 33, 37);
+            CardSubtitlePanel.Controls.Add(CardSubtitleRightLabel);
+            CardSubtitlePanel.Controls.Add(RangePictureBox);
+            CardSubtitlePanel.Controls.Add(CardSubtitleLeftLabel);
+            CardSubtitlePanel.Location = new Point(0, 38);
+            CardSubtitlePanel.Margin = new Padding(0);
+            CardSubtitlePanel.Name = "CardSubtitlePanel";
+            CardSubtitlePanel.Size = new Size(404, 37);
+            CardSubtitlePanel.TabIndex = 1;
             // 
             // CardSubtitleRightLabel
             // 
-            this.CardSubtitleRightLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CardSubtitleRightLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(162)))), ((int)(((byte)(165)))));
-            this.CardSubtitleRightLabel.Location = new System.Drawing.Point(179, 0);
-            this.CardSubtitleRightLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.CardSubtitleRightLabel.Name = "CardSubtitleRightLabel";
-            this.CardSubtitleRightLabel.Size = new System.Drawing.Size(137, 37);
-            this.CardSubtitleRightLabel.TabIndex = 3;
-            this.CardSubtitleRightLabel.Text = "CardSubtitleRight";
-            this.CardSubtitleRightLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            CardSubtitleRightLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            CardSubtitleRightLabel.ForeColor = Color.FromArgb(165, 162, 165);
+            CardSubtitleRightLabel.Location = new Point(179, 0);
+            CardSubtitleRightLabel.Margin = new Padding(0);
+            CardSubtitleRightLabel.Name = "CardSubtitleRightLabel";
+            CardSubtitleRightLabel.Size = new Size(137, 37);
+            CardSubtitleRightLabel.TabIndex = 3;
+            CardSubtitleRightLabel.Text = "CardSubtitleRight";
+            CardSubtitleRightLabel.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // RangePictureBox
             // 
-            this.RangePictureBox.Location = new System.Drawing.Point(320, 5);
-            this.RangePictureBox.Name = "RangePictureBox";
-            this.RangePictureBox.Size = new System.Drawing.Size(73, 26);
-            this.RangePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.RangePictureBox.TabIndex = 2;
-            this.RangePictureBox.TabStop = false;
+            RangePictureBox.Location = new Point(320, 5);
+            RangePictureBox.Name = "RangePictureBox";
+            RangePictureBox.Size = new Size(73, 26);
+            RangePictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            RangePictureBox.TabIndex = 2;
+            RangePictureBox.TabStop = false;
             // 
             // CardSubtitleLeftLabel
             // 
-            this.CardSubtitleLeftLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CardSubtitleLeftLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(162)))), ((int)(((byte)(165)))));
-            this.CardSubtitleLeftLabel.Location = new System.Drawing.Point(0, 0);
-            this.CardSubtitleLeftLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.CardSubtitleLeftLabel.Name = "CardSubtitleLeftLabel";
-            this.CardSubtitleLeftLabel.Size = new System.Drawing.Size(179, 37);
-            this.CardSubtitleLeftLabel.TabIndex = 1;
-            this.CardSubtitleLeftLabel.Text = "CardSubtitleLeft";
-            this.CardSubtitleLeftLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            CardSubtitleLeftLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            CardSubtitleLeftLabel.ForeColor = Color.FromArgb(165, 162, 165);
+            CardSubtitleLeftLabel.Location = new Point(0, 0);
+            CardSubtitleLeftLabel.Margin = new Padding(0);
+            CardSubtitleLeftLabel.Name = "CardSubtitleLeftLabel";
+            CardSubtitleLeftLabel.Size = new Size(179, 37);
+            CardSubtitleLeftLabel.TabIndex = 1;
+            CardSubtitleLeftLabel.Text = "CardSubtitleLeft";
+            CardSubtitleLeftLabel.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // CardDescriptionPanel
             // 
-            this.CardDescriptionPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(168)))), ((int)(((byte)(158)))));
-            this.CardDescriptionPanel.Controls.Add(this.CardDescriptionLabel);
-            this.CardDescriptionPanel.Location = new System.Drawing.Point(0, 74);
-            this.CardDescriptionPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.CardDescriptionPanel.Name = "CardDescriptionPanel";
-            this.CardDescriptionPanel.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-            this.CardDescriptionPanel.Size = new System.Drawing.Size(398, 111);
-            this.CardDescriptionPanel.TabIndex = 2;
+            CardDescriptionPanel.BackColor = Color.FromArgb(161, 168, 158);
+            CardDescriptionPanel.Controls.Add(CardDescriptionLabel);
+            CardDescriptionPanel.Location = new Point(0, 74);
+            CardDescriptionPanel.Margin = new Padding(0);
+            CardDescriptionPanel.Name = "CardDescriptionPanel";
+            CardDescriptionPanel.Padding = new Padding(0, 4, 0, 0);
+            CardDescriptionPanel.Size = new Size(398, 111);
+            CardDescriptionPanel.TabIndex = 2;
             // 
             // CardDescriptionLabel
             // 
-            this.CardDescriptionLabel.AutoSize = true;
-            this.CardDescriptionLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CardDescriptionLabel.Location = new System.Drawing.Point(3, 4);
-            this.CardDescriptionLabel.MaximumSize = new System.Drawing.Size(390, 100);
-            this.CardDescriptionLabel.Name = "CardDescriptionLabel";
-            this.CardDescriptionLabel.Size = new System.Drawing.Size(159, 21);
-            this.CardDescriptionLabel.TabIndex = 2;
-            this.CardDescriptionLabel.Text = "CardDescriptionLabel";
+            CardDescriptionLabel.AutoSize = true;
+            CardDescriptionLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            CardDescriptionLabel.Location = new Point(3, 4);
+            CardDescriptionLabel.MaximumSize = new Size(390, 100);
+            CardDescriptionLabel.Name = "CardDescriptionLabel";
+            CardDescriptionLabel.Size = new Size(159, 21);
+            CardDescriptionLabel.TabIndex = 2;
+            CardDescriptionLabel.Text = "CardDescriptionLabel";
             // 
             // MainLayout
             // 
-            this.MainLayout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(55)))), ((int)(((byte)(49)))));
-            this.MainLayout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MainLayout.BackgroundImage")));
-            this.MainLayout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.MainLayout.ColumnCount = 2;
-            this.MainLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 600F));
-            this.MainLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.MainLayout.Controls.Add(this.ArsenalListLayout, 0, 0);
-            this.MainLayout.Controls.Add(this.ArsenalPanel, 1, 0);
-            this.MainLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainLayout.Location = new System.Drawing.Point(0, 0);
-            this.MainLayout.Name = "MainLayout";
-            this.MainLayout.RowCount = 1;
-            this.MainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.MainLayout.Size = new System.Drawing.Size(1240, 590);
-            this.MainLayout.TabIndex = 33;
+            MainLayout.BackColor = Color.FromArgb(35, 55, 49);
+            MainLayout.BackgroundImage = (Image)resources.GetObject("MainLayout.BackgroundImage");
+            MainLayout.BackgroundImageLayout = ImageLayout.Center;
+            MainLayout.ColumnCount = 2;
+            MainLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 600F));
+            MainLayout.ColumnStyles.Add(new ColumnStyle());
+            MainLayout.Controls.Add(ArsenalListLayout, 0, 0);
+            MainLayout.Controls.Add(ArsenalPanel, 1, 0);
+            MainLayout.Dock = DockStyle.Fill;
+            MainLayout.Location = new Point(0, 0);
+            MainLayout.Name = "MainLayout";
+            MainLayout.RowCount = 1;
+            MainLayout.RowStyles.Add(new RowStyle());
+            MainLayout.Size = new Size(1240, 590);
+            MainLayout.TabIndex = 33;
             // 
             // SaveChangesAnimationTimer
             // 
-            this.SaveChangesAnimationTimer.Tick += new System.EventHandler(this.SaveChangesAnimationTimer_Tick);
+            SaveChangesAnimationTimer.Tick += SaveChangesAnimationTimer_Tick;
             // 
             // LabForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1240, 590);
-            this.Controls.Add(this.MainLayout);
-            this.Name = "LabForm";
-            this.Text = "LabForm";
-            this.ArsenalListLayout.ResumeLayout(false);
-            this.ArsenalListHeader.ResumeLayout(false);
-            this.ArsenalListHeader.PerformLayout();
-            this.ArsenalPanel.ResumeLayout(false);
-            this.ArsenalHeaderPanel.ResumeLayout(false);
-            this.ArsenalHeaderPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ArsenalCasePicture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SchoolPicturePsycho)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureOptical)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureNature)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureKi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureFaith)).EndInit();
-            this.ArsenalDeckPanel.ResumeLayout(false);
-            this.ArsenalControlPanel.ResumeLayout(false);
-            this.ArsenalControlPanel.PerformLayout();
-            this.CardPanel.ResumeLayout(false);
-            this.CardTitlePanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.CardSchoolPicture)).EndInit();
-            this.CardSubtitlePanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.RangePictureBox)).EndInit();
-            this.CardDescriptionPanel.ResumeLayout(false);
-            this.CardDescriptionPanel.PerformLayout();
-            this.MainLayout.ResumeLayout(false);
-            this.MainLayout.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1240, 590);
+            Controls.Add(MainLayout);
+            Name = "LabForm";
+            Text = "LabForm";
+            ArsenalListLayout.ResumeLayout(false);
+            ArsenalListHeader.ResumeLayout(false);
+            ArsenalListHeader.PerformLayout();
+            ArsenalPanel.ResumeLayout(false);
+            ArsenalHeaderPanel.ResumeLayout(false);
+            ArsenalHeaderPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ArsenalCasePicture).EndInit();
+            ((System.ComponentModel.ISupportInitialize)SchoolPicturePsycho).EndInit();
+            ((System.ComponentModel.ISupportInitialize)SchoolPictureOptical).EndInit();
+            ((System.ComponentModel.ISupportInitialize)SchoolPictureNature).EndInit();
+            ((System.ComponentModel.ISupportInitialize)SchoolPictureKi).EndInit();
+            ((System.ComponentModel.ISupportInitialize)SchoolPictureFaith).EndInit();
+            ArsenalDeckPanel.ResumeLayout(false);
+            ArsenalControlPanel.ResumeLayout(false);
+            ArsenalControlPanel.PerformLayout();
+            CardPanel.ResumeLayout(false);
+            CardTitlePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)CardSchoolPicture).EndInit();
+            CardSubtitlePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)RangePictureBox).EndInit();
+            CardDescriptionPanel.ResumeLayout(false);
+            CardDescriptionPanel.PerformLayout();
+            MainLayout.ResumeLayout(false);
+            MainLayout.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -1257,7 +1237,6 @@
         private Button NewButton;
         private Button RenameButton;
         private Button SortButton;
-        private Button EditButton;
         private Button SaveChangesButton;
         private Panel ArsenalHeaderPanel;
         private Panel ArsenalDeckPanel;

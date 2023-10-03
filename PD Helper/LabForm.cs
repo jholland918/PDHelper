@@ -17,13 +17,13 @@ namespace PD_Helper
 {
     public partial class LabForm : Form
     {
+        public bool IsEditMode { get; private set; } = false;
         private readonly ArsenalService _arsenalService = new();
         private readonly ArsenalSkill[] _arsenalSkills = new ArsenalSkill[30];
         private Dictionary<string, PictureBox> _schoolPictures;
         private ArsenalListItem _currentArsenalListItem;
         private List<ArsenalListItem> _arsenalListItems = new List<ArsenalListItem>();
         private Skill _lastCardSelected;
-        private bool _isEditMode = false;
         private AppData _appData = AppData.Instance;
 
         private struct ArsenalSkill
@@ -47,7 +47,6 @@ namespace PD_Helper
             // Tooltip all the things
             var toolTips = new ToolTip();
             toolTips.SetToolTip(SaveChangesButton, "Save to filesystem");
-            toolTips.SetToolTip(EditButton, "Toggle edit mode on/off");
             toolTips.SetToolTip(SortButton, "Sort skills");
             toolTips.SetToolTip(DeleteButton, "Delete from filesystem");
             toolTips.SetToolTip(NewButton, "Create arsenal");
@@ -241,7 +240,7 @@ namespace PD_Helper
 
         private void ArsenalListItem_MouseEnter(object? sender, EventArgs e)
         {
-            if (_isEditMode)
+            if (IsEditMode)
             {
                 return;
             }
@@ -261,7 +260,7 @@ namespace PD_Helper
 
         private ArsenalListItem AddArsenalToList(Arsenal arsenal)
         {
-            var arsenalListItem = new ArsenalListItem(arsenal);
+            var arsenalListItem = new ArsenalListItem(this, arsenal);
             _arsenalListItems.Add(arsenalListItem);
             arsenalListItem.MouseEnter += ArsenalListItem_MouseEnter;
             ArsenalListBody.Controls.Add(arsenalListItem);
@@ -321,15 +320,9 @@ namespace PD_Helper
             _arsenalService.Update(_currentArsenalListItem.Arsenal);
         }
 
-        private void EditButton_Click(object sender, EventArgs e)
+        public void SetEditMode(bool isEditMode)
         {
-            SetEditMode(!_isEditMode);
-        }
-
-        private void SetEditMode(bool isEditMode)
-        {
-            _isEditMode = isEditMode;
-            EditButton.Text = _isEditMode ? "Edit: On" : "Edit: Off";
+            IsEditMode = isEditMode;
             SaveChangesAnimationTimer.Enabled = isEditMode;
         }
 
@@ -366,7 +359,7 @@ namespace PD_Helper
             }
 
             SaveChangesButton.BackColor = Color.FromArgb(_saveButtonOpacity, AppColors.ForegroundColor);
-            
+
         }
 
         private void RandomizerButton_Click(object sender, EventArgs e)

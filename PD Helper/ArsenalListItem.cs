@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,9 +48,10 @@ namespace PD_Helper
             }
         }
 
-        public ArsenalListItem(Arsenal arsenal)
+        public ArsenalListItem(LabForm labForm, Arsenal arsenal)
             : this()
         {
+            _labForm = labForm;
             Initialize(arsenal);
         }
 
@@ -77,6 +79,8 @@ namespace PD_Helper
             SaveDropdownMenu.Click += SaveDropdownMenu_Click;
             SaveButton.Text = $"ARSENAL {_saveArsenalIndex.ToString().PadLeft(2, '0')}";
             SaveButton.Click += (s, e) => SaveArsenalToGame();
+
+            EditButton.Click += (s, e) => SetEditMode();
 
             foreach (Control control in Controls)
             {
@@ -132,6 +136,21 @@ namespace PD_Helper
             _gameService.WriteArsenal(_arsenal);
         }
 
+        private LabForm _labForm;
+
+        private void SetEditMode()
+        {
+            _labForm.SetEditMode(!_labForm.IsEditMode);
+            if (_labForm.IsEditMode)
+            {
+                EditButton.Font = new Font(EditButton.Font.Name, EditButton.Font.Size, FontStyle.Regular);
+            }
+            else
+            {
+                EditButton.Font = new Font(EditButton.Font.Name, EditButton.Font.Size, FontStyle.Regular);
+            }
+        }
+
         private void InitializeSchoolPictures()
         {
             SchoolPicturePsycho.Image = AppImages.Psycho;
@@ -165,6 +184,7 @@ namespace PD_Helper
             SaveDropdownMenu.ForeColor = AppColors.ForegroundColorHover;
             MainContainer.BackColor = AppColors.BackgroundColorHover;
             ArsenalCasePicture.BackColor = AppColors.ForegroundColorHover;
+            EditButton.ForeColor = AppColors.ForegroundColorHover;
 
             SchoolPicturePsycho.BackColor = SchoolPicturePsycho.Image == null ? Color.Transparent : AppColors.ForegroundColorHover;
             SchoolPictureOptical.BackColor = SchoolPictureOptical.Image == null ? Color.Transparent : AppColors.ForegroundColorHover;
@@ -189,6 +209,7 @@ namespace PD_Helper
             SaveDropdownMenu.ForeColor = AppColors.ForegroundColor;
             MainContainer.BackColor = AppColors.BackgroundColor;
             ArsenalCasePicture.BackColor = AppColors.ForegroundColor;
+            EditButton.ForeColor = AppColors.ForegroundColor;
 
             SchoolPicturePsycho.BackColor = SchoolPicturePsycho.Image == null ? Color.Transparent : AppColors.ForegroundColor;
             SchoolPictureOptical.BackColor = SchoolPictureOptical.Image == null ? Color.Transparent : AppColors.ForegroundColor;

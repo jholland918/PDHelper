@@ -28,189 +28,207 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ArsenalCasePicture = new System.Windows.Forms.PictureBox();
-            this.SkillsOverAuraLabel = new System.Windows.Forms.Label();
-            this.SchoolPicturePsycho = new System.Windows.Forms.PictureBox();
-            this.SchoolPictureOptical = new System.Windows.Forms.PictureBox();
-            this.SchoolPictureNature = new System.Windows.Forms.PictureBox();
-            this.SchoolPictureKi = new System.Windows.Forms.PictureBox();
-            this.SchoolPictureFaith = new System.Windows.Forms.PictureBox();
-            this.ArsenalNameLabel = new System.Windows.Forms.Label();
-            this.SaveDropdownMenu = new System.Windows.Forms.Button();
-            this.SaveButton = new System.Windows.Forms.Button();
-            this.MainContainer = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.ArsenalCasePicture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SchoolPicturePsycho)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureOptical)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureNature)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureKi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureFaith)).BeginInit();
-            this.MainContainer.SuspendLayout();
-            this.SuspendLayout();
+            ArsenalCasePicture = new PictureBox();
+            SkillsOverAuraLabel = new Label();
+            SchoolPicturePsycho = new PictureBox();
+            SchoolPictureOptical = new PictureBox();
+            SchoolPictureNature = new PictureBox();
+            SchoolPictureKi = new PictureBox();
+            SchoolPictureFaith = new PictureBox();
+            ArsenalNameLabel = new Label();
+            SaveDropdownMenu = new Button();
+            SaveButton = new Button();
+            MainContainer = new Panel();
+            EditButton = new Button();
+            ((System.ComponentModel.ISupportInitialize)ArsenalCasePicture).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)SchoolPicturePsycho).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)SchoolPictureOptical).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)SchoolPictureNature).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)SchoolPictureKi).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)SchoolPictureFaith).BeginInit();
+            MainContainer.SuspendLayout();
+            SuspendLayout();
             // 
             // ArsenalCasePicture
             // 
-            this.ArsenalCasePicture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.ArsenalCasePicture.Location = new System.Drawing.Point(3, 3);
-            this.ArsenalCasePicture.Name = "ArsenalCasePicture";
-            this.ArsenalCasePicture.Size = new System.Drawing.Size(54, 61);
-            this.ArsenalCasePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ArsenalCasePicture.TabIndex = 0;
-            this.ArsenalCasePicture.TabStop = false;
+            ArsenalCasePicture.BackColor = Color.FromArgb(92, 172, 149);
+            ArsenalCasePicture.Location = new Point(3, 3);
+            ArsenalCasePicture.Name = "ArsenalCasePicture";
+            ArsenalCasePicture.Size = new Size(54, 61);
+            ArsenalCasePicture.SizeMode = PictureBoxSizeMode.Zoom;
+            ArsenalCasePicture.TabIndex = 0;
+            ArsenalCasePicture.TabStop = false;
             // 
             // SkillsOverAuraLabel
             // 
-            this.SkillsOverAuraLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SkillsOverAuraLabel.AutoSize = true;
-            this.SkillsOverAuraLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SkillsOverAuraLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SkillsOverAuraLabel.Location = new System.Drawing.Point(267, 3);
-            this.SkillsOverAuraLabel.Name = "SkillsOverAuraLabel";
-            this.SkillsOverAuraLabel.Size = new System.Drawing.Size(44, 21);
-            this.SkillsOverAuraLabel.TabIndex = 2;
-            this.SkillsOverAuraLabel.Text = "0/30";
+            SkillsOverAuraLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            SkillsOverAuraLabel.AutoSize = true;
+            SkillsOverAuraLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            SkillsOverAuraLabel.ForeColor = Color.FromArgb(92, 172, 149);
+            SkillsOverAuraLabel.Location = new Point(267, 3);
+            SkillsOverAuraLabel.Name = "SkillsOverAuraLabel";
+            SkillsOverAuraLabel.Size = new Size(44, 21);
+            SkillsOverAuraLabel.TabIndex = 2;
+            SkillsOverAuraLabel.Text = "0/30";
             // 
             // SchoolPicturePsycho
             // 
-            this.SchoolPicturePsycho.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SchoolPicturePsycho.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SchoolPicturePsycho.Location = new System.Drawing.Point(59, 37);
-            this.SchoolPicturePsycho.Margin = new System.Windows.Forms.Padding(0);
-            this.SchoolPicturePsycho.Name = "SchoolPicturePsycho";
-            this.SchoolPicturePsycho.Size = new System.Drawing.Size(38, 27);
-            this.SchoolPicturePsycho.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.SchoolPicturePsycho.TabIndex = 0;
-            this.SchoolPicturePsycho.TabStop = false;
+            SchoolPicturePsycho.BackColor = Color.FromArgb(92, 172, 149);
+            SchoolPicturePsycho.BorderStyle = BorderStyle.FixedSingle;
+            SchoolPicturePsycho.Location = new Point(59, 37);
+            SchoolPicturePsycho.Margin = new Padding(0);
+            SchoolPicturePsycho.Name = "SchoolPicturePsycho";
+            SchoolPicturePsycho.Size = new Size(38, 27);
+            SchoolPicturePsycho.SizeMode = PictureBoxSizeMode.Zoom;
+            SchoolPicturePsycho.TabIndex = 0;
+            SchoolPicturePsycho.TabStop = false;
             // 
             // SchoolPictureOptical
             // 
-            this.SchoolPictureOptical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SchoolPictureOptical.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SchoolPictureOptical.Location = new System.Drawing.Point(98, 37);
-            this.SchoolPictureOptical.Margin = new System.Windows.Forms.Padding(0);
-            this.SchoolPictureOptical.Name = "SchoolPictureOptical";
-            this.SchoolPictureOptical.Size = new System.Drawing.Size(38, 27);
-            this.SchoolPictureOptical.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.SchoolPictureOptical.TabIndex = 1;
-            this.SchoolPictureOptical.TabStop = false;
+            SchoolPictureOptical.BackColor = Color.FromArgb(92, 172, 149);
+            SchoolPictureOptical.BorderStyle = BorderStyle.FixedSingle;
+            SchoolPictureOptical.Location = new Point(98, 37);
+            SchoolPictureOptical.Margin = new Padding(0);
+            SchoolPictureOptical.Name = "SchoolPictureOptical";
+            SchoolPictureOptical.Size = new Size(38, 27);
+            SchoolPictureOptical.SizeMode = PictureBoxSizeMode.Zoom;
+            SchoolPictureOptical.TabIndex = 1;
+            SchoolPictureOptical.TabStop = false;
             // 
             // SchoolPictureNature
             // 
-            this.SchoolPictureNature.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SchoolPictureNature.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SchoolPictureNature.Location = new System.Drawing.Point(137, 37);
-            this.SchoolPictureNature.Margin = new System.Windows.Forms.Padding(0);
-            this.SchoolPictureNature.Name = "SchoolPictureNature";
-            this.SchoolPictureNature.Size = new System.Drawing.Size(38, 27);
-            this.SchoolPictureNature.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.SchoolPictureNature.TabIndex = 2;
-            this.SchoolPictureNature.TabStop = false;
+            SchoolPictureNature.BackColor = Color.FromArgb(92, 172, 149);
+            SchoolPictureNature.BorderStyle = BorderStyle.FixedSingle;
+            SchoolPictureNature.Location = new Point(137, 37);
+            SchoolPictureNature.Margin = new Padding(0);
+            SchoolPictureNature.Name = "SchoolPictureNature";
+            SchoolPictureNature.Size = new Size(38, 27);
+            SchoolPictureNature.SizeMode = PictureBoxSizeMode.Zoom;
+            SchoolPictureNature.TabIndex = 2;
+            SchoolPictureNature.TabStop = false;
             // 
             // SchoolPictureKi
             // 
-            this.SchoolPictureKi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SchoolPictureKi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SchoolPictureKi.Location = new System.Drawing.Point(176, 37);
-            this.SchoolPictureKi.Margin = new System.Windows.Forms.Padding(0);
-            this.SchoolPictureKi.Name = "SchoolPictureKi";
-            this.SchoolPictureKi.Size = new System.Drawing.Size(38, 27);
-            this.SchoolPictureKi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.SchoolPictureKi.TabIndex = 3;
-            this.SchoolPictureKi.TabStop = false;
+            SchoolPictureKi.BackColor = Color.FromArgb(92, 172, 149);
+            SchoolPictureKi.BorderStyle = BorderStyle.FixedSingle;
+            SchoolPictureKi.Location = new Point(176, 37);
+            SchoolPictureKi.Margin = new Padding(0);
+            SchoolPictureKi.Name = "SchoolPictureKi";
+            SchoolPictureKi.Size = new Size(38, 27);
+            SchoolPictureKi.SizeMode = PictureBoxSizeMode.Zoom;
+            SchoolPictureKi.TabIndex = 3;
+            SchoolPictureKi.TabStop = false;
             // 
             // SchoolPictureFaith
             // 
-            this.SchoolPictureFaith.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SchoolPictureFaith.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SchoolPictureFaith.Location = new System.Drawing.Point(215, 37);
-            this.SchoolPictureFaith.Margin = new System.Windows.Forms.Padding(0);
-            this.SchoolPictureFaith.Name = "SchoolPictureFaith";
-            this.SchoolPictureFaith.Size = new System.Drawing.Size(42, 27);
-            this.SchoolPictureFaith.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.SchoolPictureFaith.TabIndex = 4;
-            this.SchoolPictureFaith.TabStop = false;
+            SchoolPictureFaith.BackColor = Color.FromArgb(92, 172, 149);
+            SchoolPictureFaith.BorderStyle = BorderStyle.FixedSingle;
+            SchoolPictureFaith.Location = new Point(215, 37);
+            SchoolPictureFaith.Margin = new Padding(0);
+            SchoolPictureFaith.Name = "SchoolPictureFaith";
+            SchoolPictureFaith.Size = new Size(42, 27);
+            SchoolPictureFaith.SizeMode = PictureBoxSizeMode.Zoom;
+            SchoolPictureFaith.TabIndex = 4;
+            SchoolPictureFaith.TabStop = false;
             // 
             // ArsenalNameLabel
             // 
-            this.ArsenalNameLabel.AutoSize = true;
-            this.ArsenalNameLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ArsenalNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.ArsenalNameLabel.Location = new System.Drawing.Point(63, 3);
-            this.ArsenalNameLabel.Name = "ArsenalNameLabel";
-            this.ArsenalNameLabel.Size = new System.Drawing.Size(117, 21);
-            this.ArsenalNameLabel.TabIndex = 0;
-            this.ArsenalNameLabel.Text = "Arsenal Name";
+            ArsenalNameLabel.AutoSize = true;
+            ArsenalNameLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            ArsenalNameLabel.ForeColor = Color.FromArgb(92, 172, 149);
+            ArsenalNameLabel.Location = new Point(63, 3);
+            ArsenalNameLabel.Name = "ArsenalNameLabel";
+            ArsenalNameLabel.Size = new Size(117, 21);
+            ArsenalNameLabel.TabIndex = 0;
+            ArsenalNameLabel.Text = "Arsenal Name";
             // 
             // SaveDropdownMenu
             // 
-            this.SaveDropdownMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.SaveDropdownMenu.AutoSize = true;
-            this.SaveDropdownMenu.BackColor = System.Drawing.Color.Transparent;
-            this.SaveDropdownMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(185)))), ((int)(((byte)(24)))));
-            this.SaveDropdownMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.SaveDropdownMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SaveDropdownMenu.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SaveDropdownMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SaveDropdownMenu.Location = new System.Drawing.Point(497, 30);
-            this.SaveDropdownMenu.Name = "SaveDropdownMenu";
-            this.SaveDropdownMenu.Size = new System.Drawing.Size(33, 34);
-            this.SaveDropdownMenu.TabIndex = 2;
-            this.SaveDropdownMenu.Text = "⯆";
-            this.SaveDropdownMenu.UseVisualStyleBackColor = false;
+            SaveDropdownMenu.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            SaveDropdownMenu.AutoSize = true;
+            SaveDropdownMenu.BackColor = Color.Transparent;
+            SaveDropdownMenu.FlatAppearance.MouseDownBackColor = Color.FromArgb(216, 185, 24);
+            SaveDropdownMenu.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            SaveDropdownMenu.FlatStyle = FlatStyle.Flat;
+            SaveDropdownMenu.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            SaveDropdownMenu.ForeColor = Color.FromArgb(92, 172, 149);
+            SaveDropdownMenu.Location = new Point(497, 33);
+            SaveDropdownMenu.Name = "SaveDropdownMenu";
+            SaveDropdownMenu.Size = new Size(33, 31);
+            SaveDropdownMenu.TabIndex = 2;
+            SaveDropdownMenu.Text = "⯆";
+            SaveDropdownMenu.UseVisualStyleBackColor = false;
             // 
             // SaveButton
             // 
-            this.SaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.SaveButton.AutoSize = true;
-            this.SaveButton.BackColor = System.Drawing.Color.Transparent;
-            this.SaveButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(185)))), ((int)(((byte)(24)))));
-            this.SaveButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SaveButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SaveButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
-            this.SaveButton.Location = new System.Drawing.Point(381, 30);
-            this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(116, 34);
-            this.SaveButton.TabIndex = 1;
-            this.SaveButton.Text = "ARSENAL01";
-            this.SaveButton.UseVisualStyleBackColor = false;
+            SaveButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            SaveButton.AutoSize = true;
+            SaveButton.BackColor = Color.Transparent;
+            SaveButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(216, 185, 24);
+            SaveButton.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            SaveButton.FlatStyle = FlatStyle.Flat;
+            SaveButton.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            SaveButton.ForeColor = Color.FromArgb(92, 172, 149);
+            SaveButton.Location = new Point(381, 33);
+            SaveButton.Name = "SaveButton";
+            SaveButton.Size = new Size(116, 31);
+            SaveButton.TabIndex = 1;
+            SaveButton.Text = "ARSENAL01";
+            SaveButton.UseVisualStyleBackColor = false;
             // 
             // MainContainer
             // 
-            this.MainContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(53)))), ((int)(((byte)(47)))));
-            this.MainContainer.Controls.Add(this.ArsenalCasePicture);
-            this.MainContainer.Controls.Add(this.ArsenalNameLabel);
-            this.MainContainer.Controls.Add(this.SkillsOverAuraLabel);
-            this.MainContainer.Controls.Add(this.SchoolPicturePsycho);
-            this.MainContainer.Controls.Add(this.SchoolPictureOptical);
-            this.MainContainer.Controls.Add(this.SchoolPictureNature);
-            this.MainContainer.Controls.Add(this.SchoolPictureKi);
-            this.MainContainer.Controls.Add(this.SchoolPictureFaith);
-            this.MainContainer.Controls.Add(this.SaveDropdownMenu);
-            this.MainContainer.Controls.Add(this.SaveButton);
-            this.MainContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainContainer.Location = new System.Drawing.Point(0, 0);
-            this.MainContainer.Name = "MainContainer";
-            this.MainContainer.Size = new System.Drawing.Size(535, 67);
-            this.MainContainer.TabIndex = 3;
+            MainContainer.BackColor = Color.FromArgb(33, 53, 47);
+            MainContainer.Controls.Add(ArsenalCasePicture);
+            MainContainer.Controls.Add(ArsenalNameLabel);
+            MainContainer.Controls.Add(SkillsOverAuraLabel);
+            MainContainer.Controls.Add(SchoolPicturePsycho);
+            MainContainer.Controls.Add(SchoolPictureOptical);
+            MainContainer.Controls.Add(SchoolPictureNature);
+            MainContainer.Controls.Add(SchoolPictureKi);
+            MainContainer.Controls.Add(SchoolPictureFaith);
+            MainContainer.Controls.Add(SaveDropdownMenu);
+            MainContainer.Controls.Add(SaveButton);
+            MainContainer.Controls.Add(EditButton);
+            MainContainer.Dock = DockStyle.Fill;
+            MainContainer.Location = new Point(0, 0);
+            MainContainer.Name = "MainContainer";
+            MainContainer.Size = new Size(535, 67);
+            MainContainer.TabIndex = 3;
+            // 
+            // EditButton
+            // 
+            EditButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            EditButton.AutoSize = true;
+            EditButton.BackColor = Color.Transparent;
+            EditButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(216, 185, 24);
+            EditButton.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            EditButton.FlatStyle = FlatStyle.Flat;
+            EditButton.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            EditButton.ForeColor = Color.FromArgb(92, 172, 149);
+            EditButton.Location = new Point(267, 33);
+            EditButton.Name = "EditButton";
+            EditButton.Size = new Size(58, 31);
+            EditButton.TabIndex = 5;
+            EditButton.Text = "EDIT";
+            EditButton.UseVisualStyleBackColor = false;
             // 
             // ArsenalListItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.MainContainer);
-            this.Name = "ArsenalListItem";
-            this.Size = new System.Drawing.Size(535, 67);
-            ((System.ComponentModel.ISupportInitialize)(this.ArsenalCasePicture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SchoolPicturePsycho)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureOptical)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureNature)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureKi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SchoolPictureFaith)).EndInit();
-            this.MainContainer.ResumeLayout(false);
-            this.MainContainer.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(MainContainer);
+            Name = "ArsenalListItem";
+            Size = new Size(535, 67);
+            ((System.ComponentModel.ISupportInitialize)ArsenalCasePicture).EndInit();
+            ((System.ComponentModel.ISupportInitialize)SchoolPicturePsycho).EndInit();
+            ((System.ComponentModel.ISupportInitialize)SchoolPictureOptical).EndInit();
+            ((System.ComponentModel.ISupportInitialize)SchoolPictureNature).EndInit();
+            ((System.ComponentModel.ISupportInitialize)SchoolPictureKi).EndInit();
+            ((System.ComponentModel.ISupportInitialize)SchoolPictureFaith).EndInit();
+            MainContainer.ResumeLayout(false);
+            MainContainer.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -226,5 +244,6 @@
         private Button SaveButton;
         private Button SaveDropdownMenu;
         private Panel MainContainer;
+        private Button EditButton;
     }
 }
